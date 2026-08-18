@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="NHL">
+  <rect width="128" height="128" rx="24" fill="#0D1B2A"/>
+  <circle cx="64" cy="64" r="32" fill="#ffffff" fill-opacity="0.12"/>
+  <path d="M36 86 L47 42 H58 L50 86Z" fill="#ffffff"/>
+  <path d="M70 42 H81 L92 86 H80L70 42Z" fill="#ffffff"/>
+  <path d="M58 42 H70 L64 86 H58Z" fill="#D71920"/>
+</svg>

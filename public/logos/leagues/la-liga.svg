@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="La Liga">
+  <rect width="128" height="128" rx="24" fill="#E5A532"/>
+  <circle cx="64" cy="64" r="38" fill="#ffffff" fill-opacity="0.18"/>
+  <path d="M38 86V42H90V86H82V50H46V86Z" fill="#ffffff"/>
+  <path d="M54 56H74V46H54Z" fill="#E5A532"/>
+  <path d="M54 70H74V60H54Z" fill="#E5A532"/>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Formula 1">
+  <rect width="128" height="128" rx="24" fill="#E10600"/>
+  <path d="M28 88 L52 40 H72 L62 88Z" fill="#ffffff"/>
+  <path d="M66 40 H96 L84 88 H62Z" fill="#ffffff"/>
+  <path d="M54 60 H76 L82 72 H48Z" fill="#E10600"/>
+</svg>

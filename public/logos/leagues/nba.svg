@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="NBA">
+  <rect width="128" height="128" rx="24" fill="#1D428A"/>
+  <circle cx="64" cy="64" r="36" fill="#F5F5F5" fill-opacity="0.14"/>
+  <path d="M32 80 L45 40 H52 L40 80Z" fill="#ffffff"/>
+  <path d="M52 40 H75 L60 80 H52Z" fill="#ffffff"/>
+  <path d="M75 40 H82 L96 80 H88Z" fill="#ffffff"/>
+  <path d="M45 44 L57 48 L64 36 L71 48 L83 44 L74 64 L64 58 L54 64Z" fill="#C8102E"/>
+</svg>

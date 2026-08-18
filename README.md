@@ -1,1 +1,3 @@
-# fan_of_the_game
+# Rally
+
+Every Team, Every Game, One Place.
