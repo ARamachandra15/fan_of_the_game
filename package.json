@@ -1,16 +1,19 @@
 {
   "name": "rally",
   "private": true,
-  "description": "Rally — Every Team, Every Game, One Place.",
+  "description": "Rally \u2014 Every Team, Every Game, One Place.",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "concurrently \"npm:dev:server\" \"npm:dev:client\"",
-    "dev:clean": "lsof -tiTCP:3001 -sTCP:LISTEN | xargs -r kill -9; lsof -tiTCP:3002 -sTCP:LISTEN | xargs -r kill -9; lsof -tiTCP:5173 -sTCP:LISTEN | xargs -r kill -9; lsof -tiTCP:5174 -sTCP:LISTEN | xargs -r kill -9; lsof -tiTCP:5175 -sTCP:LISTEN | xargs -r kill -9; lsof -tiTCP:5176 -sTCP:LISTEN | xargs -r kill -9; concurrently \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:clean": "node scripts/dev-clean.js && concurrently \"npm:dev:server\" \"npm:dev:client\"",
     "dev:client": "vite --host 0.0.0.0 --port 5173 --strictPort",
     "dev:server": "PORT=3002 node server/index.js",
+    "refresh:schedules": "node scripts/refreshSchedules.js",
     "build": "tsc -b && vite build",
-    "preview": "vite preview --host 0.0.0.0 --port 4173 --strictPort"
+    "preview": "vite preview --host 0.0.0.0 --port 4173 --strictPort",
+    "_note": "Always use npm run dev:clean instead of npm run dev when starting a new session, to avoid stale server processes serving cached/incomplete data.",
+    "map:espn-team-ids": "node scripts/mapEspnTeamIds.js"
   },
   "dependencies": {
     "cors": "^2.8.5",

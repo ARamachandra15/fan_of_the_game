@@ -1,0 +1,90 @@
+{
+  "fetchedAt": "2026-08-18T06:35:30.983Z",
+  "source": "TheSportsDB",
+  "league": "nba",
+  "events": [
+    {
+      "id": "2548849",
+      "league": "nba",
+      "title": "Atlanta Hawks vs Memphis Grizzlies",
+      "date": "2026-10-05",
+      "time": "23:00:00",
+      "datetime": "2026-10-05T23:00:00",
+      "status": "NS",
+      "venue": "State Farm Arena",
+      "home_team": {
+        "id": "134880",
+        "name": "Atlanta Hawks",
+        "badge": "https://r2.thesportsdb.com/images/media/team/badge/7o1noy1778226315.png"
+      },
+      "visitor_team": {
+        "id": "134877",
+        "name": "Memphis Grizzlies",
+        "badge": "https://r2.thesportsdb.com/images/media/team/badge/v44qp21778197640.png"
+      },
+      "home_team_name": "Atlanta Hawks",
+      "visitor_team_name": "Memphis Grizzlies",
+      "homeTeam": {
+        "id": "134880",
+        "name": "Atlanta Hawks",
+        "badge": "https://r2.thesportsdb.com/images/media/team/badge/7o1noy1778226315.png"
+      },
+      "visitorTeam": {
+        "id": "134877",
+        "name": "Memphis Grizzlies",
+        "badge": "https://r2.thesportsdb.com/images/media/team/badge/v44qp21778197640.png"
+      },
+      "raw": {
+        "idEvent": "2548849",
+        "idAPIfootball": "506713",
+        "strTimestamp": "2026-10-05T23:00:00",
+        "strEvent": "Atlanta Hawks vs Memphis Grizzlies",
+        "strEventAlternate": "Memphis Grizzlies @ Atlanta Hawks",
+        "strFilename": "NBA 2026-10-05 Atlanta Hawks vs Memphis Grizzlies",
+        "strSport": "Basketball",
+        "idLeague": "4387",
+        "strLeague": "NBA",
+        "strLeagueBadge": "https://r2.thesportsdb.com/images/media/league/badge/frdjqy1536585083.png",
+        "strSeason": "2026-2027",
+        "strDescriptionEN": null,
+        "strHomeTeam": "Atlanta Hawks",
+        "strAwayTeam": "Memphis Grizzlies",
+        "intHomeScore": null,
+        "intHomeScoreExtra": null,
+        "intAwayScoreExtra": null,
+        "intRound": "0",
+        "intAwayScore": null,
+        "intSpectators": null,
+        "strOfficial": null,
+        "strWeather": null,
+        "dateEvent": "2026-10-05",
+        "dateEventLocal": null,
+        "strTime": "23:00:00",
+        "strTimeLocal": null,
+        "strGroup": null,
+        "idHomeTeam": "134880",
+        "strHomeTeamBadge": "https://r2.thesportsdb.com/images/media/team/badge/7o1noy1778226315.png",
+        "idAwayTeam": "134877",
+        "strAwayTeamBadge": "https://r2.thesportsdb.com/images/media/team/badge/v44qp21778197640.png",
+        "intScore": null,
+        "intScoreVotes": null,
+        "strResult": " Atlanta Hawks Quarters:<br>    <br><br>Memphis Grizzlies Quarters:<br>    ",
+        "idVenue": "21308",
+        "strVenue": "State Farm Arena",
+        "strCountry": "United States",
+        "strCity": null,
+        "strPoster": "https://r2.thesportsdb.com/images/media/event/poster/psjuve1759259351.jpg",
+        "strSquare": "",
+        "strFanart": null,
+        "strThumb": "https://r2.thesportsdb.com/images/media/event/thumb/fnylzc1759234638.jpg",
+        "strBanner": "",
+        "strMap": null,
+        "strTweet1": null,
+        "strVideo": null,
+        "strStatus": "NS",
+        "strPostponed": "no",
+        "strLocked": "unlocked"
+      }
+    }
+  ]
+}

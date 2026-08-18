@@ -1,5 +1,3 @@
-import { FULL_TEAM_ROSTERS } from '../lib/constants';
-
 export async function fetchLeagues() {
   const response = await fetch('/api/leagues');
   if (!response.ok) {
@@ -18,11 +16,18 @@ export async function fetchTeamsForLeague(leagueId: string) {
   return Array.isArray(data.teams) ? data.teams : [];
 }
 
-export async function fetchLeagueGames(league: string) {
-  const response = await fetch(`/api/sports/${league}`);
+export async function fetchLeagueGames(league: string, teamName?: string) {
+  const query = teamName ? `?team=${encodeURIComponent(teamName)}` : '';
+  const response = await fetch(`/api/sports/${league}${query}`);
+  const data = await response.json().catch(() => ({}));
+
   if (!response.ok) {
-    throw new Error('Unable to fetch games for league');
+    const message = data?.error || 'Unable to fetch games for league';
+    if (message.toLowerCase().includes('rate limit') || message.toLowerCase().includes('rate limited')) {
+      throw new Error('ESPN rate limited, try again shortly.');
+    }
+    throw new Error(message);
   }
-  const data = await response.json();
-  return data.data ?? [];
+
+  return data.events ?? data.data ?? [];
 }

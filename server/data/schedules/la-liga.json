@@ -1,0 +1,90 @@
+{
+  "fetchedAt": "2026-08-18T06:35:31.554Z",
+  "source": "TheSportsDB",
+  "league": "la-liga",
+  "events": [
+    {
+      "id": "2506170",
+      "league": "la-liga",
+      "title": "Atlético Madrid vs Málaga",
+      "date": "2026-08-19",
+      "time": "19:00:00",
+      "datetime": "2026-08-19T19:00:00",
+      "status": "NS",
+      "venue": "Riyadh Air Metropolitano",
+      "home_team": {
+        "id": "133729",
+        "name": "Atlético Madrid",
+        "badge": "https://r2.thesportsdb.com/images/media/team/badge/0ulh3q1719984315.png"
+      },
+      "visitor_team": {
+        "id": "133736",
+        "name": "Málaga",
+        "badge": "https://r2.thesportsdb.com/images/media/team/badge/upqyvr1473502952.png"
+      },
+      "home_team_name": "Atlético Madrid",
+      "visitor_team_name": "Málaga",
+      "homeTeam": {
+        "id": "133729",
+        "name": "Atlético Madrid",
+        "badge": "https://r2.thesportsdb.com/images/media/team/badge/0ulh3q1719984315.png"
+      },
+      "visitorTeam": {
+        "id": "133736",
+        "name": "Málaga",
+        "badge": "https://r2.thesportsdb.com/images/media/team/badge/upqyvr1473502952.png"
+      },
+      "raw": {
+        "idEvent": "2506170",
+        "idAPIfootball": "1570334",
+        "strTimestamp": "2026-08-19T19:00:00",
+        "strEvent": "Atlético Madrid vs Málaga",
+        "strEventAlternate": "Málaga @ Atlético Madrid",
+        "strFilename": "Spanish La Liga 2026-08-19 Atlético Madrid vs Málaga",
+        "strSport": "Soccer",
+        "idLeague": "4335",
+        "strLeague": "Spanish La Liga",
+        "strLeagueBadge": "https://r2.thesportsdb.com/images/media/league/badge/ja4it51687628717.png",
+        "strSeason": "2026-2027",
+        "strDescriptionEN": "",
+        "strHomeTeam": "Atlético Madrid",
+        "strAwayTeam": "Málaga",
+        "intHomeScore": null,
+        "intHomeScoreExtra": null,
+        "intAwayScoreExtra": null,
+        "intRound": "1",
+        "intAwayScore": null,
+        "intSpectators": null,
+        "strOfficial": "",
+        "strWeather": "",
+        "dateEvent": "2026-08-19",
+        "dateEventLocal": "2026-08-19",
+        "strTime": "19:00:00",
+        "strTimeLocal": "21:00:00",
+        "strGroup": "",
+        "idHomeTeam": "133729",
+        "strHomeTeamBadge": "https://r2.thesportsdb.com/images/media/team/badge/0ulh3q1719984315.png",
+        "idAwayTeam": "133736",
+        "strAwayTeamBadge": "https://r2.thesportsdb.com/images/media/team/badge/upqyvr1473502952.png",
+        "intScore": null,
+        "intScoreVotes": null,
+        "strResult": "",
+        "idVenue": "26137",
+        "strVenue": "Riyadh Air Metropolitano",
+        "strCountry": "Spain",
+        "strCity": "",
+        "strPoster": "",
+        "strSquare": "",
+        "strFanart": null,
+        "strThumb": "https://r2.thesportsdb.com/images/media/event/thumb/p0t25p1784904411.jpg",
+        "strBanner": "",
+        "strMap": null,
+        "strTweet1": "",
+        "strVideo": "",
+        "strStatus": "NS",
+        "strPostponed": "no",
+        "strLocked": "unlocked"
+      }
+    }
+  ]
+}

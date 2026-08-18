@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { F1_CONSTRUCTORS, LEAGUES, FULL_TEAM_ROSTERS } from './lib/constants';
+import { F1_CONSTRUCTORS, LEAGUES } from './lib/constants';
 import { clearSelection, readSelection, writeSelection } from './lib/storage';
 import { buildMonthGrid, formatMonthLabel, goToNextMonth, goToPrevMonth, isCurrentMonth, isTodayDate } from './lib/date';
 import type { GameEvent, LeagueKey, LeagueOption, LeagueSelection, TeamOption } from './types/sports';
@@ -11,6 +11,24 @@ type FlowScreen = 'landing' | 'league' | 'team' | 'calendar';
 
 type AccessMode = 'new' | 'existing';
 
+const normalizeName = (value: string) => value.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+
+const hexToRgba = (value: string, alpha: number) => {
+  const safe = (value || '#5b7cff').trim();
+  if (!safe.startsWith('#')) {
+    return `rgba(91, 124, 255, ${alpha})`;
+  }
+
+  const hex = safe.slice(1);
+  const expanded = hex.length === 3 ? hex.split('').map((char) => char + char).join('') : hex;
+  const numeric = Number.parseInt(expanded, 16);
+  const r = (numeric >> 16) & 255;
+  const g = (numeric >> 8) & 255;
+  const b = numeric & 255;
+
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+};
+
 function App() {
   const [screen, setScreen] = useState<FlowScreen>('landing');
   const [selectedLeagues, setSelectedLeagues] = useState<LeagueSelection[]>([]);
@@ -21,6 +39,7 @@ function App() {
   const [selectedDay, setSelectedDay] = useState<Date | null>(null);
   const [failedLeagueLogos, setFailedLeagueLogos] = useState<Record<string, boolean>>({});
   const [teamLeagueIndex, setTeamLeagueIndex] = useState(0);
+  const [scheduleNotice, setScheduleNotice] = useState<string | null>(null);
 
   useEffect(() => {
     const saved = readSelection();
@@ -81,42 +100,56 @@ function App() {
   useEffect(() => {
     const loadGames = async () => {
       const nextEvents: GameEvent[] = [];
+      setScheduleNotice(null);
+
       for (const league of selectedLeagues) {
-        try {
-          const leagueGames = await fetchLeagueGames(league.id);
-          for (const game of leagueGames) {
-            if (!game) continue;
+        const selectedLeagueTeams = selectedTeams.filter((team) => team.id.startsWith(`${league.id}:`));
+        if (selectedLeagueTeams.length === 0) {
+          continue;
+        }
 
-            const homeTeam = game.home_team || game.homeTeam || {};
-            const visitorTeam = game.visitor_team || game.visitorTeam || {};
-            const homeName = homeTeam.full_name || homeTeam.name || game.home_team_name || 'Home';
-            const visitorName = visitorTeam.full_name || visitorTeam.name || game.visitor_team_name || 'Visitor';
-            const status = game.status || game.state || 'Scheduled';
-            const startDate = game.date || game.start_time || game.datetime || new Date().toISOString();
-            const dateObj = new Date(startDate);
+        for (const team of selectedLeagueTeams) {
+          try {
+            const leagueGames = await fetchLeagueGames(league.id, team.name);
+            for (const game of leagueGames) {
+              if (!game) continue;
 
-            const colorSource = selectedTeams.find(
-              (team) => team.name === homeName || team.id.includes(homeName.toLowerCase().replace(/\s+/g, '-')),
-            );
+              const homeTeam = game.home_team || game.homeTeam || game.home_team_details || {};
+              const visitorTeam = game.visitor_team || game.visitorTeam || game.visitor_team_details || {};
+              const homeName = game.home_team_name || homeTeam.name || homeTeam.full_name || game.strHomeTeam || 'Home';
+              const visitorName = game.visitor_team_name || visitorTeam.name || visitorTeam.full_name || game.strAwayTeam || 'Visitor';
+              const status = game.status || game.strStatus || game.state || 'Scheduled';
+              const startDate = game.date || game.dateEvent || game.start_time || game.datetime || game.scheduled || game.strTimestamp || new Date().toISOString();
+              const timePart = game.time || game.strTime || '00:00:00';
+              const dateObj = startDate.includes('T') ? new Date(startDate) : new Date(`${startDate}T${timePart === 'TBD' ? '00:00:00' : timePart}`);
+              const homeNormalized = normalizeName(homeName);
+              const visitorNormalized = normalizeName(visitorName);
 
-            nextEvents.push({
-              id: `${league.id}-${game.id || Math.random().toString(16).slice(2)}`,
-              league: league.id,
-              teamId: `${league.id}:${homeName.toLowerCase().replace(/\s+/g, '-')}`,
-              teamName: homeName,
-              teamShortName: homeName.slice(0, 3).toUpperCase(),
-              opponent: visitorName,
-              date: dateObj.toISOString(),
-              time: dateObj.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }),
-              venue: game.venue || game.arena || 'TBD',
-              phase: status,
-              primaryColor: colorSource?.primaryColor || '#5b7cff',
-              type: league.id === 'f1' ? 'race' : 'game',
-              status,
-            });
+              const isSelectedMatch = normalizeName(team.name) === homeNormalized || normalizeName(team.name) === visitorNormalized;
+              if (!isSelectedMatch) continue;
+
+              nextEvents.push({
+                id: `${league.id}-${game.id || game.idEvent || `${team.name}-${Math.random().toString(16).slice(2)}`}`,
+                league: league.id,
+                teamId: `${league.id}:${team.name.toLowerCase().replace(/\s+/g, '-')}`,
+                teamName: homeName,
+                teamShortName: homeName.slice(0, 3).toUpperCase(),
+                opponent: visitorName,
+                date: dateObj.toISOString(),
+                time: dateObj.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }),
+                venue: game.venue || game.strVenue || game.arena || 'TBD',
+                phase: status,
+                primaryColor: team.primaryColor || '#5b7cff',
+                type: league.id === 'f1' ? 'race' : 'game',
+                status,
+              });
+            }
+          } catch (error) {
+            const message = error instanceof Error ? error.message : 'Unable to fetch games for league';
+            if (message.toLowerCase().includes('rate limited')) {
+              setScheduleNotice('ESPN rate limited, try again shortly.');
+            }
           }
-        } catch {
-          // silent fallback for unsupported schedule data
         }
       }
       setEvents(nextEvents);
@@ -212,27 +245,31 @@ function App() {
   }, [filteredEvents]);
 
   const renderLandingStep = () => (
-    <div className="space-y-8 py-6 text-center">
-      <div className="mx-auto max-w-3xl">
-        <h1 className="text-[2.5rem] font-black uppercase tracking-[0.14em] text-white md:text-[2.75rem]">Rally</h1>
-        <p className="mt-2 text-base font-medium tracking-[0.06em] text-indigo-200 md:text-lg">Every Team, Every Game, One Place.</p>
+    <div className="relative space-y-8 py-8 text-center">
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden rounded-[32px]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.22),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.12),transparent_25%)]" />
+        <div className="absolute -left-16 top-10 h-48 w-48 rounded-full bg-indigo-500/15 blur-3xl" />
+        <div className="absolute -right-12 bottom-8 h-52 w-52 rounded-full bg-cyan-500/10 blur-3xl" />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-indigo-400/80 to-transparent" />
       </div>
 
-      <div className="mx-auto grid max-w-2xl gap-4 md:grid-cols-2">
+      <div className="mx-auto grid max-w-3xl gap-4 md:grid-cols-2">
         <button
           type="button"
           onClick={() => handleLandingChoice('new')}
-          className="rounded-2xl border border-indigo-500 bg-indigo-500/10 p-6 text-center transition hover:bg-indigo-500/20"
+          className="group relative overflow-hidden rounded-[26px] border border-indigo-400/60 bg-[linear-gradient(135deg,rgba(99,102,241,0.18),rgba(15,23,42,0.9))] p-7 text-center shadow-[0_18px_40px_rgba(99,102,241,0.18)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.01] hover:border-indigo-300 hover:shadow-[0_20px_52px_rgba(99,102,241,0.3)] active:translate-y-0"
         >
-          <span className="text-2xl font-semibold text-white">New User</span>
+          <span className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-white/80 to-transparent" />
+          <span className="relative block text-2xl font-bold tracking-[0.12em] text-white uppercase">New User</span>
         </button>
 
         <button
           type="button"
           onClick={() => handleLandingChoice('existing')}
-          className="rounded-2xl border border-slate-700 bg-slate-800/60 p-6 text-center transition hover:border-slate-500 hover:bg-slate-800"
+          className="group relative overflow-hidden rounded-[26px] border border-slate-700/80 bg-[linear-gradient(135deg,rgba(15,23,42,0.9),rgba(15,23,42,0.72))] p-7 text-center shadow-[0_18px_40px_rgba(15,23,42,0.4)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.01] hover:border-slate-500 hover:bg-slate-800/80 hover:shadow-[0_18px_40px_rgba(59,130,246,0.12)] active:translate-y-0"
         >
-          <span className="text-2xl font-semibold text-white">Existing User</span>
+          <span className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/70 to-transparent" />
+          <span className="relative block text-2xl font-bold tracking-[0.12em] text-white uppercase">Existing User</span>
         </button>
       </div>
     </div>
@@ -387,6 +424,12 @@ function App() {
         </div>
       </div>
 
+      {scheduleNotice && (
+        <div className="rounded-2xl border border-amber-500/50 bg-amber-500/10 px-4 py-3 text-sm text-amber-200">
+          {scheduleNotice}
+        </div>
+      )}
+
       <div className="flex items-center justify-between gap-4 rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
         <button
           type="button"
@@ -431,17 +474,24 @@ function App() {
               </div>
 
               <div className="space-y-1.5">
-                {visibleEvents.map((event) => (
-                  <button
-                    key={event.id}
-                    type="button"
-                    className="flex w-full items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/80 px-2 py-1 text-left text-[10px] text-slate-100"
-                    style={{ borderLeft: `3px solid ${event.primaryColor ?? '#5b7cff'}` }}
-                  >
-                    <span className="h-2.5 w-2.5 rounded-full" style={{ background: event.primaryColor ?? '#5b7cff' }} />
-                    <span className="truncate">{event.teamShortName} vs {event.opponent}</span>
-                  </button>
-                ))}
+                {visibleEvents.map((event) => {
+                  const teamColor = event.primaryColor ?? '#5b7cff';
+                  return (
+                    <button
+                      key={event.id}
+                      type="button"
+                      className="flex w-full items-center gap-2 rounded-lg border border-slate-700 px-2 py-1 text-left text-[10px] font-medium text-slate-100 shadow-sm"
+                      style={{
+                        borderLeft: `3px solid ${teamColor}`,
+                        background: hexToRgba(teamColor, 0.16),
+                        boxShadow: `inset 0 0 0 1px ${hexToRgba(teamColor, 0.24)}`,
+                      }}
+                    >
+                      <span className="h-3 w-3 rounded-full ring-2 ring-slate-950" style={{ background: teamColor }} />
+                      <span className="truncate">{event.teamShortName} vs {event.opponent}</span>
+                    </button>
+                  );
+                })}
 
                 {hiddenCount > 0 && (
                   <button
@@ -469,19 +519,26 @@ function App() {
               <button type="button" onClick={() => setSelectedDay(null)} className="text-slate-300 hover:text-white">Close</button>
             </div>
             <div className="space-y-3">
-              {(eventsByDay.get(selectedDay.toISOString().slice(0, 10)) ?? []).map((event) => (
-                <div key={event.id} className="rounded-xl border border-slate-800 bg-slate-950/70 p-3">
-                  <div className="flex items-center justify-between gap-3">
-                    <div className="flex items-center gap-2">
-                      <span className="h-3 w-3 rounded-full" style={{ background: event.primaryColor ?? '#5b7cff' }} />
-                      <span className="font-medium text-white">{event.teamName}</span>
+              {(eventsByDay.get(selectedDay.toISOString().slice(0, 10)) ?? []).map((event) => {
+                const teamColor = event.primaryColor ?? '#5b7cff';
+                return (
+                  <div
+                    key={event.id}
+                    className="rounded-xl border border-slate-800 bg-slate-950/70 p-3"
+                    style={{ borderLeft: `4px solid ${teamColor}`, background: hexToRgba(teamColor, 0.08) }}
+                  >
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="flex items-center gap-2">
+                        <span className="h-3.5 w-3.5 rounded-full ring-2 ring-slate-950" style={{ background: teamColor }} />
+                        <span className="font-medium text-white">{event.teamName}</span>
+                      </div>
+                      <span className="text-xs uppercase tracking-[0.2em] text-slate-400">{event.type}</span>
                     </div>
-                    <span className="text-xs uppercase tracking-[0.2em] text-slate-400">{event.type}</span>
+                    <div className="mt-2 text-sm text-slate-300">vs {event.opponent}</div>
+                    <div className="mt-2 text-xs text-slate-400">{event.time} • {event.venue}</div>
                   </div>
-                  <div className="mt-2 text-sm text-slate-300">vs {event.opponent}</div>
-                  <div className="mt-2 text-xs text-slate-400">{event.time} • {event.venue}</div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
@@ -493,10 +550,23 @@ function App() {
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100">
-      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.18),transparent_24%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.1),transparent_20%)]" />
+        <div className="absolute left-[-10%] top-0 h-80 w-80 rounded-full bg-indigo-500/10 blur-3xl" />
+        <div className="absolute bottom-0 right-[-8%] h-80 w-80 rounded-full bg-cyan-500/10 blur-3xl" />
+        <div className="absolute inset-x-0 top-24 h-px bg-gradient-to-r from-transparent via-indigo-300/70 to-transparent" />
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <header className="mb-8 flex flex-col items-center gap-4 md:flex-row md:items-end md:justify-between">
           <div className="w-full text-center md:text-left">
-            <h1 className="text-[2.5rem] font-black uppercase tracking-[0.14em] text-white md:text-[2.75rem]">Rally</h1>
+            <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-indigo-400/30 bg-indigo-500/5 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.26em] text-indigo-200/90">
+              <span className="h-1.5 w-1.5 rounded-full bg-indigo-400" />
+              Sports dashboard
+            </div>
+            <h1 className="text-[2.6rem] font-black uppercase tracking-[0.16em] text-transparent bg-gradient-to-r from-white via-indigo-100 to-indigo-300 bg-clip-text drop-shadow-[0_0_24px_rgba(99,102,241,0.35)] md:text-[3rem]">
+              Rally
+            </h1>
             <p className="mt-2 text-base font-medium tracking-[0.06em] text-indigo-200 md:text-lg">Every Team, Every Game, One Place.</p>
           </div>
           {screen !== 'landing' && (
