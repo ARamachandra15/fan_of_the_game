@@ -29,6 +29,51 @@ const hexToRgba = (value: string, alpha: number) => {
   return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 };
 
+/** Small circular team logo with a white backing for contrast on dark backgrounds.
+ *  Falls back to a solid colored dot using primaryColor if the image fails or is absent. */
+function TeamLogo({ logoUrl, primaryColor, alt, size = 20 }: {
+  logoUrl?: string;
+  primaryColor?: string;
+  alt: string;
+  size?: number;
+}) {
+  const [failed, setFailed] = useState(false);
+  const color = primaryColor || '#5b7cff';
+
+  const ring: React.CSSProperties = {
+    width: size,
+    height: size,
+    borderRadius: '50%',
+    flexShrink: 0,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    overflow: 'hidden',
+    background: '#ffffff',
+    boxShadow: '0 0 0 1.5px rgba(255,255,255,0.18), 0 1px 4px rgba(0,0,0,0.55)',
+  };
+
+  if (!logoUrl || failed) {
+    return (
+      <span
+        aria-label={alt}
+        style={{ ...ring, background: color, boxShadow: `0 0 0 1.5px ${hexToRgba(color, 0.4)}, 0 1px 4px rgba(0,0,0,0.55)` }}
+      />
+    );
+  }
+
+  return (
+    <span style={ring} aria-label={alt}>
+      <img
+        src={logoUrl}
+        alt={alt}
+        style={{ width: size - 4, height: size - 4, objectFit: 'contain', display: 'block' }}
+        onError={() => setFailed(true)}
+      />
+    </span>
+  );
+}
+
 function App() {
   const [screen, setScreen] = useState<FlowScreen>('landing');
   const [selectedLeagues, setSelectedLeagues] = useState<LeagueSelection[]>([]);
@@ -139,6 +184,7 @@ function App() {
                 time: dateObj.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }),
                 venue: game.venue || game.strVenue || game.arena || 'TBD',
                 phase: status,
+                logoUrl: team.logoUrl || '',
                 primaryColor: team.primaryColor || '#5b7cff',
                 type: league.id === 'f1' ? 'race' : 'game',
                 status,
@@ -487,7 +533,7 @@ function App() {
                         boxShadow: `inset 0 0 0 1px ${hexToRgba(teamColor, 0.24)}`,
                       }}
                     >
-                      <span className="h-3 w-3 rounded-full ring-2 ring-slate-950" style={{ background: teamColor }} />
+                      <TeamLogo logoUrl={event.logoUrl} primaryColor={teamColor} alt={event.teamName} size={20} />
                       <span className="truncate">{event.teamShortName} vs {event.opponent}</span>
                     </button>
                   );
@@ -529,7 +575,7 @@ function App() {
                   >
                     <div className="flex items-center justify-between gap-3">
                       <div className="flex items-center gap-2">
-                        <span className="h-3.5 w-3.5 rounded-full ring-2 ring-slate-950" style={{ background: teamColor }} />
+                        <TeamLogo logoUrl={event.logoUrl} primaryColor={teamColor} alt={event.teamName} size={28} />
                         <span className="font-medium text-white">{event.teamName}</span>
                       </div>
                       <span className="text-xs uppercase tracking-[0.2em] text-slate-400">{event.type}</span>
