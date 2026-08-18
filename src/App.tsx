@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { F1_CONSTRUCTORS, LEAGUES } from './lib/constants';
 import { clearSelection, readSelection, writeSelection } from './lib/storage';
 import { buildMonthGrid, formatMonthLabel, goToNextMonth, goToPrevMonth, isCurrentMonth, isTodayDate } from './lib/date';
@@ -85,6 +85,8 @@ function App() {
   const [failedLeagueLogos, setFailedLeagueLogos] = useState<Record<string, boolean>>({});
   const [teamLeagueIndex, setTeamLeagueIndex] = useState(0);
   const [scheduleNotice, setScheduleNotice] = useState<string | null>(null);
+  const [focusedTeamId, setFocusedTeamId] = useState<string | null>(null);
+  const calendarScrollRef = useRef<HTMLDivElement>(null); // kept for potential future use
 
   useEffect(() => {
     const saved = readSelection();
@@ -346,19 +348,10 @@ function App() {
               onClick={() => toggleLeague(league)}
               className={`group relative overflow-hidden rounded-2xl border p-4 text-left transition-all duration-200 ${
                 selected
-                  ? 'border-indigo-400 bg-indigo-500/10 shadow-lg shadow-indigo-500/10'
+                  ? 'border-emerald-400 bg-emerald-500/10 shadow-lg shadow-emerald-500/10'
                   : 'border-slate-700 bg-slate-900/70 hover:border-slate-500 hover:bg-slate-800/80'
               }`}
             >
-              <div
-                className={`absolute right-3 top-3 flex h-6 w-6 items-center justify-center rounded-full border border-white/60 bg-emerald-500 text-xs font-bold text-white shadow-lg shadow-emerald-500/30 transition-all duration-200 ease-out ${
-                  selected ? 'translate-y-0 scale-100 opacity-100' : 'translate-y-[-4px] scale-75 opacity-0'
-                }`}
-                aria-label={selected ? `${league.name} selected` : `${league.name} not selected`}
-              >
-                ✓
-              </div>
-
               <div className="flex items-center gap-4">
                 <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl bg-slate-800">
                   {league.logoPath && !logoFailed ? (
@@ -446,151 +439,275 @@ function App() {
     );
   };
 
-  const renderCalendarStep = () => (
-    <div className="space-y-4">
-      <div className="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
-        <div className="mb-3 text-xs uppercase tracking-[0.25em] text-indigo-300">My Teams</div>
-        <div className="flex flex-wrap gap-2">
-          {selectedTeams.length === 0 ? (
-            <div className="text-sm text-slate-400">No teams selected yet.</div>
-          ) : (
-            selectedTeams.map((team) => (
-              <div key={team.id} className="flex items-center gap-2 rounded-full border border-slate-700 bg-slate-950/60 px-2.5 py-1.5">
-                {team.logoUrl ? (
-                  <img src={team.logoUrl} alt={team.name} className="h-6 w-6 rounded-full object-contain" />
-                ) : (
-                  <div className="flex h-6 w-6 items-center justify-center rounded-full bg-slate-700 text-[9px] font-semibold text-white">
-                    {team.shortName.slice(0, 2).toUpperCase()}
-                  </div>
-                )}
-                <span className="text-xs font-medium text-slate-200">{team.name}</span>
-              </div>
-            ))
-          )}
-        </div>
-      </div>
+  const focusedTeam = useMemo(
+    () => selectedTeams.find((t) => t.id === focusedTeamId) ?? null,
+    [focusedTeamId, selectedTeams],
+  );
 
-      {scheduleNotice && (
-        <div className="rounded-2xl border border-amber-500/50 bg-amber-500/10 px-4 py-3 text-sm text-amber-200">
-          {scheduleNotice}
-        </div>
-      )}
+  const focusedTeamUpcoming = useMemo(() => {
+    if (!focusedTeam) return [];
+    const todayStr = new Date().toISOString().slice(0, 10);
+    const focusedName = normalizeName(focusedTeam.name);
 
-      <div className="flex items-center justify-between gap-4 rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
-        <button
-          type="button"
-          onClick={() => setCurrentMonth(goToPrevMonth(currentMonth))}
-          className="rounded-lg border border-slate-700 px-3 py-2 text-sm text-slate-200 hover:bg-slate-800"
-        >
-          Prev
-        </button>
-        <div className="text-xl font-semibold text-white">{formatMonthLabel(currentMonth)}</div>
-        <button
-          type="button"
-          onClick={() => setCurrentMonth(goToNextMonth(currentMonth))}
-          className="rounded-lg border border-slate-700 px-3 py-2 text-sm text-slate-200 hover:bg-slate-800"
-        >
-          Next
-        </button>
-      </div>
+    const all = events.filter((e) => {
+      const isTeam =
+        normalizeName(e.teamName) === focusedName ||
+        normalizeName(e.opponent) === focusedName;
+      const isFuture = e.date.slice(0, 10) >= todayStr;
+      return isTeam && isFuture;
+    });
 
-      <div className="grid grid-cols-7 gap-2">
-        {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day) => (
-          <div key={day} className="px-2 py-3 text-center text-xs font-medium uppercase tracking-[0.2em] text-slate-400">
-            {day}
-          </div>
-        ))}
+    const sorted = all
+      .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+      .slice(0, 10);
 
-        {monthDays.map((day) => {
-          const dayKey = day.toISOString().slice(0, 10);
-          const dayEvents = eventsByDay.get(dayKey) ?? [];
-          const visibleEvents = dayEvents.slice(0, 2);
-          const hiddenCount = Math.max(dayEvents.length - visibleEvents.length, 0);
+    // Diagnostic: visible in browser console while testing
+    console.log(
+      `[TeamPanel] ${focusedTeam.name}: total events in state=${events.length}, ` +
+      `matched before date filter=${events.filter(e => normalizeName(e.teamName) === focusedName || normalizeName(e.opponent) === focusedName).length}, ` +
+      `future+sorted=${all.length}, showing=${sorted.length}`,
+    );
 
-          return (
-            <div
-              key={dayKey}
-              onClick={() => setSelectedDay(day)}
-              className={`min-h-32 rounded-xl border p-2 transition ${
-                isCurrentMonth(day, currentMonth) ? 'border-slate-800 bg-slate-900/70' : 'border-slate-900 bg-slate-950/60 text-slate-500'
-              } ${isTodayDate(day) ? 'ring-1 ring-indigo-400' : ''}`}
+    return sorted;
+  }, [focusedTeam, events]);
+
+  const renderCalendarStep = () => {
+    return (
+      <div className="space-y-4">
+        {/* My Teams card */}
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+          <div className="mb-3 flex items-center justify-between">
+            <div className="text-xs uppercase tracking-[0.25em] text-indigo-300">My Teams</div>
+            <button
+              type="button"
+              title="Edit preferences"
+              onClick={() => setScreen('league')}
+              className="flex h-7 w-7 items-center justify-center rounded-lg border border-slate-700 bg-slate-800/60 text-slate-400 transition hover:border-slate-500 hover:bg-slate-700 hover:text-white"
+              aria-label="Edit preferences"
             >
-              <div className="mb-2 flex items-center justify-between">
-                <span className="text-sm font-medium text-slate-200">{day.getDate()}</span>
-              </div>
-
-              <div className="space-y-1.5">
-                {visibleEvents.map((event) => {
-                  const teamColor = event.primaryColor ?? '#5b7cff';
-                  return (
-                    <button
-                      key={event.id}
-                      type="button"
-                      className="flex w-full items-center gap-2 rounded-lg border border-slate-700 px-2 py-1 text-left text-[10px] font-medium text-slate-100 shadow-sm"
-                      style={{
-                        borderLeft: `3px solid ${teamColor}`,
-                        background: hexToRgba(teamColor, 0.16),
-                        boxShadow: `inset 0 0 0 1px ${hexToRgba(teamColor, 0.24)}`,
-                      }}
-                    >
-                      <TeamLogo logoUrl={event.logoUrl} primaryColor={teamColor} alt={event.teamName} size={20} />
-                      <span className="truncate">{event.teamShortName} vs {event.opponent}</span>
-                    </button>
-                  );
-                })}
-
-                {hiddenCount > 0 && (
+              {/* Pencil icon */}
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="h-3.5 w-3.5">
+                <path d="M11.013 2.513a1.75 1.75 0 0 1 2.475 2.474L6.226 12.25a2.751 2.751 0 0 1-.892.596l-2.047.848a.75.75 0 0 1-.98-.98l.848-2.047a2.75 2.75 0 0 1 .596-.892l7.262-7.262Z" />
+              </svg>
+            </button>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {selectedTeams.length === 0 ? (
+              <div className="text-sm text-slate-400">No teams selected yet.</div>
+            ) : (
+              selectedTeams.map((team) => {
+                const isFocused = focusedTeamId === team.id;
+                return (
                   <button
+                    key={team.id}
                     type="button"
-                    className="w-full rounded-lg border border-dashed border-slate-600 bg-slate-800/50 px-2 py-1 text-left text-[10px] font-medium text-slate-300"
-                    onClick={(event) => {
-                      event.stopPropagation();
-                      setSelectedDay(day);
-                    }}
+                    onClick={() => setFocusedTeamId(isFocused ? null : team.id)}
+                    title={isFocused ? 'Clear highlight' : `Highlight ${team.name}`}
+                    className={`flex items-center gap-2 rounded-full border px-2.5 py-1.5 text-xs font-medium transition-all duration-150 ${
+                      isFocused
+                        ? 'border-indigo-400 bg-indigo-500/20 text-white shadow shadow-indigo-500/30'
+                        : 'border-slate-700 bg-slate-950/60 text-slate-200 hover:border-slate-500 hover:bg-slate-800/60'
+                    }`}
                   >
-                    +{hiddenCount} more
+                    {team.logoUrl ? (
+                      <img src={team.logoUrl} alt={team.name} className="h-5 w-5 rounded-full object-contain" />
+                    ) : (
+                      <div className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-700 text-[8px] font-semibold text-white">
+                        {team.shortName.slice(0, 2).toUpperCase()}
+                      </div>
+                    )}
+                    {team.name}
                   </button>
-                )}
-              </div>
-            </div>
-          );
-        })}
-      </div>
+                );
+              })
+            )}
+          </div>
+        </div>
 
-      {selectedDay && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 p-4">
-          <div className="w-full max-w-lg rounded-2xl border border-slate-700 bg-slate-900 p-5 shadow-2xl">
-            <div className="mb-4 flex items-center justify-between">
-              <h3 className="text-lg font-semibold text-white">{formatMonthLabel(selectedDay)}</h3>
-              <button type="button" onClick={() => setSelectedDay(null)} className="text-slate-300 hover:text-white">Close</button>
+        {scheduleNotice && (
+          <div className="rounded-2xl border border-amber-500/50 bg-amber-500/10 px-4 py-3 text-sm text-amber-200">
+            {scheduleNotice}
+          </div>
+        )}
+
+        {/* Calendar + side panel side-by-side */}
+        <div className="flex gap-4">
+          {/* Calendar column */}
+          <div className="min-w-0 flex-1">
+            {/* Month nav */}
+            <div className="mb-3 flex items-center justify-between gap-4 rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+              <button
+                type="button"
+                onClick={() => setCurrentMonth(goToPrevMonth(currentMonth))}
+                className="rounded-lg border border-slate-700 px-3 py-2 text-sm text-slate-200 hover:bg-slate-800"
+              >
+                ‹ Prev
+              </button>
+              <div className="text-xl font-semibold text-white">{formatMonthLabel(currentMonth)}</div>
+              <button
+                type="button"
+                onClick={() => setCurrentMonth(goToNextMonth(currentMonth))}
+                className="rounded-lg border border-slate-700 px-3 py-2 text-sm text-slate-200 hover:bg-slate-800"
+              >
+                Next ›
+              </button>
             </div>
-            <div className="space-y-3">
-              {(eventsByDay.get(selectedDay.toISOString().slice(0, 10)) ?? []).map((event) => {
-                const teamColor = event.primaryColor ?? '#5b7cff';
+
+            {/* Day-of-week header */}
+            <div className="grid grid-cols-7 gap-1.5">
+              {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day) => (
+                <div key={day} className="px-1 py-3 text-center text-xs font-medium uppercase tracking-[0.18em] text-slate-400">
+                  {day}
+                </div>
+              ))}
+
+              {monthDays.map((day) => {
+                const dayKey = day.toISOString().slice(0, 10);
+                const dayEvents = eventsByDay.get(dayKey) ?? [];
+                const visibleEvents = dayEvents.slice(0, 2);
+                const hiddenCount = Math.max(dayEvents.length - visibleEvents.length, 0);
+
                 return (
                   <div
-                    key={event.id}
-                    className="rounded-xl border border-slate-800 bg-slate-950/70 p-3"
-                    style={{ borderLeft: `4px solid ${teamColor}`, background: hexToRgba(teamColor, 0.08) }}
+                    key={dayKey}
+                    onClick={() => setSelectedDay(day)}
+                    className={`min-h-28 cursor-pointer rounded-xl border p-1.5 transition-colors ${
+                      isCurrentMonth(day, currentMonth)
+                        ? 'border-slate-800 bg-slate-900/70'
+                        : 'border-slate-900 bg-slate-950/60 text-slate-500'
+                    } ${isTodayDate(day) ? 'ring-1 ring-indigo-400' : ''}`}
                   >
-                    <div className="flex items-center justify-between gap-3">
-                      <div className="flex items-center gap-2">
-                        <TeamLogo logoUrl={event.logoUrl} primaryColor={teamColor} alt={event.teamName} size={28} />
-                        <span className="font-medium text-white">{event.teamName}</span>
-                      </div>
-                      <span className="text-xs uppercase tracking-[0.2em] text-slate-400">{event.type}</span>
+                    <div className="mb-1.5 text-right text-xs font-medium text-slate-300">{day.getDate()}</div>
+
+                    <div className="space-y-1">
+                      {visibleEvents.map((event) => {
+                        const teamColor = event.primaryColor ?? '#5b7cff';
+                        const isFocusedEvent = focusedTeamId === event.teamId;
+                        return (
+                          <button
+                            key={event.id}
+                            type="button"
+                            onClick={(e) => { e.stopPropagation(); setSelectedDay(day); }}
+                            className="flex w-full items-center gap-1.5 rounded-md px-1.5 py-0.5 text-left text-[9px] font-medium text-slate-100 transition-transform"
+                            style={{
+                              borderLeft: `3px solid ${teamColor}`,
+                              background: hexToRgba(teamColor, isFocusedEvent ? 0.32 : 0.16),
+                              boxShadow: isFocusedEvent
+                                ? `0 0 0 1.5px ${teamColor}, 0 2px 8px ${hexToRgba(teamColor, 0.5)}`
+                                : `inset 0 0 0 1px ${hexToRgba(teamColor, 0.22)}`,
+                              transform: isFocusedEvent ? 'scale(1.04)' : 'scale(1)',
+                            }}
+                          >
+                            <TeamLogo logoUrl={event.logoUrl} primaryColor={teamColor} alt={event.teamName} size={16} />
+                            <span className="truncate">{event.teamShortName} vs {event.opponent}</span>
+                          </button>
+                        );
+                      })}
+
+                      {hiddenCount > 0 && (
+                        <button
+                          type="button"
+                          className="w-full rounded-md border border-dashed border-slate-600 bg-slate-800/50 px-1.5 py-0.5 text-left text-[9px] font-medium text-slate-400"
+                          onClick={(e) => { e.stopPropagation(); setSelectedDay(day); }}
+                        >
+                          +{hiddenCount}
+                        </button>
+                      )}
                     </div>
-                    <div className="mt-2 text-sm text-slate-300">vs {event.opponent}</div>
-                    <div className="mt-2 text-xs text-slate-400">{event.time} • {event.venue}</div>
                   </div>
                 );
               })}
             </div>
           </div>
+
+          {/* Team Detail Panel */}
+          {focusedTeam && (
+            <div className="w-64 shrink-0 rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+              <div className="mb-3 flex items-center gap-2">
+                {focusedTeam.logoUrl ? (
+                  <img src={focusedTeam.logoUrl} alt={focusedTeam.name} className="h-8 w-8 rounded-full object-contain bg-white p-0.5" />
+                ) : (
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold text-white" style={{ background: focusedTeam.primaryColor || '#5b7cff' }}>
+                    {focusedTeam.shortName.slice(0, 2)}
+                  </div>
+                )}
+                <div className="min-w-0">
+                  <div className="truncate text-sm font-semibold text-white">{focusedTeam.name}</div>
+                  <div className="text-[10px] uppercase tracking-[0.18em] text-slate-400">Next 10 games</div>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setFocusedTeamId(null)}
+                  className="ml-auto shrink-0 text-slate-500 hover:text-white"
+                  aria-label="Close panel"
+                >
+                  ✕
+                </button>
+              </div>
+
+              {focusedTeamUpcoming.length === 0 ? (
+                <div className="text-xs text-slate-400">No upcoming games found.</div>
+              ) : (
+                <div className="space-y-2">
+                  {focusedTeamUpcoming.map((event) => {
+                    const teamColor = event.primaryColor ?? '#5b7cff';
+                    const dateLabel = new Date(event.date).toLocaleDateString([], { month: 'short', day: 'numeric' });
+                    return (
+                      <div
+                        key={event.id}
+                        className="rounded-lg p-2 text-xs"
+                        style={{ background: hexToRgba(teamColor, 0.12), borderLeft: `3px solid ${teamColor}` }}
+                      >
+                        <div className="font-semibold text-white">vs {event.opponent}</div>
+                        <div className="mt-0.5 text-slate-400">{dateLabel} · {event.time}</div>
+                        {event.venue && event.venue !== 'TBD' && (
+                          <div className="mt-0.5 truncate text-slate-500">{event.venue}</div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+          )}
         </div>
-      )}
-    </div>
-  );
+
+        {/* Day detail modal */}
+        {selectedDay && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 p-4">
+            <div className="w-full max-w-lg rounded-2xl border border-slate-700 bg-slate-900 p-5 shadow-2xl">
+              <div className="mb-4 flex items-center justify-between">
+                <h3 className="text-lg font-semibold text-white">{formatMonthLabel(selectedDay)}</h3>
+                <button type="button" onClick={() => setSelectedDay(null)} className="text-slate-300 hover:text-white">Close</button>
+              </div>
+              <div className="space-y-3">
+                {(eventsByDay.get(selectedDay.toISOString().slice(0, 10)) ?? []).map((event) => {
+                  const teamColor = event.primaryColor ?? '#5b7cff';
+                  return (
+                    <div
+                      key={event.id}
+                      className="rounded-xl border border-slate-800 bg-slate-950/70 p-3"
+                      style={{ borderLeft: `4px solid ${teamColor}`, background: hexToRgba(teamColor, 0.08) }}
+                    >
+                      <div className="flex items-center justify-between gap-3">
+                        <div className="flex items-center gap-2">
+                          <TeamLogo logoUrl={event.logoUrl} primaryColor={teamColor} alt={event.teamName} size={28} />
+                          <span className="font-medium text-white">{event.teamName}</span>
+                        </div>
+                        <span className="text-xs uppercase tracking-[0.2em] text-slate-400">{event.type}</span>
+                      </div>
+                      <div className="mt-2 text-sm text-slate-300">vs {event.opponent}</div>
+                      <div className="mt-2 text-xs text-slate-400">{event.time} • {event.venue}</div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  };
 
   const stepIndex = screen === 'league' ? 0 : screen === 'team' ? 1 : 2;
 
@@ -683,11 +800,7 @@ function App() {
                 </button>
               )}
 
-              {screen === 'calendar' && (
-                <button type="button" onClick={() => setScreen('league')} className="rounded-xl bg-indigo-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-400">
-                  Update preferences
-                </button>
-              )}
+              {screen === 'calendar' && null}
             </div>
           )}
         </div>
