@@ -31,3 +31,19 @@ export async function fetchLeagueGames(league: string, teamName?: string) {
 
   return data.events ?? data.data ?? [];
 }
+
+export async function fetchTeamProfile(league: string, teamName: string) {
+  const query = `?team=${encodeURIComponent(teamName)}`;
+  const response = await fetch(`/api/team-profile/${league}${query}`);
+  const data = await response.json().catch(() => ({}));
+
+  if (!response.ok) {
+    const message = data?.error || 'Unable to fetch team profile';
+    if (message.toLowerCase().includes('rate limit') || message.toLowerCase().includes('rate limited')) {
+      throw new Error('ESPN rate limited, try again shortly.');
+    }
+    throw new Error(message);
+  }
+
+  return data;
+}

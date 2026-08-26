@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-18T07:15:14.480Z",
+  "fetchedAt": "2026-08-26T01:50:52.984Z",
   "source": "ESPN",
   "league": "nba",
   "teamId": "10",
@@ -1617,12 +1617,12 @@
             "tickets": [
               {
                 "id": "7430896",
-                "summary": "Tickets as low as $34",
+                "summary": "Tickets as low as $24",
                 "description": "NBA Preseason - Oklahoma City Thunder at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 34.1,
-                "numberAvailable": 1183,
-                "totalPostings": 300,
+                "maxPrice": 11698.73,
+                "startingPrice": 24.75,
+                "numberAvailable": 2655,
+                "totalPostings": 568,
                 "links": [
                   {
                     "rel": [
@@ -2208,12 +2208,12 @@
             "tickets": [
               {
                 "id": "7432942",
-                "summary": "Tickets as low as $69",
+                "summary": "Tickets as low as $50",
                 "description": "Dallas Mavericks at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 69.6,
-                "numberAvailable": 4727,
-                "totalPostings": 951,
+                "maxPrice": 9449.19,
+                "startingPrice": 50.06,
+                "numberAvailable": 5159,
+                "totalPostings": 1083,
                 "links": [
                   {
                     "rel": [
@@ -2816,12 +2816,12 @@
             "tickets": [
               {
                 "id": "7415745",
-                "summary": "Tickets as low as $354",
+                "summary": "Tickets as low as $250",
                 "description": "Houston Rockets at San Antonio Spurs",
-                "maxPrice": 1604.92,
-                "startingPrice": 354.2,
-                "numberAvailable": 194,
-                "totalPostings": 50,
+                "maxPrice": 9741.67,
+                "startingPrice": 250.78,
+                "numberAvailable": 34,
+                "totalPostings": 12,
                 "links": [
                   {
                     "rel": [
@@ -3407,12 +3407,12 @@
             "tickets": [
               {
                 "id": "7432947",
-                "summary": "Tickets as low as $65",
+                "summary": "Tickets as low as $62",
                 "description": "Houston Rockets at Atlanta Hawks",
-                "maxPrice": 8208.58,
-                "startingPrice": 65.47,
-                "numberAvailable": 1929,
-                "totalPostings": 560,
+                "maxPrice": 11698.73,
+                "startingPrice": 62.38,
+                "numberAvailable": 3505,
+                "totalPostings": 944,
                 "links": [
                   {
                     "rel": [
@@ -3998,12 +3998,12 @@
             "tickets": [
               {
                 "id": "7432949",
-                "summary": "Tickets as low as $39",
+                "summary": "Tickets as low as $31",
                 "description": "Atlanta Hawks at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 39.69,
-                "numberAvailable": 4550,
-                "totalPostings": 925,
+                "maxPrice": 4312.55,
+                "startingPrice": 31.04,
+                "numberAvailable": 4801,
+                "totalPostings": 1017,
                 "links": [
                   {
                     "rel": [
@@ -4589,12 +4589,12 @@
             "tickets": [
               {
                 "id": "7432885",
-                "summary": "Tickets as low as $36",
+                "summary": "Tickets as low as $33",
                 "description": "Houston Rockets at Milwaukee Bucks",
-                "maxPrice": 1772.44,
-                "startingPrice": 36.75,
-                "numberAvailable": 4088,
-                "totalPostings": 977,
+                "maxPrice": 1795.25,
+                "startingPrice": 33.82,
+                "numberAvailable": 4219,
+                "totalPostings": 1021,
                 "links": [
                   {
                     "rel": [
@@ -5185,12 +5185,12 @@
             "tickets": [
               {
                 "id": "7417911",
-                "summary": "Tickets as low as $79",
+                "summary": "Tickets as low as $78",
                 "description": "NBA Cup - Houston Rockets at Dallas Mavericks",
-                "maxPrice": 5394.44,
-                "startingPrice": 79.93,
-                "numberAvailable": 1208,
-                "totalPostings": 243,
+                "maxPrice": 5463.92,
+                "startingPrice": 78.32,
+                "numberAvailable": 2048,
+                "totalPostings": 469,
                 "links": [
                   {
                     "rel": [
@@ -5776,12 +5776,12 @@
             "tickets": [
               {
                 "id": "7432953",
-                "summary": "Tickets as low as $56",
+                "summary": "Tickets as low as $53",
                 "description": "Oklahoma City Thunder at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 56.02,
-                "numberAvailable": 4935,
-                "totalPostings": 978,
+                "maxPrice": 8504.52,
+                "startingPrice": 53.23,
+                "numberAvailable": 5233,
+                "totalPostings": 1086,
                 "links": [
                   {
                     "rel": [
@@ -6367,12 +6367,12 @@
             "tickets": [
               {
                 "id": "7432955",
-                "summary": "Tickets as low as $52",
+                "summary": "Tickets as low as $42",
                 "description": "Boston Celtics at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 52.38,
-                "numberAvailable": 4427,
-                "totalPostings": 891,
+                "maxPrice": 9449.19,
+                "startingPrice": 42.89,
+                "numberAvailable": 4709,
+                "totalPostings": 997,
                 "links": [
                   {
                     "rel": [
@@ -6958,12 +6958,12 @@
             "tickets": [
               {
                 "id": "7432911",
-                "summary": "Tickets as low as $42",
+                "summary": "Tickets as low as $33",
                 "description": "Minnesota Timberwolves at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 42.8,
-                "numberAvailable": 3812,
-                "totalPostings": 782,
+                "maxPrice": 9449.19,
+                "startingPrice": 33.15,
+                "numberAvailable": 4724,
+                "totalPostings": 997,
                 "links": [
                   {
                     "rel": [
@@ -7549,12 +7549,12 @@
             "tickets": [
               {
                 "id": "7432957",
-                "summary": "Tickets as low as $47",
+                "summary": "Tickets as low as $45",
                 "description": "Houston Rockets at Phoenix Suns",
-                "maxPrice": 7503.94,
-                "startingPrice": 47.24,
-                "numberAvailable": 1258,
-                "totalPostings": 337,
+                "maxPrice": 7523.27,
+                "startingPrice": 45.12,
+                "numberAvailable": 2803,
+                "totalPostings": 653,
                 "links": [
                   {
                     "rel": [
@@ -8140,12 +8140,12 @@
             "tickets": [
               {
                 "id": "7432959",
-                "summary": "Tickets as low as $40",
+                "summary": "Tickets as low as $32",
                 "description": "Denver Nuggets at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 40.72,
-                "numberAvailable": 4439,
-                "totalPostings": 889,
+                "maxPrice": 9449.19,
+                "startingPrice": 32.09,
+                "numberAvailable": 4799,
+                "totalPostings": 1012,
                 "links": [
                   {
                     "rel": [
@@ -8750,12 +8750,12 @@
             "tickets": [
               {
                 "id": "7432961",
-                "summary": "Tickets as low as $72",
+                "summary": "Tickets as low as $55",
                 "description": "Golden State Warriors at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 72.79,
-                "numberAvailable": 4758,
-                "totalPostings": 953,
+                "maxPrice": 11810.87,
+                "startingPrice": 55.34,
+                "numberAvailable": 5149,
+                "totalPostings": 1082,
                 "links": [
                   {
                     "rel": [
@@ -9372,12 +9372,12 @@
             "tickets": [
               {
                 "id": "7418059",
-                "summary": "Tickets as low as $44",
+                "summary": "Tickets as low as $35",
                 "description": "NBA Cup - Utah Jazz at Houston Rockets",
-                "maxPrice": 6480.74,
-                "startingPrice": 44.45,
-                "numberAvailable": 4391,
-                "totalPostings": 890,
+                "maxPrice": 6497.1,
+                "startingPrice": 35.27,
+                "numberAvailable": 4481,
+                "totalPostings": 939,
                 "links": [
                   {
                     "rel": [
@@ -9963,12 +9963,12 @@
             "tickets": [
               {
                 "id": "7432963",
-                "summary": "Tickets as low as $34",
+                "summary": "Tickets as low as $28",
                 "description": "Houston Rockets at Washington Wizards",
-                "maxPrice": 4047.74,
-                "startingPrice": 34.76,
-                "numberAvailable": 1810,
-                "totalPostings": 400,
+                "maxPrice": 10168.76,
+                "startingPrice": 28.15,
+                "numberAvailable": 5188,
+                "totalPostings": 990,
                 "links": [
                   {
                     "rel": [
@@ -10554,12 +10554,12 @@
             "tickets": [
               {
                 "id": "7433126",
-                "summary": "Tickets as low as $50",
+                "summary": "Tickets as low as $48",
                 "description": "Houston Rockets at Miami Heat",
-                "maxPrice": 11560.33,
-                "startingPrice": 50.08,
-                "numberAvailable": 2478,
-                "totalPostings": 598,
+                "maxPrice": 11589.23,
+                "startingPrice": 48.57,
+                "numberAvailable": 3963,
+                "totalPostings": 904,
                 "links": [
                   {
                     "rel": [
@@ -11145,12 +11145,12 @@
             "tickets": [
               {
                 "id": "7433162",
-                "summary": "Tickets as low as $24",
+                "summary": "Tickets as low as $23",
                 "description": "Houston Rockets at Indiana Pacers",
-                "maxPrice": 2043.75,
-                "startingPrice": 24.36,
-                "numberAvailable": 1894,
-                "totalPostings": 417,
+                "maxPrice": 11698.73,
+                "startingPrice": 23.42,
+                "numberAvailable": 2613,
+                "totalPostings": 586,
                 "links": [
                   {
                     "rel": [
@@ -11758,12 +11758,12 @@
             "tickets": [
               {
                 "id": "7418001",
-                "summary": "Tickets as low as $45",
+                "summary": "Tickets as low as $41",
                 "description": "NBA Cup - Houston Rockets at Denver Nuggets",
-                "maxPrice": 11903.49,
-                "startingPrice": 45.58,
-                "numberAvailable": 3332,
-                "totalPostings": 789,
+                "maxPrice": 4722.67,
+                "startingPrice": 41.57,
+                "numberAvailable": 3900,
+                "totalPostings": 974,
                 "links": [
                   {
                     "rel": [
@@ -12349,12 +12349,12 @@
             "tickets": [
               {
                 "id": "7430996",
-                "summary": "Tickets as low as $40",
+                "summary": "Tickets as low as $32",
                 "description": "LA Clippers at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 40.65,
-                "numberAvailable": 3582,
-                "totalPostings": 728,
+                "maxPrice": 6497.1,
+                "startingPrice": 32.09,
+                "numberAvailable": 4583,
+                "totalPostings": 946,
                 "links": [
                   {
                     "rel": [
@@ -12945,12 +12945,12 @@
             "tickets": [
               {
                 "id": "7418039",
-                "summary": "Tickets as low as $61",
+                "summary": "Tickets as low as $49",
                 "description": "NBA Cup - Phoenix Suns at Houston Rockets",
-                "maxPrice": 5891.81,
-                "startingPrice": 61.68,
-                "numberAvailable": 4436,
-                "totalPostings": 888,
+                "maxPrice": 5906.68,
+                "startingPrice": 49,
+                "numberAvailable": 4583,
+                "totalPostings": 976,
                 "links": [
                   {
                     "rel": [
@@ -13536,12 +13536,12 @@
             "tickets": [
               {
                 "id": "7430998",
-                "summary": "Tickets as low as $123",
+                "summary": "Tickets as low as $99",
                 "description": "Philadelphia 76ers at Houston Rockets",
-                "maxPrice": 3000.92,
-                "startingPrice": 123.16,
-                "numberAvailable": 4123,
-                "totalPostings": 904,
+                "maxPrice": 17715.05,
+                "startingPrice": 99.57,
+                "numberAvailable": 4450,
+                "totalPostings": 1018,
                 "links": [
                   {
                     "rel": [
@@ -14144,12 +14144,12 @@
             "tickets": [
               {
                 "id": "7431000",
-                "summary": "Tickets as low as $67",
+                "summary": "Tickets as low as $59",
                 "description": "Los Angeles Lakers at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 67.7,
-                "numberAvailable": 4780,
-                "totalPostings": 968,
+                "maxPrice": 17715.05,
+                "startingPrice": 59.58,
+                "numberAvailable": 5072,
+                "totalPostings": 1092,
                 "links": [
                   {
                     "rel": [
@@ -14735,12 +14735,12 @@
             "tickets": [
               {
                 "id": "7431002",
-                "summary": "Tickets as low as $28",
+                "summary": "Tickets as low as $22",
                 "description": "Toronto Raptors at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 28.17,
-                "numberAvailable": 3561,
-                "totalPostings": 735,
+                "maxPrice": 5906.68,
+                "startingPrice": 22.86,
+                "numberAvailable": 4595,
+                "totalPostings": 974,
                 "links": [
                   {
                     "rel": [
@@ -15326,12 +15326,12 @@
             "tickets": [
               {
                 "id": "7432064",
-                "summary": "Tickets as low as $76",
+                "summary": "Tickets as low as $75",
                 "description": "Houston Rockets at Chicago Bulls",
-                "maxPrice": 3547.93,
-                "startingPrice": 76.4,
-                "numberAvailable": 1030,
-                "totalPostings": 235,
+                "maxPrice": 3593.62,
+                "startingPrice": 75.85,
+                "numberAvailable": 1216,
+                "totalPostings": 301,
                 "links": [
                   {
                     "rel": [
@@ -15917,12 +15917,12 @@
             "tickets": [
               {
                 "id": "7432506",
-                "summary": "Tickets as low as $69",
+                "summary": "Tickets as low as $53",
                 "description": "New York Knicks at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 69.86,
-                "numberAvailable": 4591,
-                "totalPostings": 933,
+                "maxPrice": 17715.05,
+                "startingPrice": 53.23,
+                "numberAvailable": 4856,
+                "totalPostings": 1041,
                 "links": [
                   {
                     "rel": [
@@ -16508,12 +16508,12 @@
             "tickets": [
               {
                 "id": "7432424",
-                "summary": "Tickets as low as $27",
+                "summary": "Tickets as low as $23",
                 "description": "Milwaukee Bucks at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 27.23,
-                "numberAvailable": 4333,
-                "totalPostings": 877,
+                "maxPrice": 5670.52,
+                "startingPrice": 23.75,
+                "numberAvailable": 4683,
+                "totalPostings": 994,
                 "links": [
                   {
                     "rel": [
@@ -17101,10 +17101,10 @@
                 "id": "7431780",
                 "summary": "Tickets as low as $27",
                 "description": "Houston Rockets at Memphis Grizzlies",
-                "maxPrice": 1994.38,
-                "startingPrice": 27.67,
-                "numberAvailable": 1010,
-                "totalPostings": 213,
+                "maxPrice": 2020.05,
+                "startingPrice": 27.74,
+                "numberAvailable": 1265,
+                "totalPostings": 282,
                 "links": [
                   {
                     "rel": [
@@ -17690,12 +17690,12 @@
             "tickets": [
               {
                 "id": "7431078",
-                "summary": "Tickets as low as $110",
+                "summary": "Tickets as low as $113",
                 "description": "Houston Rockets at Toronto Raptors",
-                "maxPrice": 2657.86,
-                "startingPrice": 110.03,
-                "numberAvailable": 247,
-                "totalPostings": 64,
+                "maxPrice": 2664.7,
+                "startingPrice": 113.93,
+                "numberAvailable": 384,
+                "totalPostings": 85,
                 "links": [
                   {
                     "rel": [
@@ -18298,12 +18298,12 @@
             "tickets": [
               {
                 "id": "7431549",
-                "summary": "Tickets as low as $115",
+                "summary": "Tickets as low as $122",
                 "description": "Houston Rockets at Philadelphia 76ers",
-                "maxPrice": 22196.1,
-                "startingPrice": 115.3,
-                "numberAvailable": 1566,
-                "totalPostings": 500,
+                "maxPrice": 21566.9,
+                "startingPrice": 122.38,
+                "numberAvailable": 1924,
+                "totalPostings": 598,
                 "links": [
                   {
                     "rel": [
@@ -18889,12 +18889,12 @@
             "tickets": [
               {
                 "id": "7431126",
-                "summary": "Tickets as low as $65",
+                "summary": "Tickets as low as $62",
                 "description": "Oklahoma City Thunder at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 65.53,
-                "numberAvailable": 4303,
-                "totalPostings": 878,
+                "maxPrice": 10039.61,
+                "startingPrice": 62.74,
+                "numberAvailable": 4597,
+                "totalPostings": 993,
                 "links": [
                   {
                     "rel": [
@@ -19497,12 +19497,12 @@
             "tickets": [
               {
                 "id": "7432376",
-                "summary": "Tickets as low as $131",
+                "summary": "Tickets as low as $86",
                 "description": "Houston Rockets at Los Angeles Lakers",
-                "maxPrice": 17668.61,
-                "startingPrice": 131.63,
-                "numberAvailable": 2068,
-                "totalPostings": 576,
+                "maxPrice": 17714.14,
+                "startingPrice": 86,
+                "numberAvailable": 2357,
+                "totalPostings": 692,
                 "links": [
                   {
                     "rel": [
@@ -20088,12 +20088,12 @@
             "tickets": [
               {
                 "id": "7431254",
-                "summary": "Tickets as low as $94",
+                "summary": "Tickets as low as $96",
                 "description": "Houston Rockets at Golden State Warriors",
-                "maxPrice": 13309.92,
-                "startingPrice": 94.83,
-                "numberAvailable": 1405,
-                "totalPostings": 390,
+                "maxPrice": 10675.87,
+                "startingPrice": 96.9,
+                "numberAvailable": 1871,
+                "totalPostings": 564,
                 "links": [
                   {
                     "rel": [
@@ -20679,12 +20679,12 @@
             "tickets": [
               {
                 "id": "7431373",
-                "summary": "Tickets as low as $79",
+                "summary": "Tickets as low as $63",
                 "description": "Dallas Mavericks at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 79.96,
-                "numberAvailable": 4226,
-                "totalPostings": 864,
+                "maxPrice": 10039.61,
+                "startingPrice": 63.79,
+                "numberAvailable": 4558,
+                "totalPostings": 979,
                 "links": [
                   {
                     "rel": [
@@ -21270,12 +21270,12 @@
             "tickets": [
               {
                 "id": "7431176",
-                "summary": "Tickets as low as $53",
+                "summary": "Tickets as low as $43",
                 "description": "Cleveland Cavaliers at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 53.62,
-                "numberAvailable": 4255,
-                "totalPostings": 852,
+                "maxPrice": 7087.52,
+                "startingPrice": 43.72,
+                "numberAvailable": 4621,
+                "totalPostings": 981,
                 "links": [
                   {
                     "rel": [
@@ -21878,12 +21878,12 @@
             "tickets": [
               {
                 "id": "7431489",
-                "summary": "Tickets as low as $47",
+                "summary": "Tickets as low as $39",
                 "description": "Minnesota Timberwolves at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 47.47,
-                "numberAvailable": 4204,
-                "totalPostings": 858,
+                "maxPrice": 8268.36,
+                "startingPrice": 39.49,
+                "numberAvailable": 4637,
+                "totalPostings": 986,
                 "links": [
                   {
                     "rel": [
@@ -22469,12 +22469,12 @@
             "tickets": [
               {
                 "id": "7431808",
-                "summary": "Tickets as low as $40",
+                "summary": "Tickets as low as $35",
                 "description": "Memphis Grizzlies at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 40.65,
-                "numberAvailable": 4165,
-                "totalPostings": 830,
+                "maxPrice": 6497.1,
+                "startingPrice": 35.27,
+                "numberAvailable": 4653,
+                "totalPostings": 987,
                 "links": [
                   {
                     "rel": [
@@ -23060,12 +23060,12 @@
             "tickets": [
               {
                 "id": "7431982",
-                "summary": "Tickets as low as $53",
+                "summary": "Tickets as low as $51",
                 "description": "Houston Rockets at Brooklyn Nets",
-                "maxPrice": 9497.25,
-                "startingPrice": 53.26,
-                "numberAvailable": 2972,
-                "totalPostings": 641,
+                "maxPrice": 9521.73,
+                "startingPrice": 51.21,
+                "numberAvailable": 4233,
+                "totalPostings": 818,
                 "links": [
                   {
                     "rel": [
@@ -23651,12 +23651,12 @@
             "tickets": [
               {
                 "id": "7432508",
-                "summary": "Tickets as low as $97",
+                "summary": "Tickets as low as $89",
                 "description": "Houston Rockets at Boston Celtics",
-                "maxPrice": 10591.62,
-                "startingPrice": 97.16,
-                "numberAvailable": 2124,
-                "totalPostings": 536,
+                "maxPrice": 4331.66,
+                "startingPrice": 89.62,
+                "numberAvailable": 2695,
+                "totalPostings": 741,
                 "links": [
                   {
                     "rel": [
@@ -24261,12 +24261,12 @@
             "tickets": [
               {
                 "id": "7431140",
-                "summary": "Tickets as low as $54",
+                "summary": "Tickets as low as $50",
                 "description": "Houston Rockets at Oklahoma City Thunder",
-                "maxPrice": 1776.88,
-                "startingPrice": 54.15,
-                "numberAvailable": 854,
-                "totalPostings": 220,
+                "maxPrice": 2244.84,
+                "startingPrice": 50.56,
+                "numberAvailable": 1158,
+                "totalPostings": 307,
                 "links": [
                   {
                     "rel": [
@@ -24878,12 +24878,12 @@
             "tickets": [
               {
                 "id": "7431782",
-                "summary": "Tickets as low as $40",
+                "summary": "Tickets as low as $38",
                 "description": "Washington Wizards at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 40.72,
-                "numberAvailable": 4317,
-                "totalPostings": 870,
+                "maxPrice": 11698.73,
+                "startingPrice": 38.43,
+                "numberAvailable": 4636,
+                "totalPostings": 977,
                 "links": [
                   {
                     "rel": [
@@ -25469,12 +25469,12 @@
             "tickets": [
               {
                 "id": "7432238",
-                "summary": "Tickets as low as $54",
+                "summary": "Tickets as low as $49",
                 "description": "Detroit Pistons at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 54.17,
-                "numberAvailable": 4244,
-                "totalPostings": 851,
+                "maxPrice": 11698.73,
+                "startingPrice": 49,
+                "numberAvailable": 3176,
+                "totalPostings": 673,
                 "links": [
                   {
                     "rel": [
@@ -26079,10 +26079,10 @@
                 "id": "7425534",
                 "summary": "Tickets as low as $21",
                 "description": "Houston Rockets at Memphis Grizzlies",
-                "maxPrice": 1994.38,
-                "startingPrice": 21.95,
-                "numberAvailable": 977,
-                "totalPostings": 210,
+                "maxPrice": 2020.05,
+                "startingPrice": 21.99,
+                "numberAvailable": 1201,
+                "totalPostings": 271,
                 "links": [
                   {
                     "rel": [
@@ -26668,12 +26668,12 @@
             "tickets": [
               {
                 "id": "7431499",
-                "summary": "Tickets as low as $105",
+                "summary": "Tickets as low as $73",
                 "description": "Houston Rockets at Minnesota Timberwolves",
-                "maxPrice": 3675.31,
-                "startingPrice": 105.59,
-                "numberAvailable": 435,
-                "totalPostings": 145,
+                "maxPrice": 3654.27,
+                "startingPrice": 73.97,
+                "numberAvailable": 530,
+                "totalPostings": 169,
                 "links": [
                   {
                     "rel": [
@@ -27259,12 +27259,12 @@
             "tickets": [
               {
                 "id": "7432510",
-                "summary": "Tickets as low as $28",
+                "summary": "Tickets as low as $27",
                 "description": "Houston Rockets at Charlotte Hornets",
-                "maxPrice": 2882.12,
-                "startingPrice": 28.13,
-                "numberAvailable": 1535,
-                "totalPostings": 313,
+                "maxPrice": 2919.23,
+                "startingPrice": 27.86,
+                "numberAvailable": 2430,
+                "totalPostings": 489,
                 "links": [
                   {
                     "rel": [
@@ -27850,12 +27850,12 @@
             "tickets": [
               {
                 "id": "7432512",
-                "summary": "Tickets as low as $57",
+                "summary": "Tickets as low as $54",
                 "description": "Houston Rockets at Orlando Magic",
-                "maxPrice": 4796.32,
-                "startingPrice": 57.38,
-                "numberAvailable": 2448,
-                "totalPostings": 532,
+                "maxPrice": 4808.67,
+                "startingPrice": 54.86,
+                "numberAvailable": 3949,
+                "totalPostings": 830,
                 "links": [
                   {
                     "rel": [
@@ -28458,12 +28458,12 @@
             "tickets": [
               {
                 "id": "7432514",
-                "summary": "Tickets as low as $54",
+                "summary": "Tickets as low as $53",
                 "description": "Houston Rockets at San Antonio Spurs",
-                "maxPrice": 6211.16,
-                "startingPrice": 54.66,
-                "numberAvailable": 2387,
-                "totalPostings": 503,
+                "maxPrice": 6291.17,
+                "startingPrice": 53.81,
+                "numberAvailable": 3113,
+                "totalPostings": 617,
                 "links": [
                   {
                     "rel": [
@@ -29049,12 +29049,12 @@
             "tickets": [
               {
                 "id": "7430964",
-                "summary": "Tickets as low as $28",
+                "summary": "Tickets as low as $25",
                 "description": "New Orleans Pelicans at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 28.59,
-                "numberAvailable": 4228,
-                "totalPostings": 836,
+                "maxPrice": 11698.73,
+                "startingPrice": 25.98,
+                "numberAvailable": 4581,
+                "totalPostings": 962,
                 "links": [
                   {
                     "rel": [
@@ -29640,12 +29640,12 @@
             "tickets": [
               {
                 "id": "7432516",
-                "summary": "Tickets as low as $39",
+                "summary": "Tickets as low as $37",
                 "description": "Orlando Magic at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 39.69,
-                "numberAvailable": 4288,
-                "totalPostings": 867,
+                "maxPrice": 11698.73,
+                "startingPrice": 37.37,
+                "numberAvailable": 4621,
+                "totalPostings": 980,
                 "links": [
                   {
                     "rel": [
@@ -30248,12 +30248,12 @@
             "tickets": [
               {
                 "id": "7431399",
-                "summary": "Tickets as low as $69",
+                "summary": "Tickets as low as $71",
                 "description": "Houston Rockets at Dallas Mavericks",
-                "maxPrice": 7323.69,
-                "startingPrice": 69.01,
-                "numberAvailable": 1113,
-                "totalPostings": 208,
+                "maxPrice": 5480.77,
+                "startingPrice": 71.4,
+                "numberAvailable": 1458,
+                "totalPostings": 294,
                 "links": [
                   {
                     "rel": [
@@ -30858,12 +30858,12 @@
             "tickets": [
               {
                 "id": "7431742",
-                "summary": "Tickets as low as $27",
+                "summary": "Tickets as low as $25",
                 "description": "Utah Jazz at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 27.59,
-                "numberAvailable": 4296,
-                "totalPostings": 864,
+                "maxPrice": 11698.73,
+                "startingPrice": 25.98,
+                "numberAvailable": 4642,
+                "totalPostings": 982,
                 "links": [
                   {
                     "rel": [
@@ -31475,12 +31475,12 @@
             "tickets": [
               {
                 "id": "7432518",
-                "summary": "Tickets as low as $48",
+                "summary": "Tickets as low as $44",
                 "description": "Houston Rockets at Phoenix Suns",
-                "maxPrice": 8658,
-                "startingPrice": 48.15,
-                "numberAvailable": 1253,
-                "totalPostings": 326,
+                "maxPrice": 8680.31,
+                "startingPrice": 44.15,
+                "numberAvailable": 2800,
+                "totalPostings": 623,
                 "links": [
                   {
                     "rel": [
@@ -32068,10 +32068,10 @@
                 "id": "7431643",
                 "summary": "Tickets as low as $49",
                 "description": "Houston Rockets at Sacramento Kings",
-                "maxPrice": 2882.12,
-                "startingPrice": 49.71,
-                "numberAvailable": 2019,
-                "totalPostings": 452,
+                "maxPrice": 2919.23,
+                "startingPrice": 49.83,
+                "numberAvailable": 2700,
+                "totalPostings": 645,
                 "links": [
                   {
                     "rel": [
@@ -32676,10 +32676,10 @@
                 "id": "7431748",
                 "summary": "Tickets as low as $26",
                 "description": "Houston Rockets at Utah Jazz",
-                "maxPrice": 1550.5,
-                "startingPrice": 26.04,
-                "numberAvailable": 1064,
-                "totalPostings": 267,
+                "maxPrice": 1570.45,
+                "startingPrice": 26.1,
+                "numberAvailable": 2335,
+                "totalPostings": 543,
                 "links": [
                   {
                     "rel": [
@@ -33265,12 +33265,12 @@
             "tickets": [
               {
                 "id": "7431647",
-                "summary": "Tickets as low as $28",
+                "summary": "Tickets as low as $25",
                 "description": "Sacramento Kings at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 28.59,
-                "numberAvailable": 4234,
-                "totalPostings": 849,
+                "maxPrice": 11698.73,
+                "startingPrice": 25.98,
+                "numberAvailable": 4610,
+                "totalPostings": 970,
                 "links": [
                   {
                     "rel": [
@@ -33856,12 +33856,12 @@
             "tickets": [
               {
                 "id": "7430982",
-                "summary": "Tickets as low as $26",
+                "summary": "Tickets as low as $27",
                 "description": "Houston Rockets at New Orleans Pelicans",
-                "maxPrice": 2993.09,
-                "startingPrice": 26.52,
-                "numberAvailable": 2326,
-                "totalPostings": 475,
+                "maxPrice": 3031.63,
+                "startingPrice": 27.74,
+                "numberAvailable": 2588,
+                "totalPostings": 546,
                 "links": [
                   {
                     "rel": [
@@ -34447,12 +34447,12 @@
             "tickets": [
               {
                 "id": "7432264",
-                "summary": "Tickets as low as $54",
+                "summary": "Tickets as low as $51",
                 "description": "Denver Nuggets at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 54.17,
-                "numberAvailable": 4246,
-                "totalPostings": 856,
+                "maxPrice": 11698.73,
+                "startingPrice": 51.12,
+                "numberAvailable": 4491,
+                "totalPostings": 952,
                 "links": [
                   {
                     "rel": [
@@ -35055,12 +35055,12 @@
             "tickets": [
               {
                 "id": "7432348",
-                "summary": "Tickets as low as $38",
+                "summary": "Tickets as low as $37",
                 "description": "Houston Rockets at LA Clippers",
-                "maxPrice": 242911.45,
-                "startingPrice": 38.36,
-                "numberAvailable": 3196,
-                "totalPostings": 538,
+                "maxPrice": 243537.51,
+                "startingPrice": 37.83,
+                "numberAvailable": 3806,
+                "totalPostings": 670,
                 "links": [
                   {
                     "rel": [
@@ -35663,12 +35663,12 @@
             "tickets": [
               {
                 "id": "7432400",
-                "summary": "Tickets as low as $100",
+                "summary": "Tickets as low as $69",
                 "description": "Houston Rockets at Los Angeles Lakers",
-                "maxPrice": 17668.61,
-                "startingPrice": 100.64,
-                "numberAvailable": 2020,
-                "totalPostings": 553,
+                "maxPrice": 17714.14,
+                "startingPrice": 69.09,
+                "numberAvailable": 2320,
+                "totalPostings": 676,
                 "links": [
                   {
                     "rel": [
@@ -36254,12 +36254,12 @@
             "tickets": [
               {
                 "id": "7432520",
-                "summary": "Tickets as low as $39",
+                "summary": "Tickets as low as $37",
                 "description": "Charlotte Hornets at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 39.69,
-                "numberAvailable": 4311,
-                "totalPostings": 866,
+                "maxPrice": 11698.73,
+                "startingPrice": 37.37,
+                "numberAvailable": 4637,
+                "totalPostings": 981,
                 "links": [
                   {
                     "rel": [
@@ -36864,10 +36864,10 @@
                 "id": "7432454",
                 "summary": "Tickets as low as $54",
                 "description": "Miami Heat at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 54.17,
-                "numberAvailable": 4262,
-                "totalPostings": 853,
+                "maxPrice": 11698.73,
+                "startingPrice": 54.29,
+                "numberAvailable": 4524,
+                "totalPostings": 956,
                 "links": [
                   {
                     "rel": [
@@ -37453,12 +37453,12 @@
             "tickets": [
               {
                 "id": "7431315",
-                "summary": "Tickets as low as $77",
+                "summary": "Tickets as low as $71",
                 "description": "Golden State Warriors at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 77.06,
-                "numberAvailable": 4215,
-                "totalPostings": 845,
+                "maxPrice": 14762.96,
+                "startingPrice": 71.19,
+                "numberAvailable": 4504,
+                "totalPostings": 958,
                 "links": [
                   {
                     "rel": [
@@ -38044,12 +38044,12 @@
             "tickets": [
               {
                 "id": "7432146",
-                "summary": "Tickets as low as $27",
+                "summary": "Tickets as low as $25",
                 "description": "New Orleans Pelicans at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 27.59,
-                "numberAvailable": 4323,
-                "totalPostings": 867,
+                "maxPrice": 11698.73,
+                "startingPrice": 25.98,
+                "numberAvailable": 4584,
+                "totalPostings": 962,
                 "links": [
                   {
                     "rel": [
@@ -38654,12 +38654,12 @@
             "tickets": [
               {
                 "id": "7432522",
-                "summary": "Tickets as low as $109",
+                "summary": "Tickets as low as $107",
                 "description": "San Antonio Spurs at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 109,
-                "numberAvailable": 4029,
-                "totalPostings": 806,
+                "maxPrice": 14762.96,
+                "startingPrice": 107.13,
+                "numberAvailable": 4414,
+                "totalPostings": 937,
                 "links": [
                   {
                     "rel": [
@@ -39288,12 +39288,12 @@
             "tickets": [
               {
                 "id": "7431321",
-                "summary": "Tickets as low as $93",
+                "summary": "Tickets as low as $85",
                 "description": "Houston Rockets at Golden State Warriors",
-                "maxPrice": 13309.92,
-                "startingPrice": 93.8,
-                "numberAvailable": 1140,
-                "totalPostings": 294,
+                "maxPrice": 10675.87,
+                "startingPrice": 85.92,
+                "numberAvailable": 1559,
+                "totalPostings": 438,
                 "links": [
                   {
                     "rel": [
@@ -39879,12 +39879,12 @@
             "tickets": [
               {
                 "id": "7432354",
-                "summary": "Tickets as low as $38",
+                "summary": "Tickets as low as $36",
                 "description": "Houston Rockets at LA Clippers",
-                "maxPrice": 242911.45,
-                "startingPrice": 38.36,
-                "numberAvailable": 3252,
-                "totalPostings": 557,
+                "maxPrice": 243537.51,
+                "startingPrice": 36.98,
+                "numberAvailable": 3804,
+                "totalPostings": 674,
                 "links": [
                   {
                     "rel": [
@@ -40470,12 +40470,12 @@
             "tickets": [
               {
                 "id": "7431805",
-                "summary": "Tickets as low as $27",
+                "summary": "Tickets as low as $28",
                 "description": "Houston Rockets at Utah Jazz",
-                "maxPrice": 1550.5,
-                "startingPrice": 27.81,
-                "numberAvailable": 1050,
-                "totalPostings": 262,
+                "maxPrice": 1570.45,
+                "startingPrice": 28.35,
+                "numberAvailable": 2351,
+                "totalPostings": 546,
                 "links": [
                   {
                     "rel": [
@@ -41078,12 +41078,12 @@
             "tickets": [
               {
                 "id": "7432524",
-                "summary": "Tickets as low as $62",
+                "summary": "Tickets as low as $58",
                 "description": "Indiana Pacers at Houston Rockets",
-                "maxPrice": 7559.78,
-                "startingPrice": 62.43,
-                "numberAvailable": 7606,
-                "totalPostings": 1349,
+                "maxPrice": 8858.78,
+                "startingPrice": 58.51,
+                "numberAvailable": 7980,
+                "totalPostings": 1553,
                 "links": [
                   {
                     "rel": [
@@ -41669,12 +41669,12 @@
             "tickets": [
               {
                 "id": "7432526",
-                "summary": "Tickets as low as $66",
+                "summary": "Tickets as low as $63",
                 "description": "San Antonio Spurs at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 66.57,
-                "numberAvailable": 3359,
-                "totalPostings": 692,
+                "maxPrice": 14762.96,
+                "startingPrice": 63.79,
+                "numberAvailable": 4332,
+                "totalPostings": 925,
                 "links": [
                   {
                     "rel": [
@@ -42260,12 +42260,12 @@
             "tickets": [
               {
                 "id": "7432034",
-                "summary": "Tickets as low as $28",
+                "summary": "Tickets as low as $25",
                 "description": "Brooklyn Nets at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 28.59,
-                "numberAvailable": 3576,
-                "totalPostings": 734,
+                "maxPrice": 11698.73,
+                "startingPrice": 25.98,
+                "numberAvailable": 4584,
+                "totalPostings": 966,
                 "links": [
                   {
                     "rel": [
@@ -42853,10 +42853,10 @@
                 "id": "7432176",
                 "summary": "Tickets as low as $27",
                 "description": "Houston Rockets at New Orleans Pelicans",
-                "maxPrice": 2993.09,
-                "startingPrice": 27.81,
-                "numberAvailable": 2304,
-                "totalPostings": 466,
+                "maxPrice": 3031.63,
+                "startingPrice": 27.88,
+                "numberAvailable": 2611,
+                "totalPostings": 554,
                 "links": [
                   {
                     "rel": [
@@ -43444,10 +43444,10 @@
                 "id": "7431276",
                 "summary": "Tickets as low as $33",
                 "description": "Houston Rockets at Cleveland Cavaliers",
-                "maxPrice": 7098.9,
-                "startingPrice": 33.53,
-                "numberAvailable": 2201,
-                "totalPostings": 615,
+                "maxPrice": 7190.35,
+                "startingPrice": 33.61,
+                "numberAvailable": 2742,
+                "totalPostings": 774,
                 "links": [
                   {
                     "rel": [
@@ -44033,12 +44033,12 @@
             "tickets": [
               {
                 "id": "7432528",
-                "summary": "Tickets as low as $307",
+                "summary": "Tickets as low as $268",
                 "description": "Houston Rockets at New York Knicks",
-                "maxPrice": 11800.38,
-                "startingPrice": 307.46,
-                "numberAvailable": 740,
-                "totalPostings": 237,
+                "maxPrice": 11831.44,
+                "startingPrice": 268.19,
+                "numberAvailable": 840,
+                "totalPostings": 279,
                 "links": [
                   {
                     "rel": [
@@ -44626,10 +44626,10 @@
                 "id": "7432304",
                 "summary": "Tickets as low as $44",
                 "description": "Houston Rockets at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 44.67,
-                "numberAvailable": 2349,
-                "totalPostings": 478,
+                "maxPrice": 3031.63,
+                "startingPrice": 44.77,
+                "numberAvailable": 3612,
+                "totalPostings": 720,
                 "links": [
                   {
                     "rel": [
@@ -45234,12 +45234,12 @@
             "tickets": [
               {
                 "id": "7432416",
-                "summary": "Tickets as low as $81",
+                "summary": "Tickets as low as $78",
                 "description": "Los Angeles Lakers at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 81.83,
-                "numberAvailable": 2606,
-                "totalPostings": 538,
+                "maxPrice": 14762.96,
+                "startingPrice": 78.59,
+                "numberAvailable": 3216,
+                "totalPostings": 686,
                 "links": [
                   {
                     "rel": [
@@ -45870,10 +45870,10 @@
                 "id": "7432530",
                 "summary": "Tickets as low as $25",
                 "description": "Houston Rockets at Portland Trail Blazers",
-                "maxPrice": 1508.63,
-                "startingPrice": 25.04,
-                "numberAvailable": 2642,
-                "totalPostings": 559,
+                "maxPrice": 2020.05,
+                "startingPrice": 25.1,
+                "numberAvailable": 3223,
+                "totalPostings": 837,
                 "links": [
                   {
                     "rel": [
@@ -46461,10 +46461,10 @@
                 "id": "7432532",
                 "summary": "Tickets as low as $25",
                 "description": "Houston Rockets at Portland Trail Blazers",
-                "maxPrice": 1508.63,
-                "startingPrice": 25.04,
-                "numberAvailable": 2631,
-                "totalPostings": 567,
+                "maxPrice": 2020.05,
+                "startingPrice": 25.1,
+                "numberAvailable": 3208,
+                "totalPostings": 824,
                 "links": [
                   {
                     "rel": [
@@ -47050,12 +47050,12 @@
             "tickets": [
               {
                 "id": "7431972",
-                "summary": "Tickets as low as $40",
+                "summary": "Tickets as low as $37",
                 "description": "Memphis Grizzlies at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 40.65,
-                "numberAvailable": 3624,
-                "totalPostings": 751,
+                "maxPrice": 11698.73,
+                "startingPrice": 37.37,
+                "numberAvailable": 3976,
+                "totalPostings": 869,
                 "links": [
                   {
                     "rel": [
@@ -47641,12 +47641,12 @@
             "tickets": [
               {
                 "id": "7432534",
-                "summary": "Tickets as low as $41",
+                "summary": "Tickets as low as $38",
                 "description": "Chicago Bulls at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 41.73,
-                "numberAvailable": 3627,
-                "totalPostings": 750,
+                "maxPrice": 11698.73,
+                "startingPrice": 38.43,
+                "numberAvailable": 3976,
+                "totalPostings": 866,
                 "links": [
                   {
                     "rel": [
@@ -48232,12 +48232,12 @@
             "tickets": [
               {
                 "id": "7431699",
-                "summary": "Tickets as low as $30",
+                "summary": "Tickets as low as $27",
                 "description": "Sacramento Kings at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 30.67,
-                "numberAvailable": 3568,
-                "totalPostings": 737,
+                "maxPrice": 11698.73,
+                "startingPrice": 27.86,
+                "numberAvailable": 3911,
+                "totalPostings": 849,
                 "links": [
                   {
                     "rel": [
@@ -48823,12 +48823,12 @@
             "tickets": [
               {
                 "id": "7432675",
-                "summary": "Tickets as low as $60",
+                "summary": "Tickets as low as $56",
                 "description": "Portland Trail Blazers at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 60.06,
-                "numberAvailable": 3459,
-                "totalPostings": 711,
+                "maxPrice": 11698.73,
+                "startingPrice": 56.4,
+                "numberAvailable": 3792,
+                "totalPostings": 825,
                 "links": [
                   {
                     "rel": [
@@ -49414,12 +49414,12 @@
             "tickets": [
               {
                 "id": "7431603",
-                "summary": "Tickets as low as $136",
+                "summary": "Tickets as low as $137",
                 "description": "Houston Rockets at Minnesota Timberwolves",
-                "maxPrice": 3675.31,
-                "startingPrice": 136.99,
-                "numberAvailable": 429,
-                "totalPostings": 143,
+                "maxPrice": 3684.59,
+                "startingPrice": 137.32,
+                "numberAvailable": 538,
+                "totalPostings": 172,
                 "links": [
                   {
                     "rel": [

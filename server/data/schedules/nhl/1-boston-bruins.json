@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-18T07:15:17.395Z",
+  "fetchedAt": "2026-08-26T01:50:53.728Z",
   "source": "ESPN",
   "league": "nhl",
   "teamId": "1",
@@ -138404,15 +138404,33 @@
               }
             ],
             "notes": [],
+            "broadcasts": [
+              {
+                "type": {
+                  "id": "4",
+                  "shortName": "Streaming"
+                },
+                "market": {
+                  "id": "2",
+                  "type": "Home"
+                },
+                "media": {
+                  "shortName": "NESN+"
+                },
+                "lang": "en",
+                "region": "us",
+                "partnered": true
+              }
+            ],
             "tickets": [
               {
                 "id": "7199585",
-                "summary": "Tickets as low as $43",
+                "summary": "Tickets as low as $39",
                 "description": "NHL Preseason - Washington Capitals at Boston Bruins",
-                "maxPrice": 1602.4,
-                "startingPrice": 43.07,
-                "numberAvailable": 2590,
-                "totalPostings": 645,
+                "maxPrice": 793.95,
+                "startingPrice": 39.2,
+                "numberAvailable": 2143,
+                "totalPostings": 592,
                 "links": [
                   {
                     "rel": [
@@ -139207,15 +139225,33 @@
               }
             ],
             "notes": [],
+            "broadcasts": [
+              {
+                "type": {
+                  "id": "4",
+                  "shortName": "Streaming"
+                },
+                "market": {
+                  "id": "2",
+                  "type": "Home"
+                },
+                "media": {
+                  "shortName": "NESN+"
+                },
+                "lang": "en",
+                "region": "us",
+                "partnered": true
+              }
+            ],
             "tickets": [
               {
                 "id": "7199625",
-                "summary": "Tickets as low as $28",
+                "summary": "Tickets as low as $29",
                 "description": "NHL Preseason - Philadelphia Flyers at Boston Bruins",
-                "maxPrice": 815.22,
-                "startingPrice": 28.63,
-                "numberAvailable": 2883,
-                "totalPostings": 697,
+                "maxPrice": 710.52,
+                "startingPrice": 29.23,
+                "numberAvailable": 2499,
+                "totalPostings": 677,
                 "links": [
                   {
                     "rel": [
@@ -140010,15 +140046,33 @@
               }
             ],
             "notes": [],
+            "broadcasts": [
+              {
+                "type": {
+                  "id": "4",
+                  "shortName": "Streaming"
+                },
+                "market": {
+                  "id": "3",
+                  "type": "Away"
+                },
+                "media": {
+                  "shortName": "NESN+"
+                },
+                "lang": "en",
+                "region": "us",
+                "partnered": true
+              }
+            ],
             "tickets": [
               {
                 "id": "7199735",
-                "summary": "Tickets as low as $25",
+                "summary": "Tickets as low as $27",
                 "description": "NHL Preseason - Boston Bruins at Philadelphia Flyers",
-                "maxPrice": 2198.73,
-                "startingPrice": 25.82,
-                "numberAvailable": 4253,
-                "totalPostings": 868,
+                "maxPrice": 1933.9,
+                "startingPrice": 27.16,
+                "numberAvailable": 4654,
+                "totalPostings": 952,
                 "links": [
                   {
                     "rel": [
@@ -140813,15 +140867,33 @@
               }
             ],
             "notes": [],
+            "broadcasts": [
+              {
+                "type": {
+                  "id": "4",
+                  "shortName": "Streaming"
+                },
+                "market": {
+                  "id": "3",
+                  "type": "Away"
+                },
+                "media": {
+                  "shortName": "NESN+"
+                },
+                "lang": "en",
+                "region": "us",
+                "partnered": true
+              }
+            ],
             "tickets": [
               {
                 "id": "7199741",
-                "summary": "Tickets as low as $45",
+                "summary": "Tickets as low as $39",
                 "description": "NHL Preseason - Boston Bruins at Washington Capitals",
-                "maxPrice": 2334.99,
-                "startingPrice": 45.31,
-                "numberAvailable": 1627,
-                "totalPostings": 398,
+                "maxPrice": 2364.44,
+                "startingPrice": 39.57,
+                "numberAvailable": 2801,
+                "totalPostings": 646,
                 "links": [
                   {
                     "rel": [
@@ -141639,12 +141711,12 @@
             "tickets": [
               {
                 "id": "7292405",
-                "summary": "Tickets as low as $115",
+                "summary": "Tickets as low as $124",
                 "description": "New York Rangers at Boston Bruins",
-                "maxPrice": 3003.38,
-                "startingPrice": 115.66,
-                "numberAvailable": 2310,
-                "totalPostings": 628,
+                "maxPrice": 1711.8,
+                "startingPrice": 124.25,
+                "numberAvailable": 2493,
+                "totalPostings": 679,
                 "links": [
                   {
                     "rel": [
@@ -142468,12 +142540,12 @@
             "tickets": [
               {
                 "id": "7292453",
-                "summary": "Tickets as low as $79",
+                "summary": "Tickets as low as $71",
                 "description": "Boston Bruins at Winnipeg Jets",
-                "maxPrice": 863.98,
-                "startingPrice": 79.65,
-                "numberAvailable": 1219,
-                "totalPostings": 426,
+                "maxPrice": 1484.48,
+                "startingPrice": 71.35,
+                "numberAvailable": 1465,
+                "totalPostings": 495,
                 "links": [
                   {
                     "rel": [
@@ -143271,12 +143343,12 @@
             "tickets": [
               {
                 "id": "7292425",
-                "summary": "Tickets as low as $142",
+                "summary": "Tickets as low as $152",
                 "description": "Boston Bruins at Minnesota Wild",
-                "maxPrice": 1577.59,
-                "startingPrice": 142.87,
-                "numberAvailable": 551,
-                "totalPostings": 177,
+                "maxPrice": 1392.54,
+                "startingPrice": 152.5,
+                "numberAvailable": 1160,
+                "totalPostings": 332,
                 "links": [
                   {
                     "rel": [
@@ -144076,10 +144148,10 @@
                 "id": "7301701",
                 "summary": "Tickets as low as $48",
                 "description": "Ottawa Senators at Boston Bruins",
-                "maxPrice": 1266.02,
-                "startingPrice": 48.11,
-                "numberAvailable": 2527,
-                "totalPostings": 668,
+                "maxPrice": 1249.29,
+                "startingPrice": 48.21,
+                "numberAvailable": 2591,
+                "totalPostings": 708,
                 "links": [
                   {
                     "rel": [
@@ -144877,12 +144949,12 @@
             "tickets": [
               {
                 "id": "7302493",
-                "summary": "Tickets as low as $53",
+                "summary": "Tickets as low as $57",
                 "description": "Utah Mammoth at Boston Bruins",
-                "maxPrice": 1075.7,
-                "startingPrice": 53.15,
-                "numberAvailable": 2559,
-                "totalPostings": 647,
+                "maxPrice": 1078.38,
+                "startingPrice": 57.03,
+                "numberAvailable": 2702,
+                "totalPostings": 699,
                 "links": [
                   {
                     "rel": [
@@ -145680,12 +145752,12 @@
             "tickets": [
               {
                 "id": "7301789",
-                "summary": "Tickets as low as $108",
+                "summary": "Tickets as low as $107",
                 "description": "Philadelphia Flyers at Boston Bruins",
-                "maxPrice": 1162.92,
-                "startingPrice": 108.99,
-                "numberAvailable": 2160,
-                "totalPostings": 594,
+                "maxPrice": 1107.15,
+                "startingPrice": 107.35,
+                "numberAvailable": 2292,
+                "totalPostings": 636,
                 "links": [
                   {
                     "rel": [
@@ -146484,12 +146556,12 @@
             "tickets": [
               {
                 "id": "7301887",
-                "summary": "Tickets as low as $34",
+                "summary": "Tickets as low as $36",
                 "description": "Boston Bruins at San Jose Sharks",
-                "maxPrice": 958.89,
-                "startingPrice": 34.88,
-                "numberAvailable": 5862,
-                "totalPostings": 1249,
+                "maxPrice": 1503.78,
+                "startingPrice": 36.19,
+                "numberAvailable": 5303,
+                "totalPostings": 1207,
                 "links": [
                   {
                     "rel": [
@@ -147288,12 +147360,12 @@
             "tickets": [
               {
                 "id": "7302517",
-                "summary": "Tickets as low as $47",
+                "summary": "Tickets as low as $55",
                 "description": "Boston Bruins at Anaheim Ducks",
-                "maxPrice": 958.89,
-                "startingPrice": 47.13,
-                "numberAvailable": 1389,
-                "totalPostings": 319,
+                "maxPrice": 970.96,
+                "startingPrice": 55.98,
+                "numberAvailable": 1410,
+                "totalPostings": 331,
                 "links": [
                   {
                     "rel": [
@@ -148092,12 +148164,12 @@
             "tickets": [
               {
                 "id": "7300911",
-                "summary": "Tickets as low as $52",
+                "summary": "Tickets as low as $44",
                 "description": "Boston Bruins at Los Angeles Kings",
-                "maxPrice": 3971.17,
-                "startingPrice": 52.7,
-                "numberAvailable": 1321,
-                "totalPostings": 315,
+                "maxPrice": 3980.8,
+                "startingPrice": 44.77,
+                "numberAvailable": 2358,
+                "totalPostings": 544,
                 "links": [
                   {
                     "rel": [
@@ -148898,10 +148970,10 @@
                 "id": "7300529",
                 "summary": "Tickets as low as $40",
                 "description": "Boston Bruins at Dallas Stars",
-                "maxPrice": 10110.58,
-                "startingPrice": 40.03,
-                "numberAvailable": 2495,
-                "totalPostings": 631,
+                "maxPrice": 10135.6,
+                "startingPrice": 40.24,
+                "numberAvailable": 2793,
+                "totalPostings": 688,
                 "links": [
                   {
                     "rel": [
@@ -149701,10 +149773,10 @@
                 "id": "7301291",
                 "summary": "Tickets as low as $52",
                 "description": "Nashville Predators at Boston Bruins",
-                "maxPrice": 1075.7,
-                "startingPrice": 52.62,
-                "numberAvailable": 2281,
-                "totalPostings": 624,
+                "maxPrice": 1078.38,
+                "startingPrice": 52.76,
+                "numberAvailable": 2403,
+                "totalPostings": 658,
                 "links": [
                   {
                     "rel": [
@@ -150504,10 +150576,10 @@
                 "id": "7301899",
                 "summary": "Tickets as low as $119",
                 "description": "San Jose Sharks at Boston Bruins",
-                "maxPrice": 1825.16,
-                "startingPrice": 119.86,
-                "numberAvailable": 1869,
-                "totalPostings": 507,
+                "maxPrice": 1497.21,
+                "startingPrice": 119.77,
+                "numberAvailable": 1964,
+                "totalPostings": 541,
                 "links": [
                   {
                     "rel": [
@@ -151305,12 +151377,12 @@
             "tickets": [
               {
                 "id": "7300251",
-                "summary": "Tickets as low as $53",
+                "summary": "Tickets as low as $52",
                 "description": "Boston Bruins at Carolina Hurricanes",
-                "maxPrice": 1055.74,
-                "startingPrice": 53.14,
-                "numberAvailable": 572,
-                "totalPostings": 178,
+                "maxPrice": 970.96,
+                "startingPrice": 52.71,
+                "numberAvailable": 2127,
+                "totalPostings": 541,
                 "links": [
                   {
                     "rel": [
@@ -152108,12 +152180,12 @@
             "tickets": [
               {
                 "id": "7302039",
-                "summary": "Tickets as low as $20",
+                "summary": "Tickets as low as $21",
                 "description": "Boston Bruins at St. Louis Blues",
-                "maxPrice": 4317.95,
-                "startingPrice": 20.65,
-                "numberAvailable": 2033,
-                "totalPostings": 460,
+                "maxPrice": 4328.85,
+                "startingPrice": 21.76,
+                "numberAvailable": 4898,
+                "totalPostings": 1035,
                 "links": [
                   {
                     "rel": [
@@ -152911,12 +152983,12 @@
             "tickets": [
               {
                 "id": "7300253",
-                "summary": "Tickets as low as $92",
+                "summary": "Tickets as low as $100",
                 "description": "Chicago Blackhawks at Boston Bruins",
-                "maxPrice": 1725.29,
-                "startingPrice": 92.45,
-                "numberAvailable": 2283,
-                "totalPostings": 610,
+                "maxPrice": 1662.89,
+                "startingPrice": 100.84,
+                "numberAvailable": 2389,
+                "totalPostings": 654,
                 "links": [
                   {
                     "rel": [
@@ -153714,12 +153786,12 @@
             "tickets": [
               {
                 "id": "7302429",
-                "summary": "Tickets as low as $65",
+                "summary": "Tickets as low as $69",
                 "description": "Vegas Golden Knights at Boston Bruins",
-                "maxPrice": 1075.7,
-                "startingPrice": 65.44,
-                "numberAvailable": 2558,
-                "totalPostings": 655,
+                "maxPrice": 1158.69,
+                "startingPrice": 69.57,
+                "numberAvailable": 2690,
+                "totalPostings": 706,
                 "links": [
                   {
                     "rel": [
@@ -154517,12 +154589,12 @@
             "tickets": [
               {
                 "id": "7301857",
-                "summary": "Tickets as low as $68",
+                "summary": "Tickets as low as $65",
                 "description": "Boston Bruins at Pittsburgh Penguins",
-                "maxPrice": 1536.52,
-                "startingPrice": 68.24,
-                "numberAvailable": 3455,
-                "totalPostings": 768,
+                "maxPrice": 1229.74,
+                "startingPrice": 65.94,
+                "numberAvailable": 3822,
+                "totalPostings": 867,
                 "links": [
                   {
                     "rel": [
@@ -155320,12 +155392,12 @@
             "tickets": [
               {
                 "id": "7302283",
-                "summary": "Tickets as low as $79",
+                "summary": "Tickets as low as $85",
                 "description": "Florida Panthers at Boston Bruins",
-                "maxPrice": 1328.18,
-                "startingPrice": 79.31,
-                "numberAvailable": 2200,
-                "totalPostings": 599,
+                "maxPrice": 1078.38,
+                "startingPrice": 85.25,
+                "numberAvailable": 2326,
+                "totalPostings": 637,
                 "links": [
                   {
                     "rel": [
@@ -156123,12 +156195,12 @@
             "tickets": [
               {
                 "id": "7301109",
-                "summary": "Tickets as low as $113",
+                "summary": "Tickets as low as $109",
                 "description": "Montreal Canadiens at Boston Bruins",
-                "maxPrice": 1487.97,
-                "startingPrice": 113.98,
-                "numberAvailable": 2223,
-                "totalPostings": 593,
+                "maxPrice": 1655.74,
+                "startingPrice": 109.17,
+                "numberAvailable": 2405,
+                "totalPostings": 648,
                 "links": [
                   {
                     "rel": [
@@ -156928,10 +157000,10 @@
                 "id": "7302321",
                 "summary": "Tickets as low as $82",
                 "description": "Minnesota Wild at Boston Bruins",
-                "maxPrice": 1658.71,
-                "startingPrice": 82.77,
-                "numberAvailable": 2222,
-                "totalPostings": 599,
+                "maxPrice": 2437.18,
+                "startingPrice": 82.96,
+                "numberAvailable": 2349,
+                "totalPostings": 645,
                 "links": [
                   {
                     "rel": [
@@ -157729,12 +157801,12 @@
             "tickets": [
               {
                 "id": "7300983",
-                "summary": "Tickets as low as $52",
+                "summary": "Tickets as low as $54",
                 "description": "Los Angeles Kings at Boston Bruins",
-                "maxPrice": 1075.7,
-                "startingPrice": 52.95,
-                "numberAvailable": 2487,
-                "totalPostings": 634,
+                "maxPrice": 1207.56,
+                "startingPrice": 54.12,
+                "numberAvailable": 2557,
+                "totalPostings": 671,
                 "links": [
                   {
                     "rel": [
@@ -158533,12 +158605,12 @@
             "tickets": [
               {
                 "id": "7300825",
-                "summary": "Tickets as low as $43",
+                "summary": "Tickets as low as $44",
                 "description": "Boston Bruins at Detroit Red Wings",
-                "maxPrice": 1564.25,
-                "startingPrice": 43.4,
-                "numberAvailable": 3408,
-                "totalPostings": 783,
+                "maxPrice": 4159.29,
+                "startingPrice": 44.57,
+                "numberAvailable": 3453,
+                "totalPostings": 800,
                 "links": [
                   {
                     "rel": [
@@ -159336,12 +159408,12 @@
             "tickets": [
               {
                 "id": "7302433",
-                "summary": "Tickets as low as $117",
+                "summary": "Tickets as low as $113",
                 "description": "Washington Capitals at Boston Bruins",
-                "maxPrice": 1658.71,
-                "startingPrice": 117.06,
-                "numberAvailable": 2411,
-                "totalPostings": 629,
+                "maxPrice": 9198.37,
+                "startingPrice": 113.9,
+                "numberAvailable": 2645,
+                "totalPostings": 696,
                 "links": [
                   {
                     "rel": [
@@ -160139,12 +160211,12 @@
             "tickets": [
               {
                 "id": "7302415",
-                "summary": "Tickets as low as $78",
+                "summary": "Tickets as low as $64",
                 "description": "Winnipeg Jets at Boston Bruins",
-                "maxPrice": 1075.7,
-                "startingPrice": 78.68,
-                "numberAvailable": 2639,
-                "totalPostings": 663,
+                "maxPrice": 1324.38,
+                "startingPrice": 64.51,
+                "numberAvailable": 2752,
+                "totalPostings": 720,
                 "links": [
                   {
                     "rel": [
@@ -160942,12 +161014,12 @@
             "tickets": [
               {
                 "id": "7302142",
-                "summary": "Tickets as low as $122",
+                "summary": "Tickets as low as $124",
                 "description": "Toronto Maple Leafs at Boston Bruins",
-                "maxPrice": 2122.39,
-                "startingPrice": 122.19,
-                "numberAvailable": 2218,
-                "totalPostings": 614,
+                "maxPrice": 2120.6,
+                "startingPrice": 124.4,
+                "numberAvailable": 2428,
+                "totalPostings": 681,
                 "links": [
                   {
                     "rel": [
@@ -161747,10 +161819,10 @@
                 "id": "7302233",
                 "summary": "Tickets as low as $65",
                 "description": "Vancouver Canucks at Boston Bruins",
-                "maxPrice": 1394.76,
-                "startingPrice": 65.44,
-                "numberAvailable": 2389,
-                "totalPostings": 631,
+                "maxPrice": 1662.89,
+                "startingPrice": 65.59,
+                "numberAvailable": 2544,
+                "totalPostings": 676,
                 "links": [
                   {
                     "rel": [
@@ -162548,12 +162620,12 @@
             "tickets": [
               {
                 "id": "7299765",
-                "summary": "Tickets as low as $333",
+                "summary": "Tickets as low as $323",
                 "description": "Colorado Avalanche at Boston Bruins",
-                "maxPrice": 7188.98,
-                "startingPrice": 333.06,
-                "numberAvailable": 1443,
-                "totalPostings": 441,
+                "maxPrice": 5045.65,
+                "startingPrice": 323.18,
+                "numberAvailable": 1628,
+                "totalPostings": 491,
                 "links": [
                   {
                     "rel": [
@@ -163351,12 +163423,12 @@
             "tickets": [
               {
                 "id": "7299769",
-                "summary": "Tickets as low as $102",
+                "summary": "Tickets as low as $99",
                 "description": "Detroit Red Wings at Boston Bruins",
-                "maxPrice": 2604.58,
-                "startingPrice": 102.57,
-                "numberAvailable": 2253,
-                "totalPostings": 606,
+                "maxPrice": 1115.53,
+                "startingPrice": 99.9,
+                "numberAvailable": 2412,
+                "totalPostings": 653,
                 "links": [
                   {
                     "rel": [
@@ -164156,10 +164228,10 @@
                 "id": "7302303",
                 "summary": "Tickets as low as $50",
                 "description": "Boston Bruins at Florida Panthers",
-                "maxPrice": 8649.66,
-                "startingPrice": 50.02,
-                "numberAvailable": 1546,
-                "totalPostings": 415,
+                "maxPrice": 1462.62,
+                "startingPrice": 50.13,
+                "numberAvailable": 2535,
+                "totalPostings": 622,
                 "links": [
                   {
                     "rel": [
@@ -164957,12 +165029,12 @@
             "tickets": [
               {
                 "id": "7302157",
-                "summary": "Tickets as low as $49",
+                "summary": "Tickets as low as $50",
                 "description": "Boston Bruins at Tampa Bay Lightning",
-                "maxPrice": 11677.33,
-                "startingPrice": 49.93,
-                "numberAvailable": 2141,
-                "totalPostings": 597,
+                "maxPrice": 1960.88,
+                "startingPrice": 50.05,
+                "numberAvailable": 2532,
+                "totalPostings": 648,
                 "links": [
                   {
                     "rel": [
@@ -165760,12 +165832,12 @@
             "tickets": [
               {
                 "id": "7299781",
-                "summary": "Tickets as low as $75",
+                "summary": "Tickets as low as $78",
                 "description": "New Jersey Devils at Boston Bruins",
-                "maxPrice": 1127.03,
-                "startingPrice": 75.29,
-                "numberAvailable": 2352,
-                "totalPostings": 605,
+                "maxPrice": 1107.15,
+                "startingPrice": 78.7,
+                "numberAvailable": 2474,
+                "totalPostings": 651,
                 "links": [
                   {
                     "rel": [
@@ -166563,12 +166635,12 @@
             "tickets": [
               {
                 "id": "7299784",
-                "summary": "Tickets as low as $69",
+                "summary": "Tickets as low as $77",
                 "description": "Boston Bruins at Carolina Hurricanes",
-                "maxPrice": 799.11,
-                "startingPrice": 69.02,
-                "numberAvailable": 592,
-                "totalPostings": 180,
+                "maxPrice": 983.31,
+                "startingPrice": 77.03,
+                "numberAvailable": 1684,
+                "totalPostings": 425,
                 "links": [
                   {
                     "rel": [
@@ -167366,12 +167438,12 @@
             "tickets": [
               {
                 "id": "7299787",
-                "summary": "Tickets as low as $74",
+                "summary": "Tickets as low as $71",
                 "description": "Florida Panthers at Boston Bruins",
-                "maxPrice": 1127.03,
-                "startingPrice": 74.97,
-                "numberAvailable": 2454,
-                "totalPostings": 606,
+                "maxPrice": 1490.06,
+                "startingPrice": 71.19,
+                "numberAvailable": 2551,
+                "totalPostings": 657,
                 "links": [
                   {
                     "rel": [
@@ -168169,12 +168241,12 @@
             "tickets": [
               {
                 "id": "7302546",
-                "summary": "Tickets as low as $68",
+                "summary": "Tickets as low as $58",
                 "description": "St. Louis Blues at Boston Bruins",
-                "maxPrice": 1432.54,
-                "startingPrice": 68.37,
-                "numberAvailable": 2492,
-                "totalPostings": 624,
+                "maxPrice": 1450.6,
+                "startingPrice": 58.65,
+                "numberAvailable": 2597,
+                "totalPostings": 666,
                 "links": [
                   {
                     "rel": [
@@ -168973,12 +169045,12 @@
             "tickets": [
               {
                 "id": "7301547",
-                "summary": "Tickets as low as $76",
+                "summary": "Tickets as low as $75",
                 "description": "Boston Bruins at New Jersey Devils",
-                "maxPrice": 11885.33,
-                "startingPrice": 76.45,
-                "numberAvailable": 1817,
-                "totalPostings": 516,
+                "maxPrice": 11913.9,
+                "startingPrice": 75.95,
+                "numberAvailable": 1850,
+                "totalPostings": 528,
                 "links": [
                   {
                     "rel": [
@@ -169776,12 +169848,12 @@
             "tickets": [
               {
                 "id": "7299797",
-                "summary": "Tickets as low as $100",
+                "summary": "Tickets as low as $90",
                 "description": "Philadelphia Flyers at Boston Bruins",
-                "maxPrice": 1207.07,
-                "startingPrice": 100.02,
-                "numberAvailable": 2292,
-                "totalPostings": 584,
+                "maxPrice": 1456.68,
+                "startingPrice": 90.85,
+                "numberAvailable": 2493,
+                "totalPostings": 659,
                 "links": [
                   {
                     "rel": [
@@ -170582,10 +170654,10 @@
                 "id": "7301485",
                 "summary": "Tickets as low as $65",
                 "description": "Boston Bruins at New York Islanders",
-                "maxPrice": 1718.89,
-                "startingPrice": 65.14,
-                "numberAvailable": 1757,
-                "totalPostings": 457,
+                "maxPrice": 1723.1,
+                "startingPrice": 65.29,
+                "numberAvailable": 1745,
+                "totalPostings": 462,
                 "links": [
                   {
                     "rel": [
@@ -171410,12 +171482,12 @@
             "tickets": [
               {
                 "id": "7299804",
-                "summary": "Tickets as low as $126",
+                "summary": "Tickets as low as $134",
                 "description": "New York Islanders at Boston Bruins",
-                "maxPrice": 1706.43,
-                "startingPrice": 126.13,
-                "numberAvailable": 2171,
-                "totalPostings": 579,
+                "maxPrice": 1871.48,
+                "startingPrice": 134.32,
+                "numberAvailable": 2348,
+                "totalPostings": 634,
                 "links": [
                   {
                     "rel": [
@@ -172214,12 +172286,12 @@
             "tickets": [
               {
                 "id": "7299807",
-                "summary": "Tickets as low as $65",
+                "summary": "Tickets as low as $64",
                 "description": "Boston Bruins at New Jersey Devils",
-                "maxPrice": 11885.33,
-                "startingPrice": 65.25,
-                "numberAvailable": 1756,
-                "totalPostings": 505,
+                "maxPrice": 11913.9,
+                "startingPrice": 64.15,
+                "numberAvailable": 1778,
+                "totalPostings": 515,
                 "links": [
                   {
                     "rel": [
@@ -173017,12 +173089,12 @@
             "tickets": [
               {
                 "id": "7299811",
-                "summary": "Tickets as low as $97",
+                "summary": "Tickets as low as $99",
                 "description": "Edmonton Oilers at Boston Bruins",
-                "maxPrice": 1526.73,
-                "startingPrice": 97.77,
-                "numberAvailable": 2130,
-                "totalPostings": 572,
+                "maxPrice": 2027.63,
+                "startingPrice": 99.9,
+                "numberAvailable": 2307,
+                "totalPostings": 631,
                 "links": [
                   {
                     "rel": [
@@ -173847,12 +173919,12 @@
               },
               {
                 "id": "7300345",
-                "summary": "Tickets as low as $79",
+                "summary": "Tickets as low as $81",
                 "description": "Boston Bruins at Chicago Blackhawks",
-                "maxPrice": 16101.16,
-                "startingPrice": 79.05,
-                "numberAvailable": 4379,
-                "totalPostings": 1004,
+                "maxPrice": 6888.6,
+                "startingPrice": 81.63,
+                "numberAvailable": 4285,
+                "totalPostings": 991,
                 "links": [
                   {
                     "rel": [
@@ -174650,12 +174722,12 @@
             "tickets": [
               {
                 "id": "7299819",
-                "summary": "Tickets as low as $41",
+                "summary": "Tickets as low as $44",
                 "description": "Boston Bruins at Columbus Blue Jackets",
-                "maxPrice": 706.23,
-                "startingPrice": 41.98,
-                "numberAvailable": 5200,
-                "totalPostings": 773,
+                "maxPrice": 950.79,
+                "startingPrice": 44.21,
+                "numberAvailable": 5038,
+                "totalPostings": 769,
                 "links": [
                   {
                     "rel": [
@@ -175453,12 +175525,12 @@
             "tickets": [
               {
                 "id": "7299823",
-                "summary": "Tickets as low as $72",
+                "summary": "Tickets as low as $65",
                 "description": "Buffalo Sabres at Boston Bruins",
-                "maxPrice": 1246.14,
-                "startingPrice": 72.65,
-                "numberAvailable": 2423,
-                "totalPostings": 582,
+                "maxPrice": 1249.29,
+                "startingPrice": 65.56,
+                "numberAvailable": 2527,
+                "totalPostings": 623,
                 "links": [
                   {
                     "rel": [
@@ -176258,10 +176330,10 @@
                 "id": "7301219",
                 "summary": "Tickets as low as $170",
                 "description": "Boston Bruins at Montreal Canadiens",
-                "maxPrice": 4221.38,
-                "startingPrice": 170.29,
-                "numberAvailable": 1237,
-                "totalPostings": 357,
+                "maxPrice": 2323.79,
+                "startingPrice": 170.71,
+                "numberAvailable": 1015,
+                "totalPostings": 274,
                 "links": [
                   {
                     "rel": [
@@ -177087,12 +177159,12 @@
             "tickets": [
               {
                 "id": "7299841",
-                "summary": "Tickets as low as $82",
+                "summary": "Tickets as low as $78",
                 "description": "Boston Bruins at Detroit Red Wings",
-                "maxPrice": 1175.92,
-                "startingPrice": 82.23,
-                "numberAvailable": 2613,
-                "totalPostings": 631,
+                "maxPrice": 4042.03,
+                "startingPrice": 78.81,
+                "numberAvailable": 2671,
+                "totalPostings": 634,
                 "links": [
                   {
                     "rel": [
@@ -177890,12 +177962,12 @@
             "tickets": [
               {
                 "id": "7300367",
-                "summary": "Tickets as low as $77",
+                "summary": "Tickets as low as $71",
                 "description": "Carolina Hurricanes at Boston Bruins",
-                "maxPrice": 1127.03,
-                "startingPrice": 77.73,
-                "numberAvailable": 2378,
-                "totalPostings": 587,
+                "maxPrice": 1107.15,
+                "startingPrice": 71.13,
+                "numberAvailable": 2536,
+                "totalPostings": 639,
                 "links": [
                   {
                     "rel": [
@@ -178693,12 +178765,12 @@
             "tickets": [
               {
                 "id": "7302558",
-                "summary": "Tickets as low as $66",
+                "summary": "Tickets as low as $63",
                 "description": "Dallas Stars at Boston Bruins",
-                "maxPrice": 1127.03,
-                "startingPrice": 66.35,
-                "numberAvailable": 2337,
-                "totalPostings": 573,
+                "maxPrice": 1107.15,
+                "startingPrice": 63.49,
+                "numberAvailable": 2431,
+                "totalPostings": 619,
                 "links": [
                   {
                     "rel": [
@@ -179523,12 +179595,12 @@
             "tickets": [
               {
                 "id": "7301557",
-                "summary": "Tickets as low as $170",
+                "summary": "Tickets as low as $154",
                 "description": "Boston Bruins at New York Rangers",
-                "maxPrice": 3378.87,
-                "startingPrice": 170.59,
-                "numberAvailable": 878,
-                "totalPostings": 311,
+                "maxPrice": 11591.44,
+                "startingPrice": 154.09,
+                "numberAvailable": 1966,
+                "totalPostings": 680,
                 "links": [
                   {
                     "rel": [
@@ -180328,10 +180400,10 @@
                 "id": "7299857",
                 "summary": "Tickets as low as $102",
                 "description": "Tampa Bay Lightning at Boston Bruins",
-                "maxPrice": 1576.67,
-                "startingPrice": 102.61,
-                "numberAvailable": 2056,
-                "totalPostings": 531,
+                "maxPrice": 1580.65,
+                "startingPrice": 102.86,
+                "numberAvailable": 2236,
+                "totalPostings": 586,
                 "links": [
                   {
                     "rel": [
@@ -181131,10 +181203,10 @@
                 "id": "7299864",
                 "summary": "Tickets as low as $67",
                 "description": "Boston Bruins at Colorado Avalanche",
-                "maxPrice": 8093.97,
-                "startingPrice": 67.14,
-                "numberAvailable": 4954,
-                "totalPostings": 1128,
+                "maxPrice": 8114.41,
+                "startingPrice": 67.3,
+                "numberAvailable": 5333,
+                "totalPostings": 1167,
                 "links": [
                   {
                     "rel": [
@@ -181932,12 +182004,12 @@
             "tickets": [
               {
                 "id": "7299871",
-                "summary": "Tickets as low as $112",
+                "summary": "Tickets as low as $91",
                 "description": "Boston Bruins at Vegas Golden Knights",
-                "maxPrice": 1802.55,
-                "startingPrice": 112.22,
-                "numberAvailable": 603,
-                "totalPostings": 156,
+                "maxPrice": 1825.05,
+                "startingPrice": 91.3,
+                "numberAvailable": 758,
+                "totalPostings": 196,
                 "links": [
                   {
                     "rel": [
@@ -182735,12 +182807,12 @@
             "tickets": [
               {
                 "id": "7302499",
-                "summary": "Tickets as low as $121",
+                "summary": "Tickets as low as $118",
                 "description": "Boston Bruins at Utah Mammoth",
-                "maxPrice": 2610.21,
-                "startingPrice": 121.5,
-                "numberAvailable": 1398,
-                "totalPostings": 353,
+                "maxPrice": 2643.13,
+                "startingPrice": 118.22,
+                "numberAvailable": 1402,
+                "totalPostings": 356,
                 "links": [
                   {
                     "rel": [
@@ -183538,12 +183610,12 @@
             "tickets": [
               {
                 "id": "7299882",
-                "summary": "Tickets as low as $62",
+                "summary": "Tickets as low as $60",
                 "description": "Columbus Blue Jackets at Boston Bruins",
-                "maxPrice": 1127.03,
-                "startingPrice": 62.38,
-                "numberAvailable": 2372,
-                "totalPostings": 580,
+                "maxPrice": 1107.15,
+                "startingPrice": 60.61,
+                "numberAvailable": 2562,
+                "totalPostings": 644,
                 "links": [
                   {
                     "rel": [
@@ -184341,12 +184413,12 @@
             "tickets": [
               {
                 "id": "7299889",
-                "summary": "Tickets as low as $52",
+                "summary": "Tickets as low as $42",
                 "description": "Boston Bruins at Ottawa Senators",
-                "maxPrice": 380.21,
-                "startingPrice": 52.78,
-                "numberAvailable": 140,
-                "totalPostings": 39,
+                "maxPrice": 12442.45,
+                "startingPrice": 42.36,
+                "numberAvailable": 299,
+                "totalPostings": 74,
                 "links": [
                   {
                     "rel": [
@@ -185144,12 +185216,12 @@
             "tickets": [
               {
                 "id": "7299895",
-                "summary": "Tickets as low as $132",
+                "summary": "Tickets as low as $133",
                 "description": "Toronto Maple Leafs at Boston Bruins",
-                "maxPrice": 1127.03,
-                "startingPrice": 132.69,
-                "numberAvailable": 2218,
-                "totalPostings": 548,
+                "maxPrice": 1107.15,
+                "startingPrice": 133.02,
+                "numberAvailable": 2300,
+                "totalPostings": 583,
                 "links": [
                   {
                     "rel": [
@@ -185947,12 +186019,12 @@
             "tickets": [
               {
                 "id": "7299901",
-                "summary": "Tickets as low as $174",
+                "summary": "Tickets as low as $161",
                 "description": "Boston Bruins at Toronto Maple Leafs",
-                "maxPrice": 1369.75,
-                "startingPrice": 174.58,
-                "numberAvailable": 286,
-                "totalPostings": 97,
+                "maxPrice": 1416.14,
+                "startingPrice": 161.26,
+                "numberAvailable": 426,
+                "totalPostings": 127,
                 "links": [
                   {
                     "rel": [
@@ -186752,10 +186824,10 @@
                 "id": "7299907",
                 "summary": "Tickets as low as $92",
                 "description": "Columbus Blue Jackets at Boston Bruins",
-                "maxPrice": 1127.03,
-                "startingPrice": 92.68,
-                "numberAvailable": 2116,
-                "totalPostings": 539,
+                "maxPrice": 1107.15,
+                "startingPrice": 92.9,
+                "numberAvailable": 2259,
+                "totalPostings": 583,
                 "links": [
                   {
                     "rel": [
@@ -187553,12 +187625,12 @@
             "tickets": [
               {
                 "id": "7299931",
-                "summary": "Tickets as low as $92",
+                "summary": "Tickets as low as $81",
                 "description": "Anaheim Ducks at Boston Bruins",
-                "maxPrice": 1493.45,
-                "startingPrice": 92.03,
-                "numberAvailable": 2248,
-                "totalPostings": 546,
+                "maxPrice": 1497.21,
+                "startingPrice": 81.45,
+                "numberAvailable": 2430,
+                "totalPostings": 598,
                 "links": [
                   {
                     "rel": [
@@ -188358,10 +188430,10 @@
                 "id": "7302521",
                 "summary": "Tickets as low as $40",
                 "description": "Boston Bruins at Calgary Flames",
-                "maxPrice": 1153.56,
-                "startingPrice": 40.2,
-                "numberAvailable": 909,
-                "totalPostings": 228,
+                "maxPrice": 1175.45,
+                "startingPrice": 40.29,
+                "numberAvailable": 1378,
+                "totalPostings": 323,
                 "links": [
                   {
                     "rel": [
@@ -189161,10 +189233,10 @@
                 "id": "7299926",
                 "summary": "Tickets as low as $88",
                 "description": "Boston Bruins at Edmonton Oilers",
-                "maxPrice": 78261.04,
-                "startingPrice": 88.37,
-                "numberAvailable": 976,
-                "totalPostings": 242,
+                "maxPrice": 78452.85,
+                "startingPrice": 88.58,
+                "numberAvailable": 1048,
+                "totalPostings": 254,
                 "links": [
                   {
                     "rel": [
@@ -189962,12 +190034,12 @@
             "tickets": [
               {
                 "id": "7299933",
-                "summary": "Tickets as low as $90",
+                "summary": "Tickets as low as $81",
                 "description": "Boston Bruins at Vancouver Canucks",
-                "maxPrice": 614.04,
-                "startingPrice": 90.3,
-                "numberAvailable": 666,
-                "totalPostings": 167,
+                "maxPrice": 1468.87,
+                "startingPrice": 81.11,
+                "numberAvailable": 1013,
+                "totalPostings": 282,
                 "links": [
                   {
                     "rel": [
@@ -190765,12 +190837,12 @@
             "tickets": [
               {
                 "id": "7299939",
-                "summary": "Tickets as low as $86",
+                "summary": "Tickets as low as $87",
                 "description": "Boston Bruins at Seattle Kraken",
-                "maxPrice": 821.28,
-                "startingPrice": 86.48,
-                "numberAvailable": 2962,
-                "totalPostings": 779,
+                "maxPrice": 831.62,
+                "startingPrice": 87.42,
+                "numberAvailable": 2971,
+                "totalPostings": 783,
                 "links": [
                   {
                     "rel": [
@@ -191570,10 +191642,10 @@
                 "id": "7299945",
                 "summary": "Tickets as low as $122",
                 "description": "Washington Capitals at Boston Bruins",
-                "maxPrice": 1127.03,
-                "startingPrice": 122.67,
-                "numberAvailable": 2089,
-                "totalPostings": 536,
+                "maxPrice": 9198.37,
+                "startingPrice": 122.97,
+                "numberAvailable": 2309,
+                "totalPostings": 592,
                 "links": [
                   {
                     "rel": [
@@ -192371,12 +192443,12 @@
             "tickets": [
               {
                 "id": "7299951",
-                "summary": "Tickets as low as $108",
+                "summary": "Tickets as low as $109",
                 "description": "Detroit Red Wings at Boston Bruins",
-                "maxPrice": 1127.03,
-                "startingPrice": 108.9,
-                "numberAvailable": 2199,
-                "totalPostings": 558,
+                "maxPrice": 5687.6,
+                "startingPrice": 109.17,
+                "numberAvailable": 2382,
+                "totalPostings": 612,
                 "links": [
                   {
                     "rel": [
@@ -193174,12 +193246,12 @@
             "tickets": [
               {
                 "id": "7299957",
-                "summary": "Tickets as low as $129",
+                "summary": "Tickets as low as $144",
                 "description": "Boston Bruins at New York Rangers",
-                "maxPrice": 3189.52,
-                "startingPrice": 129.71,
-                "numberAvailable": 856,
-                "totalPostings": 310,
+                "maxPrice": 2044.2,
+                "startingPrice": 144.37,
+                "numberAvailable": 2143,
+                "totalPostings": 726,
                 "links": [
                   {
                     "rel": [
@@ -193977,12 +194049,12 @@
             "tickets": [
               {
                 "id": "7301767",
-                "summary": "Tickets as low as $60",
+                "summary": "Tickets as low as $50",
                 "description": "Boston Bruins at Ottawa Senators",
-                "maxPrice": 380.21,
-                "startingPrice": 60.13,
-                "numberAvailable": 133,
-                "totalPostings": 35,
+                "maxPrice": 603.88,
+                "startingPrice": 50.81,
+                "numberAvailable": 295,
+                "totalPostings": 70,
                 "links": [
                   {
                     "rel": [
@@ -194782,10 +194854,10 @@
                 "id": "7299970",
                 "summary": "Tickets as low as $100",
                 "description": "Pittsburgh Penguins at Boston Bruins",
-                "maxPrice": 1127.03,
-                "startingPrice": 100.45,
-                "numberAvailable": 2114,
-                "totalPostings": 543,
+                "maxPrice": 1107.15,
+                "startingPrice": 100.69,
+                "numberAvailable": 2291,
+                "totalPostings": 588,
                 "links": [
                   {
                     "rel": [
@@ -195585,10 +195657,10 @@
                 "id": "7299976",
                 "summary": "Tickets as low as $63",
                 "description": "Seattle Kraken at Boston Bruins",
-                "maxPrice": 1127.03,
-                "startingPrice": 63.31,
-                "numberAvailable": 2515,
-                "totalPostings": 594,
+                "maxPrice": 1107.15,
+                "startingPrice": 63.45,
+                "numberAvailable": 2660,
+                "totalPostings": 642,
                 "links": [
                   {
                     "rel": [
@@ -196386,12 +196458,12 @@
             "tickets": [
               {
                 "id": "7299982",
-                "summary": "Tickets as low as $181",
+                "summary": "Tickets as low as $193",
                 "description": "Boston Bruins at Montreal Canadiens",
-                "maxPrice": 2815.79,
-                "startingPrice": 181.47,
-                "numberAvailable": 1188,
-                "totalPostings": 335,
+                "maxPrice": 2323.79,
+                "startingPrice": 193,
+                "numberAvailable": 983,
+                "totalPostings": 254,
                 "links": [
                   {
                     "rel": [
@@ -197189,12 +197261,12 @@
             "tickets": [
               {
                 "id": "7299988",
-                "summary": "Tickets as low as $66",
+                "summary": "Tickets as low as $50",
                 "description": "Boston Bruins at Pittsburgh Penguins",
-                "maxPrice": 838.72,
-                "startingPrice": 66.05,
-                "numberAvailable": 3714,
-                "totalPostings": 770,
+                "maxPrice": 840.95,
+                "startingPrice": 50.78,
+                "numberAvailable": 3797,
+                "totalPostings": 848,
                 "links": [
                   {
                     "rel": [
@@ -197992,12 +198064,12 @@
             "tickets": [
               {
                 "id": "7299994",
-                "summary": "Tickets as low as $98",
+                "summary": "Tickets as low as $82",
                 "description": "Calgary Flames at Boston Bruins",
-                "maxPrice": 1127.03,
-                "startingPrice": 98.72,
-                "numberAvailable": 2272,
-                "totalPostings": 556,
+                "maxPrice": 1107.15,
+                "startingPrice": 82.09,
+                "numberAvailable": 2392,
+                "totalPostings": 600,
                 "links": [
                   {
                     "rel": [
@@ -198795,12 +198867,12 @@
             "tickets": [
               {
                 "id": "7299999",
-                "summary": "Tickets as low as $64",
+                "summary": "Tickets as low as $57",
                 "description": "New York Islanders at Boston Bruins",
-                "maxPrice": 1127.03,
-                "startingPrice": 64.27,
-                "numberAvailable": 2370,
-                "totalPostings": 565,
+                "maxPrice": 1107.15,
+                "startingPrice": 57.27,
+                "numberAvailable": 2524,
+                "totalPostings": 623,
                 "links": [
                   {
                     "rel": [
@@ -199598,12 +199670,12 @@
             "tickets": [
               {
                 "id": "7301897",
-                "summary": "Tickets as low as $64",
+                "summary": "Tickets as low as $68",
                 "description": "Boston Bruins at Philadelphia Flyers",
-                "maxPrice": 34241.98,
-                "startingPrice": 64.63,
-                "numberAvailable": 3905,
-                "totalPostings": 761,
+                "maxPrice": 34325.9,
+                "startingPrice": 68.55,
+                "numberAvailable": 3914,
+                "totalPostings": 763,
                 "links": [
                   {
                     "rel": [
@@ -200402,12 +200474,12 @@
             "tickets": [
               {
                 "id": "7300013",
-                "summary": "Tickets as low as $112",
+                "summary": "Tickets as low as $109",
                 "description": "Boston Bruins at Nashville Predators",
-                "maxPrice": 1356.58,
-                "startingPrice": 112.13,
-                "numberAvailable": 706,
-                "totalPostings": 223,
+                "maxPrice": 25960.93,
+                "startingPrice": 109.91,
+                "numberAvailable": 762,
+                "totalPostings": 236,
                 "links": [
                   {
                     "rel": [
@@ -201205,12 +201277,12 @@
             "tickets": [
               {
                 "id": "7300019",
-                "summary": "Tickets as low as $70",
+                "summary": "Tickets as low as $58",
                 "description": "Buffalo Sabres at Boston Bruins",
-                "maxPrice": 1127.03,
-                "startingPrice": 70.61,
-                "numberAvailable": 2580,
-                "totalPostings": 597,
+                "maxPrice": 1107.15,
+                "startingPrice": 58.83,
+                "numberAvailable": 2620,
+                "totalPostings": 639,
                 "links": [
                   {
                     "rel": [
@@ -202010,10 +202082,10 @@
                 "id": "7300025",
                 "summary": "Tickets as low as $53",
                 "description": "Ottawa Senators at Boston Bruins",
-                "maxPrice": 1127.03,
-                "startingPrice": 53.79,
-                "numberAvailable": 2506,
-                "totalPostings": 589,
+                "maxPrice": 9198.37,
+                "startingPrice": 53.53,
+                "numberAvailable": 2528,
+                "totalPostings": 627,
                 "links": [
                   {
                     "rel": [
@@ -202811,12 +202883,12 @@
             "tickets": [
               {
                 "id": "7300029",
-                "summary": "Tickets as low as $144",
+                "summary": "Tickets as low as $143",
                 "description": "Boston Bruins at Washington Capitals",
-                "maxPrice": 1234.11,
-                "startingPrice": 144.3,
-                "numberAvailable": 1436,
-                "totalPostings": 353,
+                "maxPrice": 1249.66,
+                "startingPrice": 143.69,
+                "numberAvailable": 2305,
+                "totalPostings": 532,
                 "links": [
                   {
                     "rel": [
@@ -203614,12 +203686,12 @@
             "tickets": [
               {
                 "id": "7300035",
-                "summary": "Tickets as low as $113",
+                "summary": "Tickets as low as $114",
                 "description": "Montreal Canadiens at Boston Bruins",
-                "maxPrice": 1432.54,
-                "startingPrice": 113.98,
-                "numberAvailable": 2203,
-                "totalPostings": 546,
+                "maxPrice": 9198.37,
+                "startingPrice": 114.26,
+                "numberAvailable": 2373,
+                "totalPostings": 597,
                 "links": [
                   {
                     "rel": [
@@ -204417,12 +204489,12 @@
             "tickets": [
               {
                 "id": "7300041",
-                "summary": "Tickets as low as $39",
+                "summary": "Tickets as low as $53",
                 "description": "Boston Bruins at Buffalo Sabres",
-                "maxPrice": 1256.49,
-                "startingPrice": 39.05,
-                "numberAvailable": 2133,
-                "totalPostings": 522,
+                "maxPrice": 1272.04,
+                "startingPrice": 53.1,
+                "numberAvailable": 2162,
+                "totalPostings": 533,
                 "links": [
                   {
                     "rel": [
@@ -205222,10 +205294,10 @@
                 "id": "7300047",
                 "summary": "Tickets as low as $114",
                 "description": "Tampa Bay Lightning at Boston Bruins",
-                "maxPrice": 1127.03,
-                "startingPrice": 114.43,
-                "numberAvailable": 2157,
-                "totalPostings": 543,
+                "maxPrice": 1107.15,
+                "startingPrice": 114.7,
+                "numberAvailable": 2304,
+                "totalPostings": 586,
                 "links": [
                   {
                     "rel": [
@@ -206023,12 +206095,12 @@
             "tickets": [
               {
                 "id": "7300051",
-                "summary": "Tickets as low as $173",
+                "summary": "Tickets as low as $161",
                 "description": "Boston Bruins at Toronto Maple Leafs",
-                "maxPrice": 1357.96,
-                "startingPrice": 173.14,
-                "numberAvailable": 206,
-                "totalPostings": 70,
+                "maxPrice": 1416.14,
+                "startingPrice": 161.26,
+                "numberAvailable": 403,
+                "totalPostings": 111,
                 "links": [
                   {
                     "rel": [
@@ -206828,10 +206900,10 @@
                 "id": "7302563",
                 "summary": "Tickets as low as $49",
                 "description": "Boston Bruins at Buffalo Sabres",
-                "maxPrice": 11786.02,
-                "startingPrice": 49.31,
-                "numberAvailable": 2165,
-                "totalPostings": 607,
+                "maxPrice": 1272.04,
+                "startingPrice": 49.43,
+                "numberAvailable": 2429,
+                "totalPostings": 685,
                 "links": [
                   {
                     "rel": [
@@ -207629,12 +207701,12 @@
             "tickets": [
               {
                 "id": "7300059",
-                "summary": "Tickets as low as $65",
+                "summary": "Tickets as low as $66",
                 "description": "Boston Bruins at Florida Panthers",
-                "maxPrice": 1756.67,
-                "startingPrice": 65.87,
-                "numberAvailable": 1557,
-                "totalPostings": 399,
+                "maxPrice": 1697.62,
+                "startingPrice": 66.02,
+                "numberAvailable": 2412,
+                "totalPostings": 575,
                 "links": [
                   {
                     "rel": [
@@ -208432,12 +208504,12 @@
             "tickets": [
               {
                 "id": "7300063",
-                "summary": "Tickets as low as $71",
+                "summary": "Tickets as low as $74",
                 "description": "Boston Bruins at Tampa Bay Lightning",
-                "maxPrice": 11677.33,
-                "startingPrice": 71.36,
-                "numberAvailable": 2005,
-                "totalPostings": 558,
+                "maxPrice": 1960.88,
+                "startingPrice": 74.01,
+                "numberAvailable": 2563,
+                "totalPostings": 660,
                 "links": [
                   {
                     "rel": [

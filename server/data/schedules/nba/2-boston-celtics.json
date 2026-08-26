@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-18T07:20:24.655Z",
+  "fetchedAt": "2026-08-26T01:54:16.325Z",
   "source": "ESPN",
   "league": "nba",
   "teamId": "2",
@@ -491,12 +491,12 @@
             "tickets": [
               {
                 "id": "7336370",
-                "summary": "Tickets as low as $13",
+                "summary": "Tickets as low as $14",
                 "description": "NBA Preseason - Boston Celtics at Cleveland Cavaliers",
-                "maxPrice": 7098.9,
-                "startingPrice": 13.2,
-                "numberAvailable": 1583,
-                "totalPostings": 449,
+                "maxPrice": 7190.35,
+                "startingPrice": 14.15,
+                "numberAvailable": 2103,
+                "totalPostings": 583,
                 "links": [
                   {
                     "rel": [
@@ -1082,12 +1082,12 @@
             "tickets": [
               {
                 "id": "7323576",
-                "summary": "Tickets as low as $104",
+                "summary": "Tickets as low as $98",
                 "description": "NBA Preseason - Philadelphia 76ers at Boston Celtics",
-                "maxPrice": 11396.79,
-                "startingPrice": 104.66,
-                "numberAvailable": 2271,
-                "totalPostings": 626,
+                "maxPrice": 11424.44,
+                "startingPrice": 98.49,
+                "numberAvailable": 2759,
+                "totalPostings": 771,
                 "links": [
                   {
                     "rel": [
@@ -1673,12 +1673,12 @@
             "tickets": [
               {
                 "id": "7323580",
-                "summary": "Tickets as low as $30",
+                "summary": "Tickets as low as $28",
                 "description": "NBA Preseason - Charlotte Hornets at Boston Celtics",
-                "maxPrice": 4662.68,
-                "startingPrice": 30.23,
-                "numberAvailable": 2500,
-                "totalPostings": 657,
+                "maxPrice": 4674.56,
+                "startingPrice": 28.99,
+                "numberAvailable": 3226,
+                "totalPostings": 839,
                 "links": [
                   {
                     "rel": [
@@ -2264,12 +2264,12 @@
             "tickets": [
               {
                 "id": "7333359",
-                "summary": "Tickets as low as $72",
+                "summary": "Tickets as low as $74",
                 "description": "NBA Preseason - Boston Celtics at Philadelphia 76ers",
-                "maxPrice": 6105.69,
-                "startingPrice": 72.04,
-                "numberAvailable": 1711,
-                "totalPostings": 517,
+                "maxPrice": 6121.42,
+                "startingPrice": 74.03,
+                "numberAvailable": 1892,
+                "totalPostings": 576,
                 "links": [
                   {
                     "rel": [
@@ -2874,10 +2874,10 @@
                 "id": "7415479",
                 "summary": "Tickets as low as $36",
                 "description": "Boston Celtics at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 36.23,
-                "numberAvailable": 2474,
-                "totalPostings": 575,
+                "maxPrice": 3144.03,
+                "startingPrice": 36.32,
+                "numberAvailable": 3502,
+                "totalPostings": 771,
                 "links": [
                   {
                     "rel": [
@@ -3480,12 +3480,12 @@
             "tickets": [
               {
                 "id": "7415526",
-                "summary": "Tickets as low as $246",
+                "summary": "Tickets as low as $233",
                 "description": "New York Knicks at Boston Celtics",
-                "maxPrice": 16090.02,
-                "startingPrice": 246.68,
-                "numberAvailable": 2810,
-                "totalPostings": 742,
+                "maxPrice": 8762.61,
+                "startingPrice": 233.32,
+                "numberAvailable": 3106,
+                "totalPostings": 867,
                 "links": [
                   {
                     "rel": [
@@ -4071,12 +4071,12 @@
             "tickets": [
               {
                 "id": "7433060",
-                "summary": "Tickets as low as $61",
+                "summary": "Tickets as low as $60",
                 "description": "Chicago Bulls at Boston Celtics",
-                "maxPrice": 6040.47,
-                "startingPrice": 61.67,
-                "numberAvailable": 2145,
-                "totalPostings": 570,
+                "maxPrice": 3481.22,
+                "startingPrice": 60.67,
+                "numberAvailable": 2840,
+                "totalPostings": 790,
                 "links": [
                   {
                     "rel": [
@@ -4662,12 +4662,12 @@
             "tickets": [
               {
                 "id": "7433154",
-                "summary": "Tickets as low as $52",
+                "summary": "Tickets as low as $53",
                 "description": "Brooklyn Nets at Boston Celtics",
-                "maxPrice": 6040.47,
-                "startingPrice": 52.38,
-                "numberAvailable": 2213,
-                "totalPostings": 576,
+                "maxPrice": 3481.22,
+                "startingPrice": 53.75,
+                "numberAvailable": 2874,
+                "totalPostings": 800,
                 "links": [
                   {
                     "rel": [
@@ -5258,12 +5258,12 @@
             "tickets": [
               {
                 "id": "7419729",
-                "summary": "Tickets as low as $86",
+                "summary": "Tickets as low as $84",
                 "description": "NBA Cup - Chicago Bulls at Boston Celtics",
-                "maxPrice": 5236.52,
-                "startingPrice": 86.4,
-                "numberAvailable": 2328,
-                "totalPostings": 615,
+                "maxPrice": 4674.56,
+                "startingPrice": 84.18,
+                "numberAvailable": 2692,
+                "totalPostings": 758,
                 "links": [
                   {
                     "rel": [
@@ -5849,12 +5849,12 @@
             "tickets": [
               {
                 "id": "7433134",
-                "summary": "Tickets as low as $80",
+                "summary": "Tickets as low as $76",
                 "description": "Boston Celtics at Orlando Magic",
-                "maxPrice": 9301.17,
-                "startingPrice": 80.71,
-                "numberAvailable": 2261,
-                "totalPostings": 638,
+                "maxPrice": 4808.67,
+                "startingPrice": 76.74,
+                "numberAvailable": 3118,
+                "totalPostings": 776,
                 "links": [
                   {
                     "rel": [
@@ -6440,12 +6440,12 @@
             "tickets": [
               {
                 "id": "7432955",
-                "summary": "Tickets as low as $52",
+                "summary": "Tickets as low as $42",
                 "description": "Boston Celtics at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 52.38,
-                "numberAvailable": 4427,
-                "totalPostings": 891,
+                "maxPrice": 9449.19,
+                "startingPrice": 42.89,
+                "numberAvailable": 4709,
+                "totalPostings": 997,
                 "links": [
                   {
                     "rel": [
@@ -7033,10 +7033,10 @@
                 "id": "7432889",
                 "summary": "Tickets as low as $57",
                 "description": "Milwaukee Bucks at Boston Celtics",
-                "maxPrice": 5236.52,
-                "startingPrice": 57.89,
-                "numberAvailable": 2166,
-                "totalPostings": 561,
+                "maxPrice": 3481.22,
+                "startingPrice": 57.5,
+                "numberAvailable": 2843,
+                "totalPostings": 792,
                 "links": [
                   {
                     "rel": [
@@ -7627,12 +7627,12 @@
             "tickets": [
               {
                 "id": "7419733",
-                "summary": "Tickets as low as $43",
+                "summary": "Tickets as low as $42",
                 "description": "NBA Cup - Boston Celtics at Charlotte Hornets",
-                "maxPrice": 2882.12,
-                "startingPrice": 43.67,
-                "numberAvailable": 1580,
-                "totalPostings": 358,
+                "maxPrice": 2919.23,
+                "startingPrice": 42.15,
+                "numberAvailable": 2844,
+                "totalPostings": 585,
                 "links": [
                   {
                     "rel": [
@@ -8218,12 +8218,12 @@
             "tickets": [
               {
                 "id": "7432891",
-                "summary": "Tickets as low as $39",
+                "summary": "Tickets as low as $42",
                 "description": "Boston Celtics at Milwaukee Bucks",
-                "maxPrice": 1772.44,
-                "startingPrice": 39.44,
-                "numberAvailable": 4230,
-                "totalPostings": 984,
+                "maxPrice": 1795.25,
+                "startingPrice": 42.13,
+                "numberAvailable": 4132,
+                "totalPostings": 969,
                 "links": [
                   {
                     "rel": [
@@ -8826,12 +8826,12 @@
             "tickets": [
               {
                 "id": "7433132",
-                "summary": "Tickets as low as $166",
+                "summary": "Tickets as low as $157",
                 "description": "Boston Celtics at Philadelphia 76ers",
-                "maxPrice": 24970.3,
-                "startingPrice": 166.58,
-                "numberAvailable": 1658,
-                "totalPostings": 513,
+                "maxPrice": 24262.45,
+                "startingPrice": 157.61,
+                "numberAvailable": 1968,
+                "totalPostings": 599,
                 "links": [
                   {
                     "rel": [
@@ -9417,12 +9417,12 @@
             "tickets": [
               {
                 "id": "7433152",
-                "summary": "Tickets as low as $84",
+                "summary": "Tickets as low as $99",
                 "description": "Boston Celtics at Toronto Raptors",
-                "maxPrice": 4133.06,
-                "startingPrice": 84.38,
-                "numberAvailable": 300,
-                "totalPostings": 76,
+                "maxPrice": 4143.7,
+                "startingPrice": 99.98,
+                "numberAvailable": 416,
+                "totalPostings": 94,
                 "links": [
                   {
                     "rel": [
@@ -10008,12 +10008,12 @@
             "tickets": [
               {
                 "id": "7433122",
-                "summary": "Tickets as low as $149",
+                "summary": "Tickets as low as $152",
                 "description": "Dallas Mavericks at Boston Celtics",
-                "maxPrice": 12070.2,
-                "startingPrice": 149.87,
-                "numberAvailable": 2080,
-                "totalPostings": 543,
+                "maxPrice": 5018.94,
+                "startingPrice": 152.42,
+                "numberAvailable": 2779,
+                "totalPostings": 768,
                 "links": [
                   {
                     "rel": [
@@ -10616,12 +10616,12 @@
             "tickets": [
               {
                 "id": "7433142",
-                "summary": "Tickets as low as $65",
+                "summary": "Tickets as low as $43",
                 "description": "Orlando Magic at Boston Celtics",
-                "maxPrice": 11670.13,
-                "startingPrice": 65.98,
-                "numberAvailable": 2223,
-                "totalPostings": 576,
+                "maxPrice": 11698.73,
+                "startingPrice": 43.26,
+                "numberAvailable": 2863,
+                "totalPostings": 790,
                 "links": [
                   {
                     "rel": [
@@ -11207,12 +11207,12 @@
             "tickets": [
               {
                 "id": "7433160",
-                "summary": "Tickets as low as $55",
+                "summary": "Tickets as low as $40",
                 "description": "Boston Celtics at Denver Nuggets",
-                "maxPrice": 6648.69,
-                "startingPrice": 55.8,
-                "numberAvailable": 3141,
-                "totalPostings": 718,
+                "maxPrice": 4131.91,
+                "startingPrice": 40.55,
+                "numberAvailable": 3896,
+                "totalPostings": 960,
                 "links": [
                   {
                     "rel": [
@@ -11798,12 +11798,12 @@
             "tickets": [
               {
                 "id": "7433003",
-                "summary": "Tickets as low as $54",
+                "summary": "Tickets as low as $50",
                 "description": "Boston Celtics at Sacramento Kings",
-                "maxPrice": 2882.12,
-                "startingPrice": 54.6,
-                "numberAvailable": 1977,
-                "totalPostings": 458,
+                "maxPrice": 2919.23,
+                "startingPrice": 50.77,
+                "numberAvailable": 2486,
+                "totalPostings": 608,
                 "links": [
                   {
                     "rel": [
@@ -12389,12 +12389,12 @@
             "tickets": [
               {
                 "id": "7431216",
-                "summary": "Tickets as low as $87",
+                "summary": "Tickets as low as $94",
                 "description": "Boston Celtics at Golden State Warriors",
-                "maxPrice": 11713.03,
-                "startingPrice": 87.71,
-                "numberAvailable": 1407,
-                "totalPostings": 388,
+                "maxPrice": 11698.73,
+                "startingPrice": 94.53,
+                "numberAvailable": 2271,
+                "totalPostings": 623,
                 "links": [
                   {
                     "rel": [
@@ -13002,12 +13002,12 @@
             "tickets": [
               {
                 "id": "7419797",
-                "summary": "Tickets as low as $37",
+                "summary": "Tickets as low as $38",
                 "description": "NBA Cup - Boston Celtics at Washington Wizards",
-                "maxPrice": 4625.63,
-                "startingPrice": 37.67,
-                "numberAvailable": 1886,
-                "totalPostings": 420,
+                "maxPrice": 9225.54,
+                "startingPrice": 38.46,
+                "numberAvailable": 5169,
+                "totalPostings": 1013,
                 "links": [
                   {
                     "rel": [
@@ -13598,12 +13598,12 @@
             "tickets": [
               {
                 "id": "7419731",
-                "summary": "Tickets as low as $98",
+                "summary": "Tickets as low as $88",
                 "description": "NBA Cup - Atlanta Hawks at Boston Celtics",
-                "maxPrice": 9658.32,
-                "startingPrice": 98.26,
-                "numberAvailable": 2460,
-                "totalPostings": 629,
+                "maxPrice": 4674.56,
+                "startingPrice": 88.79,
+                "numberAvailable": 2907,
+                "totalPostings": 796,
                 "links": [
                   {
                     "rel": [
@@ -14189,12 +14189,12 @@
             "tickets": [
               {
                 "id": "7431068",
-                "summary": "Tickets as low as $84",
+                "summary": "Tickets as low as $83",
                 "description": "Boston Celtics at San Antonio Spurs",
-                "maxPrice": 6211.16,
-                "startingPrice": 84.52,
-                "numberAvailable": 2575,
-                "totalPostings": 539,
+                "maxPrice": 13250.89,
+                "startingPrice": 83.12,
+                "numberAvailable": 3412,
+                "totalPostings": 666,
                 "links": [
                   {
                     "rel": [
@@ -14780,12 +14780,12 @@
             "tickets": [
               {
                 "id": "7431359",
-                "summary": "Tickets as low as $63",
+                "summary": "Tickets as low as $64",
                 "description": "Boston Celtics at Dallas Mavericks",
-                "maxPrice": 5091,
-                "startingPrice": 63.47,
-                "numberAvailable": 1165,
-                "totalPostings": 217,
+                "maxPrice": 3125.31,
+                "startingPrice": 64.73,
+                "numberAvailable": 1592,
+                "totalPostings": 347,
                 "links": [
                   {
                     "rel": [
@@ -15371,12 +15371,12 @@
             "tickets": [
               {
                 "id": "7431828",
-                "summary": "Tickets as low as $54",
+                "summary": "Tickets as low as $49",
                 "description": "Charlotte Hornets at Boston Celtics",
-                "maxPrice": 5369.35,
-                "startingPrice": 54.14,
-                "numberAvailable": 2184,
-                "totalPostings": 566,
+                "maxPrice": 3481.22,
+                "startingPrice": 49.16,
+                "numberAvailable": 2695,
+                "totalPostings": 766,
                 "links": [
                   {
                     "rel": [
@@ -15962,12 +15962,12 @@
             "tickets": [
               {
                 "id": "7431962",
-                "summary": "Tickets as low as $56",
+                "summary": "Tickets as low as $53",
                 "description": "Boston Celtics at Brooklyn Nets",
-                "maxPrice": 9005.9,
-                "startingPrice": 56.61,
-                "numberAvailable": 2829,
-                "totalPostings": 636,
+                "maxPrice": 9029.11,
+                "startingPrice": 53.39,
+                "numberAvailable": 3624,
+                "totalPostings": 766,
                 "links": [
                   {
                     "rel": [
@@ -16553,12 +16553,12 @@
             "tickets": [
               {
                 "id": "7431736",
-                "summary": "Tickets as low as $65",
+                "summary": "Tickets as low as $56",
                 "description": "Washington Wizards at Boston Celtics",
-                "maxPrice": 7648.4,
-                "startingPrice": 65.68,
-                "numberAvailable": 2146,
-                "totalPostings": 549,
+                "maxPrice": 3481.22,
+                "startingPrice": 56.37,
+                "numberAvailable": 2762,
+                "totalPostings": 771,
                 "links": [
                   {
                     "rel": [
@@ -17163,12 +17163,12 @@
             "tickets": [
               {
                 "id": "7431740",
-                "summary": "Tickets as low as $57",
+                "summary": "Tickets as low as $44",
                 "description": "Washington Wizards at Boston Celtics",
-                "maxPrice": 7648.4,
-                "startingPrice": 57.37,
-                "numberAvailable": 2101,
-                "totalPostings": 536,
+                "maxPrice": 3481.22,
+                "startingPrice": 44.3,
+                "numberAvailable": 2715,
+                "totalPostings": 757,
                 "links": [
                   {
                     "rel": [
@@ -17780,12 +17780,12 @@
             "tickets": [
               {
                 "id": "7431695",
-                "summary": "Tickets as low as $87",
+                "summary": "Tickets as low as $78",
                 "description": "Utah Jazz at Boston Celtics",
-                "maxPrice": 10060.3,
-                "startingPrice": 87.48,
-                "numberAvailable": 2130,
-                "totalPostings": 549,
+                "maxPrice": 4674.56,
+                "startingPrice": 78,
+                "numberAvailable": 2790,
+                "totalPostings": 770,
                 "links": [
                   {
                     "rel": [
@@ -18371,12 +18371,12 @@
             "tickets": [
               {
                 "id": "7432220",
-                "summary": "Tickets as low as $98",
+                "summary": "Tickets as low as $84",
                 "description": "Detroit Pistons at Boston Celtics",
-                "maxPrice": 11266.24,
-                "startingPrice": 98.26,
-                "numberAvailable": 2143,
-                "totalPostings": 549,
+                "maxPrice": 4684.91,
+                "startingPrice": 84.73,
+                "numberAvailable": 2808,
+                "totalPostings": 779,
                 "links": [
                   {
                     "rel": [
@@ -18962,12 +18962,12 @@
             "tickets": [
               {
                 "id": "7432661",
-                "summary": "Tickets as low as $103",
+                "summary": "Tickets as low as $73",
                 "description": "Portland Trail Blazers at Boston Celtics",
-                "maxPrice": 42610.32,
-                "startingPrice": 103.62,
-                "numberAvailable": 2126,
-                "totalPostings": 548,
+                "maxPrice": 4684.91,
+                "startingPrice": 73.58,
+                "numberAvailable": 2769,
+                "totalPostings": 783,
                 "links": [
                   {
                     "rel": [
@@ -19590,12 +19590,12 @@
             "tickets": [
               {
                 "id": "7415389",
-                "summary": "Tickets as low as $158",
+                "summary": "Tickets as low as $166",
                 "description": "Miami Heat at Boston Celtics",
-                "maxPrice": 16939.42,
-                "startingPrice": 158.48,
-                "numberAvailable": 2699,
-                "totalPostings": 705,
+                "maxPrice": 8762.61,
+                "startingPrice": 166.33,
+                "numberAvailable": 2898,
+                "totalPostings": 820,
                 "links": [
                   {
                     "rel": [
@@ -20224,12 +20224,12 @@
             "tickets": [
               {
                 "id": "7431170",
-                "summary": "Tickets as low as $110",
+                "summary": "Tickets as low as $94",
                 "description": "Cleveland Cavaliers at Boston Celtics",
-                "maxPrice": 12070.2,
-                "startingPrice": 110.07,
-                "numberAvailable": 2232,
-                "totalPostings": 583,
+                "maxPrice": 5018.94,
+                "startingPrice": 94.5,
+                "numberAvailable": 2824,
+                "totalPostings": 789,
                 "links": [
                   {
                     "rel": [
@@ -20815,12 +20815,12 @@
             "tickets": [
               {
                 "id": "7432077",
-                "summary": "Tickets as low as $131",
+                "summary": "Tickets as low as $121",
                 "description": "Boston Celtics at Chicago Bulls",
-                "maxPrice": 3547.93,
-                "startingPrice": 131.83,
-                "numberAvailable": 1029,
-                "totalPostings": 236,
+                "maxPrice": 3593.62,
+                "startingPrice": 121.25,
+                "numberAvailable": 1260,
+                "totalPostings": 320,
                 "links": [
                   {
                     "rel": [
@@ -21406,12 +21406,12 @@
             "tickets": [
               {
                 "id": "7431708",
-                "summary": "Tickets as low as $57",
+                "summary": "Tickets as low as $53",
                 "description": "Boston Celtics at Utah Jazz",
-                "maxPrice": 3511.81,
-                "startingPrice": 57.85,
-                "numberAvailable": 1079,
-                "totalPostings": 273,
+                "maxPrice": 1575.99,
+                "startingPrice": 53.72,
+                "numberAvailable": 2087,
+                "totalPostings": 496,
                 "links": [
                   {
                     "rel": [
@@ -21999,10 +21999,10 @@
                 "id": "7432663",
                 "summary": "Tickets as low as $52",
                 "description": "Boston Celtics at Portland Trail Blazers",
-                "maxPrice": 4227.36,
-                "startingPrice": 52.49,
-                "numberAvailable": 2829,
-                "totalPostings": 649,
+                "maxPrice": 4547.5,
+                "startingPrice": 52.62,
+                "numberAvailable": 3357,
+                "totalPostings": 876,
                 "links": [
                   {
                     "rel": [
@@ -22588,12 +22588,12 @@
             "tickets": [
               {
                 "id": "7431579",
-                "summary": "Tickets as low as $46",
+                "summary": "Tickets as low as $44",
                 "description": "Boston Celtics at Phoenix Suns",
-                "maxPrice": 10389.1,
-                "startingPrice": 46.12,
-                "numberAvailable": 1269,
-                "totalPostings": 333,
+                "maxPrice": 10415.87,
+                "startingPrice": 44.45,
+                "numberAvailable": 2699,
+                "totalPostings": 625,
                 "links": [
                   {
                     "rel": [
@@ -23196,12 +23196,12 @@
             "tickets": [
               {
                 "id": "7432378",
-                "summary": "Tickets as low as $131",
+                "summary": "Tickets as low as $107",
                 "description": "Boston Celtics at Los Angeles Lakers",
-                "maxPrice": 17668.61,
-                "startingPrice": 131.63,
-                "numberAvailable": 1814,
-                "totalPostings": 511,
+                "maxPrice": 17714.14,
+                "startingPrice": 107.13,
+                "numberAvailable": 2405,
+                "totalPostings": 712,
                 "links": [
                   {
                     "rel": [
@@ -23787,12 +23787,12 @@
             "tickets": [
               {
                 "id": "7432330",
-                "summary": "Tickets as low as $66",
+                "summary": "Tickets as low as $63",
                 "description": "Boston Celtics at LA Clippers",
-                "maxPrice": 242911.45,
-                "startingPrice": 66,
-                "numberAvailable": 3007,
-                "totalPostings": 529,
+                "maxPrice": 243537.51,
+                "startingPrice": 63.69,
+                "numberAvailable": 3564,
+                "totalPostings": 647,
                 "links": [
                   {
                     "rel": [
@@ -24378,12 +24378,12 @@
             "tickets": [
               {
                 "id": "7432508",
-                "summary": "Tickets as low as $97",
+                "summary": "Tickets as low as $89",
                 "description": "Houston Rockets at Boston Celtics",
-                "maxPrice": 10591.62,
-                "startingPrice": 97.16,
-                "numberAvailable": 2124,
-                "totalPostings": 536,
+                "maxPrice": 4331.66,
+                "startingPrice": 89.62,
+                "numberAvailable": 2695,
+                "totalPostings": 741,
                 "links": [
                   {
                     "rel": [
@@ -24988,12 +24988,12 @@
             "tickets": [
               {
                 "id": "7432540",
-                "summary": "Tickets as low as $154",
+                "summary": "Tickets as low as $145",
                 "description": "New York Knicks at Boston Celtics",
-                "maxPrice": 11266.24,
-                "startingPrice": 154.3,
-                "numberAvailable": 2179,
-                "totalPostings": 562,
+                "maxPrice": 6662.46,
+                "startingPrice": 145.94,
+                "numberAvailable": 2783,
+                "totalPostings": 761,
                 "links": [
                   {
                     "rel": [
@@ -25605,12 +25605,12 @@
             "tickets": [
               {
                 "id": "7431990",
-                "summary": "Tickets as low as $89",
+                "summary": "Tickets as low as $80",
                 "description": "Brooklyn Nets at Boston Celtics",
-                "maxPrice": 9256.33,
-                "startingPrice": 89.42,
-                "numberAvailable": 2112,
-                "totalPostings": 540,
+                "maxPrice": 5000.92,
+                "startingPrice": 80.9,
+                "numberAvailable": 2753,
+                "totalPostings": 745,
                 "links": [
                   {
                     "rel": [
@@ -26196,12 +26196,12 @@
             "tickets": [
               {
                 "id": "7431792",
-                "summary": "Tickets as low as $46",
+                "summary": "Tickets as low as $44",
                 "description": "Boston Celtics at Washington Wizards",
-                "maxPrice": 6359.31,
-                "startingPrice": 46.12,
-                "numberAvailable": 1705,
-                "totalPostings": 377,
+                "maxPrice": 9507.9,
+                "startingPrice": 44.99,
+                "numberAvailable": 4284,
+                "totalPostings": 852,
                 "links": [
                   {
                     "rel": [
@@ -26787,12 +26787,12 @@
             "tickets": [
               {
                 "id": "7432739",
-                "summary": "Tickets as low as $74",
+                "summary": "Tickets as low as $52",
                 "description": "Indiana Pacers at Boston Celtics",
-                "maxPrice": 8476.84,
-                "startingPrice": 74.51,
-                "numberAvailable": 2124,
-                "totalPostings": 540,
+                "maxPrice": 3481.22,
+                "startingPrice": 52.51,
+                "numberAvailable": 2674,
+                "totalPostings": 732,
                 "links": [
                   {
                     "rel": [
@@ -27397,10 +27397,10 @@
                 "id": "7432611",
                 "summary": "Tickets as low as $346",
                 "description": "Philadelphia 76ers at Boston Celtics",
-                "maxPrice": 20109.83,
-                "startingPrice": 346.9,
-                "numberAvailable": 2087,
-                "totalPostings": 542,
+                "maxPrice": 8361.64,
+                "startingPrice": 346.58,
+                "numberAvailable": 2755,
+                "totalPostings": 721,
                 "links": [
                   {
                     "rel": [
@@ -27986,12 +27986,12 @@
             "tickets": [
               {
                 "id": "7432713",
-                "summary": "Tickets as low as $97",
+                "summary": "Tickets as low as $80",
                 "description": "Charlotte Hornets at Boston Celtics",
-                "maxPrice": 9256.33,
-                "startingPrice": 97.16,
-                "numberAvailable": 2118,
-                "totalPostings": 535,
+                "maxPrice": 11698.73,
+                "startingPrice": 80.9,
+                "numberAvailable": 2802,
+                "totalPostings": 752,
                 "links": [
                   {
                     "rel": [
@@ -28594,12 +28594,12 @@
             "tickets": [
               {
                 "id": "7432679",
-                "summary": "Tickets as low as $67",
+                "summary": "Tickets as low as $52",
                 "description": "Toronto Raptors at Boston Celtics",
-                "maxPrice": 4834.54,
-                "startingPrice": 67.86,
-                "numberAvailable": 2091,
-                "totalPostings": 527,
+                "maxPrice": 3481.22,
+                "startingPrice": 52.51,
+                "numberAvailable": 2650,
+                "totalPostings": 722,
                 "links": [
                   {
                     "rel": [
@@ -29185,12 +29185,12 @@
             "tickets": [
               {
                 "id": "7432342",
-                "summary": "Tickets as low as $59",
+                "summary": "Tickets as low as $50",
                 "description": "LA Clippers at Boston Celtics",
-                "maxPrice": 8476.84,
-                "startingPrice": 59.91,
-                "numberAvailable": 1929,
-                "totalPostings": 479,
+                "maxPrice": 3481.22,
+                "startingPrice": 50.78,
+                "numberAvailable": 2558,
+                "totalPostings": 699,
                 "links": [
                   {
                     "rel": [
@@ -29776,12 +29776,12 @@
             "tickets": [
               {
                 "id": "7432621",
-                "summary": "Tickets as low as $90",
+                "summary": "Tickets as low as $80",
                 "description": "Phoenix Suns at Boston Celtics",
-                "maxPrice": 9256.33,
-                "startingPrice": 90.71,
-                "numberAvailable": 2123,
-                "totalPostings": 536,
+                "maxPrice": 4331.66,
+                "startingPrice": 80.9,
+                "numberAvailable": 2698,
+                "totalPostings": 732,
                 "links": [
                   {
                     "rel": [
@@ -30367,12 +30367,12 @@
             "tickets": [
               {
                 "id": "7432681",
-                "summary": "Tickets as low as $99",
+                "summary": "Tickets as low as $97",
                 "description": "Boston Celtics at Toronto Raptors",
-                "maxPrice": 2244.8,
-                "startingPrice": 99.72,
-                "numberAvailable": 222,
-                "totalPostings": 52,
+                "maxPrice": 2250.59,
+                "startingPrice": 97.92,
+                "numberAvailable": 373,
+                "totalPostings": 81,
                 "links": [
                   {
                     "rel": [
@@ -30975,12 +30975,12 @@
             "tickets": [
               {
                 "id": "7432394",
-                "summary": "Tickets as low as $140",
+                "summary": "Tickets as low as $119",
                 "description": "Los Angeles Lakers at Boston Celtics",
-                "maxPrice": 9256.33,
-                "startingPrice": 140.18,
-                "numberAvailable": 2233,
-                "totalPostings": 575,
+                "maxPrice": 7173.31,
+                "startingPrice": 119.58,
+                "numberAvailable": 2947,
+                "totalPostings": 807,
                 "links": [
                   {
                     "rel": [
@@ -31583,12 +31583,12 @@
             "tickets": [
               {
                 "id": "7432717",
-                "summary": "Tickets as low as $30",
+                "summary": "Tickets as low as $29",
                 "description": "Boston Celtics at Charlotte Hornets",
-                "maxPrice": 2882.12,
-                "startingPrice": 30.35,
-                "numberAvailable": 1717,
-                "totalPostings": 387,
+                "maxPrice": 2919.23,
+                "startingPrice": 29.97,
+                "numberAvailable": 2355,
+                "totalPostings": 478,
                 "links": [
                   {
                     "rel": [
@@ -32174,12 +32174,12 @@
             "tickets": [
               {
                 "id": "7432120",
-                "summary": "Tickets as low as $212",
+                "summary": "Tickets as low as $78",
                 "description": "Boston Celtics at Atlanta Hawks",
-                "maxPrice": 8208.58,
-                "startingPrice": 212.31,
-                "numberAvailable": 343,
-                "totalPostings": 118,
+                "maxPrice": 11698.73,
+                "startingPrice": 78.78,
+                "numberAvailable": 2708,
+                "totalPostings": 763,
                 "links": [
                   {
                     "rel": [
@@ -32782,12 +32782,12 @@
             "tickets": [
               {
                 "id": "7432617",
-                "summary": "Tickets as low as $212",
+                "summary": "Tickets as low as $195",
                 "description": "Boston Celtics at Philadelphia 76ers",
-                "maxPrice": 24970.3,
-                "startingPrice": 212.29,
-                "numberAvailable": 1610,
-                "totalPostings": 506,
+                "maxPrice": 24262.45,
+                "startingPrice": 195.08,
+                "numberAvailable": 2008,
+                "totalPostings": 620,
                 "links": [
                   {
                     "rel": [
@@ -33373,12 +33373,12 @@
             "tickets": [
               {
                 "id": "7432256",
-                "summary": "Tickets as low as $97",
+                "summary": "Tickets as low as $89",
                 "description": "Denver Nuggets at Boston Celtics",
-                "maxPrice": 10591.62,
-                "startingPrice": 97.47,
-                "numberAvailable": 2063,
-                "totalPostings": 525,
+                "maxPrice": 4331.66,
+                "startingPrice": 89.62,
+                "numberAvailable": 2612,
+                "totalPostings": 711,
                 "links": [
                   {
                     "rel": [
@@ -33983,12 +33983,12 @@
             "tickets": [
               {
                 "id": "7431308",
-                "summary": "Tickets as low as $110",
+                "summary": "Tickets as low as $104",
                 "description": "Golden State Warriors at Boston Celtics",
-                "maxPrice": 10060.3,
-                "startingPrice": 110.07,
-                "numberAvailable": 2135,
-                "totalPostings": 538,
+                "maxPrice": 6662.46,
+                "startingPrice": 104.83,
+                "numberAvailable": 2712,
+                "totalPostings": 736,
                 "links": [
                   {
                     "rel": [
@@ -34617,12 +34617,12 @@
             "tickets": [
               {
                 "id": "7431525",
-                "summary": "Tickets as low as $130",
+                "summary": "Tickets as low as $120",
                 "description": "Minnesota Timberwolves at Boston Celtics",
-                "maxPrice": 9658.32,
-                "startingPrice": 130.51,
-                "numberAvailable": 2096,
-                "totalPostings": 529,
+                "maxPrice": 5167.93,
+                "startingPrice": 120.07,
+                "numberAvailable": 2680,
+                "totalPostings": 728,
                 "links": [
                   {
                     "rel": [
@@ -35208,12 +35208,12 @@
             "tickets": [
               {
                 "id": "7432683",
-                "summary": "Tickets as low as $102",
+                "summary": "Tickets as low as $96",
                 "description": "Toronto Raptors at Boston Celtics",
-                "maxPrice": 9256.33,
-                "startingPrice": 102.54,
-                "numberAvailable": 2049,
-                "totalPostings": 522,
+                "maxPrice": 4114.18,
+                "startingPrice": 96.32,
+                "numberAvailable": 2560,
+                "totalPostings": 702,
                 "links": [
                   {
                     "rel": [
@@ -35818,12 +35818,12 @@
             "tickets": [
               {
                 "id": "7432719",
-                "summary": "Tickets as low as $60",
+                "summary": "Tickets as low as $57",
                 "description": "Boston Celtics at Oklahoma City Thunder",
-                "maxPrice": 1776.88,
-                "startingPrice": 60.93,
-                "numberAvailable": 812,
-                "totalPostings": 214,
+                "maxPrice": 2244.84,
+                "startingPrice": 57.5,
+                "numberAvailable": 1129,
+                "totalPostings": 305,
                 "links": [
                   {
                     "rel": [
@@ -36435,12 +36435,12 @@
             "tickets": [
               {
                 "id": "7431910",
-                "summary": "Tickets as low as $27",
+                "summary": "Tickets as low as $32",
                 "description": "Boston Celtics at Memphis Grizzlies",
-                "maxPrice": 2314.07,
-                "startingPrice": 27.1,
-                "numberAvailable": 974,
-                "totalPostings": 213,
+                "maxPrice": 2319.84,
+                "startingPrice": 32.29,
+                "numberAvailable": 1208,
+                "totalPostings": 277,
                 "links": [
                   {
                     "rel": [
@@ -37045,12 +37045,12 @@
             "tickets": [
               {
                 "id": "7431226",
-                "summary": "Tickets as low as $106",
+                "summary": "Tickets as low as $100",
                 "description": "Cleveland Cavaliers at Boston Celtics",
-                "maxPrice": 5384.95,
-                "startingPrice": 106.87,
-                "numberAvailable": 2153,
-                "totalPostings": 545,
+                "maxPrice": 5000.92,
+                "startingPrice": 100.51,
+                "numberAvailable": 2680,
+                "totalPostings": 723,
                 "links": [
                   {
                     "rel": [
@@ -37679,12 +37679,12 @@
             "tickets": [
               {
                 "id": "7431543",
-                "summary": "Tickets as low as $304",
+                "summary": "Tickets as low as $300",
                 "description": "Boston Celtics at Minnesota Timberwolves (Kevin Garnett Jersey Retirement)",
-                "maxPrice": 4134.56,
-                "startingPrice": 304.7,
-                "numberAvailable": 352,
-                "totalPostings": 108,
+                "maxPrice": 3836.4,
+                "startingPrice": 300.14,
+                "numberAvailable": 588,
+                "totalPostings": 166,
                 "links": [
                   {
                     "rel": [
@@ -38270,12 +38270,12 @@
             "tickets": [
               {
                 "id": "7432741",
-                "summary": "Tickets as low as $33",
+                "summary": "Tickets as low as $31",
                 "description": "Boston Celtics at Indiana Pacers",
-                "maxPrice": 3830.11,
-                "startingPrice": 33.54,
-                "numberAvailable": 1603,
-                "totalPostings": 361,
+                "maxPrice": 11698.73,
+                "startingPrice": 31.88,
+                "numberAvailable": 2321,
+                "totalPostings": 510,
                 "links": [
                   {
                     "rel": [
@@ -38882,10 +38882,10 @@
                 "id": "7432280",
                 "summary": "Tickets as low as $56",
                 "description": "Boston Celtics at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 56.26,
-                "numberAvailable": 2247,
-                "totalPostings": 462,
+                "maxPrice": 3031.63,
+                "startingPrice": 56.4,
+                "numberAvailable": 3565,
+                "totalPostings": 705,
                 "links": [
                   {
                     "rel": [
@@ -39516,12 +39516,12 @@
             "tickets": [
               {
                 "id": "7432627",
-                "summary": "Tickets as low as $284",
+                "summary": "Tickets as low as $251",
                 "description": "Philadelphia 76ers at Boston Celtics",
-                "maxPrice": 20109.83,
-                "startingPrice": 284.34,
-                "numberAvailable": 2127,
-                "totalPostings": 548,
+                "maxPrice": 8361.64,
+                "startingPrice": 251.63,
+                "numberAvailable": 2772,
+                "totalPostings": 735,
                 "links": [
                   {
                     "rel": [
@@ -40133,12 +40133,12 @@
             "tickets": [
               {
                 "id": "7432178",
-                "summary": "Tickets as low as $87",
+                "summary": "Tickets as low as $83",
                 "description": "Boston Celtics at Chicago Bulls",
-                "maxPrice": 3547.93,
-                "startingPrice": 87.27,
-                "numberAvailable": 1057,
-                "totalPostings": 238,
+                "maxPrice": 3593.62,
+                "startingPrice": 83.11,
+                "numberAvailable": 1136,
+                "totalPostings": 262,
                 "links": [
                   {
                     "rel": [
@@ -40724,12 +40724,12 @@
             "tickets": [
               {
                 "id": "7431932",
-                "summary": "Tickets as low as $69",
+                "summary": "Tickets as low as $56",
                 "description": "Memphis Grizzlies at Boston Celtics",
-                "maxPrice": 7602.96,
-                "startingPrice": 69.01,
-                "numberAvailable": 2035,
-                "totalPostings": 513,
+                "maxPrice": 3481.22,
+                "startingPrice": 56.37,
+                "numberAvailable": 2673,
+                "totalPostings": 722,
                 "links": [
                   {
                     "rel": [
@@ -41332,12 +41332,12 @@
             "tickets": [
               {
                 "id": "7432723",
-                "summary": "Tickets as low as $127",
+                "summary": "Tickets as low as $114",
                 "description": "Oklahoma City Thunder at Boston Celtics",
-                "maxPrice": 12706.38,
-                "startingPrice": 127.86,
-                "numberAvailable": 2077,
-                "totalPostings": 528,
+                "maxPrice": 5000.92,
+                "startingPrice": 114.9,
+                "numberAvailable": 2801,
+                "totalPostings": 752,
                 "links": [
                   {
                     "rel": [
@@ -41942,12 +41942,12 @@
             "tickets": [
               {
                 "id": "7432580",
-                "summary": "Tickets as low as $366",
+                "summary": "Tickets as low as $367",
                 "description": "Boston Celtics at New York Knicks",
-                "maxPrice": 14517.03,
-                "startingPrice": 366.73,
-                "numberAvailable": 781,
-                "totalPostings": 255,
+                "maxPrice": 20120.07,
+                "startingPrice": 367.7,
+                "numberAvailable": 893,
+                "totalPostings": 301,
                 "links": [
                   {
                     "rel": [
@@ -42559,12 +42559,12 @@
             "tickets": [
               {
                 "id": "7431670",
-                "summary": "Tickets as low as $61",
+                "summary": "Tickets as low as $45",
                 "description": "Sacramento Kings at Boston Celtics",
-                "maxPrice": 8476.84,
-                "startingPrice": 61.25,
-                "numberAvailable": 2046,
-                "totalPostings": 517,
+                "maxPrice": 3481.22,
+                "startingPrice": 45.15,
+                "numberAvailable": 2638,
+                "totalPostings": 714,
                 "links": [
                   {
                     "rel": [
@@ -43150,12 +43150,12 @@
             "tickets": [
               {
                 "id": "7432578",
-                "summary": "Tickets as low as $67",
+                "summary": "Tickets as low as $62",
                 "description": "Orlando Magic at Boston Celtics",
-                "maxPrice": 7602.96,
-                "startingPrice": 67.05,
-                "numberAvailable": 2112,
-                "totalPostings": 531,
+                "maxPrice": 3481.22,
+                "startingPrice": 62.55,
+                "numberAvailable": 2632,
+                "totalPostings": 693,
                 "links": [
                   {
                     "rel": [
@@ -43741,12 +43741,12 @@
             "tickets": [
               {
                 "id": "7432181",
-                "summary": "Tickets as low as $84",
+                "summary": "Tickets as low as $81",
                 "description": "New Orleans Pelicans at Boston Celtics",
-                "maxPrice": 9612.88,
-                "startingPrice": 84.25,
-                "numberAvailable": 2044,
-                "totalPostings": 515,
+                "maxPrice": 3997.63,
+                "startingPrice": 81.23,
+                "numberAvailable": 2552,
+                "totalPostings": 696,
                 "links": [
                   {
                     "rel": [
@@ -44332,12 +44332,12 @@
             "tickets": [
               {
                 "id": "7432038",
-                "summary": "Tickets as low as $55",
+                "summary": "Tickets as low as $52",
                 "description": "Boston Celtics at Brooklyn Nets",
-                "maxPrice": 13550.53,
-                "startingPrice": 55.42,
-                "numberAvailable": 3089,
-                "totalPostings": 670,
+                "maxPrice": 13585.46,
+                "startingPrice": 52.9,
+                "numberAvailable": 4740,
+                "totalPostings": 907,
                 "links": [
                   {
                     "rel": [
@@ -44942,12 +44942,12 @@
             "tickets": [
               {
                 "id": "7432705",
-                "summary": "Tickets as low as $169",
+                "summary": "Tickets as low as $162",
                 "description": "San Antonio Spurs at Boston Celtics",
-                "maxPrice": 12426.74,
-                "startingPrice": 169.06,
-                "numberAvailable": 2115,
-                "totalPostings": 546,
+                "maxPrice": 5167.93,
+                "startingPrice": 162.63,
+                "numberAvailable": 2689,
+                "totalPostings": 736,
                 "links": [
                   {
                     "rel": [
@@ -45561,10 +45561,10 @@
                 "id": "7432484",
                 "summary": "Tickets as low as $99",
                 "description": "Boston Celtics at Miami Heat",
-                "maxPrice": 20615.09,
-                "startingPrice": 99.4,
-                "numberAvailable": 2329,
-                "totalPostings": 563,
+                "maxPrice": 20667.14,
+                "startingPrice": 99.66,
+                "numberAvailable": 2551,
+                "totalPostings": 627,
                 "links": [
                   {
                     "rel": [
@@ -46152,10 +46152,10 @@
                 "id": "7432191",
                 "summary": "Tickets as low as $32",
                 "description": "Boston Celtics at New Orleans Pelicans",
-                "maxPrice": 2993.09,
-                "startingPrice": 32.39,
-                "numberAvailable": 2298,
-                "totalPostings": 464,
+                "maxPrice": 3031.63,
+                "startingPrice": 32.47,
+                "numberAvailable": 2716,
+                "totalPostings": 561,
                 "links": [
                   {
                     "rel": [
@@ -46741,12 +46741,12 @@
             "tickets": [
               {
                 "id": "7432749",
-                "summary": "Tickets as low as $34",
+                "summary": "Tickets as low as $33",
                 "description": "Boston Celtics at Indiana Pacers",
-                "maxPrice": 4084.97,
-                "startingPrice": 34.13,
-                "numberAvailable": 1576,
-                "totalPostings": 353,
+                "maxPrice": 11698.73,
+                "startingPrice": 33.03,
+                "numberAvailable": 2289,
+                "totalPostings": 504,
                 "links": [
                   {
                     "rel": [
@@ -47351,10 +47351,10 @@
                 "id": "7432751",
                 "summary": "Tickets as low as $48",
                 "description": "Boston Celtics at Cleveland Cavaliers",
-                "maxPrice": 7098.9,
-                "startingPrice": 48.15,
-                "numberAvailable": 2115,
-                "totalPostings": 608,
+                "maxPrice": 11698.73,
+                "startingPrice": 48.25,
+                "numberAvailable": 2701,
+                "totalPostings": 763,
                 "links": [
                   {
                     "rel": [
@@ -47940,12 +47940,12 @@
             "tickets": [
               {
                 "id": "7432491",
-                "summary": "Tickets as low as $125",
+                "summary": "Tickets as low as $97",
                 "description": "Miami Heat at Boston Celtics",
-                "maxPrice": 10014.86,
-                "startingPrice": 125.84,
-                "numberAvailable": 2078,
-                "totalPostings": 532,
+                "maxPrice": 6662.46,
+                "startingPrice": 97.36,
+                "numberAvailable": 2708,
+                "totalPostings": 726,
                 "links": [
                   {
                     "rel": [
@@ -48548,12 +48548,12 @@
             "tickets": [
               {
                 "id": "7432597",
-                "summary": "Tickets as low as $371",
+                "summary": "Tickets as low as $372",
                 "description": "Boston Celtics at New York Knicks",
-                "maxPrice": 14517.03,
-                "startingPrice": 371.97,
-                "numberAvailable": 755,
-                "totalPostings": 244,
+                "maxPrice": 20120.07,
+                "startingPrice": 372.95,
+                "numberAvailable": 861,
+                "totalPostings": 287,
                 "links": [
                   {
                     "rel": [
@@ -49141,10 +49141,10 @@
                 "id": "7432599",
                 "summary": "Tickets as low as $79",
                 "description": "Boston Celtics at Orlando Magic",
-                "maxPrice": 4796.32,
-                "startingPrice": 79.34,
-                "numberAvailable": 2924,
-                "totalPostings": 660,
+                "maxPrice": 4808.67,
+                "startingPrice": 79.54,
+                "numberAvailable": 3449,
+                "totalPostings": 772,
                 "links": [
                   {
                     "rel": [
@@ -49730,12 +49730,12 @@
             "tickets": [
               {
                 "id": "7432743",
-                "summary": "Tickets as low as $212",
+                "summary": "Tickets as low as $87",
                 "description": "Boston Celtics at Atlanta Hawks",
-                "maxPrice": 8208.58,
-                "startingPrice": 212.31,
-                "numberAvailable": 371,
-                "totalPostings": 129,
+                "maxPrice": 11698.73,
+                "startingPrice": 87.5,
+                "numberAvailable": 2740,
+                "totalPostings": 773,
                 "links": [
                   {
                     "rel": [
@@ -50323,10 +50323,10 @@
                 "id": "7432503",
                 "summary": "Tickets as low as $87",
                 "description": "Milwaukee Bucks at Boston Celtics",
-                "maxPrice": 9612.88,
-                "startingPrice": 87.48,
-                "numberAvailable": 2031,
-                "totalPostings": 522,
+                "maxPrice": 3997.63,
+                "startingPrice": 87.5,
+                "numberAvailable": 2611,
+                "totalPostings": 721,
                 "links": [
                   {
                     "rel": [

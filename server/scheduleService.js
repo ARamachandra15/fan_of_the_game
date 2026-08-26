@@ -260,6 +260,54 @@ function mapSoccerEventToGame(event, teamId, normalizedLeague) {
   };
 }
 
+export async function fetchEspnTeamRecord(leagueKey, teamName) {
+  const normalizedLeague = normalizeLeagueKey(leagueKey);
+  const config = getLeagueConfig(normalizedLeague);
+  if (!config) {
+    throw new Error(`Unsupported league for ESPN team record lookup: ${leagueKey}`);
+  }
+
+  const teamId = await resolveEspnTeamId(normalizedLeague, teamName);
+  const url = `${ESPN_BASE}/${config.sport}/${config.league}/teams/${teamId}`;
+  const response = await fetch(url);
+  const rawText = await response.text();
+
+  if (response.status === 429) {
+    const error = new Error('ESPN rate limited, try again shortly.');
+    error.status = 429;
+    throw error;
+  }
+  if (!response.ok) {
+    const error = new Error(`ESPN team record lookup failed for ${teamName}: HTTP ${response.status}`);
+    error.status = response.status;
+    error.details = rawText;
+    throw error;
+  }
+
+  let payload;
+  try {
+    payload = JSON.parse(rawText);
+  } catch {
+    const error = new Error('ESPN returned a non-JSON team payload.');
+    error.status = 500;
+    throw error;
+  }
+
+  const team = payload?.team ?? {};
+  const recordItems = Array.isArray(team?.record?.items) ? team.record.items : [];
+  const totalRecord = recordItems.find((item) => item?.type === 'total') ?? recordItems[0] ?? null;
+
+  return {
+    teamId: String(teamId),
+    league: normalizedLeague,
+    teamName,
+    standingSummary: team?.standingSummary ?? null,
+    recordSummary: totalRecord?.summary ?? null,
+    recordType: totalRecord?.type ?? null,
+    recordRaw: team?.record ?? {},
+  };
+}
+
 export async function fetchEspnTeamSchedule(leagueKey, teamName, options = {}) {
   const { forceRefresh = false } = options;
   const normalizedLeague = normalizeLeagueKey(leagueKey);

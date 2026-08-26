@@ -3,7 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import fs from 'node:fs';
 import path from 'node:path';
-import { fetchEspnTeamSchedule, normalizeLeagueKey } from './scheduleService.js';
+import { fetchEspnTeamRecord, fetchEspnTeamSchedule, normalizeLeagueKey } from './scheduleService.js';
 
 dotenv.config();
 
@@ -27,6 +27,43 @@ app.get('/api/sports/:league', async (req, res) => {
     return res.status(400).json({
       error: 'A selected team name is required for ESPN schedule fetches.',
       example: '/api/sports/nfl?team=Houston%20Texans',
+    });
+
+    app.get('/api/team-profile/:league', async (req, res) => {
+      const { league } = req.params;
+      const normalizedLeague = normalizeLeagueKey(league);
+      const teamName = typeof req.query.team === 'string' ? decodeURIComponent(req.query.team) : null;
+
+      if (!teamName) {
+        return res.status(400).json({
+          error: 'A selected team name is required for ESPN team profile lookup.',
+          example: '/api/team-profile/nba?team=Houston%20Rockets',
+        });
+      }
+
+      try {
+        const profile = await fetchEspnTeamRecord(normalizedLeague, teamName);
+        return res.json({
+          ...profile,
+          source: 'espn-team-endpoint',
+        });
+      } catch (error) {
+        const message = error instanceof Error ? error.message : String(error);
+        const status = Number(error?.status ?? 500);
+        if (message.toLowerCase().includes('rate limited') || status === 429) {
+          return res.status(429).json({
+            error: 'ESPN rate limited, try again shortly.',
+            details: message,
+          });
+        }
+
+        return res.status(status || 500).json({
+          error: message,
+          details: error?.details ?? null,
+          league: normalizedLeague,
+          team: teamName,
+        });
+      }
     });
   }
 

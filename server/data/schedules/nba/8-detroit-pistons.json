@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-18T07:26:07.229Z",
+  "fetchedAt": "2026-08-26T01:54:17.687Z",
   "source": "ESPN",
   "league": "nba",
   "teamId": "8",
@@ -491,12 +491,12 @@
             "tickets": [
               {
                 "id": "7364789",
-                "summary": "Tickets as low as $22",
+                "summary": "Tickets as low as $23",
                 "description": "NBA Preseason - Phoenix Suns at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 22.96,
-                "numberAvailable": 4875,
-                "totalPostings": 1129,
+                "maxPrice": 3031.63,
+                "startingPrice": 23.02,
+                "numberAvailable": 5829,
+                "totalPostings": 1307,
                 "links": [
                   {
                     "rel": [
@@ -1082,12 +1082,12 @@
             "tickets": [
               {
                 "id": "7406932",
-                "summary": "Tickets as low as $25",
+                "summary": "Tickets as low as $12",
                 "description": "NBA Preseason - Detroit Pistons at Washington Wizards",
-                "maxPrice": 2660.18,
-                "startingPrice": 25.56,
-                "numberAvailable": 752,
-                "totalPostings": 226,
+                "maxPrice": 11698.73,
+                "startingPrice": 12.8,
+                "numberAvailable": 3288,
+                "totalPostings": 745,
                 "links": [
                   {
                     "rel": [
@@ -1673,12 +1673,12 @@
             "tickets": [
               {
                 "id": "7400038",
-                "summary": "Tickets as low as $35",
+                "summary": "Tickets as low as $40",
                 "description": "NBA Preseason - Toronto Raptors at Detroit Pistons",
-                "maxPrice": 11957.3,
-                "startingPrice": 35.55,
-                "numberAvailable": 3197,
-                "totalPostings": 681,
+                "maxPrice": 3144.03,
+                "startingPrice": 40.45,
+                "numberAvailable": 3710,
+                "totalPostings": 756,
                 "links": [
                   {
                     "rel": [
@@ -2283,10 +2283,10 @@
                 "id": "7415479",
                 "summary": "Tickets as low as $36",
                 "description": "Boston Celtics at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 36.23,
-                "numberAvailable": 2474,
-                "totalPostings": 575,
+                "maxPrice": 3144.03,
+                "startingPrice": 36.32,
+                "numberAvailable": 3502,
+                "totalPostings": 771,
                 "links": [
                   {
                     "rel": [
@@ -2872,12 +2872,12 @@
             "tickets": [
               {
                 "id": "7432867",
-                "summary": "Tickets as low as $62",
+                "summary": "Tickets as low as $58",
                 "description": "Detroit Pistons at Miami Heat",
-                "maxPrice": 13596.08,
-                "startingPrice": 62.65,
-                "numberAvailable": 2338,
-                "totalPostings": 595,
+                "maxPrice": 13631.11,
+                "startingPrice": 58.07,
+                "numberAvailable": 2799,
+                "totalPostings": 762,
                 "links": [
                   {
                     "rel": [
@@ -3463,12 +3463,12 @@
             "tickets": [
               {
                 "id": "7433080",
-                "summary": "Tickets as low as $96",
+                "summary": "Tickets as low as $88",
                 "description": "Detroit Pistons at Philadelphia 76ers",
-                "maxPrice": 11670.13,
-                "startingPrice": 96.72,
-                "numberAvailable": 1731,
-                "totalPostings": 526,
+                "maxPrice": 10784.7,
+                "startingPrice": 88.78,
+                "numberAvailable": 2045,
+                "totalPostings": 629,
                 "links": [
                   {
                     "rel": [
@@ -4071,12 +4071,12 @@
             "tickets": [
               {
                 "id": "7432929",
-                "summary": "Tickets as low as $322",
+                "summary": "Tickets as low as $281",
                 "description": "Detroit Pistons at New York Knicks",
-                "maxPrice": 11613.62,
-                "startingPrice": 322.32,
-                "numberAvailable": 1162,
-                "totalPostings": 369,
+                "maxPrice": 11883.02,
+                "startingPrice": 281.5,
+                "numberAvailable": 1313,
+                "totalPostings": 425,
                 "links": [
                   {
                     "rel": [
@@ -4664,10 +4664,10 @@
                 "id": "7432765",
                 "summary": "Tickets as low as $36",
                 "description": "Charlotte Hornets at Detroit Pistons",
-                "maxPrice": 11670.13,
-                "startingPrice": 36.23,
-                "numberAvailable": 2397,
-                "totalPostings": 496,
+                "maxPrice": 3031.63,
+                "startingPrice": 36.32,
+                "numberAvailable": 3718,
+                "totalPostings": 745,
                 "links": [
                   {
                     "rel": [
@@ -5258,12 +5258,12 @@
             "tickets": [
               {
                 "id": "7418359",
-                "summary": "Tickets as low as $46",
+                "summary": "Tickets as low as $38",
                 "description": "NBA Cup - Detroit Pistons at Brooklyn Nets",
-                "maxPrice": 6280.88,
-                "startingPrice": 46.73,
-                "numberAvailable": 2670,
-                "totalPostings": 620,
+                "maxPrice": 6297.07,
+                "startingPrice": 38.88,
+                "numberAvailable": 3650,
+                "totalPostings": 799,
                 "links": [
                   {
                     "rel": [
@@ -5849,12 +5849,12 @@
             "tickets": [
               {
                 "id": "7432769",
-                "summary": "Tickets as low as $14",
+                "summary": "Tickets as low as $13",
                 "description": "Detroit Pistons at Charlotte Hornets",
-                "maxPrice": 2882.12,
-                "startingPrice": 14,
-                "numberAvailable": 1630,
-                "totalPostings": 341,
+                "maxPrice": 2919.23,
+                "startingPrice": 13.92,
+                "numberAvailable": 3544,
+                "totalPostings": 700,
                 "links": [
                   {
                     "rel": [
@@ -6459,12 +6459,12 @@
             "tickets": [
               {
                 "id": "7433082",
-                "summary": "Tickets as low as $113",
+                "summary": "Tickets as low as $129",
                 "description": "Philadelphia 76ers at Detroit Pistons",
-                "maxPrice": 5919.52,
-                "startingPrice": 113.19,
-                "numberAvailable": 2870,
-                "totalPostings": 597,
+                "maxPrice": 5935.09,
+                "startingPrice": 129.33,
+                "numberAvailable": 4064,
+                "totalPostings": 870,
                 "links": [
                   {
                     "rel": [
@@ -7078,10 +7078,10 @@
                 "id": "7433084",
                 "summary": "Tickets as low as $56",
                 "description": "Los Angeles Lakers at Detroit Pistons",
-                "maxPrice": 11670.13,
-                "startingPrice": 56.26,
-                "numberAvailable": 2484,
-                "totalPostings": 517,
+                "maxPrice": 3562.06,
+                "startingPrice": 56.4,
+                "numberAvailable": 3426,
+                "totalPostings": 711,
                 "links": [
                   {
                     "rel": [
@@ -7686,10 +7686,10 @@
                 "id": "7433032",
                 "summary": "Tickets as low as $36",
                 "description": "Washington Wizards at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 36.23,
-                "numberAvailable": 2327,
-                "totalPostings": 463,
+                "maxPrice": 3031.63,
+                "startingPrice": 36.32,
+                "numberAvailable": 3760,
+                "totalPostings": 764,
                 "links": [
                   {
                     "rel": [
@@ -8275,12 +8275,12 @@
             "tickets": [
               {
                 "id": "7433034",
-                "summary": "Tickets as low as $22",
+                "summary": "Tickets as low as $17",
                 "description": "Detroit Pistons at Washington Wizards",
-                "maxPrice": 3469.85,
-                "startingPrice": 22.47,
-                "numberAvailable": 1783,
-                "totalPostings": 388,
+                "maxPrice": 7377.57,
+                "startingPrice": 17.87,
+                "numberAvailable": 5519,
+                "totalPostings": 1039,
                 "links": [
                   {
                     "rel": [
@@ -8866,12 +8866,12 @@
             "tickets": [
               {
                 "id": "7433088",
-                "summary": "Tickets as low as $61",
+                "summary": "Tickets as low as $54",
                 "description": "Detroit Pistons at Miami Heat",
-                "maxPrice": 13596.08,
-                "startingPrice": 61.34,
-                "numberAvailable": 2802,
-                "totalPostings": 664,
+                "maxPrice": 13631.11,
+                "startingPrice": 54.65,
+                "numberAvailable": 3958,
+                "totalPostings": 904,
                 "links": [
                   {
                     "rel": [
@@ -9476,10 +9476,10 @@
                 "id": "7433019",
                 "summary": "Tickets as low as $45",
                 "description": "Detroit Pistons at San Antonio Spurs",
-                "maxPrice": 6211.16,
-                "startingPrice": 45.28,
-                "numberAvailable": 2498,
-                "totalPostings": 518,
+                "maxPrice": 6291.17,
+                "startingPrice": 45.38,
+                "numberAvailable": 3348,
+                "totalPostings": 655,
                 "links": [
                   {
                     "rel": [
@@ -10067,10 +10067,10 @@
                 "id": "7432813",
                 "summary": "Tickets as low as $17",
                 "description": "Detroit Pistons at New Orleans Pelicans",
-                "maxPrice": 2993.09,
-                "startingPrice": 17.37,
-                "numberAvailable": 1984,
-                "totalPostings": 411,
+                "maxPrice": 3031.63,
+                "startingPrice": 17.41,
+                "numberAvailable": 2728,
+                "totalPostings": 558,
                 "links": [
                   {
                     "rel": [
@@ -10678,12 +10678,12 @@
             "tickets": [
               {
                 "id": "7418581",
-                "summary": "Tickets as low as $48",
+                "summary": "Tickets as low as $49",
                 "description": "NBA Cup - Toronto Raptors at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 48.89,
-                "numberAvailable": 2688,
-                "totalPostings": 565,
+                "maxPrice": 3031.63,
+                "startingPrice": 49,
+                "numberAvailable": 3451,
+                "totalPostings": 699,
                 "links": [
                   {
                     "rel": [
@@ -11269,12 +11269,12 @@
             "tickets": [
               {
                 "id": "7433074",
-                "summary": "Tickets as low as $52",
+                "summary": "Tickets as low as $44",
                 "description": "Detroit Pistons at Atlanta Hawks",
-                "maxPrice": 8208.58,
-                "startingPrice": 52.49,
-                "numberAvailable": 1649,
-                "totalPostings": 478,
+                "maxPrice": 11698.73,
+                "startingPrice": 44.3,
+                "numberAvailable": 2933,
+                "totalPostings": 826,
                 "links": [
                   {
                     "rel": [
@@ -11865,12 +11865,12 @@
             "tickets": [
               {
                 "id": "7418987",
-                "summary": "Tickets as low as $55",
+                "summary": "Tickets as low as $52",
                 "description": "NBA Cup - Detroit Pistons at Orlando Magic",
-                "maxPrice": 4796.32,
-                "startingPrice": 55.69,
-                "numberAvailable": 2304,
-                "totalPostings": 644,
+                "maxPrice": 4808.67,
+                "startingPrice": 52.01,
+                "numberAvailable": 3267,
+                "totalPostings": 788,
                 "links": [
                   {
                     "rel": [
@@ -12463,10 +12463,10 @@
                 "id": "7418559",
                 "summary": "Tickets as low as $56",
                 "description": "NBA Cup - Milwaukee Bucks at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 56.26,
-                "numberAvailable": 2936,
-                "totalPostings": 623,
+                "maxPrice": 3031.63,
+                "startingPrice": 56.4,
+                "numberAvailable": 3670,
+                "totalPostings": 755,
                 "links": [
                   {
                     "rel": [
@@ -13054,10 +13054,10 @@
                 "id": "7431046",
                 "summary": "Tickets as low as $41",
                 "description": "Orlando Magic at Detroit Pistons",
-                "maxPrice": 11670.13,
-                "startingPrice": 41.1,
-                "numberAvailable": 2508,
-                "totalPostings": 511,
+                "maxPrice": 3031.63,
+                "startingPrice": 41.2,
+                "numberAvailable": 3628,
+                "totalPostings": 735,
                 "links": [
                   {
                     "rel": [
@@ -13645,10 +13645,10 @@
                 "id": "7430950",
                 "summary": "Tickets as low as $36",
                 "description": "Denver Nuggets at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 36.23,
-                "numberAvailable": 2609,
-                "totalPostings": 545,
+                "maxPrice": 3031.63,
+                "startingPrice": 36.32,
+                "numberAvailable": 3634,
+                "totalPostings": 733,
                 "links": [
                   {
                     "rel": [
@@ -14236,10 +14236,10 @@
                 "id": "7431768",
                 "summary": "Tickets as low as $36",
                 "description": "Memphis Grizzlies at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 36.23,
-                "numberAvailable": 2772,
-                "totalPostings": 556,
+                "maxPrice": 3031.63,
+                "startingPrice": 36.32,
+                "numberAvailable": 3709,
+                "totalPostings": 738,
                 "links": [
                   {
                     "rel": [
@@ -14825,12 +14825,12 @@
             "tickets": [
               {
                 "id": "7430994",
-                "summary": "Tickets as low as $35",
+                "summary": "Tickets as low as $32",
                 "description": "Detroit Pistons at Indiana Pacers",
-                "maxPrice": 2555.76,
-                "startingPrice": 35.61,
-                "numberAvailable": 1713,
-                "totalPostings": 387,
+                "maxPrice": 11698.73,
+                "startingPrice": 32.55,
+                "numberAvailable": 2537,
+                "totalPostings": 560,
                 "links": [
                   {
                     "rel": [
@@ -15418,10 +15418,10 @@
                 "id": "7431966",
                 "summary": "Tickets as low as $36",
                 "description": "Brooklyn Nets at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 36.23,
-                "numberAvailable": 2546,
-                "totalPostings": 515,
+                "maxPrice": 3031.63,
+                "startingPrice": 36.32,
+                "numberAvailable": 3795,
+                "totalPostings": 766,
                 "links": [
                   {
                     "rel": [
@@ -16009,10 +16009,10 @@
                 "id": "7431548",
                 "summary": "Tickets as low as $36",
                 "description": "Phoenix Suns at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 36.23,
-                "numberAvailable": 2752,
-                "totalPostings": 553,
+                "maxPrice": 3031.63,
+                "startingPrice": 36.32,
+                "numberAvailable": 3529,
+                "totalPostings": 708,
                 "links": [
                   {
                     "rel": [
@@ -16600,10 +16600,10 @@
                 "id": "7431160",
                 "summary": "Tickets as low as $56",
                 "description": "Cleveland Cavaliers at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 56.26,
-                "numberAvailable": 2624,
-                "totalPostings": 521,
+                "maxPrice": 3031.63,
+                "startingPrice": 56.4,
+                "numberAvailable": 3558,
+                "totalPostings": 714,
                 "links": [
                   {
                     "rel": [
@@ -17189,12 +17189,12 @@
             "tickets": [
               {
                 "id": "7432220",
-                "summary": "Tickets as low as $98",
+                "summary": "Tickets as low as $84",
                 "description": "Detroit Pistons at Boston Celtics",
-                "maxPrice": 11266.24,
-                "startingPrice": 98.26,
-                "numberAvailable": 2143,
-                "totalPostings": 549,
+                "maxPrice": 4684.91,
+                "startingPrice": 84.73,
+                "numberAvailable": 2808,
+                "totalPostings": 779,
                 "links": [
                   {
                     "rel": [
@@ -17797,12 +17797,12 @@
             "tickets": [
               {
                 "id": "7431124",
-                "summary": "Tickets as low as $48",
+                "summary": "Tickets as low as $54",
                 "description": "Detroit Pistons at Oklahoma City Thunder",
-                "maxPrice": 1776.88,
-                "startingPrice": 48.15,
-                "numberAvailable": 836,
-                "totalPostings": 222,
+                "maxPrice": 2244.84,
+                "startingPrice": 54.8,
+                "numberAvailable": 1145,
+                "totalPostings": 311,
                 "links": [
                   {
                     "rel": [
@@ -18388,12 +18388,12 @@
             "tickets": [
               {
                 "id": "7432072",
-                "summary": "Tickets as low as $63",
+                "summary": "Tickets as low as $60",
                 "description": "Detroit Pistons at Atlanta Hawks",
-                "maxPrice": 8208.58,
-                "startingPrice": 63.99,
-                "numberAvailable": 1708,
-                "totalPostings": 513,
+                "maxPrice": 11698.73,
+                "startingPrice": 60.3,
+                "numberAvailable": 3212,
+                "totalPostings": 862,
                 "links": [
                   {
                     "rel": [
@@ -18979,12 +18979,12 @@
             "tickets": [
               {
                 "id": "7432070",
-                "summary": "Tickets as low as $115",
+                "summary": "Tickets as low as $109",
                 "description": "Detroit Pistons at Chicago Bulls",
-                "maxPrice": 3547.93,
-                "startingPrice": 115.53,
-                "numberAvailable": 1000,
-                "totalPostings": 231,
+                "maxPrice": 3593.62,
+                "startingPrice": 109.29,
+                "numberAvailable": 1243,
+                "totalPostings": 313,
                 "links": [
                   {
                     "rel": [
@@ -19572,10 +19572,10 @@
                 "id": "7432224",
                 "summary": "Tickets as low as $43",
                 "description": "Portland Trail Blazers at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 43.62,
-                "numberAvailable": 2206,
-                "totalPostings": 454,
+                "maxPrice": 3031.63,
+                "startingPrice": 43.72,
+                "numberAvailable": 3486,
+                "totalPostings": 711,
                 "links": [
                   {
                     "rel": [
@@ -20163,10 +20163,10 @@
                 "id": "7430940",
                 "summary": "Tickets as low as $36",
                 "description": "New Orleans Pelicans at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 36.23,
-                "numberAvailable": 2697,
-                "totalPostings": 545,
+                "maxPrice": 3031.63,
+                "startingPrice": 36.32,
+                "numberAvailable": 3458,
+                "totalPostings": 697,
                 "links": [
                   {
                     "rel": [
@@ -20754,10 +20754,10 @@
                 "id": "7432226",
                 "summary": "Tickets as low as $59",
                 "description": "Orlando Magic at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 59.42,
-                "numberAvailable": 2480,
-                "totalPostings": 523,
+                "maxPrice": 3031.63,
+                "startingPrice": 59.58,
+                "numberAvailable": 3675,
+                "totalPostings": 763,
                 "links": [
                   {
                     "rel": [
@@ -21343,12 +21343,12 @@
             "tickets": [
               {
                 "id": "7432216",
-                "summary": "Tickets as low as $49",
+                "summary": "Tickets as low as $27",
                 "description": "Detroit Pistons at Denver Nuggets",
-                "maxPrice": 2158.05,
-                "startingPrice": 49.94,
-                "numberAvailable": 2285,
-                "totalPostings": 537,
+                "maxPrice": 3820.13,
+                "startingPrice": 27.86,
+                "numberAvailable": 3024,
+                "totalPostings": 784,
                 "links": [
                   {
                     "rel": [
@@ -21936,10 +21936,10 @@
                 "id": "7431613",
                 "summary": "Tickets as low as $30",
                 "description": "Detroit Pistons at Sacramento Kings",
-                "maxPrice": 2882.12,
-                "startingPrice": 30.75,
-                "numberAvailable": 2032,
-                "totalPostings": 464,
+                "maxPrice": 2919.23,
+                "startingPrice": 30.82,
+                "numberAvailable": 2699,
+                "totalPostings": 646,
                 "links": [
                   {
                     "rel": [
@@ -22525,12 +22525,12 @@
             "tickets": [
               {
                 "id": "7431264",
-                "summary": "Tickets as low as $86",
+                "summary": "Tickets as low as $74",
                 "description": "Detroit Pistons at Golden State Warriors",
-                "maxPrice": 13309.92,
-                "startingPrice": 86.33,
-                "numberAvailable": 1221,
-                "totalPostings": 347,
+                "maxPrice": 11698.73,
+                "startingPrice": 74.68,
+                "numberAvailable": 1770,
+                "totalPostings": 521,
                 "links": [
                   {
                     "rel": [
@@ -23116,12 +23116,12 @@
             "tickets": [
               {
                 "id": "7432231",
-                "summary": "Tickets as low as $95",
+                "summary": "Tickets as low as $81",
                 "description": "Detroit Pistons at Los Angeles Lakers",
-                "maxPrice": 17668.61,
-                "startingPrice": 95.48,
-                "numberAvailable": 2006,
-                "totalPostings": 548,
+                "maxPrice": 17714.14,
+                "startingPrice": 81.77,
+                "numberAvailable": 2310,
+                "totalPostings": 677,
                 "links": [
                   {
                     "rel": [
@@ -23707,12 +23707,12 @@
             "tickets": [
               {
                 "id": "7431716",
-                "summary": "Tickets as low as $51",
+                "summary": "Tickets as low as $47",
                 "description": "Utah Jazz at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 51,
-                "numberAvailable": 2403,
-                "totalPostings": 497,
+                "maxPrice": 3031.63,
+                "startingPrice": 47.47,
+                "numberAvailable": 3784,
+                "totalPostings": 781,
                 "links": [
                   {
                     "rel": [
@@ -24298,12 +24298,12 @@
             "tickets": [
               {
                 "id": "7432234",
-                "summary": "Tickets as low as $54",
+                "summary": "Tickets as low as $48",
                 "description": "Detroit Pistons at Toronto Raptors",
-                "maxPrice": 2174.96,
-                "startingPrice": 54.03,
-                "numberAvailable": 231,
-                "totalPostings": 58,
+                "maxPrice": 2180.55,
+                "startingPrice": 48.66,
+                "numberAvailable": 375,
+                "totalPostings": 82,
                 "links": [
                   {
                     "rel": [
@@ -24891,10 +24891,10 @@
                 "id": "7431385",
                 "summary": "Tickets as low as $43",
                 "description": "Dallas Mavericks at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 43.62,
-                "numberAvailable": 2242,
-                "totalPostings": 451,
+                "maxPrice": 3031.63,
+                "startingPrice": 43.72,
+                "numberAvailable": 3647,
+                "totalPostings": 726,
                 "links": [
                   {
                     "rel": [
@@ -25480,12 +25480,12 @@
             "tickets": [
               {
                 "id": "7432238",
-                "summary": "Tickets as low as $54",
+                "summary": "Tickets as low as $49",
                 "description": "Detroit Pistons at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 54.17,
-                "numberAvailable": 4244,
-                "totalPostings": 851,
+                "maxPrice": 11698.73,
+                "startingPrice": 49,
+                "numberAvailable": 3176,
+                "totalPostings": 673,
                 "links": [
                   {
                     "rel": [
@@ -26090,10 +26090,10 @@
                 "id": "7425522",
                 "summary": "Tickets as low as $32",
                 "description": "Detroit Pistons at Cleveland Cavaliers",
-                "maxPrice": 7098.9,
-                "startingPrice": 32.39,
-                "numberAvailable": 2201,
-                "totalPostings": 616,
+                "maxPrice": 7190.35,
+                "startingPrice": 32.47,
+                "numberAvailable": 2653,
+                "totalPostings": 764,
                 "links": [
                   {
                     "rel": [
@@ -26681,10 +26681,10 @@
                 "id": "7432242",
                 "summary": "Tickets as low as $53",
                 "description": "Indiana Pacers at Detroit Pistons",
-                "maxPrice": 11670.13,
-                "startingPrice": 53.1,
-                "numberAvailable": 2293,
-                "totalPostings": 471,
+                "maxPrice": 3031.63,
+                "startingPrice": 53.23,
+                "numberAvailable": 3675,
+                "totalPostings": 741,
                 "links": [
                   {
                     "rel": [
@@ -27272,10 +27272,10 @@
                 "id": "7431503",
                 "summary": "Tickets as low as $58",
                 "description": "Minnesota Timberwolves at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 58.37,
-                "numberAvailable": 1988,
-                "totalPostings": 417,
+                "maxPrice": 3031.63,
+                "startingPrice": 58.51,
+                "numberAvailable": 3387,
+                "totalPostings": 696,
                 "links": [
                   {
                     "rel": [
@@ -27863,10 +27863,10 @@
                 "id": "7432104",
                 "summary": "Tickets as low as $36",
                 "description": "Atlanta Hawks at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 36.23,
-                "numberAvailable": 2240,
-                "totalPostings": 479,
+                "maxPrice": 3031.63,
+                "startingPrice": 36.32,
+                "numberAvailable": 3856,
+                "totalPostings": 783,
                 "links": [
                   {
                     "rel": [
@@ -28473,10 +28473,10 @@
                 "id": "7431194",
                 "summary": "Tickets as low as $32",
                 "description": "Detroit Pistons at Cleveland Cavaliers",
-                "maxPrice": 7098.9,
-                "startingPrice": 32.39,
-                "numberAvailable": 2244,
-                "totalPostings": 626,
+                "maxPrice": 11698.73,
+                "startingPrice": 32.47,
+                "numberAvailable": 2756,
+                "totalPostings": 768,
                 "links": [
                   {
                     "rel": [
@@ -29088,12 +29088,12 @@
             "tickets": [
               {
                 "id": "7431397",
-                "summary": "Tickets as low as $57",
+                "summary": "Tickets as low as $58",
                 "description": "Detroit Pistons at Dallas Mavericks",
-                "maxPrice": 2168.6,
-                "startingPrice": 57.92,
-                "numberAvailable": 1021,
-                "totalPostings": 184,
+                "maxPrice": 2174.18,
+                "startingPrice": 58.06,
+                "numberAvailable": 1474,
+                "totalPostings": 286,
                 "links": [
                   {
                     "rel": [
@@ -29681,10 +29681,10 @@
                 "id": "7431639",
                 "summary": "Tickets as low as $44",
                 "description": "Sacramento Kings at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 44.67,
-                "numberAvailable": 2314,
-                "totalPostings": 474,
+                "maxPrice": 3031.63,
+                "startingPrice": 44.77,
+                "numberAvailable": 3534,
+                "totalPostings": 735,
                 "links": [
                   {
                     "rel": [
@@ -30272,10 +30272,10 @@
                 "id": "7432123",
                 "summary": "Tickets as low as $36",
                 "description": "Chicago Bulls at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 36.23,
-                "numberAvailable": 2469,
-                "totalPostings": 482,
+                "maxPrice": 3031.63,
+                "startingPrice": 36.32,
+                "numberAvailable": 3624,
+                "totalPostings": 730,
                 "links": [
                   {
                     "rel": [
@@ -30882,10 +30882,10 @@
                 "id": "7432248",
                 "summary": "Tickets as low as $56",
                 "description": "New York Knicks at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 56.26,
-                "numberAvailable": 2377,
-                "totalPostings": 488,
+                "maxPrice": 3031.63,
+                "startingPrice": 56.4,
+                "numberAvailable": 3597,
+                "totalPostings": 729,
                 "links": [
                   {
                     "rel": [
@@ -31514,12 +31514,12 @@
             "tickets": [
               {
                 "id": "7432250",
-                "summary": "Tickets as low as $102",
+                "summary": "Tickets as low as $91",
                 "description": "Detroit Pistons at Philadelphia 76ers",
-                "maxPrice": 13873.5,
-                "startingPrice": 102.27,
-                "numberAvailable": 1543,
-                "totalPostings": 476,
+                "maxPrice": 13480.25,
+                "startingPrice": 91.76,
+                "numberAvailable": 2044,
+                "totalPostings": 630,
                 "links": [
                   {
                     "rel": [
@@ -32105,12 +32105,12 @@
             "tickets": [
               {
                 "id": "7431304",
-                "summary": "Tickets as low as $122",
+                "summary": "Tickets as low as $119",
                 "description": "Golden State Warriors at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 122.33,
-                "numberAvailable": 2332,
-                "totalPostings": 490,
+                "maxPrice": 3031.63,
+                "startingPrice": 119.97,
+                "numberAvailable": 3623,
+                "totalPostings": 755,
                 "links": [
                   {
                     "rel": [
@@ -32698,10 +32698,10 @@
                 "id": "7432254",
                 "summary": "Tickets as low as $30",
                 "description": "Detroit Pistons at LA Clippers",
-                "maxPrice": 15537.89,
-                "startingPrice": 30.75,
-                "numberAvailable": 3042,
-                "totalPostings": 535,
+                "maxPrice": 15577.93,
+                "startingPrice": 30.54,
+                "numberAvailable": 3716,
+                "totalPostings": 651,
                 "links": [
                   {
                     "rel": [
@@ -33287,12 +33287,12 @@
             "tickets": [
               {
                 "id": "7432258",
-                "summary": "Tickets as low as $31",
+                "summary": "Tickets as low as $29",
                 "description": "Detroit Pistons at Phoenix Suns",
-                "maxPrice": 9235.04,
-                "startingPrice": 31.24,
-                "numberAvailable": 1204,
-                "totalPostings": 312,
+                "maxPrice": 9258.83,
+                "startingPrice": 29.19,
+                "numberAvailable": 2882,
+                "totalPostings": 632,
                 "links": [
                   {
                     "rel": [
@@ -33878,12 +33878,12 @@
             "tickets": [
               {
                 "id": "7432262",
-                "summary": "Tickets as low as $35",
+                "summary": "Tickets as low as $37",
                 "description": "Detroit Pistons at Portland Trail Blazers",
-                "maxPrice": 3442.36,
-                "startingPrice": 35.51,
-                "numberAvailable": 2751,
-                "totalPostings": 613,
+                "maxPrice": 3703.23,
+                "startingPrice": 37.37,
+                "numberAvailable": 4493,
+                "totalPostings": 1006,
                 "links": [
                   {
                     "rel": [
@@ -34471,10 +34471,10 @@
                 "id": "7431754",
                 "summary": "Tickets as low as $22",
                 "description": "Detroit Pistons at Utah Jazz",
-                "maxPrice": 1550.5,
-                "startingPrice": 22.68,
-                "numberAvailable": 1050,
-                "totalPostings": 265,
+                "maxPrice": 1570.45,
+                "startingPrice": 22.73,
+                "numberAvailable": 1991,
+                "totalPostings": 476,
                 "links": [
                   {
                     "rel": [
@@ -35079,12 +35079,12 @@
             "tickets": [
               {
                 "id": "7432266",
-                "summary": "Tickets as low as $68",
+                "summary": "Tickets as low as $59",
                 "description": "New York Knicks at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 68.91,
-                "numberAvailable": 2029,
-                "totalPostings": 435,
+                "maxPrice": 3031.63,
+                "startingPrice": 59.58,
+                "numberAvailable": 3509,
+                "totalPostings": 701,
                 "links": [
                   {
                     "rel": [
@@ -35696,12 +35696,12 @@
             "tickets": [
               {
                 "id": "7432268",
-                "summary": "Tickets as low as $64",
+                "summary": "Tickets as low as $49",
                 "description": "Miami Heat at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 64.21,
-                "numberAvailable": 1393,
-                "totalPostings": 317,
+                "maxPrice": 11932.66,
+                "startingPrice": 49,
+                "numberAvailable": 3669,
+                "totalPostings": 740,
                 "links": [
                   {
                     "rel": [
@@ -36304,12 +36304,12 @@
             "tickets": [
               {
                 "id": "7432272",
-                "summary": "Tickets as low as $112",
+                "summary": "Tickets as low as $115",
                 "description": "Oklahoma City Thunder at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 112.3,
-                "numberAvailable": 1319,
-                "totalPostings": 303,
+                "maxPrice": 11932.66,
+                "startingPrice": 115.59,
+                "numberAvailable": 3764,
+                "totalPostings": 760,
                 "links": [
                   {
                     "rel": [
@@ -36897,10 +36897,10 @@
                 "id": "7432158",
                 "summary": "Tickets as low as $36",
                 "description": "Chicago Bulls at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 36.23,
-                "numberAvailable": 2453,
-                "totalPostings": 506,
+                "maxPrice": 3031.63,
+                "startingPrice": 36.32,
+                "numberAvailable": 3740,
+                "totalPostings": 765,
                 "links": [
                   {
                     "rel": [
@@ -37486,12 +37486,12 @@
             "tickets": [
               {
                 "id": "7432276",
-                "summary": "Tickets as low as $44",
+                "summary": "Tickets as low as $42",
                 "description": "Detroit Pistons at Milwaukee Bucks",
-                "maxPrice": 1772.44,
-                "startingPrice": 44.43,
-                "numberAvailable": 3423,
-                "totalPostings": 799,
+                "maxPrice": 1795.25,
+                "startingPrice": 42.74,
+                "numberAvailable": 4075,
+                "totalPostings": 958,
                 "links": [
                   {
                     "rel": [
@@ -38098,10 +38098,10 @@
                 "id": "7432280",
                 "summary": "Tickets as low as $56",
                 "description": "Boston Celtics at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 56.26,
-                "numberAvailable": 2247,
-                "totalPostings": 462,
+                "maxPrice": 3031.63,
+                "startingPrice": 56.4,
+                "numberAvailable": 3565,
+                "totalPostings": 705,
                 "links": [
                   {
                     "rel": [
@@ -38732,10 +38732,10 @@
                 "id": "7431244",
                 "summary": "Tickets as low as $40",
                 "description": "Cleveland Cavaliers at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 40.45,
-                "numberAvailable": 2411,
-                "totalPostings": 503,
+                "maxPrice": 3031.63,
+                "startingPrice": 40.55,
+                "numberAvailable": 3697,
+                "totalPostings": 747,
                 "links": [
                   {
                     "rel": [
@@ -39323,10 +39323,10 @@
                 "id": "7432284",
                 "summary": "Tickets as low as $36",
                 "description": "Milwaukee Bucks at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 36.23,
-                "numberAvailable": 2417,
-                "totalPostings": 489,
+                "maxPrice": 3031.63,
+                "startingPrice": 36.32,
+                "numberAvailable": 3578,
+                "totalPostings": 715,
                 "links": [
                   {
                     "rel": [
@@ -39914,10 +39914,10 @@
                 "id": "7432030",
                 "summary": "Tickets as low as $56",
                 "description": "Brooklyn Nets at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 56.26,
-                "numberAvailable": 2390,
-                "totalPostings": 488,
+                "maxPrice": 3031.63,
+                "startingPrice": 56.4,
+                "numberAvailable": 3676,
+                "totalPostings": 740,
                 "links": [
                   {
                     "rel": [
@@ -40503,12 +40503,12 @@
             "tickets": [
               {
                 "id": "7432286",
-                "summary": "Tickets as low as $79",
+                "summary": "Tickets as low as $72",
                 "description": "Detroit Pistons at Toronto Raptors",
-                "maxPrice": 1772.75,
-                "startingPrice": 79.25,
-                "numberAvailable": 209,
-                "totalPostings": 48,
+                "maxPrice": 1777.3,
+                "startingPrice": 72.97,
+                "numberAvailable": 362,
+                "totalPostings": 78,
                 "links": [
                   {
                     "rel": [
@@ -41111,12 +41111,12 @@
             "tickets": [
               {
                 "id": "7432290",
-                "summary": "Tickets as low as $28",
+                "summary": "Tickets as low as $27",
                 "description": "Detroit Pistons at Indiana Pacers",
-                "maxPrice": 3191.8,
-                "startingPrice": 28.34,
-                "numberAvailable": 1561,
-                "totalPostings": 345,
+                "maxPrice": 11698.73,
+                "startingPrice": 27.66,
+                "numberAvailable": 2308,
+                "totalPostings": 500,
                 "links": [
                   {
                     "rel": [
@@ -41702,12 +41702,12 @@
             "tickets": [
               {
                 "id": "7432294",
-                "summary": "Tickets as low as $44",
+                "summary": "Tickets as low as $42",
                 "description": "Detroit Pistons at Milwaukee Bucks",
-                "maxPrice": 2216.31,
-                "startingPrice": 44.43,
-                "numberAvailable": 3953,
-                "totalPostings": 897,
+                "maxPrice": 2244.84,
+                "startingPrice": 42.74,
+                "numberAvailable": 4551,
+                "totalPostings": 1035,
                 "links": [
                   {
                     "rel": [
@@ -42293,12 +42293,12 @@
             "tickets": [
               {
                 "id": "7432298",
-                "summary": "Tickets as low as $58",
+                "summary": "Tickets as low as $61",
                 "description": "Charlotte Hornets at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 58.88,
-                "numberAvailable": 2341,
-                "totalPostings": 491,
+                "maxPrice": 3031.63,
+                "startingPrice": 61.68,
+                "numberAvailable": 3839,
+                "totalPostings": 789,
                 "links": [
                   {
                     "rel": [
@@ -42903,10 +42903,10 @@
                 "id": "7431587",
                 "summary": "Tickets as low as $68",
                 "description": "Detroit Pistons at Minnesota Timberwolves",
-                "maxPrice": 3675.31,
-                "startingPrice": 68.38,
-                "numberAvailable": 439,
-                "totalPostings": 145,
+                "maxPrice": 3684.59,
+                "startingPrice": 68.54,
+                "numberAvailable": 536,
+                "totalPostings": 171,
                 "links": [
                   {
                     "rel": [
@@ -43492,12 +43492,12 @@
             "tickets": [
               {
                 "id": "7432302",
-                "summary": "Tickets as low as $16",
+                "summary": "Tickets as low as $15",
                 "description": "Detroit Pistons at Charlotte Hornets",
-                "maxPrice": 2882.12,
-                "startingPrice": 16.93,
-                "numberAvailable": 1516,
-                "totalPostings": 316,
+                "maxPrice": 2919.23,
+                "startingPrice": 15.96,
+                "numberAvailable": 2603,
+                "totalPostings": 517,
                 "links": [
                   {
                     "rel": [
@@ -44085,10 +44085,10 @@
                 "id": "7432304",
                 "summary": "Tickets as low as $44",
                 "description": "Houston Rockets at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 44.67,
-                "numberAvailable": 2349,
-                "totalPostings": 478,
+                "maxPrice": 3031.63,
+                "startingPrice": 44.77,
+                "numberAvailable": 3612,
+                "totalPostings": 720,
                 "links": [
                   {
                     "rel": [
@@ -44693,10 +44693,10 @@
                 "id": "7432308",
                 "summary": "Tickets as low as $113",
                 "description": "San Antonio Spurs at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 113.19,
-                "numberAvailable": 2112,
-                "totalPostings": 449,
+                "maxPrice": 3031.63,
+                "startingPrice": 113.47,
+                "numberAvailable": 3616,
+                "totalPostings": 745,
                 "links": [
                   {
                     "rel": [
@@ -45284,10 +45284,10 @@
                 "id": "7432310",
                 "summary": "Tickets as low as $36",
                 "description": "LA Clippers at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 36.23,
-                "numberAvailable": 2805,
-                "totalPostings": 556,
+                "maxPrice": 3031.63,
+                "startingPrice": 36.32,
+                "numberAvailable": 3597,
+                "totalPostings": 698,
                 "links": [
                   {
                     "rel": [
@@ -45875,10 +45875,10 @@
                 "id": "7432312",
                 "summary": "Tickets as low as $46",
                 "description": "Toronto Raptors at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 46.78,
-                "numberAvailable": 2329,
-                "totalPostings": 484,
+                "maxPrice": 3031.63,
+                "startingPrice": 46.88,
+                "numberAvailable": 3770,
+                "totalPostings": 779,
                 "links": [
                   {
                     "rel": [
@@ -46464,12 +46464,12 @@
             "tickets": [
               {
                 "id": "7432314",
-                "summary": "Tickets as low as $76",
+                "summary": "Tickets as low as $75",
                 "description": "Detroit Pistons at Chicago Bulls",
-                "maxPrice": 3547.93,
-                "startingPrice": 76.4,
-                "numberAvailable": 1013,
-                "totalPostings": 230,
+                "maxPrice": 3593.62,
+                "startingPrice": 75.85,
+                "numberAvailable": 1134,
+                "totalPostings": 261,
                 "links": [
                   {
                     "rel": [
@@ -47057,10 +47057,10 @@
                 "id": "7432316",
                 "summary": "Tickets as low as $56",
                 "description": "Miami Heat at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 56.26,
-                "numberAvailable": 2411,
-                "totalPostings": 493,
+                "maxPrice": 3031.63,
+                "startingPrice": 56.4,
+                "numberAvailable": 3482,
+                "totalPostings": 712,
                 "links": [
                   {
                     "rel": [
@@ -47648,10 +47648,10 @@
                 "id": "7431978",
                 "summary": "Tickets as low as $16",
                 "description": "Detroit Pistons at Memphis Grizzlies",
-                "maxPrice": 1994.38,
-                "startingPrice": 16.93,
-                "numberAvailable": 970,
-                "totalPostings": 206,
+                "maxPrice": 2020.05,
+                "startingPrice": 16.75,
+                "numberAvailable": 1186,
+                "totalPostings": 266,
                 "links": [
                   {
                     "rel": [
@@ -48239,10 +48239,10 @@
                 "id": "7432318",
                 "summary": "Tickets as low as $40",
                 "description": "Indiana Pacers at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 40.45,
-                "numberAvailable": 2481,
-                "totalPostings": 512,
+                "maxPrice": 3031.63,
+                "startingPrice": 40.55,
+                "numberAvailable": 3805,
+                "totalPostings": 781,
                 "links": [
                   {
                     "rel": [
@@ -48845,12 +48845,12 @@
             "tickets": [
               {
                 "id": "7432320",
-                "summary": "Tickets as low as $344",
+                "summary": "Tickets as low as $325",
                 "description": "Detroit Pistons at New York Knicks",
-                "maxPrice": 9871.58,
-                "startingPrice": 344.78,
-                "numberAvailable": 751,
-                "totalPostings": 241,
+                "maxPrice": 11870.04,
+                "startingPrice": 325.68,
+                "numberAvailable": 891,
+                "totalPostings": 297,
                 "links": [
                   {
                     "rel": [
@@ -49436,12 +49436,12 @@
             "tickets": [
               {
                 "id": "7431959",
-                "summary": "Tickets as low as $30",
+                "summary": "Tickets as low as $29",
                 "description": "Detroit Pistons at Washington Wizards",
-                "maxPrice": 4336.69,
-                "startingPrice": 30.1,
-                "numberAvailable": 1747,
-                "totalPostings": 384,
+                "maxPrice": 6340.64,
+                "startingPrice": 29.5,
+                "numberAvailable": 4749,
+                "totalPostings": 906,
                 "links": [
                   {
                     "rel": [

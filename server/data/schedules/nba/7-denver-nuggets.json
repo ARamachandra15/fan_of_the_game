@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-18T07:40:36.588Z",
+  "fetchedAt": "2026-08-26T01:40:20.865Z",
   "source": "ESPN",
   "league": "nba",
   "teamId": "7",
@@ -491,12 +491,12 @@
             "tickets": [
               {
                 "id": "7403385",
-                "summary": "Tickets as low as $22",
+                "summary": "Tickets as low as $19",
                 "description": "NBA Preseason - Chicago Bulls at Denver Nuggets",
-                "maxPrice": 11671.29,
-                "startingPrice": 22.11,
-                "numberAvailable": 1463,
-                "totalPostings": 363,
+                "maxPrice": 1570.45,
+                "startingPrice": 19.71,
+                "numberAvailable": 2195,
+                "totalPostings": 566,
                 "links": [
                   {
                     "rel": [
@@ -607,9 +607,9 @@
       "id": "401898719",
       "league": "nba",
       "title": "DEN @ LAL",
-      "date": "2026-10-16",
-      "time": "04:00",
-      "datetime": "2026-10-16T04:00Z",
+      "date": "2026-10-17",
+      "time": "02:30",
+      "datetime": "2026-10-17T02:30Z",
       "status": "Scheduled",
       "venue": "crypto.com Arena",
       "home_team_name": "Los Angeles Lakers",
@@ -632,7 +632,7 @@
       },
       "raw": {
         "id": "401898719",
-        "date": "2026-10-16T04:00Z",
+        "date": "2026-10-17T02:30Z",
         "name": "Denver Nuggets at Los Angeles Lakers",
         "shortName": "DEN @ LAL",
         "season": {
@@ -645,11 +645,11 @@
           "name": "Preseason",
           "abbreviation": "pre"
         },
-        "timeValid": false,
+        "timeValid": true,
         "competitions": [
           {
             "id": "401898719",
-            "date": "2026-10-16T04:00Z",
+            "date": "2026-10-17T02:30Z",
             "attendance": 0,
             "type": {
               "id": "1",
@@ -658,7 +658,7 @@
               "slug": "standard",
               "type": "standard"
             },
-            "timeValid": false,
+            "timeValid": true,
             "neutralSite": false,
             "boxscoreAvailable": false,
             "ticketsAvailable": true,
@@ -1082,12 +1082,12 @@
             "tickets": [
               {
                 "id": "7329682",
-                "summary": "Tickets as low as $39",
+                "summary": "Tickets as low as $37",
                 "description": "NBA Preseason - Denver Nuggets at Los Angeles Lakers",
-                "maxPrice": 7179.36,
-                "startingPrice": 39.56,
-                "numberAvailable": 1592,
-                "totalPostings": 487,
+                "maxPrice": 7197.85,
+                "startingPrice": 37.06,
+                "numberAvailable": 1895,
+                "totalPostings": 578,
                 "links": [
                   {
                     "rel": [
@@ -1118,8 +1118,8 @@
                 "state": "pre",
                 "completed": false,
                 "description": "Scheduled",
-                "detail": "10/16 - TBD",
-                "shortDetail": "TBD"
+                "detail": "Fri, October 16th at 10:30 PM EDT",
+                "shortDetail": "10/16 - 10:30 PM EDT"
               }
             }
           }
@@ -1692,12 +1692,12 @@
             "tickets": [
               {
                 "id": "7415524",
-                "summary": "Tickets as low as $76",
+                "summary": "Tickets as low as $70",
                 "description": "Denver Nuggets at Oklahoma City Thunder",
-                "maxPrice": 1977.79,
-                "startingPrice": 76.3,
-                "numberAvailable": 1045,
-                "totalPostings": 275,
+                "maxPrice": 2244.84,
+                "startingPrice": 70.57,
+                "numberAvailable": 1188,
+                "totalPostings": 324,
                 "links": [
                   {
                     "rel": [
@@ -2309,12 +2309,12 @@
             "tickets": [
               {
                 "id": "7432791",
-                "summary": "Tickets as low as $48",
+                "summary": "Tickets as low as $40",
                 "description": "New Orleans Pelicans at Denver Nuggets",
-                "maxPrice": 5050.06,
-                "startingPrice": 48.92,
-                "numberAvailable": 3068,
-                "totalPostings": 735,
+                "maxPrice": 3820.13,
+                "startingPrice": 40.17,
+                "numberAvailable": 3653,
+                "totalPostings": 917,
                 "links": [
                   {
                     "rel": [
@@ -2917,12 +2917,12 @@
             "tickets": [
               {
                 "id": "7432833",
-                "summary": "Tickets as low as $54",
+                "summary": "Tickets as low as $43",
                 "description": "Golden State Warriors at Denver Nuggets",
-                "maxPrice": 8305.56,
-                "startingPrice": 54.42,
-                "numberAvailable": 3215,
-                "totalPostings": 753,
+                "maxPrice": 5063.62,
+                "startingPrice": 43.34,
+                "numberAvailable": 3717,
+                "totalPostings": 938,
                 "links": [
                   {
                     "rel": [
@@ -3510,10 +3510,10 @@
                 "id": "7432793",
                 "summary": "Tickets as low as $21",
                 "description": "Denver Nuggets at New Orleans Pelicans",
-                "maxPrice": 2993.09,
-                "startingPrice": 21.95,
-                "numberAvailable": 2107,
-                "totalPostings": 437,
+                "maxPrice": 7498.97,
+                "startingPrice": 21.99,
+                "numberAvailable": 2682,
+                "totalPostings": 560,
                 "links": [
                   {
                     "rel": [
@@ -4104,12 +4104,12 @@
             "tickets": [
               {
                 "id": "7418089",
-                "summary": "Tickets as low as $41",
+                "summary": "Tickets as low as $37",
                 "description": "NBA Cup - Denver Nuggets at Phoenix Suns",
-                "maxPrice": 8080.97,
-                "startingPrice": 41.54,
-                "numberAvailable": 1917,
-                "totalPostings": 480,
+                "maxPrice": 8101.79,
+                "startingPrice": 37.37,
+                "numberAvailable": 2783,
+                "totalPostings": 648,
                 "links": [
                   {
                     "rel": [
@@ -4695,12 +4695,12 @@
             "tickets": [
               {
                 "id": "7433086",
-                "summary": "Tickets as low as $30",
+                "summary": "Tickets as low as $24",
                 "description": "Portland Trail Blazers at Denver Nuggets",
-                "maxPrice": 3331.47,
-                "startingPrice": 30.72,
-                "numberAvailable": 3236,
-                "totalPostings": 740,
+                "maxPrice": 3304.84,
+                "startingPrice": 24.44,
+                "numberAvailable": 4083,
+                "totalPostings": 985,
                 "links": [
                   {
                     "rel": [
@@ -5286,12 +5286,12 @@
             "tickets": [
               {
                 "id": "7433090",
-                "summary": "Tickets as low as $27",
+                "summary": "Tickets as low as $23",
                 "description": "Toronto Raptors at Denver Nuggets",
-                "maxPrice": 2826.46,
-                "startingPrice": 27.85,
-                "numberAvailable": 2972,
-                "totalPostings": 683,
+                "maxPrice": 3304.84,
+                "startingPrice": 23.29,
+                "numberAvailable": 4073,
+                "totalPostings": 996,
                 "links": [
                   {
                     "rel": [
@@ -6443,12 +6443,12 @@
             "tickets": [
               {
                 "id": "7432959",
-                "summary": "Tickets as low as $40",
+                "summary": "Tickets as low as $32",
                 "description": "Denver Nuggets at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 40.72,
-                "numberAvailable": 4439,
-                "totalPostings": 889,
+                "maxPrice": 9449.19,
+                "startingPrice": 32.09,
+                "numberAvailable": 4799,
+                "totalPostings": 1012,
                 "links": [
                   {
                     "rel": [
@@ -7036,10 +7036,10 @@
                 "id": "7433050",
                 "summary": "Tickets as low as $21",
                 "description": "Denver Nuggets at Memphis Grizzlies",
-                "maxPrice": 1994.38,
-                "startingPrice": 21.36,
-                "numberAvailable": 1012,
-                "totalPostings": 214,
+                "maxPrice": 2020.05,
+                "startingPrice": 21.8,
+                "numberAvailable": 1271,
+                "totalPostings": 285,
                 "links": [
                   {
                     "rel": [
@@ -7627,10 +7627,10 @@
                 "id": "7432809",
                 "summary": "Tickets as low as $31",
                 "description": "Denver Nuggets at New Orleans Pelicans",
-                "maxPrice": 2993.09,
-                "startingPrice": 31.24,
-                "numberAvailable": 2291,
-                "totalPostings": 461,
+                "maxPrice": 3031.63,
+                "startingPrice": 31.31,
+                "numberAvailable": 3012,
+                "totalPostings": 639,
                 "links": [
                   {
                     "rel": [
@@ -8216,12 +8216,12 @@
             "tickets": [
               {
                 "id": "7432981",
-                "summary": "Tickets as low as $30",
+                "summary": "Tickets as low as $24",
                 "description": "Phoenix Suns at Denver Nuggets",
-                "maxPrice": 2826.46,
-                "startingPrice": 30.27,
-                "numberAvailable": 3327,
-                "totalPostings": 763,
+                "maxPrice": 2834.05,
+                "startingPrice": 24.06,
+                "numberAvailable": 4254,
+                "totalPostings": 1021,
                 "links": [
                   {
                     "rel": [
@@ -8807,12 +8807,12 @@
             "tickets": [
               {
                 "id": "7433160",
-                "summary": "Tickets as low as $55",
+                "summary": "Tickets as low as $40",
                 "description": "Boston Celtics at Denver Nuggets",
-                "maxPrice": 6648.69,
-                "startingPrice": 55.8,
-                "numberAvailable": 3141,
-                "totalPostings": 718,
+                "maxPrice": 4131.91,
+                "startingPrice": 40.55,
+                "numberAvailable": 3896,
+                "totalPostings": 960,
                 "links": [
                   {
                     "rel": [
@@ -9420,12 +9420,12 @@
             "tickets": [
               {
                 "id": "7418001",
-                "summary": "Tickets as low as $45",
+                "summary": "Tickets as low as $41",
                 "description": "NBA Cup - Houston Rockets at Denver Nuggets",
-                "maxPrice": 11903.49,
-                "startingPrice": 45.58,
-                "numberAvailable": 3332,
-                "totalPostings": 789,
+                "maxPrice": 4722.67,
+                "startingPrice": 41.57,
+                "numberAvailable": 3900,
+                "totalPostings": 974,
                 "links": [
                   {
                     "rel": [
@@ -10011,12 +10011,12 @@
             "tickets": [
               {
                 "id": "7433078",
-                "summary": "Tickets as low as $87",
+                "summary": "Tickets as low as $79",
                 "description": "Denver Nuggets at Chicago Bulls",
-                "maxPrice": 3547.93,
-                "startingPrice": 87.27,
-                "numberAvailable": 1060,
-                "totalPostings": 242,
+                "maxPrice": 3593.62,
+                "startingPrice": 79.09,
+                "numberAvailable": 1285,
+                "totalPostings": 316,
                 "links": [
                   {
                     "rel": [
@@ -10624,12 +10624,12 @@
             "tickets": [
               {
                 "id": "7417985",
-                "summary": "Tickets as low as $39",
+                "summary": "Tickets as low as $31",
                 "description": "NBA Cup - Dallas Mavericks at Denver Nuggets",
-                "maxPrice": 2954.82,
-                "startingPrice": 39.62,
-                "numberAvailable": 3175,
-                "totalPostings": 737,
+                "maxPrice": 2962.76,
+                "startingPrice": 31.9,
+                "numberAvailable": 3828,
+                "totalPostings": 933,
                 "links": [
                   {
                     "rel": [
@@ -11220,12 +11220,12 @@
             "tickets": [
               {
                 "id": "7418189",
-                "summary": "Tickets as low as $38",
+                "summary": "Tickets as low as $30",
                 "description": "NBA Cup - Denver Nuggets at Utah Jazz",
-                "maxPrice": 2735.66,
-                "startingPrice": 38.11,
-                "numberAvailable": 1288,
-                "totalPostings": 331,
+                "maxPrice": 1570.45,
+                "startingPrice": 30.39,
+                "numberAvailable": 2306,
+                "totalPostings": 551,
                 "links": [
                   {
                     "rel": [
@@ -11811,12 +11811,12 @@
             "tickets": [
               {
                 "id": "7430946",
-                "summary": "Tickets as low as $82",
+                "summary": "Tickets as low as $75",
                 "description": "Denver Nuggets at Toronto Raptors",
-                "maxPrice": 2067.79,
-                "startingPrice": 82.32,
-                "numberAvailable": 256,
-                "totalPostings": 64,
+                "maxPrice": 2073.11,
+                "startingPrice": 75.94,
+                "numberAvailable": 406,
+                "totalPostings": 90,
                 "links": [
                   {
                     "rel": [
@@ -12404,10 +12404,10 @@
                 "id": "7430950",
                 "summary": "Tickets as low as $36",
                 "description": "Denver Nuggets at Detroit Pistons",
-                "maxPrice": 2993.09,
-                "startingPrice": 36.23,
-                "numberAvailable": 2609,
-                "totalPostings": 545,
+                "maxPrice": 3031.63,
+                "startingPrice": 36.32,
+                "numberAvailable": 3634,
+                "totalPostings": 733,
                 "links": [
                   {
                     "rel": [
@@ -12993,12 +12993,12 @@
             "tickets": [
               {
                 "id": "7431535",
-                "summary": "Tickets as low as $86",
+                "summary": "Tickets as low as $90",
                 "description": "Denver Nuggets at Philadelphia 76ers",
-                "maxPrice": 16647.7,
-                "startingPrice": 86.83,
-                "numberAvailable": 1554,
-                "totalPostings": 480,
+                "maxPrice": 16175.8,
+                "startingPrice": 90.57,
+                "numberAvailable": 1952,
+                "totalPostings": 614,
                 "links": [
                   {
                     "rel": [
@@ -13584,12 +13584,12 @@
             "tickets": [
               {
                 "id": "7431687",
-                "summary": "Tickets as low as $38",
+                "summary": "Tickets as low as $28",
                 "description": "Denver Nuggets at Utah Jazz",
-                "maxPrice": 1550.5,
-                "startingPrice": 38.11,
-                "numberAvailable": 1070,
-                "totalPostings": 269,
+                "maxPrice": 1570.45,
+                "startingPrice": 28.75,
+                "numberAvailable": 2055,
+                "totalPostings": 494,
                 "links": [
                   {
                     "rel": [
@@ -14194,10 +14194,10 @@
                 "id": "7432204",
                 "summary": "Tickets as low as $23",
                 "description": "Denver Nuggets at Portland Trail Blazers",
-                "maxPrice": 2547.12,
-                "startingPrice": 23.92,
-                "numberAvailable": 2827,
-                "totalPostings": 588,
+                "maxPrice": 2244.84,
+                "startingPrice": 23.98,
+                "numberAvailable": 3327,
+                "totalPostings": 839,
                 "links": [
                   {
                     "rel": [
@@ -14783,12 +14783,12 @@
             "tickets": [
               {
                 "id": "7432066",
-                "summary": "Tickets as low as $33",
+                "summary": "Tickets as low as $24",
                 "description": "Atlanta Hawks at Denver Nuggets",
-                "maxPrice": 2954.82,
-                "startingPrice": 33,
-                "numberAvailable": 3174,
-                "totalPostings": 736,
+                "maxPrice": 2962.76,
+                "startingPrice": 24.44,
+                "numberAvailable": 4167,
+                "totalPostings": 1014,
                 "links": [
                   {
                     "rel": [
@@ -15374,12 +15374,12 @@
             "tickets": [
               {
                 "id": "7432206",
-                "summary": "Tickets as low as $86",
+                "summary": "Tickets as low as $67",
                 "description": "Los Angeles Lakers at Denver Nuggets",
-                "maxPrice": 11629.77,
-                "startingPrice": 86.83,
-                "numberAvailable": 3067,
-                "totalPostings": 703,
+                "maxPrice": 5894.27,
+                "startingPrice": 67.85,
+                "numberAvailable": 3672,
+                "totalPostings": 949,
                 "links": [
                   {
                     "rel": [
@@ -15967,10 +15967,10 @@
                 "id": "7432208",
                 "summary": "Tickets as low as $42",
                 "description": "Denver Nuggets at LA Clippers",
-                "maxPrice": 242911.45,
-                "startingPrice": 42.71,
-                "numberAvailable": 3284,
-                "totalPostings": 566,
+                "maxPrice": 243537.51,
+                "startingPrice": 42.41,
+                "numberAvailable": 3831,
+                "totalPostings": 677,
                 "links": [
                   {
                     "rel": [
@@ -16573,12 +16573,12 @@
             "tickets": [
               {
                 "id": "7432210",
-                "summary": "Tickets as low as $121",
+                "summary": "Tickets as low as $83",
                 "description": "Denver Nuggets at Los Angeles Lakers",
-                "maxPrice": 17668.61,
-                "startingPrice": 121.31,
-                "numberAvailable": 2076,
-                "totalPostings": 573,
+                "maxPrice": 17714.14,
+                "startingPrice": 83.88,
+                "numberAvailable": 2407,
+                "totalPostings": 705,
                 "links": [
                   {
                     "rel": [
@@ -17201,12 +17201,12 @@
             "tickets": [
               {
                 "id": "7415403",
-                "summary": "Tickets as low as $117",
+                "summary": "Tickets as low as $108",
                 "description": "Denver Nuggets at Golden State Warriors",
-                "maxPrice": 13309.92,
-                "startingPrice": 117.8,
-                "numberAvailable": 1846,
-                "totalPostings": 540,
+                "maxPrice": 10675.87,
+                "startingPrice": 108.07,
+                "numberAvailable": 2379,
+                "totalPostings": 664,
                 "links": [
                   {
                     "rel": [
@@ -17818,12 +17818,12 @@
             "tickets": [
               {
                 "id": "7432212",
-                "summary": "Tickets as low as $59",
+                "summary": "Tickets as low as $37",
                 "description": "Indiana Pacers at Denver Nuggets",
-                "maxPrice": 6648.69,
-                "startingPrice": 59.42,
-                "numberAvailable": 2403,
-                "totalPostings": 567,
+                "maxPrice": 3543.47,
+                "startingPrice": 37.35,
+                "numberAvailable": 2796,
+                "totalPostings": 773,
                 "links": [
                   {
                     "rel": [
@@ -18426,12 +18426,12 @@
             "tickets": [
               {
                 "id": "7431480",
-                "summary": "Tickets as low as $55",
+                "summary": "Tickets as low as $52",
                 "description": "Minnesota Timberwolves at Denver Nuggets",
-                "maxPrice": 8305.56,
-                "startingPrice": 55.02,
-                "numberAvailable": 2399,
-                "totalPostings": 586,
+                "maxPrice": 3543.47,
+                "startingPrice": 52.51,
+                "numberAvailable": 2644,
+                "totalPostings": 723,
                 "links": [
                   {
                     "rel": [
@@ -19034,12 +19034,12 @@
             "tickets": [
               {
                 "id": "7431483",
-                "summary": "Tickets as low as $162",
+                "summary": "Tickets as low as $111",
                 "description": "Denver Nuggets at Minnesota Timberwolves",
-                "maxPrice": 3675.31,
-                "startingPrice": 162.13,
-                "numberAvailable": 453,
-                "totalPostings": 150,
+                "maxPrice": 3654.27,
+                "startingPrice": 111.31,
+                "numberAvailable": 588,
+                "totalPostings": 183,
                 "links": [
                   {
                     "rel": [
@@ -19625,12 +19625,12 @@
             "tickets": [
               {
                 "id": "7432214",
-                "summary": "Tickets as low as $71",
+                "summary": "Tickets as low as $73",
                 "description": "New York Knicks at Denver Nuggets",
-                "maxPrice": 9301.78,
-                "startingPrice": 71.02,
-                "numberAvailable": 1993,
-                "totalPostings": 524,
+                "maxPrice": 5406.17,
+                "startingPrice": 73.2,
+                "numberAvailable": 3112,
+                "totalPostings": 808,
                 "links": [
                   {
                     "rel": [
@@ -20216,12 +20216,12 @@
             "tickets": [
               {
                 "id": "7432216",
-                "summary": "Tickets as low as $49",
+                "summary": "Tickets as low as $27",
                 "description": "Detroit Pistons at Denver Nuggets",
-                "maxPrice": 2158.05,
-                "startingPrice": 49.94,
-                "numberAvailable": 2285,
-                "totalPostings": 537,
+                "maxPrice": 3820.13,
+                "startingPrice": 27.86,
+                "numberAvailable": 3024,
+                "totalPostings": 784,
                 "links": [
                   {
                     "rel": [
@@ -20824,12 +20824,12 @@
             "tickets": [
               {
                 "id": "7431583",
-                "summary": "Tickets as low as $39",
+                "summary": "Tickets as low as $20",
                 "description": "Phoenix Suns at Denver Nuggets",
-                "maxPrice": 1263.25,
-                "startingPrice": 39.74,
-                "numberAvailable": 2321,
-                "totalPostings": 550,
+                "maxPrice": 3391.45,
+                "startingPrice": 20.96,
+                "numberAvailable": 3447,
+                "totalPostings": 858,
                 "links": [
                   {
                     "rel": [
@@ -21415,12 +21415,12 @@
             "tickets": [
               {
                 "id": "7431884",
-                "summary": "Tickets as low as $20",
+                "summary": "Tickets as low as $19",
                 "description": "Denver Nuggets at Charlotte Hornets",
-                "maxPrice": 2882.12,
-                "startingPrice": 20.25,
-                "numberAvailable": 1549,
-                "totalPostings": 325,
+                "maxPrice": 2919.23,
+                "startingPrice": 19.3,
+                "numberAvailable": 2595,
+                "totalPostings": 520,
                 "links": [
                   {
                     "rel": [
@@ -22008,10 +22008,10 @@
                 "id": "7431180",
                 "summary": "Tickets as low as $50",
                 "description": "Denver Nuggets at Cleveland Cavaliers",
-                "maxPrice": 7098.9,
-                "startingPrice": 50.32,
-                "numberAvailable": 2201,
-                "totalPostings": 620,
+                "maxPrice": 11698.73,
+                "startingPrice": 50.1,
+                "numberAvailable": 2811,
+                "totalPostings": 790,
                 "links": [
                   {
                     "rel": [
@@ -22614,12 +22614,12 @@
             "tickets": [
               {
                 "id": "7432218",
-                "summary": "Tickets as low as $272",
+                "summary": "Tickets as low as $252",
                 "description": "Denver Nuggets at New York Knicks",
-                "maxPrice": 11032.95,
-                "startingPrice": 272.43,
-                "numberAvailable": 856,
-                "totalPostings": 274,
+                "maxPrice": 11870.04,
+                "startingPrice": 252.13,
+                "numberAvailable": 998,
+                "totalPostings": 333,
                 "links": [
                   {
                     "rel": [
@@ -23205,12 +23205,12 @@
             "tickets": [
               {
                 "id": "7432222",
-                "summary": "Tickets as low as $44",
+                "summary": "Tickets as low as $42",
                 "description": "Denver Nuggets at Milwaukee Bucks",
-                "maxPrice": 1772.44,
-                "startingPrice": 44.43,
-                "numberAvailable": 3740,
-                "totalPostings": 859,
+                "maxPrice": 1795.25,
+                "startingPrice": 42.74,
+                "numberAvailable": 4360,
+                "totalPostings": 1013,
                 "links": [
                   {
                     "rel": [
@@ -23796,12 +23796,12 @@
             "tickets": [
               {
                 "id": "7431821",
-                "summary": "Tickets as low as $40",
+                "summary": "Tickets as low as $27",
                 "description": "Memphis Grizzlies at Denver Nuggets",
-                "maxPrice": 2889.13,
-                "startingPrice": 40.45,
-                "numberAvailable": 2403,
-                "totalPostings": 585,
+                "maxPrice": 2896.89,
+                "startingPrice": 27.65,
+                "numberAvailable": 3367,
+                "totalPostings": 835,
                 "links": [
                   {
                     "rel": [
@@ -24387,12 +24387,12 @@
             "tickets": [
               {
                 "id": "7432228",
-                "summary": "Tickets as low as $40",
+                "summary": "Tickets as low as $39",
                 "description": "Charlotte Hornets at Denver Nuggets",
-                "maxPrice": 1458.95,
-                "startingPrice": 40.45,
-                "numberAvailable": 2211,
-                "totalPostings": 519,
+                "maxPrice": 2294.9,
+                "startingPrice": 39.63,
+                "numberAvailable": 3309,
+                "totalPostings": 828,
                 "links": [
                   {
                     "rel": [
@@ -24978,12 +24978,12 @@
             "tickets": [
               {
                 "id": "7432230",
-                "summary": "Tickets as low as $40",
+                "summary": "Tickets as low as $32",
                 "description": "Orlando Magic at Denver Nuggets",
-                "maxPrice": 2889.13,
-                "startingPrice": 40.45,
-                "numberAvailable": 2205,
-                "totalPostings": 546,
+                "maxPrice": 2600.96,
+                "startingPrice": 32.52,
+                "numberAvailable": 3120,
+                "totalPostings": 791,
                 "links": [
                   {
                     "rel": [
@@ -25586,12 +25586,12 @@
             "tickets": [
               {
                 "id": "7431722",
-                "summary": "Tickets as low as $40",
+                "summary": "Tickets as low as $37",
                 "description": "Utah Jazz at Denver Nuggets",
-                "maxPrice": 2889.13,
-                "startingPrice": 40.45,
-                "numberAvailable": 2351,
-                "totalPostings": 573,
+                "maxPrice": 2943.51,
+                "startingPrice": 37.69,
+                "numberAvailable": 3302,
+                "totalPostings": 825,
                 "links": [
                   {
                     "rel": [
@@ -26177,12 +26177,12 @@
             "tickets": [
               {
                 "id": "7431798",
-                "summary": "Tickets as low as $39",
+                "summary": "Tickets as low as $32",
                 "description": "Washington Wizards at Denver Nuggets",
-                "maxPrice": 1228.41,
-                "startingPrice": 39.4,
-                "numberAvailable": 2225,
-                "totalPostings": 532,
+                "maxPrice": 2557.38,
+                "startingPrice": 32.52,
+                "numberAvailable": 3299,
+                "totalPostings": 831,
                 "links": [
                   {
                     "rel": [
@@ -26768,12 +26768,12 @@
             "tickets": [
               {
                 "id": "7432236",
-                "summary": "Tickets as low as $39",
+                "summary": "Tickets as low as $32",
                 "description": "Milwaukee Bucks at Denver Nuggets",
-                "maxPrice": 1228.41,
-                "startingPrice": 39.4,
-                "numberAvailable": 2077,
-                "totalPostings": 507,
+                "maxPrice": 2557.38,
+                "startingPrice": 32.52,
+                "numberAvailable": 3125,
+                "totalPostings": 806,
                 "links": [
                   {
                     "rel": [
@@ -27376,12 +27376,12 @@
             "tickets": [
               {
                 "id": "7431633",
-                "summary": "Tickets as low as $32",
+                "summary": "Tickets as low as $22",
                 "description": "Sacramento Kings at Denver Nuggets",
-                "maxPrice": 1141.88,
-                "startingPrice": 32.02,
-                "numberAvailable": 2187,
-                "totalPostings": 519,
+                "maxPrice": 2094.25,
+                "startingPrice": 22.21,
+                "numberAvailable": 3295,
+                "totalPostings": 822,
                 "links": [
                   {
                     "rel": [
@@ -27986,12 +27986,12 @@
             "tickets": [
               {
                 "id": "7431507",
-                "summary": "Tickets as low as $138",
+                "summary": "Tickets as low as $135",
                 "description": "Denver Nuggets at Minnesota Timberwolves",
-                "maxPrice": 3675.31,
-                "startingPrice": 138.85,
-                "numberAvailable": 449,
-                "totalPostings": 149,
+                "maxPrice": 3684.59,
+                "startingPrice": 135.17,
+                "numberAvailable": 554,
+                "totalPostings": 176,
                 "links": [
                   {
                     "rel": [
@@ -28622,12 +28622,12 @@
             "tickets": [
               {
                 "id": "7432240",
-                "summary": "Tickets as low as $72",
+                "summary": "Tickets as low as $69",
                 "description": "Denver Nuggets at Oklahoma City Thunder",
-                "maxPrice": 1977.79,
-                "startingPrice": 72.06,
-                "numberAvailable": 831,
-                "totalPostings": 223,
+                "maxPrice": 2020.05,
+                "startingPrice": 69.51,
+                "numberAvailable": 1168,
+                "totalPostings": 314,
                 "links": [
                   {
                     "rel": [
@@ -29239,12 +29239,12 @@
             "tickets": [
               {
                 "id": "7432244",
-                "summary": "Tickets as low as $40",
+                "summary": "Tickets as low as $39",
                 "description": "Portland Trail Blazers at Denver Nuggets",
-                "maxPrice": 3960.63,
-                "startingPrice": 40.45,
-                "numberAvailable": 2152,
-                "totalPostings": 513,
+                "maxPrice": 2972.9,
+                "startingPrice": 39.63,
+                "numberAvailable": 3313,
+                "totalPostings": 823,
                 "links": [
                   {
                     "rel": [
@@ -29830,12 +29830,12 @@
             "tickets": [
               {
                 "id": "7432246",
-                "summary": "Tickets as low as $53",
+                "summary": "Tickets as low as $51",
                 "description": "Oklahoma City Thunder at Denver Nuggets",
-                "maxPrice": 3170.68,
-                "startingPrice": 53.1,
-                "numberAvailable": 2071,
-                "totalPostings": 490,
+                "maxPrice": 2873.57,
+                "startingPrice": 51.68,
+                "numberAvailable": 2892,
+                "totalPostings": 724,
                 "links": [
                   {
                     "rel": [
@@ -30438,12 +30438,12 @@
             "tickets": [
               {
                 "id": "7431403",
-                "summary": "Tickets as low as $55",
+                "summary": "Tickets as low as $48",
                 "description": "Dallas Mavericks at Denver Nuggets",
-                "maxPrice": 4949.89,
-                "startingPrice": 55.21,
-                "numberAvailable": 2162,
-                "totalPostings": 515,
+                "maxPrice": 3722.85,
+                "startingPrice": 48.05,
+                "numberAvailable": 3452,
+                "totalPostings": 851,
                 "links": [
                   {
                     "rel": [
@@ -31029,12 +31029,12 @@
             "tickets": [
               {
                 "id": "7432251",
-                "summary": "Tickets as low as $40",
+                "summary": "Tickets as low as $37",
                 "description": "LA Clippers at Denver Nuggets",
-                "maxPrice": 4062.03,
-                "startingPrice": 40.45,
-                "numberAvailable": 1922,
-                "totalPostings": 430,
+                "maxPrice": 2896.89,
+                "startingPrice": 37.69,
+                "numberAvailable": 3025,
+                "totalPostings": 755,
                 "links": [
                   {
                     "rel": [
@@ -31620,12 +31620,12 @@
             "tickets": [
               {
                 "id": "7432126",
-                "summary": "Tickets as low as $139",
+                "summary": "Tickets as low as $57",
                 "description": "Denver Nuggets at Atlanta Hawks",
-                "maxPrice": 8208.58,
-                "startingPrice": 139.76,
-                "numberAvailable": 347,
-                "totalPostings": 120,
+                "maxPrice": 11698.73,
+                "startingPrice": 57.75,
+                "numberAvailable": 2579,
+                "totalPostings": 740,
                 "links": [
                   {
                     "rel": [
@@ -32211,12 +32211,12 @@
             "tickets": [
               {
                 "id": "7432256",
-                "summary": "Tickets as low as $97",
+                "summary": "Tickets as low as $89",
                 "description": "Denver Nuggets at Boston Celtics",
-                "maxPrice": 10591.62,
-                "startingPrice": 97.47,
-                "numberAvailable": 2063,
-                "totalPostings": 525,
+                "maxPrice": 4331.66,
+                "startingPrice": 89.62,
+                "numberAvailable": 2612,
+                "totalPostings": 711,
                 "links": [
                   {
                     "rel": [
@@ -32802,12 +32802,12 @@
             "tickets": [
               {
                 "id": "7432136",
-                "summary": "Tickets as low as $40",
+                "summary": "Tickets as low as $27",
                 "description": "Chicago Bulls at Denver Nuggets",
-                "maxPrice": 2267.62,
-                "startingPrice": 40.45,
-                "numberAvailable": 2226,
-                "totalPostings": 526,
+                "maxPrice": 2896.89,
+                "startingPrice": 27.65,
+                "numberAvailable": 3170,
+                "totalPostings": 799,
                 "links": [
                   {
                     "rel": [
@@ -33412,12 +33412,12 @@
             "tickets": [
               {
                 "id": "7432260",
-                "summary": "Tickets as low as $104",
+                "summary": "Tickets as low as $81",
                 "description": "Denver Nuggets at Los Angeles Lakers",
-                "maxPrice": 17668.61,
-                "startingPrice": 104.78,
-                "numberAvailable": 1787,
-                "totalPostings": 496,
+                "maxPrice": 17714.14,
+                "startingPrice": 81.77,
+                "numberAvailable": 2334,
+                "totalPostings": 687,
                 "links": [
                   {
                     "rel": [
@@ -34029,12 +34029,12 @@
             "tickets": [
               {
                 "id": "7432264",
-                "summary": "Tickets as low as $54",
+                "summary": "Tickets as low as $51",
                 "description": "Denver Nuggets at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 54.17,
-                "numberAvailable": 4246,
-                "totalPostings": 856,
+                "maxPrice": 11698.73,
+                "startingPrice": 51.12,
+                "numberAvailable": 4491,
+                "totalPostings": 952,
                 "links": [
                   {
                     "rel": [
@@ -34620,12 +34620,12 @@
             "tickets": [
               {
                 "id": "7431760",
-                "summary": "Tickets as low as $34",
+                "summary": "Tickets as low as $28",
                 "description": "Utah Jazz at Denver Nuggets",
-                "maxPrice": 2550.53,
-                "startingPrice": 34.78,
-                "numberAvailable": 2300,
-                "totalPostings": 563,
+                "maxPrice": 2471,
+                "startingPrice": 28.65,
+                "numberAvailable": 2201,
+                "totalPostings": 564,
                 "links": [
                   {
                     "rel": [
@@ -35230,12 +35230,12 @@
             "tickets": [
               {
                 "id": "7432270",
-                "summary": "Tickets as low as $69",
+                "summary": "Tickets as low as $63",
                 "description": "Los Angeles Lakers at Denver Nuggets",
-                "maxPrice": 12625.99,
-                "startingPrice": 69.09,
-                "numberAvailable": 2364,
-                "totalPostings": 577,
+                "maxPrice": 11698.73,
+                "startingPrice": 63.64,
+                "numberAvailable": 2669,
+                "totalPostings": 725,
                 "links": [
                   {
                     "rel": [
@@ -35866,12 +35866,12 @@
             "tickets": [
               {
                 "id": "7433177",
-                "summary": "Tickets as low as $246",
+                "summary": "Tickets as low as $247",
                 "description": "Denver Nuggets at San Antonio Spurs",
-                "maxPrice": 2257.96,
-                "startingPrice": 246.64,
-                "numberAvailable": 102,
-                "totalPostings": 49,
+                "maxPrice": 2232.25,
+                "startingPrice": 247.26,
+                "numberAvailable": 205,
+                "totalPostings": 75,
                 "links": [
                   {
                     "rel": [
@@ -36483,12 +36483,12 @@
             "tickets": [
               {
                 "id": "7432018",
-                "summary": "Tickets as low as $28",
+                "summary": "Tickets as low as $27",
                 "description": "Brooklyn Nets at Denver Nuggets",
-                "maxPrice": 2550.53,
-                "startingPrice": 28.85,
-                "numberAvailable": 2270,
-                "totalPostings": 558,
+                "maxPrice": 2009.11,
+                "startingPrice": 27.65,
+                "numberAvailable": 3332,
+                "totalPostings": 825,
                 "links": [
                   {
                     "rel": [
@@ -37093,12 +37093,12 @@
             "tickets": [
               {
                 "id": "7432278",
-                "summary": "Tickets as low as $79",
+                "summary": "Tickets as low as $70",
                 "description": "San Antonio Spurs at Denver Nuggets",
-                "maxPrice": 9969.42,
-                "startingPrice": 79.46,
-                "numberAvailable": 2259,
-                "totalPostings": 540,
+                "maxPrice": 11698.73,
+                "startingPrice": 70.21,
+                "numberAvailable": 2767,
+                "totalPostings": 748,
                 "links": [
                   {
                     "rel": [
@@ -37729,12 +37729,12 @@
             "tickets": [
               {
                 "id": "7431559",
-                "summary": "Tickets as low as $78",
+                "summary": "Tickets as low as $73",
                 "description": "Minnesota Timberwolves at Denver Nuggets",
-                "maxPrice": 9969.42,
-                "startingPrice": 78.4,
-                "numberAvailable": 2129,
-                "totalPostings": 532,
+                "maxPrice": 11698.73,
+                "startingPrice": 73.92,
+                "numberAvailable": 2684,
+                "totalPostings": 719,
                 "links": [
                   {
                     "rel": [
@@ -38346,12 +38346,12 @@
             "tickets": [
               {
                 "id": "7431665",
-                "summary": "Tickets as low as $32",
+                "summary": "Tickets as low as $33",
                 "description": "Denver Nuggets at Sacramento Kings",
-                "maxPrice": 2882.12,
-                "startingPrice": 32.93,
-                "numberAvailable": 2050,
-                "totalPostings": 468,
+                "maxPrice": 2919.23,
+                "startingPrice": 33,
+                "numberAvailable": 2720,
+                "totalPostings": 649,
                 "links": [
                   {
                     "rel": [
@@ -38939,10 +38939,10 @@
                 "id": "7432282",
                 "summary": "Tickets as low as $25",
                 "description": "Denver Nuggets at Portland Trail Blazers",
-                "maxPrice": 2552.7,
-                "startingPrice": 25.04,
-                "numberAvailable": 2927,
-                "totalPostings": 650,
+                "maxPrice": 2746.38,
+                "startingPrice": 25.1,
+                "numberAvailable": 3297,
+                "totalPostings": 853,
                 "links": [
                   {
                     "rel": [
@@ -39545,12 +39545,12 @@
             "tickets": [
               {
                 "id": "7431327",
-                "summary": "Tickets as low as $92",
+                "summary": "Tickets as low as $93",
                 "description": "Golden State Warriors at Denver Nuggets",
-                "maxPrice": 2228.62,
-                "startingPrice": 92.1,
-                "numberAvailable": 2195,
-                "totalPostings": 519,
+                "maxPrice": 6545.28,
+                "startingPrice": 93.46,
+                "numberAvailable": 2767,
+                "totalPostings": 745,
                 "links": [
                   {
                     "rel": [
@@ -40153,12 +40153,12 @@
             "tickets": [
               {
                 "id": "7432288",
-                "summary": "Tickets as low as $53",
+                "summary": "Tickets as low as $42",
                 "description": "Miami Heat at Denver Nuggets",
-                "maxPrice": 1395.17,
-                "startingPrice": 53.1,
-                "numberAvailable": 2019,
-                "totalPostings": 488,
+                "maxPrice": 3722.85,
+                "startingPrice": 42.87,
+                "numberAvailable": 2902,
+                "totalPostings": 724,
                 "links": [
                   {
                     "rel": [
@@ -40761,12 +40761,12 @@
             "tickets": [
               {
                 "id": "7432292",
-                "summary": "Tickets as low as $38",
+                "summary": "Tickets as low as $32",
                 "description": "Denver Nuggets at LA Clippers",
-                "maxPrice": 242911.45,
-                "startingPrice": 38.36,
-                "numberAvailable": 3024,
-                "totalPostings": 529,
+                "maxPrice": 243537.51,
+                "startingPrice": 32.72,
+                "numberAvailable": 3942,
+                "totalPostings": 693,
                 "links": [
                   {
                     "rel": [
@@ -41352,12 +41352,12 @@
             "tickets": [
               {
                 "id": "7431266",
-                "summary": "Tickets as low as $34",
+                "summary": "Tickets as low as $27",
                 "description": "Cleveland Cavaliers at Denver Nuggets",
-                "maxPrice": 1395.17,
-                "startingPrice": 34.78,
-                "numberAvailable": 2145,
-                "totalPostings": 507,
+                "maxPrice": 3722.85,
+                "startingPrice": 27.65,
+                "numberAvailable": 3199,
+                "totalPostings": 803,
                 "links": [
                   {
                     "rel": [
@@ -41943,12 +41943,12 @@
             "tickets": [
               {
                 "id": "7432296",
-                "summary": "Tickets as low as $79",
+                "summary": "Tickets as low as $74",
                 "description": "Denver Nuggets at Orlando Magic",
-                "maxPrice": 4796.32,
-                "startingPrice": 79.34,
-                "numberAvailable": 2032,
-                "totalPostings": 453,
+                "maxPrice": 4808.67,
+                "startingPrice": 74.03,
+                "numberAvailable": 3521,
+                "totalPostings": 741,
                 "links": [
                   {
                     "rel": [
@@ -42534,12 +42534,12 @@
             "tickets": [
               {
                 "id": "7432300",
-                "summary": "Tickets as low as $76",
+                "summary": "Tickets as low as $80",
                 "description": "Denver Nuggets at Miami Heat",
-                "maxPrice": 19437.23,
-                "startingPrice": 76.31,
-                "numberAvailable": 2283,
-                "totalPostings": 547,
+                "maxPrice": 19486.31,
+                "startingPrice": 80.19,
+                "numberAvailable": 2672,
+                "totalPostings": 638,
                 "links": [
                   {
                     "rel": [
@@ -43125,12 +43125,12 @@
             "tickets": [
               {
                 "id": "7431930",
-                "summary": "Tickets as low as $27",
+                "summary": "Tickets as low as $25",
                 "description": "Denver Nuggets at Washington Wizards",
-                "maxPrice": 6070.37,
-                "startingPrice": 27.81,
-                "numberAvailable": 1776,
-                "totalPostings": 389,
+                "maxPrice": 9330.08,
+                "startingPrice": 25.56,
+                "numberAvailable": 5270,
+                "totalPostings": 977,
                 "links": [
                   {
                     "rel": [
@@ -43716,12 +43716,12 @@
             "tickets": [
               {
                 "id": "7432040",
-                "summary": "Tickets as low as $45",
+                "summary": "Tickets as low as $44",
                 "description": "Denver Nuggets at Brooklyn Nets",
-                "maxPrice": 11661.8,
-                "startingPrice": 45.65,
-                "numberAvailable": 3076,
-                "totalPostings": 667,
+                "maxPrice": 11690.38,
+                "startingPrice": 44.44,
+                "numberAvailable": 4331,
+                "totalPostings": 851,
                 "links": [
                   {
                     "rel": [
@@ -44324,12 +44324,12 @@
             "tickets": [
               {
                 "id": "7432306",
-                "summary": "Tickets as low as $100",
+                "summary": "Tickets as low as $95",
                 "description": "Philadelphia 76ers at Denver Nuggets",
-                "maxPrice": 4080.57,
-                "startingPrice": 100.92,
-                "numberAvailable": 1932,
-                "totalPostings": 478,
+                "maxPrice": 6878.49,
+                "startingPrice": 95.51,
+                "numberAvailable": 2291,
+                "totalPostings": 604,
                 "links": [
                   {
                     "rel": [
@@ -44915,12 +44915,12 @@
             "tickets": [
               {
                 "id": "7431693",
-                "summary": "Tickets as low as $32",
+                "summary": "Tickets as low as $33",
                 "description": "Denver Nuggets at Sacramento Kings",
-                "maxPrice": 2882.12,
-                "startingPrice": 32.93,
-                "numberAvailable": 2108,
-                "totalPostings": 477,
+                "maxPrice": 2919.23,
+                "startingPrice": 33,
+                "numberAvailable": 2785,
+                "totalPostings": 664,
                 "links": [
                   {
                     "rel": [
@@ -45525,12 +45525,12 @@
             "tickets": [
               {
                 "id": "7431459",
-                "summary": "Tickets as low as $50",
+                "summary": "Tickets as low as $48",
                 "description": "Denver Nuggets at Dallas Mavericks",
-                "maxPrice": 2168.6,
-                "startingPrice": 50.17,
-                "numberAvailable": 1103,
-                "totalPostings": 201,
+                "maxPrice": 2469.27,
+                "startingPrice": 48.29,
+                "numberAvailable": 1384,
+                "totalPostings": 273,
                 "links": [
                   {
                     "rel": [
@@ -46159,12 +46159,12 @@
             "tickets": [
               {
                 "id": "7432655",
-                "summary": "Tickets as low as $48",
+                "summary": "Tickets as low as $44",
                 "description": "Denver Nuggets at Phoenix Suns",
-                "maxPrice": 9812.07,
-                "startingPrice": 48.12,
-                "numberAvailable": 1240,
-                "totalPostings": 320,
+                "maxPrice": 9837.35,
+                "startingPrice": 44.78,
+                "numberAvailable": 2823,
+                "totalPostings": 622,
                 "links": [
                   {
                     "rel": [
@@ -46750,12 +46750,12 @@
             "tickets": [
               {
                 "id": "7431974",
-                "summary": "Tickets as low as $46",
+                "summary": "Tickets as low as $37",
                 "description": "Memphis Grizzlies at Denver Nuggets",
-                "maxPrice": 1263.25,
-                "startingPrice": 46.78,
-                "numberAvailable": 2097,
-                "totalPostings": 497,
+                "maxPrice": 3391.45,
+                "startingPrice": 37.69,
+                "numberAvailable": 3213,
+                "totalPostings": 802,
                 "links": [
                   {
                     "rel": [
@@ -47341,12 +47341,12 @@
             "tickets": [
               {
                 "id": "7432200",
-                "summary": "Tickets as low as $34",
+                "summary": "Tickets as low as $32",
                 "description": "New Orleans Pelicans at Denver Nuggets",
-                "maxPrice": 1141.88,
-                "startingPrice": 34.13,
-                "numberAvailable": 2201,
-                "totalPostings": 522,
+                "maxPrice": 2557.38,
+                "startingPrice": 32.52,
+                "numberAvailable": 3298,
+                "totalPostings": 821,
                 "links": [
                   {
                     "rel": [
@@ -47932,12 +47932,12 @@
             "tickets": [
               {
                 "id": "7432372",
-                "summary": "Tickets as low as $34",
+                "summary": "Tickets as low as $27",
                 "description": "LA Clippers at Denver Nuggets",
-                "maxPrice": 1141.88,
-                "startingPrice": 34.78,
-                "numberAvailable": 2041,
-                "totalPostings": 450,
+                "maxPrice": 2896.89,
+                "startingPrice": 27.65,
+                "numberAvailable": 3352,
+                "totalPostings": 805,
                 "links": [
                   {
                     "rel": [
@@ -48540,12 +48540,12 @@
             "tickets": [
               {
                 "id": "7432709",
-                "summary": "Tickets as low as $87",
+                "summary": "Tickets as low as $85",
                 "description": "Denver Nuggets at San Antonio Spurs",
-                "maxPrice": 6211.16,
-                "startingPrice": 87.27,
-                "numberAvailable": 2335,
-                "totalPostings": 486,
+                "maxPrice": 6291.17,
+                "startingPrice": 85.22,
+                "numberAvailable": 3066,
+                "totalPostings": 604,
                 "links": [
                   {
                     "rel": [
@@ -49131,12 +49131,12 @@
             "tickets": [
               {
                 "id": "7432727",
-                "summary": "Tickets as low as $55",
+                "summary": "Tickets as low as $42",
                 "description": "Oklahoma City Thunder at Denver Nuggets",
-                "maxPrice": 4052.47,
-                "startingPrice": 55.21,
-                "numberAvailable": 2104,
-                "totalPostings": 524,
+                "maxPrice": 4063.36,
+                "startingPrice": 42.87,
+                "numberAvailable": 3048,
+                "totalPostings": 763,
                 "links": [
                   {
                     "rel": [

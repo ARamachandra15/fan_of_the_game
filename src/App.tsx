@@ -1,13 +1,18 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { F1_CONSTRUCTORS, LEAGUES } from './lib/constants';
 import { clearSelection, readSelection, writeSelection } from './lib/storage';
 import { buildMonthGrid, formatMonthLabel, goToNextMonth, goToPrevMonth, isCurrentMonth, isTodayDate } from './lib/date';
 import type { GameEvent, LeagueKey, LeagueOption, LeagueSelection, TeamOption } from './types/sports';
-import { fetchLeagueGames, fetchTeamsForLeague } from './services/sportsApi';
+import { fetchLeagueGames, fetchTeamProfile, fetchTeamsForLeague } from './services/sportsApi';
 
-const STEPS = ['Leagues', 'Teams', 'Calendar'];
+const NAV_TABS = [
+  { label: 'Leagues', screen: 'league' as const },
+  { label: 'Teams', screen: 'team' as const },
+  { label: 'Calendar', screen: 'calendar' as const },
+  { label: 'My Teams', screen: 'my-teams' as const },
+];
 
-type FlowScreen = 'landing' | 'league' | 'team' | 'calendar';
+type FlowScreen = 'landing' | 'league' | 'team' | 'calendar' | 'my-teams';
 
 type AccessMode = 'new' | 'existing';
 
@@ -86,7 +91,13 @@ function App() {
   const [teamLeagueIndex, setTeamLeagueIndex] = useState(0);
   const [scheduleNotice, setScheduleNotice] = useState<string | null>(null);
   const [focusedTeamId, setFocusedTeamId] = useState<string | null>(null);
-  const calendarScrollRef = useRef<HTMLDivElement>(null); // kept for potential future use
+  const [profileTeamId, setProfileTeamId] = useState<string | null>(null);
+  const [teamProfiles, setTeamProfiles] = useState<Record<string, {
+    loading: boolean;
+    recordSummary: string | null;
+    standingSummary: string | null;
+    source: string;
+  }>>({});
 
   useEffect(() => {
     const saved = readSelection();
@@ -175,13 +186,34 @@ function App() {
               const isSelectedMatch = normalizeName(team.name) === homeNormalized || normalizeName(team.name) === visitorNormalized;
               if (!isSelectedMatch) continue;
 
+              const selectedIsHome = normalizeName(team.name) === homeNormalized;
+              const opponentName = selectedIsHome ? visitorName : homeName;
+              const teamDisplayName = team.name;
+              const competition = game?.raw?.competitions?.[0] ?? {};
+              const competitors = Array.isArray(competition?.competitors) ? competition.competitors : [];
+              const homeComp = competitors.find((entry: any) => entry?.homeAway === 'home') ?? competitors[0] ?? {};
+              const awayComp = competitors.find((entry: any) => entry?.homeAway === 'away') ?? competitors[1] ?? {};
+              const homeScoreValue = Number.parseInt(String(homeComp?.score ?? ''), 10);
+              const awayScoreValue = Number.parseInt(String(awayComp?.score ?? ''), 10);
+              const teamScore = Number.isFinite(homeScoreValue) && Number.isFinite(awayScoreValue)
+                ? (selectedIsHome ? homeScoreValue : awayScoreValue)
+                : null;
+              const opponentScore = Number.isFinite(homeScoreValue) && Number.isFinite(awayScoreValue)
+                ? (selectedIsHome ? awayScoreValue : homeScoreValue)
+                : null;
+              const completed = Boolean(game?.raw?.status?.type?.completed)
+                || String(status).toLowerCase() === 'final'
+                || String(status).toLowerCase() === 'post';
+              const seasonYear = Number(game?.raw?.season?.year ?? NaN);
+              const seasonType = Number(game?.raw?.seasonType?.type ?? NaN);
+
               nextEvents.push({
                 id: `${league.id}-${game.id || game.idEvent || `${team.name}-${Math.random().toString(16).slice(2)}`}`,
                 league: league.id,
-                teamId: `${league.id}:${team.name.toLowerCase().replace(/\s+/g, '-')}`,
-                teamName: homeName,
-                teamShortName: homeName.slice(0, 3).toUpperCase(),
-                opponent: visitorName,
+                teamId: team.id,
+                teamName: teamDisplayName,
+                teamShortName: team.shortName?.slice(0, 3).toUpperCase() || teamDisplayName.slice(0, 3).toUpperCase(),
+                opponent: opponentName,
                 date: dateObj.toISOString(),
                 time: dateObj.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }),
                 venue: game.venue || game.strVenue || game.arena || 'TBD',
@@ -190,6 +222,11 @@ function App() {
                 primaryColor: team.primaryColor || '#5b7cff',
                 type: league.id === 'f1' ? 'race' : 'game',
                 status,
+                completed,
+                teamScore,
+                opponentScore,
+                seasonYear: Number.isFinite(seasonYear) ? seasonYear : undefined,
+                seasonType: Number.isFinite(seasonType) ? seasonType : undefined,
               });
             }
           } catch (error) {
@@ -295,17 +332,17 @@ function App() {
   const renderLandingStep = () => (
     <div className="relative space-y-8 py-8 text-center">
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden rounded-[32px]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.22),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.12),transparent_25%)]" />
-        <div className="absolute -left-16 top-10 h-48 w-48 rounded-full bg-indigo-500/15 blur-3xl" />
-        <div className="absolute -right-12 bottom-8 h-52 w-52 rounded-full bg-cyan-500/10 blur-3xl" />
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-indigo-400/80 to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(245,158,11,0.22),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(251,191,36,0.12),transparent_25%)]" />
+        <div className="absolute -left-16 top-10 h-48 w-48 rounded-full bg-amber-500/15 blur-3xl" />
+        <div className="absolute -right-12 bottom-8 h-52 w-52 rounded-full bg-orange-500/10 blur-3xl" />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-400/80 to-transparent" />
       </div>
 
       <div className="mx-auto grid max-w-3xl gap-4 md:grid-cols-2">
         <button
           type="button"
           onClick={() => handleLandingChoice('new')}
-          className="group relative overflow-hidden rounded-[26px] border border-indigo-400/60 bg-[linear-gradient(135deg,rgba(99,102,241,0.18),rgba(15,23,42,0.9))] p-7 text-center shadow-[0_18px_40px_rgba(99,102,241,0.18)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.01] hover:border-indigo-300 hover:shadow-[0_20px_52px_rgba(99,102,241,0.3)] active:translate-y-0"
+          className="group relative overflow-hidden rounded-[26px] border border-amber-400/60 bg-[linear-gradient(135deg,rgba(245,158,11,0.18),rgba(15,23,42,0.9))] p-7 text-center shadow-[0_18px_40px_rgba(245,158,11,0.18)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.01] hover:border-amber-300 hover:shadow-[0_20px_52px_rgba(245,158,11,0.3)] active:translate-y-0"
         >
           <span className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-white/80 to-transparent" />
           <span className="relative block text-2xl font-bold tracking-[0.12em] text-white uppercase">New User</span>
@@ -316,7 +353,7 @@ function App() {
           onClick={() => handleLandingChoice('existing')}
           className="group relative overflow-hidden rounded-[26px] border border-slate-700/80 bg-[linear-gradient(135deg,rgba(15,23,42,0.9),rgba(15,23,42,0.72))] p-7 text-center shadow-[0_18px_40px_rgba(15,23,42,0.4)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.01] hover:border-slate-500 hover:bg-slate-800/80 hover:shadow-[0_18px_40px_rgba(59,130,246,0.12)] active:translate-y-0"
         >
-          <span className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/70 to-transparent" />
+          <span className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-amber-300/70 to-transparent" />
           <span className="relative block text-2xl font-bold tracking-[0.12em] text-white uppercase">Existing User</span>
         </button>
       </div>
@@ -327,7 +364,7 @@ function App() {
     <div className="space-y-6">
       <div className="mb-4 flex items-center justify-between gap-3">
         <div>
-          <div className="text-xs uppercase tracking-[0.3em] text-indigo-300">League Selection</div>
+          <div className="text-xs uppercase tracking-[0.3em] text-amber-300">League Selection</div>
           <h2 className="mt-1 text-2xl font-semibold text-white">Pick your leagues</h2>
         </div>
         <div className="rounded-full border border-slate-700 bg-slate-800 px-3 py-1.5 text-xs uppercase tracking-[0.2em] text-slate-300">
@@ -348,7 +385,7 @@ function App() {
               onClick={() => toggleLeague(league)}
               className={`group relative overflow-hidden rounded-2xl border p-4 text-left transition-all duration-200 ${
                 selected
-                  ? 'border-emerald-400 bg-emerald-500/10 shadow-lg shadow-emerald-500/10'
+                  ? 'border-amber-400 bg-amber-500/10 shadow-lg shadow-amber-500/10'
                   : 'border-slate-700 bg-slate-900/70 hover:border-slate-500 hover:bg-slate-800/80'
               }`}
             >
@@ -390,14 +427,14 @@ function App() {
     return (
       <div className="space-y-6">
         <div className="rounded-2xl border border-slate-800 bg-slate-950/50 p-4">
-          <div className="text-xs uppercase tracking-[0.25em] text-indigo-300">Team Selection</div>
+          <div className="text-xs uppercase tracking-[0.25em] text-amber-300">Team Selection</div>
           <h2 className="mt-2 text-2xl font-semibold text-white">{progressLabel}</h2>
           <div className="mt-3 flex gap-2">
             {selectedLeagues.map((league, index) => (
               <div
                 key={league.id}
                 className={`h-2 flex-1 rounded-full ${
-                  index < teamLeagueIndex ? 'bg-indigo-500' : index === teamLeagueIndex ? 'bg-indigo-400' : 'bg-slate-700'
+                  index < teamLeagueIndex ? 'bg-amber-500' : index === teamLeagueIndex ? 'bg-amber-400' : 'bg-slate-700'
                 }`}
               />
             ))}
@@ -414,7 +451,7 @@ function App() {
                 onClick={() => toggleTeam(team)}
                 className={`rounded-2xl border p-4 text-left transition-all duration-200 ${
                   selected
-                    ? 'border-emerald-400 bg-emerald-500/10 shadow-lg shadow-emerald-500/10'
+                    ? 'border-amber-400 bg-amber-500/10 shadow-lg shadow-amber-500/10'
                     : 'border-slate-700 bg-slate-900/70 hover:border-slate-500 hover:bg-slate-800/80'
                 }`}
               >
@@ -444,32 +481,119 @@ function App() {
     [focusedTeamId, selectedTeams],
   );
 
+  const profileTeam = useMemo(
+    () => selectedTeams.find((t) => t.id === profileTeamId) ?? null,
+    [profileTeamId, selectedTeams],
+  );
+
+  const getTeamEvents = (teamName: string) => {
+    const name = normalizeName(teamName);
+    return events.filter((e) => normalizeName(e.teamName) === name || normalizeName(e.opponent) === name);
+  };
+
   const focusedTeamUpcoming = useMemo(() => {
     if (!focusedTeam) return [];
     const todayStr = new Date().toISOString().slice(0, 10);
-    const focusedName = normalizeName(focusedTeam.name);
-
-    const all = events.filter((e) => {
-      const isTeam =
-        normalizeName(e.teamName) === focusedName ||
-        normalizeName(e.opponent) === focusedName;
-      const isFuture = e.date.slice(0, 10) >= todayStr;
-      return isTeam && isFuture;
-    });
+    const all = getTeamEvents(focusedTeam.name).filter((e) => e.date.slice(0, 10) >= todayStr);
 
     const sorted = all
       .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
       .slice(0, 10);
 
-    // Diagnostic: visible in browser console while testing
-    console.log(
-      `[TeamPanel] ${focusedTeam.name}: total events in state=${events.length}, ` +
-      `matched before date filter=${events.filter(e => normalizeName(e.teamName) === focusedName || normalizeName(e.opponent) === focusedName).length}, ` +
-      `future+sorted=${all.length}, showing=${sorted.length}`,
-    );
-
     return sorted;
   }, [focusedTeam, events]);
+
+  const profileTeamEvents = useMemo(() => {
+    if (!profileTeam) return [];
+    const all = getTeamEvents(profileTeam.name)
+      .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+    return all;
+  }, [profileTeam, events]);
+
+  const profileCurrentSeasonYear = useMemo(() => {
+    if (profileTeamEvents.length === 0) return null;
+    const years = profileTeamEvents
+      .map((e) => e.seasonYear)
+      .filter((year): year is number => Number.isFinite(year));
+    if (years.length === 0) return null;
+    return Math.max(...years);
+  }, [profileTeamEvents]);
+
+  const profileCompletedCurrentSeason = useMemo(() => {
+    if (!profileTeam) return [];
+    return profileTeamEvents.filter((event) =>
+      event.completed === true
+      && (profileCurrentSeasonYear === null || event.seasonYear === profileCurrentSeasonYear));
+  }, [profileTeam, profileTeamEvents, profileCurrentSeasonYear]);
+
+  const profileUpcomingNext10 = useMemo(() => {
+    if (!profileTeam) return [];
+    const todayStr = new Date().toISOString().slice(0, 10);
+    return profileTeamEvents
+      .filter((event) =>
+        event.date.slice(0, 10) >= todayStr
+        && (profileCurrentSeasonYear === null || event.seasonYear === profileCurrentSeasonYear))
+      .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+      .slice(0, 10);
+  }, [profileTeam, profileTeamEvents, profileCurrentSeasonYear]);
+
+  const profileComputedRecord = useMemo(() => {
+    if (!profileTeam) return null;
+    let wins = 0;
+    let losses = 0;
+    let draws = 0;
+    for (const event of profileCompletedCurrentSeason) {
+      if (typeof event.teamScore !== 'number' || typeof event.opponentScore !== 'number') continue;
+      if (event.teamScore > event.opponentScore) wins += 1;
+      else if (event.teamScore < event.opponentScore) losses += 1;
+      else draws += 1;
+    }
+    if (draws > 0 || profileTeam.league === 'premier-league' || profileTeam.league === 'la-liga') {
+      return `${wins}-${draws}-${losses}`;
+    }
+    return `${wins}-${losses}`;
+  }, [profileTeam, profileCompletedCurrentSeason]);
+
+  useEffect(() => {
+    const loadProfile = async () => {
+      if (!profileTeam) return;
+      if (teamProfiles[profileTeam.id]?.loading || teamProfiles[profileTeam.id]) return;
+      setTeamProfiles((current) => ({
+        ...current,
+        [profileTeam.id]: {
+          loading: true,
+          recordSummary: null,
+          standingSummary: null,
+          source: 'loading',
+        },
+      }));
+
+      try {
+        const profile = await fetchTeamProfile(profileTeam.league, profileTeam.name);
+        setTeamProfiles((current) => ({
+          ...current,
+          [profileTeam.id]: {
+            loading: false,
+            recordSummary: profile.recordSummary ?? null,
+            standingSummary: profile.standingSummary ?? null,
+            source: profile.source ?? 'espn-team-endpoint',
+          },
+        }));
+      } catch {
+        setTeamProfiles((current) => ({
+          ...current,
+          [profileTeam.id]: {
+            loading: false,
+            recordSummary: null,
+            standingSummary: null,
+            source: 'error',
+          },
+        }));
+      }
+    };
+
+    loadProfile();
+  }, [profileTeam, teamProfiles]);
 
   const renderCalendarStep = () => {
     return (
@@ -477,7 +601,7 @@ function App() {
         {/* My Teams card */}
         <div className="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
           <div className="mb-3 flex items-center justify-between">
-            <div className="text-xs uppercase tracking-[0.25em] text-indigo-300">My Teams</div>
+            <div className="text-xs uppercase tracking-[0.25em] text-amber-300">My Teams</div>
             <button
               type="button"
               title="Edit preferences"
@@ -505,7 +629,7 @@ function App() {
                     title={isFocused ? 'Clear highlight' : `Highlight ${team.name}`}
                     className={`flex items-center gap-2 rounded-full border px-2.5 py-1.5 text-xs font-medium transition-all duration-150 ${
                       isFocused
-                        ? 'border-indigo-400 bg-indigo-500/20 text-white shadow shadow-indigo-500/30'
+                        ? 'border-amber-400 bg-amber-500/20 text-white shadow shadow-amber-500/30'
                         : 'border-slate-700 bg-slate-950/60 text-slate-200 hover:border-slate-500 hover:bg-slate-800/60'
                     }`}
                   >
@@ -575,7 +699,7 @@ function App() {
                       isCurrentMonth(day, currentMonth)
                         ? 'border-slate-800 bg-slate-900/70'
                         : 'border-slate-900 bg-slate-950/60 text-slate-500'
-                    } ${isTodayDate(day) ? 'ring-1 ring-indigo-400' : ''}`}
+                    } ${isTodayDate(day) ? 'ring-1 ring-amber-400' : ''}`}
                   >
                     <div className="mb-1.5 text-right text-xs font-medium text-slate-300">{day.getDate()}</div>
 
@@ -709,42 +833,168 @@ function App() {
     );
   };
 
-  const stepIndex = screen === 'league' ? 0 : screen === 'team' ? 1 : 2;
+  const renderMyTeamsStep = () => {
+    const profileMeta = profileTeam ? teamProfiles[profileTeam.id] : null;
+    const recordDisplay = profileMeta?.recordSummary || profileComputedRecord || 'N/A';
+
+    return (
+      <div className="grid gap-4 lg:grid-cols-[320px_minmax(0,1fr)]">
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+          <div className="mb-3 text-xs uppercase tracking-[0.25em] text-amber-300">My Teams</div>
+          {selectedTeams.length === 0 ? (
+            <div className="text-sm text-slate-400">No teams selected yet.</div>
+          ) : (
+            <div className="space-y-2">
+              {selectedTeams.map((team) => {
+                const selected = profileTeamId === team.id;
+                return (
+                  <button
+                    key={team.id}
+                    type="button"
+                    onClick={() => setProfileTeamId((current) => current === team.id ? null : team.id)}
+                    className={`flex w-full items-center gap-3 rounded-xl border px-3 py-2 text-left transition ${
+                      selected
+                        ? 'border-amber-400 bg-amber-500/15 shadow shadow-amber-500/20'
+                        : 'border-slate-700 bg-slate-900/70 hover:border-slate-500 hover:bg-slate-800/80'
+                    }`}
+                  >
+                    {team.logoUrl ? (
+                      <img src={team.logoUrl} alt={team.name} className="h-8 w-8 rounded-full bg-white/90 p-0.5 object-contain" />
+                    ) : (
+                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-700 text-[10px] font-semibold text-white">
+                        {team.shortName.slice(0, 2).toUpperCase()}
+                      </div>
+                    )}
+                    <div>
+                      <div className="text-sm font-semibold text-white">{team.name}</div>
+                      <div className="text-[10px] uppercase tracking-[0.18em] text-slate-400">{team.league}</div>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          )}
+        </div>
+
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+          {!profileTeam ? (
+            <div className="text-sm text-slate-400">Select a team to view profile details.</div>
+          ) : (
+            <div className="space-y-4">
+              <div className="rounded-2xl border border-amber-500/30 bg-amber-500/10 p-4">
+                <div className="flex items-center gap-3">
+                  <TeamLogo logoUrl={profileTeam.logoUrl} primaryColor={profileTeam.primaryColor} alt={profileTeam.name} size={36} />
+                  <div>
+                    <div className="text-lg font-semibold text-white">{profileTeam.name}</div>
+                    <div className="text-xs uppercase tracking-[0.18em] text-slate-300">
+                      {profileMeta?.standingSummary || 'Current Season'}
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-3 text-2xl font-black text-amber-200">
+                  {profileMeta?.loading ? 'Loading record…' : recordDisplay}
+                </div>
+                <div className="text-xs text-slate-400">
+                  {profileMeta?.recordSummary
+                    ? `Source: ESPN team endpoint (${profileMeta.source})`
+                    : 'Record computed from completed games in current season'}
+                </div>
+              </div>
+
+              <div className="grid gap-4 xl:grid-cols-2">
+                <div className="rounded-xl border border-slate-800 bg-slate-950/60 p-3">
+                  <div className="mb-2 text-xs uppercase tracking-[0.2em] text-amber-300">Recent Results</div>
+                  {profileCompletedCurrentSeason.length === 0 ? (
+                    <div className="text-xs text-slate-400">No completed games yet for this season.</div>
+                  ) : (
+                    <div className="space-y-2">
+                      {profileCompletedCurrentSeason.map((event) => (
+                        <div key={event.id} className="rounded-lg border border-slate-800 bg-slate-900/80 p-2 text-xs">
+                          <div className="font-semibold text-white">vs {event.opponent}</div>
+                          <div className="mt-0.5 text-slate-300">
+                            {event.teamScore ?? '-'} - {event.opponentScore ?? '-'} · {new Date(event.date).toLocaleDateString()} · {event.time}
+                          </div>
+                          <div className="mt-0.5 truncate text-slate-500">{event.venue || 'TBD'}</div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                <div className="rounded-xl border border-slate-800 bg-slate-950/60 p-3">
+                  <div className="mb-2 text-xs uppercase tracking-[0.2em] text-amber-300">Upcoming Schedule (Next 10)</div>
+                  {profileUpcomingNext10.length === 0 ? (
+                    <div className="text-xs text-slate-400">No upcoming games found.</div>
+                  ) : (
+                    <div className="space-y-2">
+                      {profileUpcomingNext10.map((event) => (
+                        <div key={event.id} className="rounded-lg border border-slate-800 bg-slate-900/80 p-2 text-xs">
+                          <div className="font-semibold text-white">vs {event.opponent}</div>
+                          <div className="mt-0.5 text-slate-300">{new Date(event.date).toLocaleDateString()} · {event.time}</div>
+                          <div className="mt-0.5 truncate text-slate-500">{event.venue || 'TBD'}</div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  };
+
+  const stepIndex = screen === 'league'
+    ? 0
+    : screen === 'team'
+      ? 1
+      : screen === 'calendar'
+        ? 2
+        : 3;
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.18),transparent_24%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.1),transparent_20%)]" />
-        <div className="absolute left-[-10%] top-0 h-80 w-80 rounded-full bg-indigo-500/10 blur-3xl" />
-        <div className="absolute bottom-0 right-[-8%] h-80 w-80 rounded-full bg-cyan-500/10 blur-3xl" />
-        <div className="absolute inset-x-0 top-24 h-px bg-gradient-to-r from-transparent via-indigo-300/70 to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(245,158,11,0.18),transparent_24%),radial-gradient(circle_at_bottom_right,rgba(251,146,60,0.1),transparent_20%)]" />
+        <div className="absolute left-[-10%] top-0 h-80 w-80 rounded-full bg-amber-500/10 blur-3xl" />
+        <div className="absolute bottom-0 right-[-8%] h-80 w-80 rounded-full bg-orange-500/10 blur-3xl" />
+        <div className="absolute inset-x-0 top-24 h-px bg-gradient-to-r from-transparent via-amber-300/70 to-transparent" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <header className="mb-8 flex flex-col items-center gap-4 md:flex-row md:items-end md:justify-between">
           <div className="w-full text-center md:text-left">
-            <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-indigo-400/30 bg-indigo-500/5 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.26em] text-indigo-200/90">
-              <span className="h-1.5 w-1.5 rounded-full bg-indigo-400" />
-              Sports dashboard
-            </div>
-            <h1 className="text-[2.6rem] font-black uppercase tracking-[0.16em] text-transparent bg-gradient-to-r from-white via-indigo-100 to-indigo-300 bg-clip-text drop-shadow-[0_0_24px_rgba(99,102,241,0.35)] md:text-[3rem]">
+            <h1 className="text-[2.6rem] font-black uppercase tracking-[0.16em] text-transparent bg-gradient-to-r from-white via-amber-100 to-amber-300 bg-clip-text drop-shadow-[0_0_24px_rgba(245,158,11,0.35)] md:text-[3rem]">
               Rally
             </h1>
-            <p className="mt-2 text-base font-medium tracking-[0.06em] text-indigo-200 md:text-lg">Every Team, Every Game, One Place.</p>
+            <p className="mt-2 text-base font-medium tracking-[0.06em] text-amber-200 md:text-lg">Every Team, Every Game, One Place.</p>
           </div>
           {screen !== 'landing' && (
             <div className="inline-flex items-center justify-center gap-1 rounded-full border border-slate-700 bg-slate-900/80 p-1 shadow-sm shadow-slate-950/40">
-              {STEPS.map((label, index) => (
-                <div
-                  key={label}
+              {NAV_TABS.map((tab, index) => (
+                <button
+                  key={tab.label}
+                  type="button"
+                  onClick={() => {
+                    if (tab.screen === 'team' && selectedLeagues.length === 0) {
+                      setScreen('league');
+                      return;
+                    }
+                    if ((tab.screen === 'calendar' || tab.screen === 'my-teams') && selectedTeams.length === 0 && selectedLeagues.length === 0) {
+                      setScreen('league');
+                      return;
+                    }
+                    setScreen(tab.screen);
+                  }}
                   className={`rounded-full px-3 py-2 text-[11px] font-medium uppercase tracking-[0.2em] transition-colors ${
                     index === stepIndex
-                      ? 'bg-indigo-500/15 text-indigo-200 ring-1 ring-inset ring-indigo-400/60'
+                      ? 'bg-amber-500/15 text-amber-200 ring-1 ring-inset ring-amber-400/60'
                       : 'text-slate-400 hover:text-slate-200'
                   }`}
                 >
-                  {label}
-                </div>
+                  {tab.label}
+                </button>
               ))}
             </div>
           )}
@@ -755,6 +1005,7 @@ function App() {
           {screen === 'league' && renderLeagueStep()}
           {screen === 'team' && renderTeamStep()}
           {screen === 'calendar' && renderCalendarStep()}
+          {screen === 'my-teams' && renderMyTeamsStep()}
 
           {screen !== 'landing' && (
             <div className="mt-8 flex items-center justify-between">
@@ -773,6 +1024,11 @@ function App() {
 
                   if (screen === 'calendar') {
                     setScreen(selectedLeagues.length > 0 ? 'team' : 'league');
+                    return;
+                  }
+
+                  if (screen === 'my-teams') {
+                    setScreen('calendar');
                   }
                 }}
                 className="rounded-xl border border-slate-700 px-4 py-2 text-sm font-medium text-slate-200 hover:bg-slate-800"
@@ -784,7 +1040,7 @@ function App() {
                 <button
                   type="button"
                   onClick={handleLeagueContinue}
-                  className="rounded-xl bg-indigo-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-400"
+                  className="rounded-xl bg-amber-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-amber-400"
                 >
                   {selectedLeagues.length === 0 ? 'Go to Calendar' : 'Continue'}
                 </button>
@@ -794,7 +1050,7 @@ function App() {
                 <button
                   type="button"
                   onClick={handleTeamContinue}
-                  className="rounded-xl bg-indigo-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-400"
+                  className="rounded-xl bg-amber-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-amber-400"
                 >
                   {teamLeagueIndex < selectedLeagues.length - 1 ? 'Continue to next league' : 'View calendar'}
                 </button>

@@ -52,4 +52,9 @@ export interface GameEvent {
   primaryColor?: string;
   type: 'game' | 'race';
   status?: string;
+  completed?: boolean;
+  teamScore?: number | null;
+  opponentScore?: number | null;
+  seasonYear?: number;
+  seasonType?: number;
 }
