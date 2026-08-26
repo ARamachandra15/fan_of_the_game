@@ -1,5 +1,7 @@
+const API_BASE = import.meta.env.VITE_API_BASE_URL || '';
+
 export async function fetchLeagues() {
-  const response = await fetch('/api/leagues');
+  const response = await fetch(`${API_BASE}/api/leagues`);
   if (!response.ok) {
     throw new Error('Unable to fetch supported leagues');
   }
@@ -8,7 +10,7 @@ export async function fetchLeagues() {
 }
 
 export async function fetchTeamsForLeague(leagueId: string) {
-  const response = await fetch(`/api/teams/${leagueId}`);
+  const response = await fetch(`${API_BASE}/api/teams/${leagueId}`);
   if (!response.ok) {
     throw new Error('Unable to fetch teams for league');
   }
@@ -18,7 +20,7 @@ export async function fetchTeamsForLeague(leagueId: string) {
 
 export async function fetchLeagueGames(league: string, teamName?: string) {
   const query = teamName ? `?team=${encodeURIComponent(teamName)}` : '';
-  const response = await fetch(`/api/sports/${league}${query}`);
+  const response = await fetch(`${API_BASE}/api/sports/${league}${query}`);
   const data = await response.json().catch(() => ({}));
 
   if (!response.ok) {
@@ -34,7 +36,7 @@ export async function fetchLeagueGames(league: string, teamName?: string) {
 
 export async function fetchTeamProfile(league: string, teamName: string) {
   const query = `?team=${encodeURIComponent(teamName)}`;
-  const response = await fetch(`/api/team-profile/${league}${query}`);
+  const response = await fetch(`${API_BASE}/api/team-profile/${league}${query}`);
   const data = await response.json().catch(() => ({}));
 
   if (!response.ok) {
