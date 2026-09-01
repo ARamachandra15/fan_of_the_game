@@ -1,12 +1,12 @@
 import { useEffect, useMemo, useState } from 'react';
 import { F1_CONSTRUCTORS, LEAGUES } from './lib/constants';
 import { clearSelection, normalizeStoredSelection, readSelection, writeSelection } from './lib/storage';
-import { buildMonthGrid, formatMonthLabel, goToNextMonth, goToPrevMonth, isCurrentMonth, isTodayDate } from './lib/date';
+import { buildMonthGrid, formatDateKey, formatMonthLabel, goToNextMonth, goToPrevMonth, isCurrentMonth, isTodayDate } from './lib/date';
 import type { GameEvent, LeagueKey, LeagueOption, LeagueSelection, TeamOption, UserSelectionState } from './types/sports';
 import { fetchLeagueGames, fetchTeamProfile, fetchTeamsForLeague } from './services/sportsApi';
 import { hasSupabase, supabase } from './lib/supabase';
 import { readTimezoneOffset, writeTimezoneOffset } from './lib/storage';
-import { IANA_TIMEZONES, getDefaultTimezone, formatTimeInTimezone, normalizeEspnTimestamp, getTimezoneInfo } from './lib/timezoneIANA';
+import { IANA_TIMEZONES, getDefaultTimezone, formatTimeInTimezone, normalizeEspnTimestamp, getTimezoneInfo, getDatePartsInTimezone, getDateKeyInTimezone } from './lib/timezoneIANA';
 
 const NAV_TABS = [
   { label: 'Leagues', screen: 'league' as const },
@@ -568,13 +568,17 @@ function App() {
     setScreen('calendar');
   };
 
+  const calendarTimezone = userTimezoneId ?? getDefaultTimezone();
+
   const filteredEvents = useMemo(
     () =>
       events.filter((event) => {
-        const eventDate = new Date(event.date);
-        return eventDate.getMonth() === currentMonth.getMonth() && eventDate.getFullYear() === currentMonth.getFullYear();
+        // Localize to the user's selected timezone (not the browser's) so events
+        // near a month boundary land in the correct month bucket.
+        const { year, month } = getDatePartsInTimezone(event.datetime, calendarTimezone);
+        return month - 1 === currentMonth.getMonth() && year === currentMonth.getFullYear();
       }),
-    [events, currentMonth],
+    [events, currentMonth, calendarTimezone],
   );
 
   const monthDays = buildMonthGrid(currentMonth);
@@ -583,14 +587,16 @@ function App() {
     const map = new Map<string, GameEvent[]>();
 
     for (const event of filteredEvents) {
-      const dayKey = new Date(event.date).toISOString().slice(0, 10);
+      // Group by the calendar day the event falls on in the user's selected
+      // timezone, not UTC, so it matches the (also timezone-localized) display time.
+      const dayKey = getDateKeyInTimezone(event.datetime, calendarTimezone);
       const group = map.get(dayKey) ?? [];
       group.push(event);
       map.set(dayKey, group);
     }
 
     return map;
-  }, [filteredEvents]);
+  }, [filteredEvents, calendarTimezone]);
 
   const renderLandingStep = () => {
     if (authMode) {
@@ -1057,7 +1063,7 @@ function App() {
               ))}
 
               {monthDays.map((day) => {
-                const dayKey = day.toISOString().slice(0, 10);
+                const dayKey = formatDateKey(day);
                 const dayEvents = eventsByDay.get(dayKey) ?? [];
                 // Sort events by time, earliest first
                 const sortedEvents = dayEvents.sort((a, b) => {
@@ -1207,7 +1213,7 @@ function App() {
                 <button type="button" onClick={() => setSelectedDay(null)} className="text-slate-300 hover:text-white">Close</button>
               </div>
               <div className="space-y-3">
-                {(eventsByDay.get(selectedDay.toISOString().slice(0, 10)) ?? []).map((event) => {
+                {(eventsByDay.get(formatDateKey(selectedDay)) ?? []).map((event) => {
                   const teamColor = event.primaryColor ?? '#5b7cff';
                   const displayTime = userTimezoneId !== null
                     ? formatTimeInTimezone(event.datetime, userTimezoneId)

@@ -146,6 +146,59 @@ export function formatTimeInTimezone(utcTimestamp: string, timezoneId: string): 
 }
 
 /**
+ * Get the calendar date (year, month, day) that a UTC instant falls on
+ * when localized to the given IANA timezone. Use this instead of
+ * `new Date(...).toISOString()`/`getDate()` for calendar placement, since
+ * those use UTC or the browser's local timezone respectively, not the
+ * user's selected timezone.
+ *
+ * @param utcTimestamp ISO 8601 UTC timestamp
+ * @param timezoneId IANA timezone ID (e.g., "America/New_York")
+ * @returns { year, month, day } - month is 1-indexed
+ */
+export function getDatePartsInTimezone(utcTimestamp: string, timezoneId: string): { year: number; month: number; day: number } {
+  const date = new Date(utcTimestamp);
+  if (Number.isNaN(date.getTime())) {
+    const now = new Date();
+    return { year: now.getFullYear(), month: now.getMonth() + 1, day: now.getDate() };
+  }
+
+  const formatter = new Intl.DateTimeFormat('en-US', {
+    timeZone: timezoneId,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  });
+
+  const parts = formatter.formatToParts(date);
+  const partsMap: Record<string, string> = {};
+  for (const part of parts) {
+    partsMap[part.type] = part.value;
+  }
+
+  return {
+    year: parseInt(partsMap.year, 10),
+    month: parseInt(partsMap.month, 10),
+    day: parseInt(partsMap.day, 10),
+  };
+}
+
+/**
+ * Get the "yyyy-MM-dd" calendar day key that a UTC instant falls on when
+ * localized to the given IANA timezone. Use this for grouping events onto
+ * calendar days so the grouping matches the user's selected timezone
+ * instead of UTC or the browser's local timezone.
+ *
+ * @param utcTimestamp ISO 8601 UTC timestamp
+ * @param timezoneId IANA timezone ID (e.g., "America/New_York")
+ * @returns date key string, e.g. "2026-09-19"
+ */
+export function getDateKeyInTimezone(utcTimestamp: string, timezoneId: string): string {
+  const { year, month, day } = getDatePartsInTimezone(utcTimestamp, timezoneId);
+  return `${String(year).padStart(4, '0')}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+}
+
+/**
  * Get timezone info (label, abbreviation, etc.) for display
  */
 export function getTimezoneInfo(timezoneId: string): typeof IANA_TIMEZONES[0] | null {

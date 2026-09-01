@@ -13,6 +13,13 @@ export function formatMonthLabel(date: Date) {
   return format(date, 'MMMM yyyy');
 }
 
+// Plain "yyyy-MM-dd" key for a calendar grid date. Uses date-fns `format`
+// (local field extraction) instead of `toISOString()`, which would shift
+// the date if the browser's local UTC offset is positive.
+export function formatDateKey(date: Date) {
+  return format(date, 'yyyy-MM-dd');
+}
+
 export function isCurrentMonth(date: Date, reference: Date) {
   return isSameMonth(date, reference);
 }
