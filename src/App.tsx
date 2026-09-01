@@ -37,6 +37,25 @@ const hexToRgba = (value: string, alpha: number) => {
   return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 };
 
+// Result colors are from the followed team's perspective (event.teamScore vs event.opponentScore),
+// which is already normalized for home/away when the event is built.
+type MatchResult = 'win' | 'loss' | 'draw';
+
+const RESULT_COLORS: Record<MatchResult, string> = {
+  win: '#22c55e',
+  loss: '#ef4444',
+  draw: '#94a3b8',
+};
+
+const getMatchResult = (event: GameEvent): MatchResult | null => {
+  if (!event.completed || typeof event.teamScore !== 'number' || typeof event.opponentScore !== 'number') {
+    return null;
+  }
+  if (event.teamScore > event.opponentScore) return 'win';
+  if (event.teamScore < event.opponentScore) return 'loss';
+  return 'draw';
+};
+
 const buildSelectionPayload = (selectedLeagues: LeagueSelection[], selectedTeams: TeamOption[]): UserSelectionState => ({
   version: 1,
   selectedLeagues,
@@ -109,6 +128,7 @@ function App() {
   const [authLoading, setAuthLoading] = useState(false);
   const [authUser, setAuthUser] = useState<{ id: string; email?: string | null } | null>(null);
   const [focusedTeamId, setFocusedTeamId] = useState<string | null>(null);
+  const [isEditingMyTeams, setIsEditingMyTeams] = useState(false);
   const [profileTeamId, setProfileTeamId] = useState<string | null>(null);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
   const [showTimezoneSelector, setShowTimezoneSelector] = useState(false);
@@ -394,10 +414,10 @@ function App() {
                 ? (selectedIsHome ? awayScoreValue : homeScoreValue)
                 : null;
               const completed = Boolean(game?.raw?.status?.type?.completed)
+                || Boolean(competition?.status?.type?.completed)
                 || String(status).toLowerCase() === 'final'
                 || String(status).toLowerCase() === 'post';
               const seasonYear = Number(game?.raw?.season?.year ?? NaN);
-              const seasonType = Number(game?.raw?.seasonType?.type ?? NaN);
 
               nextEvents.push({
                 id: `${league.id}-${game.id || game.idEvent || `${team.name}-${Math.random().toString(16).slice(2)}`}`,
@@ -419,7 +439,10 @@ function App() {
                 teamScore,
                 opponentScore,
                 seasonYear: Number.isFinite(seasonYear) ? seasonYear : undefined,
-                seasonType: Number.isFinite(seasonType) ? seasonType : undefined,
+                // Season phase is normalized once on the server (from ESPN's seasonType.type);
+                // every UI surface (calendar, My Teams, record calc) consumes this same value.
+                seasonType: game.seasonType,
+                seasonTypeLabel: game.seasonTypeLabel,
               });
             }
           } catch (error) {
@@ -900,6 +923,7 @@ function App() {
     if (!profileTeam) return [];
     return profileTeamEvents.filter((event) =>
       event.completed === true
+      && event.seasonType === 'regular'
       && (profileCurrentSeasonYear === null || event.seasonYear === profileCurrentSeasonYear));
   }, [profileTeam, profileTeamEvents, profileCurrentSeasonYear]);
 
@@ -982,8 +1006,12 @@ function App() {
             <button
               type="button"
               title="Edit preferences"
-              onClick={() => setScreen('league')}
-              className="flex h-7 w-7 items-center justify-center rounded-lg border border-slate-700 bg-slate-800/60 text-slate-400 transition hover:border-slate-500 hover:bg-slate-700 hover:text-white"
+              onClick={() => setIsEditingMyTeams((current) => !current)}
+              className={`flex h-7 w-7 items-center justify-center rounded-lg border transition ${
+                isEditingMyTeams
+                  ? 'border-amber-400 bg-amber-500/20 text-amber-200'
+                  : 'border-slate-700 bg-slate-800/60 text-slate-400 hover:border-slate-500 hover:bg-slate-700 hover:text-white'
+              }`}
               aria-label="Edit preferences"
             >
               {/* Pencil icon */}
@@ -992,35 +1020,58 @@ function App() {
               </svg>
             </button>
           </div>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             {selectedTeams.length === 0 ? (
               <div className="text-sm text-slate-400">No teams selected yet.</div>
             ) : (
               selectedTeams.map((team) => {
                 const isFocused = focusedTeamId === team.id;
                 return (
-                  <button
-                    key={team.id}
-                    type="button"
-                    onClick={() => setFocusedTeamId(isFocused ? null : team.id)}
-                    title={isFocused ? 'Clear highlight' : `Highlight ${team.name}`}
-                    className={`flex items-center gap-2 rounded-full border px-2.5 py-1.5 text-xs font-medium transition-all duration-150 ${
-                      isFocused
-                        ? 'border-amber-400 bg-amber-500/20 text-white shadow shadow-amber-500/30'
-                        : 'border-slate-700 bg-slate-950/60 text-slate-200 hover:border-slate-500 hover:bg-slate-800/60'
-                    }`}
-                  >
-                    {team.logoUrl ? (
-                      <img src={team.logoUrl} alt={team.name} className="h-5 w-5 rounded-full object-contain" />
-                    ) : (
-                      <div className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-700 text-[8px] font-semibold text-white">
-                        {team.shortName.slice(0, 2).toUpperCase()}
-                      </div>
+                  <div key={team.id} className="relative">
+                    <button
+                      type="button"
+                      onClick={() => setFocusedTeamId(isFocused ? null : team.id)}
+                      title={isFocused ? 'Clear highlight' : `Highlight ${team.name}`}
+                      className={`flex items-center gap-2 rounded-full border px-2.5 py-1.5 text-xs font-medium transition-all duration-150 ${
+                        isFocused
+                          ? 'border-amber-400 bg-amber-500/20 text-white shadow shadow-amber-500/30'
+                          : 'border-slate-700 bg-slate-950/60 text-slate-200 hover:border-slate-500 hover:bg-slate-800/60'
+                      }`}
+                    >
+                      {team.logoUrl ? (
+                        <img src={team.logoUrl} alt={team.name} className="h-5 w-5 rounded-full object-contain" />
+                      ) : (
+                        <div className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-700 text-[8px] font-semibold text-white">
+                          {team.shortName.slice(0, 2).toUpperCase()}
+                        </div>
+                      )}
+                      {team.name}
+                    </button>
+                    {isEditingMyTeams && (
+                      <button
+                        type="button"
+                        onClick={(e) => { e.stopPropagation(); toggleTeam(team); }}
+                        title={`Remove ${team.name}`}
+                        aria-label={`Remove ${team.name}`}
+                        className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full border border-slate-600 bg-slate-800 text-slate-300 shadow transition hover:border-red-400 hover:bg-red-500/80 hover:text-white"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="h-2.5 w-2.5">
+                          <path d="M3 8a1 1 0 0 1 1-1h8a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1Z" />
+                        </svg>
+                      </button>
                     )}
-                    {team.name}
-                  </button>
+                  </div>
                 );
               })
+            )}
+            {isEditingMyTeams && (
+              <button
+                type="button"
+                onClick={() => setScreen('league')}
+                className="flex items-center gap-1.5 rounded-full border border-dashed border-slate-600 px-2.5 py-1.5 text-xs font-medium text-slate-300 transition hover:border-amber-400 hover:text-amber-200"
+              >
+                <span className="text-sm leading-none">+</span> Add teams
+              </button>
             )}
           </div>
         </div>
@@ -1091,6 +1142,8 @@ function App() {
                     <div className="space-y-1">
                       {visibleEvents.map((event) => {
                         const teamColor = event.primaryColor ?? '#5b7cff';
+                        const matchResult = getMatchResult(event);
+                        const accentColor = matchResult ? RESULT_COLORS[matchResult] : teamColor;
                         const isFocusedEvent = focusedTeamId === event.teamId;
                         const displayTime = userTimezoneId !== null 
                           ? formatTimeInTimezone(event.datetime, userTimezoneId)
@@ -1101,13 +1154,13 @@ function App() {
                             type="button"
                             onClick={(e) => { e.stopPropagation(); setSelectedDay(day); }}
                             className="flex w-full items-center gap-1.5 rounded-md px-1.5 py-0.5 text-left text-[9px] font-medium text-slate-100 transition-transform"
-                            title={`${event.teamName} vs ${event.opponent} at ${displayTime}`}
+                            title={`${event.teamName} vs ${event.opponent} at ${displayTime}${event.seasonTypeLabel ? ` (${event.seasonTypeLabel})` : ''}`}
                             style={{
-                              borderLeft: `3px solid ${teamColor}`,
-                              background: hexToRgba(teamColor, isFocusedEvent ? 0.32 : 0.16),
+                              borderLeft: `3px solid ${accentColor}`,
+                              background: hexToRgba(accentColor, isFocusedEvent ? 0.32 : 0.16),
                               boxShadow: isFocusedEvent
-                                ? `0 0 0 1.5px ${teamColor}, 0 2px 8px ${hexToRgba(teamColor, 0.5)}`
-                                : `inset 0 0 0 1px ${hexToRgba(teamColor, 0.22)}`,
+                                ? `0 0 0 1.5px ${accentColor}, 0 2px 8px ${hexToRgba(accentColor, 0.5)}`
+                                : `inset 0 0 0 1px ${hexToRgba(accentColor, 0.22)}`,
                               transform: isFocusedEvent ? 'scale(1.04)' : 'scale(1)',
                             }}
                           >
@@ -1132,10 +1185,18 @@ function App() {
                                 const displayTime = userTimezoneId !== null
                                   ? formatTimeInTimezone(event.datetime, userTimezoneId)
                                   : event.time;
+                                const matchResult = getMatchResult(event);
                                 return (
-                                  <div key={event.id} className="text-[8px] text-slate-300 py-1 border-b border-slate-700 last:border-b-0">
+                                  <div
+                                    key={event.id}
+                                    className="text-[8px] text-slate-300 py-1 border-b border-slate-700 last:border-b-0 pl-1.5"
+                                    style={matchResult ? { borderLeft: `2px solid ${RESULT_COLORS[matchResult]}` } : undefined}
+                                  >
                                     <div className="font-medium text-amber-200">{event.teamShortName} vs {event.opponent}</div>
                                     <div className="text-slate-400">{displayTime}</div>
+                                    {event.seasonTypeLabel && (
+                                      <div className="text-slate-500">{event.seasonTypeLabel}</div>
+                                    )}
                                   </div>
                                 );
                               })}
@@ -1195,6 +1256,9 @@ function App() {
                         {event.venue && event.venue !== 'TBD' && (
                           <div className="mt-0.5 truncate text-slate-500">{event.venue}</div>
                         )}
+                        {event.seasonTypeLabel && (
+                          <div className="mt-0.5 text-[10px] uppercase tracking-[0.14em] text-amber-300/80">{event.seasonTypeLabel}</div>
+                        )}
                       </div>
                     );
                   })}
@@ -1215,6 +1279,8 @@ function App() {
               <div className="space-y-3">
                 {(eventsByDay.get(formatDateKey(selectedDay)) ?? []).map((event) => {
                   const teamColor = event.primaryColor ?? '#5b7cff';
+                  const matchResult = getMatchResult(event);
+                  const accentColor = matchResult ? RESULT_COLORS[matchResult] : teamColor;
                   const displayTime = userTimezoneId !== null
                     ? formatTimeInTimezone(event.datetime, userTimezoneId)
                     : event.time;
@@ -1222,7 +1288,7 @@ function App() {
                     <div
                       key={event.id}
                       className="rounded-xl border border-slate-800 bg-slate-950/70 p-3"
-                      style={{ borderLeft: `4px solid ${teamColor}`, background: hexToRgba(teamColor, 0.08) }}
+                      style={{ borderLeft: `4px solid ${accentColor}`, background: hexToRgba(accentColor, 0.08) }}
                     >
                       <div className="flex items-center justify-between gap-3">
                         <div className="flex items-center gap-2">
@@ -1233,6 +1299,9 @@ function App() {
                       </div>
                       <div className="mt-2 text-sm text-slate-300">vs {event.opponent}</div>
                       <div className="mt-2 text-xs text-slate-400">{displayTime} • {event.venue}</div>
+                      {event.seasonTypeLabel && (
+                        <div className="mt-1 text-[10px] uppercase tracking-[0.14em] text-amber-300/80">{event.seasonTypeLabel}</div>
+                      )}
                     </div>
                   );
                 })}
@@ -1246,7 +1315,10 @@ function App() {
 
   const renderMyTeamsStep = () => {
     const profileMeta = profileTeam ? teamProfiles[profileTeam.id] : null;
-    const recordDisplay = profileMeta?.recordSummary || profileComputedRecord || 'N/A';
+    // ESPN's team-record endpoint reflects whatever ESPN is currently reporting (which is the
+    // preseason record before the regular season starts), so it can't be trusted as-is. Prefer
+    // the record we compute from regular-season-only completed games instead.
+    const recordDisplay = profileComputedRecord ?? profileMeta?.recordSummary ?? 'N/A';
 
     return (
       <div className="grid gap-4 lg:grid-cols-[320px_minmax(0,1fr)]">
@@ -1306,9 +1378,9 @@ function App() {
                   {profileMeta?.loading ? 'Loading record…' : recordDisplay}
                 </div>
                 <div className="text-xs text-slate-400">
-                  {profileMeta?.recordSummary
-                    ? `Source: ESPN team endpoint (${profileMeta.source})`
-                    : 'Record computed from completed games in current season'}
+                  {profileComputedRecord !== null
+                    ? 'Regular-season record computed from completed games'
+                    : `Source: ESPN team endpoint (${profileMeta?.source ?? 'unknown'})`}
                 </div>
               </div>
 
@@ -1323,13 +1395,24 @@ function App() {
                         const displayTime = userTimezoneId !== null
                           ? formatTimeInTimezone(event.datetime, userTimezoneId)
                           : event.time;
+                        const matchResult = getMatchResult(event);
                         return (
-                          <div key={event.id} className="rounded-lg border border-slate-800 bg-slate-900/80 p-2 text-xs">
+                          <div
+                            key={event.id}
+                            className="rounded-lg border border-slate-800 bg-slate-900/80 p-2 text-xs"
+                            style={matchResult ? {
+                              borderLeft: `3px solid ${RESULT_COLORS[matchResult]}`,
+                              background: hexToRgba(RESULT_COLORS[matchResult], 0.08),
+                            } : undefined}
+                          >
                             <div className="font-semibold text-white">vs {event.opponent}</div>
                             <div className="mt-0.5 text-slate-300">
                               {event.teamScore ?? '-'} - {event.opponentScore ?? '-'} · {new Date(event.date).toLocaleDateString()} · {displayTime}
                             </div>
                             <div className="mt-0.5 truncate text-slate-500">{event.venue || 'TBD'}</div>
+                            {event.seasonTypeLabel && (
+                              <div className="mt-0.5 text-[10px] uppercase tracking-[0.14em] text-amber-300/80">{event.seasonTypeLabel}</div>
+                            )}
                           </div>
                         );
                       })}
@@ -1352,6 +1435,9 @@ function App() {
                             <div className="font-semibold text-white">vs {event.opponent}</div>
                             <div className="mt-0.5 text-slate-300">{new Date(event.date).toLocaleDateString()} · {displayTime}</div>
                             <div className="mt-0.5 truncate text-slate-500">{event.venue || 'TBD'}</div>
+                            {event.seasonTypeLabel && (
+                              <div className="mt-0.5 text-[10px] uppercase tracking-[0.14em] text-amber-300/80">{event.seasonTypeLabel}</div>
+                            )}
                           </div>
                         );
                       })}

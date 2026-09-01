@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-01T01:25:06.372Z",
+  "fetchedAt": "2026-09-01T16:54:44.220Z",
   "source": "ESPN-scoreboard",
   "league": "premier-league",
   "teamId": "360",
@@ -23,7 +23,9 @@
       "title": "MAN @ HUL",
       "date": "2026-08-22",
       "time": "11:30",
-      "datetime": "2026-08-22T11:30Z",
+      "datetime": "2026-08-22T11:30:00.000Z",
+      "seasonType": "regular",
+      "seasonTypeLabel": "Regular Season",
       "status": "post",
       "venue": "The MKM Stadium",
       "home_team_name": "Hull City",
@@ -425,7 +427,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "11120"
+                    "id": "250"
                   }
                 },
                 "statistics": [
@@ -795,7 +797,9 @@
       "title": "IPS @ MAN",
       "date": "2026-08-30",
       "time": "15:30",
-      "datetime": "2026-08-30T15:30Z",
+      "datetime": "2026-08-30T15:30:00.000Z",
+      "seasonType": "regular",
+      "seasonTypeLabel": "Regular Season",
       "status": "post",
       "venue": "Old Trafford",
       "home_team_name": "Manchester United",
@@ -1027,7 +1031,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "11120"
+                    "id": "250"
                   }
                 },
                 "statistics": [
@@ -1831,7 +1835,9 @@
       "title": "MAN @ EVE",
       "date": "2026-09-06",
       "time": "13:00",
-      "datetime": "2026-09-06T13:00Z",
+      "datetime": "2026-09-06T13:00:00.000Z",
+      "seasonType": "regular",
+      "seasonTypeLabel": "Regular Season",
       "status": "pre",
       "venue": "Hill Dickinson Stadium",
       "home_team_name": "Everton",
@@ -1895,8 +1901,8 @@
             },
             "tickets": [
               {
-                "summary": "Tickets as low as $151",
-                "numberAvailable": 572,
+                "summary": "Tickets as low as $160",
+                "numberAvailable": 462,
                 "links": [
                   {
                     "href": "https://www.vividseats.com/everton-fc-tickets-goodison-park-9-5-2026--sports-soccer/production/7188461?wsUser=717"
@@ -2282,7 +2288,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "11120"
+                    "id": "250"
                   }
                 },
                 "statistics": [],
@@ -2672,7 +2678,9 @@
       "title": "MNC @ MAN",
       "date": "2026-09-13",
       "time": "15:30",
-      "datetime": "2026-09-13T15:30Z",
+      "datetime": "2026-09-13T15:30:00.000Z",
+      "seasonType": "regular",
+      "seasonTypeLabel": "Regular Season",
       "status": "pre",
       "venue": "Old Trafford",
       "home_team_name": "Manchester United",
@@ -2736,8 +2744,8 @@
             },
             "tickets": [
               {
-                "summary": "Tickets as low as $374",
-                "numberAvailable": 2002,
+                "summary": "Tickets as low as $316",
+                "numberAvailable": 2053,
                 "links": [
                   {
                     "href": "https://www.vividseats.com/manchester-united-fc-tickets-old-trafford-football-ground-9-12-2026--sports-soccer/production/7188487?wsUser=717"
@@ -2878,7 +2886,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "11120"
+                    "id": "250"
                   }
                 },
                 "statistics": [],
@@ -3084,7 +3092,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "1279"
+                    "id": "4036"
                   }
                 },
                 "statistics": [],
@@ -3474,7 +3482,9 @@
       "title": "MAN @ FUL",
       "date": "2026-09-20",
       "time": "15:30",
-      "datetime": "2026-09-20T15:30Z",
+      "datetime": "2026-09-20T15:30:00.000Z",
+      "seasonType": "regular",
+      "seasonTypeLabel": "Regular Season",
       "status": "pre",
       "venue": "Craven Cottage",
       "home_team_name": "Fulham",
@@ -3538,8 +3548,8 @@
             },
             "tickets": [
               {
-                "summary": "Tickets as low as $372",
-                "numberAvailable": 529,
+                "summary": "Tickets as low as $298",
+                "numberAvailable": 455,
                 "links": [
                   {
                     "href": "https://www.vividseats.com/fulham-fc-tickets-craven-cottage-9-19-2026--sports-soccer/production/7188501?wsUser=717"
@@ -3886,7 +3896,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "11120"
+                    "id": "250"
                   }
                 },
                 "statistics": [],
@@ -4037,7 +4047,9 @@
       "title": "TOT @ MAN",
       "date": "2026-10-10",
       "time": "16:30",
-      "datetime": "2026-10-10T16:30Z",
+      "datetime": "2026-10-10T16:30:00.000Z",
+      "seasonType": "regular",
+      "seasonTypeLabel": "Regular Season",
       "status": "pre",
       "venue": "Old Trafford",
       "home_team_name": "Manchester United",
@@ -4102,7 +4114,7 @@
             "tickets": [
               {
                 "summary": "Tickets as low as $301",
-                "numberAvailable": 1995,
+                "numberAvailable": 1993,
                 "links": [
                   {
                     "href": "https://www.vividseats.com/manchester-united-fc-tickets-old-trafford-football-ground-10-10-2026--sports-soccer/production/7188525?wsUser=717"
@@ -4243,7 +4255,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "11120"
+                    "id": "250"
                   }
                 },
                 "statistics": [],
@@ -4602,7 +4614,9 @@
       "title": "MAN @ LEE",
       "date": "2026-10-18",
       "time": "13:00",
-      "datetime": "2026-10-18T13:00Z",
+      "datetime": "2026-10-18T13:00:00.000Z",
+      "seasonType": "regular",
+      "seasonTypeLabel": "Regular Season",
       "status": "pre",
       "venue": "Elland Road",
       "home_team_name": "Leeds United",
@@ -5014,7 +5028,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "11120"
+                    "id": "250"
                   }
                 },
                 "statistics": [],
@@ -5165,7 +5179,9 @@
       "title": "BOU @ MAN",
       "date": "2026-10-25",
       "time": "14:00",
-      "datetime": "2026-10-25T14:00Z",
+      "datetime": "2026-10-25T14:00:00.000Z",
+      "seasonType": "regular",
+      "seasonTypeLabel": "Regular Season",
       "status": "pre",
       "venue": "Old Trafford",
       "home_team_name": "Manchester United",
@@ -5229,8 +5245,8 @@
             },
             "tickets": [
               {
-                "summary": "Tickets as low as $234",
-                "numberAvailable": 2945,
+                "summary": "Tickets as low as $235",
+                "numberAvailable": 2943,
                 "links": [
                   {
                     "href": "https://www.vividseats.com/manchester-united-fc-tickets-old-trafford-football-ground-10-24-2026--sports-soccer/production/7188561?wsUser=717"
@@ -5371,7 +5387,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "11120"
+                    "id": "250"
                   }
                 },
                 "statistics": [],
@@ -5728,7 +5744,9 @@
       "title": "MAN @ CHE",
       "date": "2026-10-31",
       "time": "12:30",
-      "datetime": "2026-10-31T12:30Z",
+      "datetime": "2026-10-31T12:30:00.000Z",
+      "seasonType": "regular",
+      "seasonTypeLabel": "Regular Season",
       "status": "pre",
       "venue": "Stamford Bridge",
       "home_team_name": "Chelsea",
@@ -6140,7 +6158,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "11120"
+                    "id": "250"
                   }
                 },
                 "statistics": [],
@@ -6291,7 +6309,9 @@
       "title": "AVL @ MAN",
       "date": "2026-11-07",
       "time": "15:00",
-      "datetime": "2026-11-07T15:00Z",
+      "datetime": "2026-11-07T15:00:00.000Z",
+      "seasonType": "regular",
+      "seasonTypeLabel": "Regular Season",
       "status": "pre",
       "venue": "Old Trafford",
       "home_team_name": "Manchester United",
@@ -6483,7 +6503,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "11120"
+                    "id": "250"
                   }
                 },
                 "statistics": [],
@@ -6704,16 +6724,15 @@
                         "displayValue": "0",
                         "value": 0,
                         "athlete": {
-                          "id": "132233",
-                          "displayName": "Marco Bizot",
-                          "shortName": "M. Bizot",
-                          "fullName": "Marco Bizot",
-                          "jersey": "40",
+                          "id": "204679",
+                          "displayName": "Victor Lindelöf",
+                          "shortName": "V. Lindelöf",
+                          "fullName": "Victor Lindelöf",
+                          "jersey": "3",
                           "active": true,
                           "team": {
                             "id": "362"
                           },
-                          "headshot": "https://a.espncdn.com/i/headshots/soccer/players/full/132233.png",
                           "links": [
                             {
                               "rel": [
@@ -6721,12 +6740,12 @@
                                 "desktop",
                                 "athlete"
                               ],
-                              "href": "https://www.espn.com/soccer/player/_/id/132233/marco-bizot",
+                              "href": "https://www.espn.com/soccer/player/_/id/204679/victor-lindelof",
                               "isHidden": false
                             }
                           ],
                           "position": {
-                            "abbreviation": "G"
+                            "abbreviation": "D"
                           }
                         },
                         "team": {
@@ -6745,16 +6764,15 @@
                         "displayValue": "0",
                         "value": 0,
                         "athlete": {
-                          "id": "132233",
-                          "displayName": "Marco Bizot",
-                          "shortName": "M. Bizot",
-                          "fullName": "Marco Bizot",
-                          "jersey": "40",
+                          "id": "204679",
+                          "displayName": "Victor Lindelöf",
+                          "shortName": "V. Lindelöf",
+                          "fullName": "Victor Lindelöf",
+                          "jersey": "3",
                           "active": true,
                           "team": {
                             "id": "362"
                           },
-                          "headshot": "https://a.espncdn.com/i/headshots/soccer/players/full/132233.png",
                           "links": [
                             {
                               "rel": [
@@ -6762,12 +6780,12 @@
                                 "desktop",
                                 "athlete"
                               ],
-                              "href": "https://www.espn.com/soccer/player/_/id/132233/marco-bizot",
+                              "href": "https://www.espn.com/soccer/player/_/id/204679/victor-lindelof",
                               "isHidden": false
                             }
                           ],
                           "position": {
-                            "abbreviation": "G"
+                            "abbreviation": "D"
                           }
                         },
                         "team": {
@@ -6842,7 +6860,9 @@
       "title": "MAN @ LIV",
       "date": "2026-11-21",
       "time": "15:00",
-      "datetime": "2026-11-21T15:00Z",
+      "datetime": "2026-11-21T15:00:00.000Z",
+      "seasonType": "regular",
+      "seasonTypeLabel": "Regular Season",
       "status": "pre",
       "venue": "Anfield",
       "home_team_name": "Liverpool",
@@ -7240,7 +7260,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "11120"
+                    "id": "250"
                   }
                 },
                 "statistics": [],
@@ -7391,7 +7411,9 @@
       "title": "BRE @ MAN",
       "date": "2026-11-28",
       "time": "15:00",
-      "datetime": "2026-11-28T15:00Z",
+      "datetime": "2026-11-28T15:00:00.000Z",
+      "seasonType": "regular",
+      "seasonTypeLabel": "Regular Season",
       "status": "pre",
       "venue": "Old Trafford",
       "home_team_name": "Manchester United",
@@ -7583,7 +7605,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "11120"
+                    "id": "250"
                   }
                 },
                 "statistics": [],
@@ -7940,7 +7962,9 @@
       "title": "MAN @ NEW",
       "date": "2026-12-02",
       "time": "20:00",
-      "datetime": "2026-12-02T20:00Z",
+      "datetime": "2026-12-02T20:00:00.000Z",
+      "seasonType": "regular",
+      "seasonTypeLabel": "Regular Season",
       "status": "pre",
       "venue": "St. James' Park",
       "home_team_name": "Newcastle United",
@@ -8144,7 +8168,10 @@
                       "isPremium": false,
                       "isHidden": false
                     }
-                  ]
+                  ],
+                  "venue": {
+                    "id": "152"
+                  }
                 },
                 "statistics": [],
                 "leaders": [
@@ -8349,7 +8376,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "11120"
+                    "id": "250"
                   }
                 },
                 "statistics": [],
@@ -8500,7 +8527,9 @@
       "title": "COV @ MAN",
       "date": "2026-12-05",
       "time": "15:00",
-      "datetime": "2026-12-05T15:00Z",
+      "datetime": "2026-12-05T15:00:00.000Z",
+      "seasonType": "regular",
+      "seasonTypeLabel": "Regular Season",
       "status": "pre",
       "venue": "Old Trafford",
       "home_team_name": "Manchester United",
@@ -8692,7 +8721,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "11120"
+                    "id": "250"
                   }
                 },
                 "statistics": [],
@@ -9049,7 +9078,9 @@
       "title": "MAN @ CRY",
       "date": "2026-12-12",
       "time": "15:00",
-      "datetime": "2026-12-12T15:00Z",
+      "datetime": "2026-12-12T15:00:00.000Z",
+      "seasonType": "regular",
+      "seasonTypeLabel": "Regular Season",
       "status": "pre",
       "venue": "Selhurst Park",
       "home_team_name": "Crystal Palace",
@@ -9239,7 +9270,10 @@
                       "isPremium": false,
                       "isHidden": false
                     }
-                  ]
+                  ],
+                  "venue": {
+                    "id": "135"
+                  }
                 },
                 "statistics": [],
                 "leaders": [
@@ -9444,7 +9478,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "11120"
+                    "id": "250"
                   }
                 },
                 "statistics": [],
@@ -9595,7 +9629,9 @@
       "title": "MAN @ ARS",
       "date": "2026-12-19",
       "time": "15:00",
-      "datetime": "2026-12-19T15:00Z",
+      "datetime": "2026-12-19T15:00:00.000Z",
+      "seasonType": "regular",
+      "seasonTypeLabel": "Regular Season",
       "status": "pre",
       "venue": "Emirates Stadium",
       "home_team_name": "Arsenal",
@@ -9799,14 +9835,14 @@
                     "abbreviation": "G",
                     "leaders": [
                       {
-                        "displayValue": "1",
-                        "value": 1,
+                        "displayValue": "2",
+                        "value": 2,
                         "athlete": {
-                          "id": "231182",
-                          "displayName": "Kai Havertz",
-                          "shortName": "K. Havertz",
-                          "fullName": "Kai Havertz",
-                          "jersey": "29",
+                          "id": "280555",
+                          "displayName": "Bukayo Saka",
+                          "shortName": "B. Saka",
+                          "fullName": "Bukayo Saka",
+                          "jersey": "7",
                           "active": true,
                           "team": {
                             "id": "359"
@@ -9818,7 +9854,7 @@
                                 "desktop",
                                 "athlete"
                               ],
-                              "href": "https://www.espn.com/soccer/player/_/id/231182/kai-havertz",
+                              "href": "https://www.espn.com/soccer/player/_/id/280555/bukayo-saka",
                               "isHidden": false
                             }
                           ],
@@ -9839,14 +9875,14 @@
                     "abbreviation": "G",
                     "leaders": [
                       {
-                        "displayValue": "1",
-                        "value": 1,
+                        "displayValue": "2",
+                        "value": 2,
                         "athlete": {
-                          "id": "231182",
-                          "displayName": "Kai Havertz",
-                          "shortName": "K. Havertz",
-                          "fullName": "Kai Havertz",
-                          "jersey": "29",
+                          "id": "280555",
+                          "displayName": "Bukayo Saka",
+                          "shortName": "B. Saka",
+                          "fullName": "Bukayo Saka",
+                          "jersey": "7",
                           "active": true,
                           "team": {
                             "id": "359"
@@ -9858,7 +9894,7 @@
                                 "desktop",
                                 "athlete"
                               ],
-                              "href": "https://www.espn.com/soccer/player/_/id/231182/kai-havertz",
+                              "href": "https://www.espn.com/soccer/player/_/id/280555/bukayo-saka",
                               "isHidden": false
                             }
                           ],
@@ -9993,7 +10029,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "11120"
+                    "id": "250"
                   }
                 },
                 "statistics": [],
@@ -10144,7 +10180,9 @@
       "title": "NFO @ MAN",
       "date": "2026-12-26",
       "time": "15:00",
-      "datetime": "2026-12-26T15:00Z",
+      "datetime": "2026-12-26T15:00:00.000Z",
+      "seasonType": "regular",
+      "seasonTypeLabel": "Regular Season",
       "status": "pre",
       "venue": "Old Trafford",
       "home_team_name": "Manchester United",
@@ -10336,7 +10374,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "11120"
+                    "id": "250"
                   }
                 },
                 "statistics": [],
@@ -10693,7 +10731,9 @@
       "title": "SUN @ MAN",
       "date": "2026-12-30",
       "time": "20:00",
-      "datetime": "2026-12-30T20:00Z",
+      "datetime": "2026-12-30T20:00:00.000Z",
+      "seasonType": "regular",
+      "seasonTypeLabel": "Regular Season",
       "status": "pre",
       "venue": "Old Trafford",
       "home_team_name": "Manchester United",
@@ -10899,7 +10939,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "11120"
+                    "id": "250"
                   }
                 },
                 "statistics": [],
@@ -11256,7 +11296,9 @@
       "title": "MAN @ BHA",
       "date": "2027-01-02",
       "time": "15:00",
-      "datetime": "2027-01-02T15:00Z",
+      "datetime": "2027-01-02T15:00:00.000Z",
+      "seasonType": "regular",
+      "seasonTypeLabel": "Regular Season",
       "status": "pre",
       "venue": "American Express Stadium",
       "home_team_name": "Brighton & Hove Albion",
@@ -11654,7 +11696,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "11120"
+                    "id": "250"
                   }
                 },
                 "statistics": [],
@@ -11805,7 +11847,9 @@
       "title": "NEW @ MAN",
       "date": "2027-01-06",
       "time": "20:00",
-      "datetime": "2027-01-06T20:00Z",
+      "datetime": "2027-01-06T20:00:00.000Z",
+      "seasonType": "regular",
+      "seasonTypeLabel": "Regular Season",
       "status": "pre",
       "venue": "Old Trafford",
       "home_team_name": "Manchester United",
@@ -11870,7 +11914,7 @@
             "tickets": [
               {
                 "summary": "Tickets as low as $267",
-                "numberAvailable": 1490,
+                "numberAvailable": 1491,
                 "links": [
                   {
                     "href": "https://www.vividseats.com/manchester-united-fc-tickets-old-trafford-football-ground-1-6-2027--sports-soccer/production/7188775?wsUser=717"
@@ -12011,7 +12055,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "11120"
+                    "id": "250"
                   }
                 },
                 "statistics": [],
@@ -12215,7 +12259,10 @@
                       "isPremium": false,
                       "isHidden": false
                     }
-                  ]
+                  ],
+                  "venue": {
+                    "id": "152"
+                  }
                 },
                 "statistics": [],
                 "leaders": [
@@ -12365,7 +12412,9 @@
       "title": "MAN @ AVL",
       "date": "2027-01-16",
       "time": "15:00",
-      "datetime": "2027-01-16T15:00Z",
+      "datetime": "2027-01-16T15:00:00.000Z",
+      "seasonType": "regular",
+      "seasonTypeLabel": "Regular Season",
       "status": "pre",
       "venue": "Villa Park",
       "home_team_name": "Aston Villa",
@@ -12572,16 +12621,15 @@
                         "displayValue": "0",
                         "value": 0,
                         "athlete": {
-                          "id": "132233",
-                          "displayName": "Marco Bizot",
-                          "shortName": "M. Bizot",
-                          "fullName": "Marco Bizot",
-                          "jersey": "40",
+                          "id": "204679",
+                          "displayName": "Victor Lindelöf",
+                          "shortName": "V. Lindelöf",
+                          "fullName": "Victor Lindelöf",
+                          "jersey": "3",
                           "active": true,
                           "team": {
                             "id": "362"
                           },
-                          "headshot": "https://a.espncdn.com/i/headshots/soccer/players/full/132233.png",
                           "links": [
                             {
                               "rel": [
@@ -12589,12 +12637,12 @@
                                 "desktop",
                                 "athlete"
                               ],
-                              "href": "https://www.espn.com/soccer/player/_/id/132233/marco-bizot",
+                              "href": "https://www.espn.com/soccer/player/_/id/204679/victor-lindelof",
                               "isHidden": false
                             }
                           ],
                           "position": {
-                            "abbreviation": "G"
+                            "abbreviation": "D"
                           }
                         },
                         "team": {
@@ -12613,16 +12661,15 @@
                         "displayValue": "0",
                         "value": 0,
                         "athlete": {
-                          "id": "132233",
-                          "displayName": "Marco Bizot",
-                          "shortName": "M. Bizot",
-                          "fullName": "Marco Bizot",
-                          "jersey": "40",
+                          "id": "204679",
+                          "displayName": "Victor Lindelöf",
+                          "shortName": "V. Lindelöf",
+                          "fullName": "Victor Lindelöf",
+                          "jersey": "3",
                           "active": true,
                           "team": {
                             "id": "362"
                           },
-                          "headshot": "https://a.espncdn.com/i/headshots/soccer/players/full/132233.png",
                           "links": [
                             {
                               "rel": [
@@ -12630,12 +12677,12 @@
                                 "desktop",
                                 "athlete"
                               ],
-                              "href": "https://www.espn.com/soccer/player/_/id/132233/marco-bizot",
+                              "href": "https://www.espn.com/soccer/player/_/id/204679/victor-lindelof",
                               "isHidden": false
                             }
                           ],
                           "position": {
-                            "abbreviation": "G"
+                            "abbreviation": "D"
                           }
                         },
                         "team": {
@@ -12765,7 +12812,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "11120"
+                    "id": "250"
                   }
                 },
                 "statistics": [],
@@ -12916,7 +12963,9 @@
       "title": "LIV @ MAN",
       "date": "2027-01-23",
       "time": "15:00",
-      "datetime": "2027-01-23T15:00Z",
+      "datetime": "2027-01-23T15:00:00.000Z",
+      "seasonType": "regular",
+      "seasonTypeLabel": "Regular Season",
       "status": "pre",
       "venue": "Old Trafford",
       "home_team_name": "Manchester United",
@@ -13108,7 +13157,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "11120"
+                    "id": "250"
                   }
                 },
                 "statistics": [],
@@ -13465,7 +13514,9 @@
       "title": "MAN @ BRE",
       "date": "2027-01-30",
       "time": "15:00",
-      "datetime": "2027-01-30T15:00Z",
+      "datetime": "2027-01-30T15:00:00.000Z",
+      "seasonType": "regular",
+      "seasonTypeLabel": "Regular Season",
       "status": "pre",
       "venue": "Gtech Community Stadium",
       "home_team_name": "Brentford",
@@ -13863,7 +13914,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "11120"
+                    "id": "250"
                   }
                 },
                 "statistics": [],
@@ -14014,7 +14065,9 @@
       "title": "CHE @ MAN",
       "date": "2027-02-06",
       "time": "15:00",
-      "datetime": "2027-02-06T15:00Z",
+      "datetime": "2027-02-06T15:00:00.000Z",
+      "seasonType": "regular",
+      "seasonTypeLabel": "Regular Season",
       "status": "pre",
       "venue": "Old Trafford",
       "home_team_name": "Manchester United",
@@ -14206,7 +14259,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "11120"
+                    "id": "250"
                   }
                 },
                 "statistics": [],
@@ -14563,7 +14616,9 @@
       "title": "BHA @ MAN",
       "date": "2027-02-10",
       "time": "20:00",
-      "datetime": "2027-02-10T20:00Z",
+      "datetime": "2027-02-10T20:00:00.000Z",
+      "seasonType": "regular",
+      "seasonTypeLabel": "Regular Season",
       "status": "pre",
       "venue": "Old Trafford",
       "home_team_name": "Manchester United",
@@ -14769,7 +14824,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "11120"
+                    "id": "250"
                   }
                 },
                 "statistics": [],
@@ -15126,7 +15181,9 @@
       "title": "MAN @ NFO",
       "date": "2027-02-20",
       "time": "15:00",
-      "datetime": "2027-02-20T15:00Z",
+      "datetime": "2027-02-20T15:00:00.000Z",
+      "seasonType": "regular",
+      "seasonTypeLabel": "Regular Season",
       "status": "pre",
       "venue": "The City Ground",
       "home_team_name": "Nottingham Forest",
@@ -15524,7 +15581,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "11120"
+                    "id": "250"
                   }
                 },
                 "statistics": [],
@@ -15675,7 +15732,9 @@
       "title": "ARS @ MAN",
       "date": "2027-02-27",
       "time": "15:00",
-      "datetime": "2027-02-27T15:00Z",
+      "datetime": "2027-02-27T15:00:00.000Z",
+      "seasonType": "regular",
+      "seasonTypeLabel": "Regular Season",
       "status": "pre",
       "venue": "Old Trafford",
       "home_team_name": "Manchester United",
@@ -15867,7 +15926,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "11120"
+                    "id": "250"
                   }
                 },
                 "statistics": [],
@@ -16085,14 +16144,14 @@
                     "abbreviation": "G",
                     "leaders": [
                       {
-                        "displayValue": "1",
-                        "value": 1,
+                        "displayValue": "2",
+                        "value": 2,
                         "athlete": {
-                          "id": "231182",
-                          "displayName": "Kai Havertz",
-                          "shortName": "K. Havertz",
-                          "fullName": "Kai Havertz",
-                          "jersey": "29",
+                          "id": "280555",
+                          "displayName": "Bukayo Saka",
+                          "shortName": "B. Saka",
+                          "fullName": "Bukayo Saka",
+                          "jersey": "7",
                           "active": true,
                           "team": {
                             "id": "359"
@@ -16104,7 +16163,7 @@
                                 "desktop",
                                 "athlete"
                               ],
-                              "href": "https://www.espn.com/soccer/player/_/id/231182/kai-havertz",
+                              "href": "https://www.espn.com/soccer/player/_/id/280555/bukayo-saka",
                               "isHidden": false
                             }
                           ],
@@ -16125,14 +16184,14 @@
                     "abbreviation": "G",
                     "leaders": [
                       {
-                        "displayValue": "1",
-                        "value": 1,
+                        "displayValue": "2",
+                        "value": 2,
                         "athlete": {
-                          "id": "231182",
-                          "displayName": "Kai Havertz",
-                          "shortName": "K. Havertz",
-                          "fullName": "Kai Havertz",
-                          "jersey": "29",
+                          "id": "280555",
+                          "displayName": "Bukayo Saka",
+                          "shortName": "B. Saka",
+                          "fullName": "Bukayo Saka",
+                          "jersey": "7",
                           "active": true,
                           "team": {
                             "id": "359"
@@ -16144,7 +16203,7 @@
                                 "desktop",
                                 "athlete"
                               ],
-                              "href": "https://www.espn.com/soccer/player/_/id/231182/kai-havertz",
+                              "href": "https://www.espn.com/soccer/player/_/id/280555/bukayo-saka",
                               "isHidden": false
                             }
                           ],
@@ -16224,7 +16283,9 @@
       "title": "MAN @ SUN",
       "date": "2027-03-03",
       "time": "20:00",
-      "datetime": "2027-03-03T20:00Z",
+      "datetime": "2027-03-03T20:00:00.000Z",
+      "seasonType": "regular",
+      "seasonTypeLabel": "Regular Season",
       "status": "pre",
       "venue": "Stadium of Light",
       "home_team_name": "Sunderland",
@@ -16636,7 +16697,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "11120"
+                    "id": "250"
                   }
                 },
                 "statistics": [],
@@ -16787,7 +16848,9 @@
       "title": "EVE @ MAN",
       "date": "2027-03-13",
       "time": "15:00",
-      "datetime": "2027-03-13T15:00Z",
+      "datetime": "2027-03-13T15:00:00.000Z",
+      "seasonType": "regular",
+      "seasonTypeLabel": "Regular Season",
       "status": "pre",
       "venue": "Old Trafford",
       "home_team_name": "Manchester United",
@@ -16979,7 +17042,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "11120"
+                    "id": "250"
                   }
                 },
                 "statistics": [],
@@ -17336,7 +17399,9 @@
       "title": "MAN @ MNC",
       "date": "2027-03-20",
       "time": "15:00",
-      "datetime": "2027-03-20T15:00Z",
+      "datetime": "2027-03-20T15:00:00.000Z",
+      "seasonType": "regular",
+      "seasonTypeLabel": "Regular Season",
       "status": "pre",
       "venue": "Etihad Stadium",
       "home_team_name": "Manchester City",
@@ -17528,7 +17593,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "1279"
+                    "id": "4036"
                   }
                 },
                 "statistics": [],
@@ -17734,7 +17799,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "11120"
+                    "id": "250"
                   }
                 },
                 "statistics": [],
@@ -17885,7 +17950,9 @@
       "title": "HUL @ MAN",
       "date": "2027-04-10",
       "time": "14:00",
-      "datetime": "2027-04-10T14:00Z",
+      "datetime": "2027-04-10T14:00:00.000Z",
+      "seasonType": "regular",
+      "seasonTypeLabel": "Regular Season",
       "status": "pre",
       "venue": "Old Trafford",
       "home_team_name": "Manchester United",
@@ -18077,7 +18144,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "11120"
+                    "id": "250"
                   }
                 },
                 "statistics": [],
@@ -18434,7 +18501,9 @@
       "title": "MAN @ IPS",
       "date": "2027-04-17",
       "time": "14:00",
-      "datetime": "2027-04-17T14:00Z",
+      "datetime": "2027-04-17T14:00:00.000Z",
+      "seasonType": "regular",
+      "seasonTypeLabel": "Regular Season",
       "status": "pre",
       "venue": "Portman Road",
       "home_team_name": "Ipswich Town",
@@ -18832,7 +18901,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "11120"
+                    "id": "250"
                   }
                 },
                 "statistics": [],
@@ -18983,7 +19052,9 @@
       "title": "CRY @ MAN",
       "date": "2027-04-24",
       "time": "14:00",
-      "datetime": "2027-04-24T14:00Z",
+      "datetime": "2027-04-24T14:00:00.000Z",
+      "seasonType": "regular",
+      "seasonTypeLabel": "Regular Season",
       "status": "pre",
       "venue": "Old Trafford",
       "home_team_name": "Manchester United",
@@ -19175,7 +19246,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "11120"
+                    "id": "250"
                   }
                 },
                 "statistics": [],
@@ -19379,7 +19450,10 @@
                       "isPremium": false,
                       "isHidden": false
                     }
-                  ]
+                  ],
+                  "venue": {
+                    "id": "135"
+                  }
                 },
                 "statistics": [],
                 "leaders": [
@@ -19529,7 +19603,9 @@
       "title": "MAN @ COV",
       "date": "2027-05-01",
       "time": "14:00",
-      "datetime": "2027-05-01T14:00Z",
+      "datetime": "2027-05-01T14:00:00.000Z",
+      "seasonType": "regular",
+      "seasonTypeLabel": "Regular Season",
       "status": "pre",
       "venue": "Coventry Building Society Arena",
       "home_team_name": "Coventry City",
@@ -19927,7 +20003,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "11120"
+                    "id": "250"
                   }
                 },
                 "statistics": [],
@@ -20078,7 +20154,9 @@
       "title": "MAN @ BOU",
       "date": "2027-05-08",
       "time": "14:00",
-      "datetime": "2027-05-08T14:00Z",
+      "datetime": "2027-05-08T14:00:00.000Z",
+      "seasonType": "regular",
+      "seasonTypeLabel": "Regular Season",
       "status": "pre",
       "venue": "Vitality Stadium",
       "home_team_name": "AFC Bournemouth",
@@ -20476,7 +20554,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "11120"
+                    "id": "250"
                   }
                 },
                 "statistics": [],
@@ -20627,7 +20705,9 @@
       "title": "LEE @ MAN",
       "date": "2027-05-15",
       "time": "14:00",
-      "datetime": "2027-05-15T14:00Z",
+      "datetime": "2027-05-15T14:00:00.000Z",
+      "seasonType": "regular",
+      "seasonTypeLabel": "Regular Season",
       "status": "pre",
       "venue": "Old Trafford",
       "home_team_name": "Manchester United",
@@ -20819,7 +20899,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "11120"
+                    "id": "250"
                   }
                 },
                 "statistics": [],
@@ -21176,7 +21256,9 @@
       "title": "MAN @ TOT",
       "date": "2027-05-23",
       "time": "14:00",
-      "datetime": "2027-05-23T14:00Z",
+      "datetime": "2027-05-23T14:00:00.000Z",
+      "seasonType": "regular",
+      "seasonTypeLabel": "Regular Season",
       "status": "pre",
       "venue": "Tottenham Hotspur Stadium",
       "home_team_name": "Tottenham Hotspur",
@@ -21576,7 +21658,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "11120"
+                    "id": "250"
                   }
                 },
                 "statistics": [],
@@ -21727,7 +21809,9 @@
       "title": "FUL @ MAN",
       "date": "2027-05-30",
       "time": "15:00",
-      "datetime": "2027-05-30T15:00Z",
+      "datetime": "2027-05-30T15:00:00.000Z",
+      "seasonType": "regular",
+      "seasonTypeLabel": "Regular Season",
       "status": "pre",
       "venue": "Old Trafford",
       "home_team_name": "Manchester United",
@@ -21919,7 +22003,7 @@
                     }
                   ],
                   "venue": {
-                    "id": "11120"
+                    "id": "250"
                   }
                 },
                 "statistics": [],

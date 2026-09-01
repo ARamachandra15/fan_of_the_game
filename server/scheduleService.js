@@ -38,6 +38,23 @@ export function normalizeTeamName(value = '') {
     .trim();
 }
 
+// ESPN seasonType.type: 1 = Preseason, 2 = Regular Season, 3 = Postseason, 4 = Offseason.
+// Soccer events don't carry seasonType at all, so default to Regular Season
+// (domestic league play should count toward the record).
+export function normalizeSeasonType(rawType) {
+  switch (Number(rawType)) {
+    case 1:
+      return { seasonType: 'preseason', seasonTypeLabel: 'Pre-Season' };
+    case 3:
+      return { seasonType: 'postseason', seasonTypeLabel: 'Playoff' };
+    case 4:
+      return { seasonType: 'offseason', seasonTypeLabel: 'Offseason' };
+    case 2:
+    default:
+      return { seasonType: 'regular', seasonTypeLabel: 'Regular Season' };
+  }
+}
+
 function readTeamSnapshot() {
   try {
     const raw = fs.readFileSync(TEAM_DATA_PATH, 'utf8');
@@ -312,6 +329,7 @@ function mapSoccerEventToGame(event, teamId, normalizedLeague) {
   }
   
   const timeValue = normalizedDateTime.includes('T') ? normalizedDateTime.slice(11, 16) : '00:00';
+  const { seasonType, seasonTypeLabel } = normalizeSeasonType(event?.seasonType?.type);
 
   return {
     id: String(event?.id ?? event?.uid ?? `${normalizedLeague}-${teamId}-${rawDate}`),
@@ -320,6 +338,8 @@ function mapSoccerEventToGame(event, teamId, normalizedLeague) {
     date: normalizedDateTime.includes('T') ? normalizedDateTime.slice(0, 10) : normalizedDateTime,
     time: timeValue,
     datetime: normalizedDateTime,
+    seasonType,
+    seasonTypeLabel,
     status,
     venue: competition?.venue?.fullName || 'TBD',
     home_team_name: homeName,
@@ -476,7 +496,10 @@ export async function fetchEspnTeamSchedule(leagueKey, teamName, options = {}) {
     const awayComp = competitors.find((entry) => entry.homeAway === 'away') ?? opponent;
     const homeName = homeComp?.team?.displayName || selected?.team?.displayName || teamName;
     const awayName = awayComp?.team?.displayName || opponent?.team?.displayName || 'Opponent';
-    const status = event?.status?.type?.state || event?.status?.type?.description || 'Scheduled';
+    // ESPN's team-schedule endpoint (NFL/NBA/NHL/NCAAF) nests status under the competition,
+    // not the event root (unlike the soccer scoreboard endpoint) - check both.
+    const statusType = event?.status?.type || competition?.status?.type;
+    const status = statusType?.state || statusType?.description || 'Scheduled';
     const rawDate = event?.date || competition?.date || new Date().toISOString();
     
     // Normalize ESPN timestamp to UTC. ESPN returns ISO 8601 strings which might include timezone info.
@@ -494,6 +517,7 @@ export async function fetchEspnTeamSchedule(leagueKey, teamName, options = {}) {
     }
     
     const timeValue = normalizedDateTime.includes('T') ? normalizedDateTime.slice(11, 16) : '00:00';
+    const { seasonType, seasonTypeLabel } = normalizeSeasonType(event?.seasonType?.type);
 
     return {
       id: String(event?.id ?? event?.uid ?? `${normalizedLeague}-${teamId}-${index}`),
@@ -502,6 +526,8 @@ export async function fetchEspnTeamSchedule(leagueKey, teamName, options = {}) {
       date: normalizedDateTime.includes('T') ? normalizedDateTime.slice(0, 10) : normalizedDateTime,
       time: timeValue,
       datetime: normalizedDateTime,
+      seasonType,
+      seasonTypeLabel,
       status,
       venue: competition?.venue?.fullName || 'TBD',
       home_team_name: homeName,

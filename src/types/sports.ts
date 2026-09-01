@@ -58,5 +58,6 @@ export interface GameEvent {
   teamScore?: number | null;
   opponentScore?: number | null;
   seasonYear?: number;
-  seasonType?: number;
+  seasonType?: 'preseason' | 'regular' | 'postseason' | 'offseason';
+  seasonTypeLabel?: string;
 }
