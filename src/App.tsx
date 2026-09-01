@@ -172,6 +172,30 @@ function App() {
     }
   };
 
+  const loadUserTimezone = async (userId?: string) => {
+    if (hasSupabase() && supabase && userId) {
+      try {
+        const { data, error } = await supabase
+          .from('user_metadata')
+          .select('timezone_offset')
+          .eq('user_id', userId)
+          .maybeSingle();
+
+        if (!error && data && data.timezone_offset !== null && data.timezone_offset !== undefined) {
+          setUserTimezoneOffset(data.timezone_offset);
+          return;
+        }
+      } catch (err) {
+        console.warn('Failed to load timezone from Supabase:', err);
+      }
+    }
+    
+    // Fallback to browser detection
+    const browserOffset = detectBrowserTimezone();
+    const closestOffset = findClosestTimezone(browserOffset);
+    setUserTimezoneOffset(closestOffset);
+  };
+
   useEffect(() => {
     if (!hasSupabase() || !supabase) {
       const saved = readSelection();
@@ -198,6 +222,7 @@ function App() {
 
       if (currentUser) {
         await loadSavedSelection(currentUser.id);
+        await loadUserTimezone(currentUser.id);
       } else {
         const saved = readSelection();
         if (saved) {
@@ -215,6 +240,7 @@ function App() {
 
       if (nextUser) {
         await loadSavedSelection(nextUser.id);
+        await loadUserTimezone(nextUser.id);
       } else {
         const saved = readSelection();
         if (saved) {
@@ -232,13 +258,16 @@ function App() {
     writeSelection(selectedLeagues, selectedTeams);
   }, [screen, selectedLeagues, selectedTeams]);
 
-  // Initialize timezone on app load
+  // Initialize timezone on app load (only if not already loaded from Supabase)
   useEffect(() => {
     if (userTimezoneOffset !== null) return; // Already initialized
-    const browserOffset = detectBrowserTimezone();
-    const closestOffset = findClosestTimezone(browserOffset);
-    setUserTimezoneOffset(closestOffset);
-  }, [userTimezoneOffset]);
+    // Only initialize from browser if not logged in
+    if (!authUser) {
+      const browserOffset = detectBrowserTimezone();
+      const closestOffset = findClosestTimezone(browserOffset);
+      setUserTimezoneOffset(closestOffset);
+    }
+  }, [userTimezoneOffset, authUser]);
 
   // Clear team search when navigating away from team selection screen
   useEffect(() => {
@@ -1407,10 +1436,12 @@ function App() {
                             <div className="mt-3 flex gap-2 border-t border-slate-700 pt-3">
                               <button
                                 type="button"
+                                disabled={pendingTimezoneOffset === userTimezoneOffset}
                                 onClick={async () => {
                                   setUserTimezoneOffset(pendingTimezoneOffset);
                                   setPendingTimezoneOffset(null);
                                   setShowTimezoneSelector(false);
+                                  setShowProfileMenu(false);
                                   // Persist to Supabase if logged in
                                   if (authUser && hasSupabase() && supabase) {
                                     try {
@@ -1424,7 +1455,7 @@ function App() {
                                     }
                                   }
                                 }}
-                                className="flex-1 rounded px-2 py-1.5 bg-amber-500 text-xs font-medium text-white hover:bg-amber-400 transition-colors"
+                                className="flex-1 rounded px-2 py-1.5 bg-amber-500 text-xs font-medium text-white hover:bg-amber-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                               >
                                 Save
                               </button>
