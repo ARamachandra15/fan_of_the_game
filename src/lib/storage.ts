@@ -27,3 +27,14 @@ export function writeSelection(selectedLeagues: LeagueSelection[], selectedTeams
 
   localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
 }
+
+export function normalizeStoredSelection(input: Partial<UserSelectionState> | null | undefined): UserSelectionState | null {
+  if (!input) return null;
+
+  return {
+    version: 1,
+    selectedLeagues: Array.isArray(input.selectedLeagues) ? input.selectedLeagues as LeagueSelection[] : [],
+    selectedTeams: Array.isArray(input.selectedTeams) ? input.selectedTeams as TeamOption[] : [],
+    updatedAt: input.updatedAt ?? new Date().toISOString(),
+  };
+}

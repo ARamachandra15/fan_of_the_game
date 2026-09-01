@@ -1,7 +1,7 @@
 {
   "name": "rally",
   "private": true,
-  "description": "Rally \u2014 Every Team, Every Game, One Place.",
+  "description": "Rally — Every Team, Every Game, One Place.",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
@@ -16,6 +16,7 @@
     "map:espn-team-ids": "node scripts/mapEspnTeamIds.js"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.112.4",
     "cors": "^2.8.5",
     "date-fns": "^4.1.0",
     "dotenv": "^16.4.5",

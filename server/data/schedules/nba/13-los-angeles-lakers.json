@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-18T07:15:15.384Z",
+  "fetchedAt": "2026-08-31T13:29:46.084Z",
   "source": "ESPN",
   "league": "nba",
   "teamId": "13",
@@ -491,12 +491,12 @@
             "tickets": [
               {
                 "id": "7325849",
-                "summary": "Tickets as low as $24",
+                "summary": "Tickets as low as $25",
                 "description": "NBA Preseason - Los Angeles Lakers at Sacramento Kings",
-                "maxPrice": 2882.12,
-                "startingPrice": 24.72,
-                "numberAvailable": 2123,
-                "totalPostings": 558,
+                "maxPrice": 2920,
+                "startingPrice": 25,
+                "numberAvailable": 2021,
+                "totalPostings": 498,
                 "links": [
                   {
                     "rel": [
@@ -1082,12 +1082,12 @@
             "tickets": [
               {
                 "id": "7322560",
-                "summary": "Tickets as low as $42",
+                "summary": "Tickets as low as $49",
                 "description": "NBA Preseason - Los Angeles Lakers at Golden State Warriors",
-                "maxPrice": 13309.92,
-                "startingPrice": 42.49,
-                "numberAvailable": 2565,
-                "totalPostings": 646,
+                "maxPrice": 13345,
+                "startingPrice": 49,
+                "numberAvailable": 3867,
+                "totalPostings": 941,
                 "links": [
                   {
                     "rel": [
@@ -1673,12 +1673,12 @@
             "tickets": [
               {
                 "id": "7329678",
-                "summary": "Tickets as low as $39",
+                "summary": "Tickets as low as $30",
                 "description": "NBA Preseason - Sacramento Kings at Los Angeles Lakers",
-                "maxPrice": 7179.36,
-                "startingPrice": 39.56,
-                "numberAvailable": 1605,
-                "totalPostings": 498,
+                "maxPrice": 5796,
+                "startingPrice": 30,
+                "numberAvailable": 2395,
+                "totalPostings": 775,
                 "links": [
                   {
                     "rel": [
@@ -1789,9 +1789,9 @@
       "id": "401898718",
       "league": "nba",
       "title": "GS VS LAL",
-      "date": "2026-10-13",
-      "time": "04:00",
-      "datetime": "2026-10-13T04:00Z",
+      "date": "2026-10-14",
+      "time": "02:00",
+      "datetime": "2026-10-14T02:00Z",
       "status": "Scheduled",
       "venue": "T-Mobile Arena",
       "home_team_name": "Los Angeles Lakers",
@@ -1814,7 +1814,7 @@
       },
       "raw": {
         "id": "401898718",
-        "date": "2026-10-13T04:00Z",
+        "date": "2026-10-14T02:00Z",
         "name": "Golden State Warriors at Los Angeles Lakers",
         "shortName": "GS VS LAL",
         "season": {
@@ -1827,11 +1827,11 @@
           "name": "Preseason",
           "abbreviation": "pre"
         },
-        "timeValid": false,
+        "timeValid": true,
         "competitions": [
           {
             "id": "401898718",
-            "date": "2026-10-13T04:00Z",
+            "date": "2026-10-14T02:00Z",
             "attendance": 0,
             "type": {
               "id": "1",
@@ -1840,7 +1840,7 @@
               "slug": "standard",
               "type": "standard"
             },
-            "timeValid": false,
+            "timeValid": true,
             "neutralSite": true,
             "boxscoreAvailable": false,
             "ticketsAvailable": true,
@@ -2266,10 +2266,10 @@
                 "id": "7325843",
                 "summary": "Tickets as low as $18",
                 "description": "NBA Preseason - Portland Trail Blazers at Sacramento Kings",
-                "maxPrice": 2882.12,
-                "startingPrice": 18.66,
-                "numberAvailable": 2430,
-                "totalPostings": 622,
+                "maxPrice": 2920,
+                "startingPrice": 18,
+                "numberAvailable": 2967,
+                "totalPostings": 737,
                 "links": [
                   {
                     "rel": [
@@ -2300,8 +2300,8 @@
                 "state": "pre",
                 "completed": false,
                 "description": "Scheduled",
-                "detail": "10/13 - TBD",
-                "shortDetail": "TBD"
+                "detail": "Tue, October 13th at 10:00 PM EDT",
+                "shortDetail": "10/13 - 10:00 PM EDT"
               }
             }
           }
@@ -2380,9 +2380,9 @@
       "id": "401898719",
       "league": "nba",
       "title": "DEN @ LAL",
-      "date": "2026-10-16",
-      "time": "04:00",
-      "datetime": "2026-10-16T04:00Z",
+      "date": "2026-10-17",
+      "time": "02:30",
+      "datetime": "2026-10-17T02:30Z",
       "status": "Scheduled",
       "venue": "crypto.com Arena",
       "home_team_name": "Los Angeles Lakers",
@@ -2405,7 +2405,7 @@
       },
       "raw": {
         "id": "401898719",
-        "date": "2026-10-16T04:00Z",
+        "date": "2026-10-17T02:30Z",
         "name": "Denver Nuggets at Los Angeles Lakers",
         "shortName": "DEN @ LAL",
         "season": {
@@ -2418,11 +2418,11 @@
           "name": "Preseason",
           "abbreviation": "pre"
         },
-        "timeValid": false,
+        "timeValid": true,
         "competitions": [
           {
             "id": "401898719",
-            "date": "2026-10-16T04:00Z",
+            "date": "2026-10-17T02:30Z",
             "attendance": 0,
             "type": {
               "id": "1",
@@ -2431,7 +2431,7 @@
               "slug": "standard",
               "type": "standard"
             },
-            "timeValid": false,
+            "timeValid": true,
             "neutralSite": false,
             "boxscoreAvailable": false,
             "ticketsAvailable": true,
@@ -2855,12 +2855,12 @@
             "tickets": [
               {
                 "id": "7329682",
-                "summary": "Tickets as low as $39",
+                "summary": "Tickets as low as $38",
                 "description": "NBA Preseason - Denver Nuggets at Los Angeles Lakers",
-                "maxPrice": 7179.36,
-                "startingPrice": 39.56,
-                "numberAvailable": 1592,
-                "totalPostings": 487,
+                "maxPrice": 6091,
+                "startingPrice": 38,
+                "numberAvailable": 2433,
+                "totalPostings": 789,
                 "links": [
                   {
                     "rel": [
@@ -2891,8 +2891,8 @@
                 "state": "pre",
                 "completed": false,
                 "description": "Scheduled",
-                "detail": "10/16 - TBD",
-                "shortDetail": "TBD"
+                "detail": "Fri, October 16th at 10:30 PM EDT",
+                "shortDetail": "10/16 - 10:30 PM EDT"
               }
             }
           }
@@ -3465,12 +3465,12 @@
             "tickets": [
               {
                 "id": "7415518",
-                "summary": "Tickets as low as $157",
+                "summary": "Tickets as low as $128",
                 "description": "Golden State Warriors at Los Angeles Lakers",
-                "maxPrice": 28709.92,
-                "startingPrice": 157.46,
-                "numberAvailable": 2402,
-                "totalPostings": 698,
+                "maxPrice": 25625,
+                "startingPrice": 128,
+                "numberAvailable": 2945,
+                "totalPostings": 843,
                 "links": [
                   {
                     "rel": [
@@ -4082,12 +4082,12 @@
             "tickets": [
               {
                 "id": "7433094",
-                "summary": "Tickets as low as $90",
+                "summary": "Tickets as low as $63",
                 "description": "LA Clippers at Los Angeles Lakers",
-                "maxPrice": 15460.34,
-                "startingPrice": 90.32,
-                "numberAvailable": 2082,
-                "totalPostings": 582,
+                "maxPrice": 14486,
+                "startingPrice": 63,
+                "numberAvailable": 2873,
+                "totalPostings": 851,
                 "links": [
                   {
                     "rel": [
@@ -4673,12 +4673,12 @@
             "tickets": [
               {
                 "id": "7433100",
-                "summary": "Tickets as low as $70",
+                "summary": "Tickets as low as $58",
                 "description": "Los Angeles Lakers at Utah Jazz",
-                "maxPrice": 19422.8,
-                "startingPrice": 70.97,
-                "numberAvailable": 1088,
-                "totalPostings": 286,
+                "maxPrice": 1571,
+                "startingPrice": 58,
+                "numberAvailable": 2463,
+                "totalPostings": 607,
                 "links": [
                   {
                     "rel": [
@@ -5281,12 +5281,12 @@
             "tickets": [
               {
                 "id": "7433104",
-                "summary": "Tickets as low as $69",
+                "summary": "Tickets as low as $47",
                 "description": "Portland Trail Blazers at Los Angeles Lakers",
-                "maxPrice": 13252.08,
-                "startingPrice": 69.66,
-                "numberAvailable": 2173,
-                "totalPostings": 624,
+                "maxPrice": 13907,
+                "startingPrice": 47,
+                "numberAvailable": 3043,
+                "totalPostings": 908,
                 "links": [
                   {
                     "rel": [
@@ -5872,12 +5872,12 @@
             "tickets": [
               {
                 "id": "7433102",
-                "summary": "Tickets as low as $110",
+                "summary": "Tickets as low as $114",
                 "description": "Los Angeles Lakers at LA Clippers",
-                "maxPrice": 242911.45,
-                "startingPrice": 110.1,
-                "numberAvailable": 2973,
-                "totalPostings": 520,
+                "maxPrice": 243538,
+                "startingPrice": 114,
+                "numberAvailable": 4218,
+                "totalPostings": 719,
                 "links": [
                   {
                     "rel": [
@@ -6485,12 +6485,12 @@
             "tickets": [
               {
                 "id": "7420142",
-                "summary": "Tickets as low as $148",
+                "summary": "Tickets as low as $149",
                 "description": "NBA Cup - Los Angeles Lakers at Golden State Warriors",
-                "maxPrice": 24916.13,
-                "startingPrice": 148.02,
-                "numberAvailable": 1912,
-                "totalPostings": 539,
+                "maxPrice": 11439,
+                "startingPrice": 149,
+                "numberAvailable": 2661,
+                "totalPostings": 741,
                 "links": [
                   {
                     "rel": [
@@ -7076,12 +7076,12 @@
             "tickets": [
               {
                 "id": "7433108",
-                "summary": "Tickets as low as $79",
+                "summary": "Tickets as low as $52",
                 "description": "Toronto Raptors at Los Angeles Lakers",
-                "maxPrice": 12147.95,
-                "startingPrice": 79.99,
-                "numberAvailable": 2179,
-                "totalPostings": 616,
+                "maxPrice": 13907,
+                "startingPrice": 52,
+                "numberAvailable": 3062,
+                "totalPostings": 897,
                 "links": [
                   {
                     "rel": [
@@ -7667,12 +7667,12 @@
             "tickets": [
               {
                 "id": "7432873",
-                "summary": "Tickets as low as $85",
+                "summary": "Tickets as low as $70",
                 "description": "Miami Heat at Los Angeles Lakers",
-                "maxPrice": 15460.34,
-                "startingPrice": 85.15,
-                "numberAvailable": 2190,
-                "totalPostings": 624,
+                "maxPrice": 15645,
+                "startingPrice": 70,
+                "numberAvailable": 3061,
+                "totalPostings": 907,
                 "links": [
                   {
                     "rel": [
@@ -8258,12 +8258,12 @@
             "tickets": [
               {
                 "id": "7432997",
-                "summary": "Tickets as low as $84",
+                "summary": "Tickets as low as $83",
                 "description": "Los Angeles Lakers at Sacramento Kings",
-                "maxPrice": 6431.71,
-                "startingPrice": 84.01,
-                "numberAvailable": 2043,
-                "totalPostings": 476,
+                "maxPrice": 5096,
+                "startingPrice": 83,
+                "numberAvailable": 2709,
+                "totalPostings": 661,
                 "links": [
                   {
                     "rel": [
@@ -8871,12 +8871,12 @@
             "tickets": [
               {
                 "id": "7420168",
-                "summary": "Tickets as low as $69",
+                "summary": "Tickets as low as $54",
                 "description": "NBA Cup - Portland Trail Blazers at Los Angeles Lakers",
-                "maxPrice": 12147.95,
-                "startingPrice": 69.66,
-                "numberAvailable": 2187,
-                "totalPostings": 614,
+                "maxPrice": 13907,
+                "startingPrice": 54,
+                "numberAvailable": 3175,
+                "totalPostings": 944,
                 "links": [
                   {
                     "rel": [
@@ -9462,12 +9462,12 @@
             "tickets": [
               {
                 "id": "7433084",
-                "summary": "Tickets as low as $56",
+                "summary": "Tickets as low as $57",
                 "description": "Los Angeles Lakers at Detroit Pistons",
-                "maxPrice": 11670.13,
-                "startingPrice": 56.26,
-                "numberAvailable": 2484,
-                "totalPostings": 517,
+                "maxPrice": 3563,
+                "startingPrice": 57,
+                "numberAvailable": 4109,
+                "totalPostings": 865,
                 "links": [
                   {
                     "rel": [
@@ -10053,12 +10053,12 @@
             "tickets": [
               {
                 "id": "7433066",
-                "summary": "Tickets as low as $92",
+                "summary": "Tickets as low as $71",
                 "description": "Los Angeles Lakers at Atlanta Hawks",
-                "maxPrice": 8208.58,
-                "startingPrice": 92.1,
-                "numberAvailable": 1680,
-                "totalPostings": 506,
+                "maxPrice": 8315,
+                "startingPrice": 71,
+                "numberAvailable": 3492,
+                "totalPostings": 1003,
                 "links": [
                   {
                     "rel": [
@@ -10644,12 +10644,12 @@
             "tickets": [
               {
                 "id": "7432895",
-                "summary": "Tickets as low as $44",
+                "summary": "Tickets as low as $42",
                 "description": "Los Angeles Lakers at Milwaukee Bucks",
-                "maxPrice": 2216.31,
-                "startingPrice": 44.43,
-                "numberAvailable": 3371,
-                "totalPostings": 809,
+                "maxPrice": 4562,
+                "startingPrice": 42,
+                "numberAvailable": 4068,
+                "totalPostings": 1005,
                 "links": [
                   {
                     "rel": [
@@ -11235,12 +11235,12 @@
             "tickets": [
               {
                 "id": "7432979",
-                "summary": "Tickets as low as $109",
+                "summary": "Tickets as low as $84",
                 "description": "Los Angeles Lakers at Phoenix Suns",
-                "maxPrice": 10966.14,
-                "startingPrice": 109,
-                "numberAvailable": 1452,
-                "totalPostings": 383,
+                "maxPrice": 10995,
+                "startingPrice": 84,
+                "numberAvailable": 2197,
+                "totalPostings": 555,
                 "links": [
                   {
                     "rel": [
@@ -11826,12 +11826,12 @@
             "tickets": [
               {
                 "id": "7432779",
-                "summary": "Tickets as low as $59",
+                "summary": "Tickets as low as $45",
                 "description": "Charlotte Hornets at Los Angeles Lakers",
-                "maxPrice": 9939.68,
-                "startingPrice": 59.32,
-                "numberAvailable": 2156,
-                "totalPostings": 608,
+                "maxPrice": 13907,
+                "startingPrice": 45,
+                "numberAvailable": 3061,
+                "totalPostings": 901,
                 "links": [
                   {
                     "rel": [
@@ -12417,12 +12417,12 @@
             "tickets": [
               {
                 "id": "7433112",
-                "summary": "Tickets as low as $69",
+                "summary": "Tickets as low as $41",
                 "description": "Utah Jazz at Los Angeles Lakers",
-                "maxPrice": 12147.95,
-                "startingPrice": 69.66,
-                "numberAvailable": 2173,
-                "totalPostings": 610,
+                "maxPrice": 13907,
+                "startingPrice": 41,
+                "numberAvailable": 3083,
+                "totalPostings": 895,
                 "links": [
                   {
                     "rel": [
@@ -13013,12 +13013,12 @@
             "tickets": [
               {
                 "id": "7420174",
-                "summary": "Tickets as low as $74",
+                "summary": "Tickets as low as $62",
                 "description": "NBA Cup -  Sacramento Kings at Los Angeles Lakers",
-                "maxPrice": 14356.21,
-                "startingPrice": 74.81,
-                "numberAvailable": 2158,
-                "totalPostings": 606,
+                "maxPrice": 14394,
+                "startingPrice": 62,
+                "numberAvailable": 3215,
+                "totalPostings": 949,
                 "links": [
                   {
                     "rel": [
@@ -13604,12 +13604,12 @@
             "tickets": [
               {
                 "id": "7431675",
-                "summary": "Tickets as low as $74",
+                "summary": "Tickets as low as $38",
                 "description": "Utah Jazz at Los Angeles Lakers",
-                "maxPrice": 14356.21,
-                "startingPrice": 74.81,
-                "numberAvailable": 2082,
-                "totalPostings": 563,
+                "maxPrice": 14394,
+                "startingPrice": 38,
+                "numberAvailable": 2996,
+                "totalPostings": 876,
                 "links": [
                   {
                     "rel": [
@@ -14217,12 +14217,12 @@
             "tickets": [
               {
                 "id": "7420272",
-                "summary": "Tickets as low as $123",
+                "summary": "Tickets as low as $130",
                 "description": "NBA Cup - Los Angeles Lakers at San Antonio Spurs",
-                "maxPrice": 6211.16,
-                "startingPrice": 123.13,
-                "numberAvailable": 2363,
-                "totalPostings": 511,
+                "maxPrice": 5842,
+                "startingPrice": 130,
+                "numberAvailable": 3341,
+                "totalPostings": 603,
                 "links": [
                   {
                     "rel": [
@@ -14808,12 +14808,12 @@
             "tickets": [
               {
                 "id": "7431762",
-                "summary": "Tickets as low as $80",
+                "summary": "Tickets as low as $79",
                 "description": "Los Angeles Lakers at Memphis Grizzlies",
-                "maxPrice": 3469.85,
-                "startingPrice": 80.75,
-                "numberAvailable": 1057,
-                "totalPostings": 232,
+                "maxPrice": 3479,
+                "startingPrice": 79,
+                "numberAvailable": 1694,
+                "totalPostings": 394,
                 "links": [
                   {
                     "rel": [
@@ -15416,12 +15416,12 @@
             "tickets": [
               {
                 "id": "7431000",
-                "summary": "Tickets as low as $67",
+                "summary": "Tickets as low as $58",
                 "description": "Los Angeles Lakers at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 67.7,
-                "numberAvailable": 4780,
-                "totalPostings": 968,
+                "maxPrice": 17716,
+                "startingPrice": 58,
+                "numberAvailable": 5220,
+                "totalPostings": 1108,
                 "links": [
                   {
                     "rel": [
@@ -16007,12 +16007,12 @@
             "tickets": [
               {
                 "id": "7430920",
-                "summary": "Tickets as low as $48",
+                "summary": "Tickets as low as $42",
                 "description": "Los Angeles Lakers at New Orleans Pelicans",
-                "maxPrice": 2993.09,
-                "startingPrice": 48.15,
-                "numberAvailable": 2355,
-                "totalPostings": 475,
+                "maxPrice": 7459,
+                "startingPrice": 42,
+                "numberAvailable": 3673,
+                "totalPostings": 764,
                 "links": [
                   {
                     "rel": [
@@ -16598,12 +16598,12 @@
             "tickets": [
               {
                 "id": "7430924",
-                "summary": "Tickets as low as $59",
+                "summary": "Tickets as low as $43",
                 "description": "New Orleans Pelicans at Los Angeles Lakers",
-                "maxPrice": 17668.61,
-                "startingPrice": 59.32,
-                "numberAvailable": 2020,
-                "totalPostings": 555,
+                "maxPrice": 13907,
+                "startingPrice": 43,
+                "numberAvailable": 3054,
+                "totalPostings": 903,
                 "links": [
                   {
                     "rel": [
@@ -17208,12 +17208,12 @@
             "tickets": [
               {
                 "id": "7431465",
-                "summary": "Tickets as low as $184",
+                "summary": "Tickets as low as $126",
                 "description": "Los Angeles Lakers at Minnesota Timberwolves",
-                "maxPrice": 3675.31,
-                "startingPrice": 184.3,
-                "numberAvailable": 474,
-                "totalPostings": 155,
+                "maxPrice": 3630,
+                "startingPrice": 126,
+                "numberAvailable": 778,
+                "totalPostings": 240,
                 "links": [
                   {
                     "rel": [
@@ -17825,12 +17825,12 @@
             "tickets": [
               {
                 "id": "7431469",
-                "summary": "Tickets as low as $187",
+                "summary": "Tickets as low as $120",
                 "description": "Los Angeles Lakers at Minnesota Timberwolves",
-                "maxPrice": 3703.32,
-                "startingPrice": 187.66,
-                "numberAvailable": 462,
-                "totalPostings": 155,
+                "maxPrice": 3669,
+                "startingPrice": 120,
+                "numberAvailable": 785,
+                "totalPostings": 244,
                 "links": [
                   {
                     "rel": [
@@ -18416,12 +18416,12 @@
             "tickets": [
               {
                 "id": "7432206",
-                "summary": "Tickets as low as $86",
+                "summary": "Tickets as low as $62",
                 "description": "Los Angeles Lakers at Denver Nuggets",
-                "maxPrice": 11629.77,
-                "startingPrice": 86.83,
-                "numberAvailable": 3067,
-                "totalPostings": 703,
+                "maxPrice": 4837,
+                "startingPrice": 62,
+                "numberAvailable": 4256,
+                "totalPostings": 1084,
                 "links": [
                   {
                     "rel": [
@@ -19007,12 +19007,12 @@
             "tickets": [
               {
                 "id": "7432374",
-                "summary": "Tickets as low as $85",
+                "summary": "Tickets as low as $72",
                 "description": "Indiana Pacers at Los Angeles Lakers",
-                "maxPrice": 17668.61,
-                "startingPrice": 85.15,
-                "numberAvailable": 2045,
-                "totalPostings": 568,
+                "maxPrice": 15501,
+                "startingPrice": 72,
+                "numberAvailable": 2972,
+                "totalPostings": 879,
                 "links": [
                   {
                     "rel": [
@@ -19615,12 +19615,12 @@
             "tickets": [
               {
                 "id": "7432210",
-                "summary": "Tickets as low as $121",
+                "summary": "Tickets as low as $84",
                 "description": "Denver Nuggets at Los Angeles Lakers",
-                "maxPrice": 17668.61,
-                "startingPrice": 121.31,
-                "numberAvailable": 2076,
-                "totalPostings": 573,
+                "maxPrice": 17715,
+                "startingPrice": 84,
+                "numberAvailable": 3105,
+                "totalPostings": 910,
                 "links": [
                   {
                     "rel": [
@@ -20243,12 +20243,12 @@
             "tickets": [
               {
                 "id": "7415411",
-                "summary": "Tickets as low as $306",
+                "summary": "Tickets as low as $276",
                 "description": "Philadelphia 76ers at Los Angeles Lakers",
-                "maxPrice": 60683.15,
-                "startingPrice": 306.8,
-                "numberAvailable": 2294,
-                "totalPostings": 668,
+                "maxPrice": 60840,
+                "startingPrice": 276,
+                "numberAvailable": 2835,
+                "totalPostings": 824,
                 "links": [
                   {
                     "rel": [
@@ -20860,12 +20860,12 @@
             "tickets": [
               {
                 "id": "7431796",
-                "summary": "Tickets as low as $104",
+                "summary": "Tickets as low as $75",
                 "description": "Memphis Grizzlies at Los Angeles Lakers",
-                "maxPrice": 17668.61,
-                "startingPrice": 104.78,
-                "numberAvailable": 2094,
-                "totalPostings": 574,
+                "maxPrice": 17715,
+                "startingPrice": 75,
+                "numberAvailable": 2990,
+                "totalPostings": 860,
                 "links": [
                   {
                     "rel": [
@@ -21468,12 +21468,12 @@
             "tickets": [
               {
                 "id": "7432376",
-                "summary": "Tickets as low as $131",
+                "summary": "Tickets as low as $86",
                 "description": "Houston Rockets at Los Angeles Lakers",
-                "maxPrice": 17668.61,
-                "startingPrice": 131.63,
-                "numberAvailable": 2068,
-                "totalPostings": 576,
+                "maxPrice": 17715,
+                "startingPrice": 86,
+                "numberAvailable": 2933,
+                "totalPostings": 859,
                 "links": [
                   {
                     "rel": [
@@ -22059,12 +22059,12 @@
             "tickets": [
               {
                 "id": "7430942",
-                "summary": "Tickets as low as $72",
+                "summary": "Tickets as low as $48",
                 "description": "Los Angeles Lakers at New Orleans Pelicans",
-                "maxPrice": 2993.09,
-                "startingPrice": 72.06,
-                "numberAvailable": 2328,
-                "totalPostings": 474,
+                "maxPrice": 9432,
+                "startingPrice": 48,
+                "numberAvailable": 3649,
+                "totalPostings": 753,
                 "links": [
                   {
                     "rel": [
@@ -22650,12 +22650,12 @@
             "tickets": [
               {
                 "id": "7432082",
-                "summary": "Tickets as low as $176",
+                "summary": "Tickets as low as $153",
                 "description": "Los Angeles Lakers at Chicago Bulls",
-                "maxPrice": 3547.93,
-                "startingPrice": 176.39,
-                "numberAvailable": 1005,
-                "totalPostings": 233,
+                "maxPrice": 5782,
+                "startingPrice": 153,
+                "numberAvailable": 1853,
+                "totalPostings": 422,
                 "links": [
                   {
                     "rel": [
@@ -23241,12 +23241,12 @@
             "tickets": [
               {
                 "id": "7431102",
-                "summary": "Tickets as low as $170",
+                "summary": "Tickets as low as $151",
                 "description": "Los Angeles Lakers at Toronto Raptors",
-                "maxPrice": 4703.97,
-                "startingPrice": 170.94,
-                "numberAvailable": 285,
-                "totalPostings": 71,
+                "maxPrice": 8285,
+                "startingPrice": 151,
+                "numberAvailable": 501,
+                "totalPostings": 117,
                 "links": [
                   {
                     "rel": [
@@ -23832,12 +23832,12 @@
             "tickets": [
               {
                 "id": "7431764",
-                "summary": "Tickets as low as $65",
+                "summary": "Tickets as low as $52",
                 "description": "Los Angeles Lakers at Washington Wizards",
-                "maxPrice": 4625.63,
-                "startingPrice": 65.53,
-                "numberAvailable": 1815,
-                "totalPostings": 407,
+                "maxPrice": 7134,
+                "startingPrice": 52,
+                "numberAvailable": 4571,
+                "totalPostings": 875,
                 "links": [
                   {
                     "rel": [
@@ -24440,12 +24440,12 @@
             "tickets": [
               {
                 "id": "7432378",
-                "summary": "Tickets as low as $131",
+                "summary": "Tickets as low as $108",
                 "description": "Boston Celtics at Los Angeles Lakers",
-                "maxPrice": 17668.61,
-                "startingPrice": 131.63,
-                "numberAvailable": 1814,
-                "totalPostings": 511,
+                "maxPrice": 17715,
+                "startingPrice": 108,
+                "numberAvailable": 2929,
+                "totalPostings": 864,
                 "links": [
                   {
                     "rel": [
@@ -25031,12 +25031,12 @@
             "tickets": [
               {
                 "id": "7432231",
-                "summary": "Tickets as low as $95",
+                "summary": "Tickets as low as $82",
                 "description": "Detroit Pistons at Los Angeles Lakers",
-                "maxPrice": 17668.61,
-                "startingPrice": 95.48,
-                "numberAvailable": 2006,
-                "totalPostings": 548,
+                "maxPrice": 17715,
+                "startingPrice": 82,
+                "numberAvailable": 2808,
+                "totalPostings": 817,
                 "links": [
                   {
                     "rel": [
@@ -25639,12 +25639,12 @@
             "tickets": [
               {
                 "id": "7432332",
-                "summary": "Tickets as low as $109",
+                "summary": "Tickets as low as $95",
                 "description": "Los Angeles Lakers at LA Clippers",
-                "maxPrice": 242911.45,
-                "startingPrice": 109,
-                "numberAvailable": 3155,
-                "totalPostings": 562,
+                "maxPrice": 243538,
+                "startingPrice": 95,
+                "numberAvailable": 4383,
+                "totalPostings": 729,
                 "links": [
                   {
                     "rel": [
@@ -26230,12 +26230,12 @@
             "tickets": [
               {
                 "id": "7432380",
-                "summary": "Tickets as low as $53",
+                "summary": "Tickets as low as $50",
                 "description": "Los Angeles Lakers at Portland Trail Blazers",
-                "maxPrice": 3442.36,
-                "startingPrice": 53.29,
-                "numberAvailable": 2745,
-                "totalPostings": 641,
+                "maxPrice": 3534,
+                "startingPrice": 50,
+                "numberAvailable": 4137,
+                "totalPostings": 1022,
                 "links": [
                   {
                     "rel": [
@@ -26821,12 +26821,12 @@
             "tickets": [
               {
                 "id": "7432382",
-                "summary": "Tickets as low as $79",
+                "summary": "Tickets as low as $64",
                 "description": "Orlando Magic at Los Angeles Lakers",
-                "maxPrice": 17668.61,
-                "startingPrice": 79.99,
-                "numberAvailable": 2032,
-                "totalPostings": 554,
+                "maxPrice": 17715,
+                "startingPrice": 64,
+                "numberAvailable": 3059,
+                "totalPostings": 865,
                 "links": [
                   {
                     "rel": [
@@ -27412,12 +27412,12 @@
             "tickets": [
               {
                 "id": "7432384",
-                "summary": "Tickets as low as $84",
+                "summary": "Tickets as low as $56",
                 "description": "Milwaukee Bucks at Los Angeles Lakers",
-                "maxPrice": 17668.61,
-                "startingPrice": 84.11,
-                "numberAvailable": 2001,
-                "totalPostings": 545,
+                "maxPrice": 17715,
+                "startingPrice": 56,
+                "numberAvailable": 2801,
+                "totalPostings": 821,
                 "links": [
                   {
                     "rel": [
@@ -28003,12 +28003,12 @@
             "tickets": [
               {
                 "id": "7431627",
-                "summary": "Tickets as low as $81",
+                "summary": "Tickets as low as $83",
                 "description": "Los Angeles Lakers at Sacramento Kings",
-                "maxPrice": 6327.08,
-                "startingPrice": 81.83,
-                "numberAvailable": 2089,
-                "totalPostings": 478,
+                "maxPrice": 4111,
+                "startingPrice": 83,
+                "numberAvailable": 2718,
+                "totalPostings": 648,
                 "links": [
                   {
                     "rel": [
@@ -28611,12 +28611,12 @@
             "tickets": [
               {
                 "id": "7431284",
-                "summary": "Tickets as low as $130",
+                "summary": "Tickets as low as $115",
                 "description": "Los Angeles Lakers at Golden State Warriors",
-                "maxPrice": 13309.92,
-                "startingPrice": 130.48,
-                "numberAvailable": 1394,
-                "totalPostings": 388,
+                "maxPrice": 10676,
+                "startingPrice": 115,
+                "numberAvailable": 2744,
+                "totalPostings": 735,
                 "links": [
                   {
                     "rel": [
@@ -29202,12 +29202,12 @@
             "tickets": [
               {
                 "id": "7431631",
-                "summary": "Tickets as low as $90",
+                "summary": "Tickets as low as $65",
                 "description": "Sacramento Kings at Los Angeles Lakers",
-                "maxPrice": 17668.61,
-                "startingPrice": 90.32,
-                "numberAvailable": 2001,
-                "totalPostings": 549,
+                "maxPrice": 17715,
+                "startingPrice": 65,
+                "numberAvailable": 2838,
+                "totalPostings": 830,
                 "links": [
                   {
                     "rel": [
@@ -29793,12 +29793,12 @@
             "tickets": [
               {
                 "id": "7431810",
-                "summary": "Tickets as low as $95",
+                "summary": "Tickets as low as $54",
                 "description": "Washington Wizards at Los Angeles Lakers",
-                "maxPrice": 17668.61,
-                "startingPrice": 95.48,
-                "numberAvailable": 1610,
-                "totalPostings": 430,
+                "maxPrice": 17715,
+                "startingPrice": 54,
+                "numberAvailable": 2366,
+                "totalPostings": 700,
                 "links": [
                   {
                     "rel": [
@@ -30401,12 +30401,12 @@
             "tickets": [
               {
                 "id": "7432386",
-                "summary": "Tickets as low as $104",
+                "summary": "Tickets as low as $98",
                 "description": "Oklahoma City Thunder at Los Angeles Lakers",
-                "maxPrice": 17668.61,
-                "startingPrice": 104.78,
-                "numberAvailable": 1773,
-                "totalPostings": 494,
+                "maxPrice": 17715,
+                "startingPrice": 98,
+                "numberAvailable": 2784,
+                "totalPostings": 810,
                 "links": [
                   {
                     "rel": [
@@ -30992,12 +30992,12 @@
             "tickets": [
               {
                 "id": "7432388",
-                "summary": "Tickets as low as $62",
+                "summary": "Tickets as low as $63",
                 "description": "Los Angeles Lakers at Indiana Pacers",
-                "maxPrice": 5106.74,
-                "startingPrice": 62.52,
-                "numberAvailable": 1667,
-                "totalPostings": 369,
+                "maxPrice": 11699,
+                "startingPrice": 63,
+                "numberAvailable": 2874,
+                "totalPostings": 620,
                 "links": [
                   {
                     "rel": [
@@ -31602,12 +31602,12 @@
             "tickets": [
               {
                 "id": "7432390",
-                "summary": "Tickets as low as $586",
+                "summary": "Tickets as low as $457",
                 "description": "Los Angeles Lakers at New York Knicks",
-                "maxPrice": 23227.26,
-                "startingPrice": 586.28,
-                "numberAvailable": 905,
-                "totalPostings": 287,
+                "maxPrice": 24388,
+                "startingPrice": 457,
+                "numberAvailable": 1575,
+                "totalPostings": 501,
                 "links": [
                   {
                     "rel": [
@@ -32219,12 +32219,12 @@
             "tickets": [
               {
                 "id": "7432392",
-                "summary": "Tickets as low as $47",
+                "summary": "Tickets as low as $41",
                 "description": "Los Angeles Lakers at Charlotte Hornets",
-                "maxPrice": 2882.12,
-                "startingPrice": 47.65,
-                "numberAvailable": 1478,
-                "totalPostings": 318,
+                "maxPrice": 3267,
+                "startingPrice": 41,
+                "numberAvailable": 2685,
+                "totalPostings": 521,
                 "links": [
                   {
                     "rel": [
@@ -32827,12 +32827,12 @@
             "tickets": [
               {
                 "id": "7432394",
-                "summary": "Tickets as low as $140",
+                "summary": "Tickets as low as $122",
                 "description": "Los Angeles Lakers at Boston Celtics",
-                "maxPrice": 9256.33,
-                "startingPrice": 140.18,
-                "numberAvailable": 2233,
-                "totalPostings": 575,
+                "maxPrice": 6691,
+                "startingPrice": 122,
+                "numberAvailable": 3292,
+                "totalPostings": 865,
                 "links": [
                   {
                     "rel": [
@@ -33418,12 +33418,12 @@
             "tickets": [
               {
                 "id": "7432006",
-                "summary": "Tickets as low as $93",
+                "summary": "Tickets as low as $91",
                 "description": "Los Angeles Lakers at Brooklyn Nets",
-                "maxPrice": 22246.32,
-                "startingPrice": 93.34,
-                "numberAvailable": 3240,
-                "totalPostings": 684,
+                "maxPrice": 18959,
+                "startingPrice": 91,
+                "numberAvailable": 4028,
+                "totalPostings": 804,
                 "links": [
                   {
                     "rel": [
@@ -34028,12 +34028,12 @@
             "tickets": [
               {
                 "id": "7432396",
-                "summary": "Tickets as low as $128",
+                "summary": "Tickets as low as $130",
                 "description": "Los Angeles Lakers at San Antonio Spurs",
-                "maxPrice": 6211.16,
-                "startingPrice": 128.75,
-                "numberAvailable": 2430,
-                "totalPostings": 515,
+                "maxPrice": 5842,
+                "startingPrice": 130,
+                "numberAvailable": 3723,
+                "totalPostings": 645,
                 "links": [
                   {
                     "rel": [
@@ -34662,12 +34662,12 @@
             "tickets": [
               {
                 "id": "7432398",
-                "summary": "Tickets as low as $97",
+                "summary": "Tickets as low as $83",
                 "description": "Los Angeles Lakers at Phoenix Suns",
-                "maxPrice": 10966.14,
-                "startingPrice": 97.04,
-                "numberAvailable": 1402,
-                "totalPostings": 354,
+                "maxPrice": 10995,
+                "startingPrice": 83,
+                "numberAvailable": 2211,
+                "totalPostings": 552,
                 "links": [
                   {
                     "rel": [
@@ -35272,12 +35272,12 @@
             "tickets": [
               {
                 "id": "7432346",
-                "summary": "Tickets as low as $85",
+                "summary": "Tickets as low as $72",
                 "description": "LA Clippers at Los Angeles Lakers",
-                "maxPrice": 17668.61,
-                "startingPrice": 85.15,
-                "numberAvailable": 1948,
-                "totalPostings": 513,
+                "maxPrice": 17715,
+                "startingPrice": 72,
+                "numberAvailable": 2730,
+                "totalPostings": 786,
                 "links": [
                   {
                     "rel": [
@@ -35908,12 +35908,12 @@
             "tickets": [
               {
                 "id": "7432260",
-                "summary": "Tickets as low as $104",
+                "summary": "Tickets as low as $82",
                 "description": "Denver Nuggets at Los Angeles Lakers",
-                "maxPrice": 17668.61,
-                "startingPrice": 104.78,
-                "numberAvailable": 1787,
-                "totalPostings": 496,
+                "maxPrice": 17715,
+                "startingPrice": 82,
+                "numberAvailable": 2786,
+                "totalPostings": 819,
                 "links": [
                   {
                     "rel": [
@@ -36525,12 +36525,12 @@
             "tickets": [
               {
                 "id": "7432148",
-                "summary": "Tickets as low as $95",
+                "summary": "Tickets as low as $65",
                 "description": "Chicago Bulls at Los Angeles Lakers",
-                "maxPrice": 17668.61,
-                "startingPrice": 95.48,
-                "numberAvailable": 1992,
-                "totalPostings": 547,
+                "maxPrice": 17715,
+                "startingPrice": 65,
+                "numberAvailable": 2791,
+                "totalPostings": 815,
                 "links": [
                   {
                     "rel": [
@@ -37133,12 +37133,12 @@
             "tickets": [
               {
                 "id": "7432400",
-                "summary": "Tickets as low as $100",
+                "summary": "Tickets as low as $70",
                 "description": "Houston Rockets at Los Angeles Lakers",
-                "maxPrice": 17668.61,
-                "startingPrice": 100.64,
-                "numberAvailable": 2020,
-                "totalPostings": 553,
+                "maxPrice": 17715,
+                "startingPrice": 70,
+                "numberAvailable": 2799,
+                "totalPostings": 812,
                 "links": [
                   {
                     "rel": [
@@ -37743,12 +37743,12 @@
             "tickets": [
               {
                 "id": "7432270",
-                "summary": "Tickets as low as $69",
+                "summary": "Tickets as low as $65",
                 "description": "Los Angeles Lakers at Denver Nuggets",
-                "maxPrice": 12625.99,
-                "startingPrice": 69.09,
-                "numberAvailable": 2364,
-                "totalPostings": 577,
+                "maxPrice": 5251,
+                "startingPrice": 65,
+                "numberAvailable": 3490,
+                "totalPostings": 910,
                 "links": [
                   {
                     "rel": [
@@ -38379,12 +38379,12 @@
             "tickets": [
               {
                 "id": "7431419",
-                "summary": "Tickets as low as $136",
+                "summary": "Tickets as low as $137",
                 "description": "Los Angeles Lakers at Dallas Mavericks",
-                "maxPrice": 16261.79,
-                "startingPrice": 136.44,
-                "numberAvailable": 1135,
-                "totalPostings": 227,
+                "maxPrice": 20534,
+                "startingPrice": 137,
+                "numberAvailable": 1885,
+                "totalPostings": 390,
                 "links": [
                   {
                     "rel": [
@@ -38996,12 +38996,12 @@
             "tickets": [
               {
                 "id": "7432402",
-                "summary": "Tickets as low as $112",
+                "summary": "Tickets as low as $99",
                 "description": "Los Angeles Lakers at Orlando Magic",
-                "maxPrice": 10886.73,
-                "startingPrice": 112.51,
-                "numberAvailable": 2267,
-                "totalPostings": 644,
+                "maxPrice": 7999,
+                "startingPrice": 99,
+                "numberAvailable": 4617,
+                "totalPostings": 992,
                 "links": [
                   {
                     "rel": [
@@ -39604,12 +39604,12 @@
             "tickets": [
               {
                 "id": "7432404",
-                "summary": "Tickets as low as $295",
+                "summary": "Tickets as low as $178",
                 "description": "Los Angeles Lakers at Philadelphia 76ers",
-                "maxPrice": 27744.5,
-                "startingPrice": 295.91,
-                "numberAvailable": 1620,
-                "totalPostings": 508,
+                "maxPrice": 26958,
+                "startingPrice": 178,
+                "numberAvailable": 2149,
+                "totalPostings": 669,
                 "links": [
                   {
                     "rel": [
@@ -40214,12 +40214,12 @@
             "tickets": [
               {
                 "id": "7432406",
-                "summary": "Tickets as low as $141",
+                "summary": "Tickets as low as $135",
                 "description": "Oklahoma City Thunder at Los Angeles Lakers",
-                "maxPrice": 17668.61,
-                "startingPrice": 141.97,
-                "numberAvailable": 1985,
-                "totalPostings": 541,
+                "maxPrice": 17715,
+                "startingPrice": 135,
+                "numberAvailable": 2765,
+                "totalPostings": 804,
                 "links": [
                   {
                     "rel": [
@@ -40831,12 +40831,12 @@
             "tickets": [
               {
                 "id": "7432024",
-                "summary": "Tickets as low as $85",
+                "summary": "Tickets as low as $51",
                 "description": "Brooklyn Nets at Los Angeles Lakers",
-                "maxPrice": 17668.61,
-                "startingPrice": 85.15,
-                "numberAvailable": 1948,
-                "totalPostings": 529,
+                "maxPrice": 17715,
+                "startingPrice": 51,
+                "numberAvailable": 2742,
+                "totalPostings": 792,
                 "links": [
                   {
                     "rel": [
@@ -41439,12 +41439,12 @@
             "tickets": [
               {
                 "id": "7432408",
-                "summary": "Tickets as low as $260",
+                "summary": "Tickets as low as $135",
                 "description": "New York Knicks at Los Angeles Lakers",
-                "maxPrice": 24293.4,
-                "startingPrice": 260.78,
-                "numberAvailable": 1968,
-                "totalPostings": 533,
+                "maxPrice": 24356,
+                "startingPrice": 135,
+                "numberAvailable": 3096,
+                "totalPostings": 855,
                 "links": [
                   {
                     "rel": [
@@ -42030,12 +42030,12 @@
             "tickets": [
               {
                 "id": "7431252",
-                "summary": "Tickets as low as $116",
+                "summary": "Tickets as low as $84",
                 "description": "Cleveland Cavaliers at Los Angeles Lakers",
-                "maxPrice": 17668.61,
-                "startingPrice": 116.15,
-                "numberAvailable": 1947,
-                "totalPostings": 533,
+                "maxPrice": 17715,
+                "startingPrice": 84,
+                "numberAvailable": 2759,
+                "totalPostings": 810,
                 "links": [
                   {
                     "rel": [
@@ -42638,12 +42638,12 @@
             "tickets": [
               {
                 "id": "7431329",
-                "summary": "Tickets as low as $172",
+                "summary": "Tickets as low as $103",
                 "description": "Golden State Warriors at Los Angeles Lakers",
-                "maxPrice": 17668.61,
-                "startingPrice": 172.97,
-                "numberAvailable": 1975,
-                "totalPostings": 537,
+                "maxPrice": 17715,
+                "startingPrice": 103,
+                "numberAvailable": 2805,
+                "totalPostings": 800,
                 "links": [
                   {
                     "rel": [
@@ -43229,12 +43229,12 @@
             "tickets": [
               {
                 "id": "7432410",
-                "summary": "Tickets as low as $62",
+                "summary": "Tickets as low as $55",
                 "description": "Los Angeles Lakers at Portland Trail Blazers",
-                "maxPrice": 4227.36,
-                "startingPrice": 62.14,
-                "numberAvailable": 2819,
-                "totalPostings": 640,
+                "maxPrice": 4340,
+                "startingPrice": 55,
+                "numberAvailable": 3362,
+                "totalPostings": 888,
                 "links": [
                   {
                     "rel": [
@@ -43839,12 +43839,12 @@
             "tickets": [
               {
                 "id": "7432412",
-                "summary": "Tickets as low as $79",
+                "summary": "Tickets as low as $61",
                 "description": "Phoenix Suns at Los Angeles Lakers",
-                "maxPrice": 17668.61,
-                "startingPrice": 79.99,
-                "numberAvailable": 1270,
-                "totalPostings": 341,
+                "maxPrice": 17715,
+                "startingPrice": 61,
+                "numberAvailable": 2327,
+                "totalPostings": 670,
                 "links": [
                   {
                     "rel": [
@@ -44456,12 +44456,12 @@
             "tickets": [
               {
                 "id": "7432180",
-                "summary": "Tickets as low as $85",
+                "summary": "Tickets as low as $76",
                 "description": "Atlanta Hawks at Los Angeles Lakers",
-                "maxPrice": 17668.61,
-                "startingPrice": 85.15,
-                "numberAvailable": 1674,
-                "totalPostings": 463,
+                "maxPrice": 17715,
+                "startingPrice": 76,
+                "numberAvailable": 2688,
+                "totalPostings": 773,
                 "links": [
                   {
                     "rel": [
@@ -45064,12 +45064,12 @@
             "tickets": [
               {
                 "id": "7431437",
-                "summary": "Tickets as low as $131",
+                "summary": "Tickets as low as $70",
                 "description": "Dallas Mavericks at Los Angeles Lakers",
-                "maxPrice": 17668.61,
-                "startingPrice": 131.63,
-                "numberAvailable": 1691,
-                "totalPostings": 464,
+                "maxPrice": 17715,
+                "startingPrice": 70,
+                "numberAvailable": 2670,
+                "totalPostings": 766,
                 "links": [
                   {
                     "rel": [
@@ -45672,12 +45672,12 @@
             "tickets": [
               {
                 "id": "7432414",
-                "summary": "Tickets as low as $99",
+                "summary": "Tickets as low as $106",
                 "description": "Los Angeles Lakers at Miami Heat",
-                "maxPrice": 16314.8,
-                "startingPrice": 99.4,
-                "numberAvailable": 2181,
-                "totalPostings": 563,
+                "maxPrice": 17520,
+                "startingPrice": 106,
+                "numberAvailable": 2724,
+                "totalPostings": 721,
                 "links": [
                   {
                     "rel": [
@@ -46263,12 +46263,12 @@
             "tickets": [
               {
                 "id": "7431280",
-                "summary": "Tickets as low as $73",
+                "summary": "Tickets as low as $57",
                 "description": "Los Angeles Lakers at Cleveland Cavaliers",
-                "maxPrice": 7098.9,
-                "startingPrice": 73.14,
-                "numberAvailable": 2153,
-                "totalPostings": 608,
+                "maxPrice": 7191,
+                "startingPrice": 57,
+                "numberAvailable": 3618,
+                "totalPostings": 1000,
                 "links": [
                   {
                     "rel": [
@@ -46873,12 +46873,12 @@
             "tickets": [
               {
                 "id": "7432416",
-                "summary": "Tickets as low as $81",
+                "summary": "Tickets as low as $80",
                 "description": "Los Angeles Lakers at Houston Rockets",
-                "maxPrice": 2660.18,
-                "startingPrice": 81.83,
-                "numberAvailable": 2606,
-                "totalPostings": 538,
+                "maxPrice": 14763,
+                "startingPrice": 80,
+                "numberAvailable": 3388,
+                "totalPostings": 716,
                 "links": [
                   {
                     "rel": [
@@ -47490,12 +47490,12 @@
             "tickets": [
               {
                 "id": "7431968",
-                "summary": "Tickets as low as $56",
+                "summary": "Tickets as low as $52",
                 "description": "Los Angeles Lakers at Memphis Grizzlies",
-                "maxPrice": 3469.85,
-                "startingPrice": 56.26,
-                "numberAvailable": 996,
-                "totalPostings": 213,
+                "maxPrice": 3479,
+                "startingPrice": 52,
+                "numberAvailable": 1629,
+                "totalPostings": 367,
                 "links": [
                   {
                     "rel": [
@@ -48098,12 +48098,12 @@
             "tickets": [
               {
                 "id": "7432418",
-                "summary": "Tickets as low as $88",
+                "summary": "Tickets as low as $78",
                 "description": "Los Angeles Lakers at Oklahoma City Thunder",
-                "maxPrice": 11784.52,
-                "startingPrice": 88.14,
-                "numberAvailable": 620,
-                "totalPostings": 180,
+                "maxPrice": 2299,
+                "startingPrice": 78,
+                "numberAvailable": 1500,
+                "totalPostings": 383,
                 "links": [
                   {
                     "rel": [
@@ -48706,12 +48706,12 @@
             "tickets": [
               {
                 "id": "7432422",
-                "summary": "Tickets as low as $216",
+                "summary": "Tickets as low as $103",
                 "description": "San Antonio Spurs at Los Angeles Lakers",
-                "maxPrice": 20981,
-                "startingPrice": 216.61,
-                "numberAvailable": 1709,
-                "totalPostings": 473,
+                "maxPrice": 21036,
+                "startingPrice": 103,
+                "numberAvailable": 2760,
+                "totalPostings": 787,
                 "links": [
                   {
                     "rel": [
@@ -49297,12 +49297,12 @@
             "tickets": [
               {
                 "id": "7431471",
-                "summary": "Tickets as low as $90",
+                "summary": "Tickets as low as $65",
                 "description": "Dallas Mavericks at Los Angeles Lakers",
-                "maxPrice": 20981,
-                "startingPrice": 90.32,
-                "numberAvailable": 1707,
-                "totalPostings": 470,
+                "maxPrice": 21036,
+                "startingPrice": 65,
+                "numberAvailable": 2676,
+                "totalPostings": 774,
                 "links": [
                   {
                     "rel": [
@@ -49907,12 +49907,12 @@
             "tickets": [
               {
                 "id": "7431599",
-                "summary": "Tickets as low as $85",
+                "summary": "Tickets as low as $75",
                 "description": "Minnesota Timberwolves at Los Angeles Lakers",
-                "maxPrice": 20981,
-                "startingPrice": 85.15,
-                "numberAvailable": 1682,
-                "totalPostings": 468,
+                "maxPrice": 21036,
+                "startingPrice": 75,
+                "numberAvailable": 2699,
+                "totalPostings": 779,
                 "links": [
                   {
                     "rel": [
@@ -50524,12 +50524,12 @@
             "tickets": [
               {
                 "id": "7431601",
-                "summary": "Tickets as low as $104",
+                "summary": "Tickets as low as $96",
                 "description": "Minnesota Timberwolves at Los Angeles Lakers",
-                "maxPrice": 20981,
-                "startingPrice": 104.78,
-                "numberAvailable": 1676,
-                "totalPostings": 467,
+                "maxPrice": 21036,
+                "startingPrice": 96,
+                "numberAvailable": 2726,
+                "totalPostings": 782,
                 "links": [
                   {
                     "rel": [
@@ -51115,12 +51115,12 @@
             "tickets": [
               {
                 "id": "7432426",
-                "summary": "Tickets as low as $177",
+                "summary": "Tickets as low as $72",
                 "description": "Phoenix Suns at Los Angeles Lakers",
-                "maxPrice": 20981,
-                "startingPrice": 177.92,
-                "numberAvailable": 1602,
-                "totalPostings": 448,
+                "maxPrice": 21036,
+                "startingPrice": 72,
+                "numberAvailable": 2621,
+                "totalPostings": 759,
                 "links": [
                   {
                     "rel": [

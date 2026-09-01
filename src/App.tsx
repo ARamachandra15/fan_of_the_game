@@ -1,9 +1,10 @@
 import { useEffect, useMemo, useState } from 'react';
 import { F1_CONSTRUCTORS, LEAGUES } from './lib/constants';
-import { clearSelection, readSelection, writeSelection } from './lib/storage';
+import { clearSelection, normalizeStoredSelection, readSelection, writeSelection } from './lib/storage';
 import { buildMonthGrid, formatMonthLabel, goToNextMonth, goToPrevMonth, isCurrentMonth, isTodayDate } from './lib/date';
-import type { GameEvent, LeagueKey, LeagueOption, LeagueSelection, TeamOption } from './types/sports';
+import type { GameEvent, LeagueKey, LeagueOption, LeagueSelection, TeamOption, UserSelectionState } from './types/sports';
 import { fetchLeagueGames, fetchTeamProfile, fetchTeamsForLeague } from './services/sportsApi';
+import { hasSupabase, supabase } from './lib/supabase';
 
 const NAV_TABS = [
   { label: 'Leagues', screen: 'league' as const },
@@ -33,6 +34,13 @@ const hexToRgba = (value: string, alpha: number) => {
 
   return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 };
+
+const buildSelectionPayload = (selectedLeagues: LeagueSelection[], selectedTeams: TeamOption[]): UserSelectionState => ({
+  version: 1,
+  selectedLeagues,
+  selectedTeams,
+  updatedAt: new Date().toISOString(),
+});
 
 /** Small circular team logo with a white backing for contrast on dark backgrounds.
  *  Falls back to a solid colored dot using primaryColor if the image fails or is absent. */
@@ -90,6 +98,13 @@ function App() {
   const [failedLeagueLogos, setFailedLeagueLogos] = useState<Record<string, boolean>>({});
   const [teamLeagueIndex, setTeamLeagueIndex] = useState(0);
   const [scheduleNotice, setScheduleNotice] = useState<string | null>(null);
+  const [authMode, setAuthMode] = useState<AccessMode | null>(null);
+  const [authEmail, setAuthEmail] = useState('');
+  const [authPassword, setAuthPassword] = useState('');
+  const [authConfirmPassword, setAuthConfirmPassword] = useState('');
+  const [authError, setAuthError] = useState<string | null>(null);
+  const [authLoading, setAuthLoading] = useState(false);
+  const [authUser, setAuthUser] = useState<{ id: string; email?: string | null } | null>(null);
   const [focusedTeamId, setFocusedTeamId] = useState<string | null>(null);
   const [profileTeamId, setProfileTeamId] = useState<string | null>(null);
   const [teamProfiles, setTeamProfiles] = useState<Record<string, {
@@ -99,12 +114,110 @@ function App() {
     source: string;
   }>>({});
 
-  useEffect(() => {
+  const applySelectionSnapshot = (snapshot: UserSelectionState | null) => {
+    const normalized = normalizeStoredSelection(snapshot);
+    if (!normalized) return;
+
+    setSelectedLeagues(normalized.selectedLeagues || []);
+    setSelectedTeams(normalized.selectedTeams || []);
+  };
+
+  const persistSelectionCheckpoint = async () => {
+    const snapshot = buildSelectionPayload(selectedLeagues, selectedTeams);
+    writeSelection(selectedLeagues, selectedTeams);
+
+    if (!hasSupabase() || !supabase || !authUser) return;
+
+    const { error } = await supabase.from('user_selections').upsert({
+      user_id: authUser.id,
+      selected_leagues: selectedLeagues,
+      selected_teams: selectedTeams,
+      updated_at: snapshot.updatedAt,
+    }, { onConflict: 'user_id' });
+
+    if (error) {
+      throw new Error(error.message);
+    }
+  };
+
+  const loadSavedSelection = async (userId?: string) => {
+    if (hasSupabase() && supabase && userId) {
+      const { data, error } = await supabase
+        .from('user_selections')
+        .select('*')
+        .eq('user_id', userId)
+        .maybeSingle();
+
+      if (!error && data) {
+        applySelectionSnapshot({
+          version: 1,
+          selectedLeagues: Array.isArray(data.selected_leagues) ? data.selected_leagues : [],
+          selectedTeams: Array.isArray(data.selected_teams) ? data.selected_teams : [],
+          updatedAt: data.updated_at ?? new Date().toISOString(),
+        });
+        return;
+      }
+    }
+
     const saved = readSelection();
     if (saved) {
-      setSelectedLeagues(saved.selectedLeagues || []);
-      setSelectedTeams(saved.selectedTeams || []);
+      applySelectionSnapshot(saved);
     }
+  };
+
+  useEffect(() => {
+    if (!hasSupabase() || !supabase) {
+      const saved = readSelection();
+      if (saved) {
+        setSelectedLeagues(saved.selectedLeagues || []);
+        setSelectedTeams(saved.selectedTeams || []);
+      }
+      return;
+    }
+
+    const hydrateSession = async () => {
+      if (!supabase) {
+        const saved = readSelection();
+        if (saved) {
+          setSelectedLeagues(saved.selectedLeagues || []);
+          setSelectedTeams(saved.selectedTeams || []);
+        }
+        return;
+      }
+
+      const { data: { session } } = await supabase.auth.getSession();
+      const currentUser = session?.user ?? null;
+      setAuthUser(currentUser ? { id: currentUser.id, email: currentUser.email } : null);
+
+      if (currentUser) {
+        await loadSavedSelection(currentUser.id);
+      } else {
+        const saved = readSelection();
+        if (saved) {
+          setSelectedLeagues(saved.selectedLeagues || []);
+          setSelectedTeams(saved.selectedTeams || []);
+        }
+      }
+    };
+
+    void hydrateSession();
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (_event, session) => {
+      const nextUser = session?.user ?? null;
+      setAuthUser(nextUser ? { id: nextUser.id, email: nextUser.email } : null);
+
+      if (nextUser) {
+        await loadSavedSelection(nextUser.id);
+      } else {
+        const saved = readSelection();
+        if (saved) {
+          setSelectedLeagues(saved.selectedLeagues || []);
+          setSelectedTeams(saved.selectedTeams || []);
+        }
+      }
+    });
+
+    return () => subscription.unsubscribe();
   }, []);
 
   useEffect(() => {
@@ -269,34 +382,95 @@ function App() {
   };
 
   const handleLandingChoice = (mode: AccessMode) => {
-    if (mode === 'new') {
-      clearSelection();
-      setSelectedLeagues([]);
-      setSelectedTeams([]);
-      setTeamCatalog({});
-      setTeamLeagueIndex(0);
-      setSelectedDay(null);
-    } else {
-      const saved = readSelection();
-      setSelectedLeagues(saved?.selectedLeagues || []);
-      setSelectedTeams(saved?.selectedTeams || []);
-      setTeamLeagueIndex(0);
-    }
+    setAuthMode(mode);
+    setAuthError(null);
+    setAuthPassword('');
+    setAuthConfirmPassword('');
+  };
 
+  const continueAsGuest = () => {
+    setAuthMode(null);
+    setAuthError(null);
+    clearSelection();
+    setSelectedLeagues([]);
+    setSelectedTeams([]);
+    setTeamCatalog({});
+    setTeamLeagueIndex(0);
+    setSelectedDay(null);
     setScreen('league');
   };
 
-  const handleLeagueContinue = () => {
+  const submitAuth = async (event: React.FormEvent) => {
+    event.preventDefault();
+
+    if (!hasSupabase() || !supabase) {
+      setAuthError('Supabase is not configured. Add VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY.');
+      return;
+    }
+
+    if (!authEmail.trim() || !authPassword) {
+      setAuthError('Email and password are required.');
+      return;
+    }
+
+    if (authMode === 'new' && authPassword !== authConfirmPassword) {
+      setAuthError('Passwords do not match.');
+      return;
+    }
+
+    setAuthLoading(true);
+    setAuthError(null);
+
+    try {
+      const result = authMode === 'new'
+        ? await supabase.auth.signUp({ email: authEmail.trim(), password: authPassword })
+        : await supabase.auth.signInWithPassword({ email: authEmail.trim(), password: authPassword });
+
+      if (result.error) {
+        throw result.error;
+      }
+
+      const sessionUser = result.data?.user ?? null;
+      if (sessionUser) {
+        setAuthUser({ id: sessionUser.id, email: sessionUser.email });
+        await loadSavedSelection(sessionUser.id);
+      }
+
+      setAuthEmail('');
+      setAuthPassword('');
+      setAuthConfirmPassword('');
+      setAuthMode(null);
+      setScreen('league');
+    } catch (error) {
+      setAuthError(error instanceof Error ? error.message : 'Authentication failed.');
+    } finally {
+      setAuthLoading(false);
+    }
+  };
+
+  const handleLeagueContinue = async () => {
     if (selectedLeagues.length === 0) {
       setScreen('calendar');
       return;
+    }
+
+    try {
+      await persistSelectionCheckpoint();
+    } catch (error) {
+      console.error('Failed to persist league selection checkpoint', error);
     }
 
     setTeamLeagueIndex(0);
     setScreen('team');
   };
 
-  const handleTeamContinue = () => {
+  const handleTeamContinue = async () => {
+    try {
+      await persistSelectionCheckpoint();
+    } catch (error) {
+      console.error('Failed to persist team selection checkpoint', error);
+    }
+
     if (teamLeagueIndex < selectedLeagues.length - 1) {
       setTeamLeagueIndex((current) => current + 1);
       return;
@@ -329,36 +503,128 @@ function App() {
     return map;
   }, [filteredEvents]);
 
-  const renderLandingStep = () => (
-    <div className="relative space-y-8 py-8 text-center">
-      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden rounded-[32px]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(245,158,11,0.22),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(251,191,36,0.12),transparent_25%)]" />
-        <div className="absolute -left-16 top-10 h-48 w-48 rounded-full bg-amber-500/15 blur-3xl" />
-        <div className="absolute -right-12 bottom-8 h-52 w-52 rounded-full bg-orange-500/10 blur-3xl" />
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-400/80 to-transparent" />
-      </div>
+  const renderLandingStep = () => {
+    if (authMode) {
+      return (
+        <div className="relative mx-auto max-w-md py-8">
+          <div className="rounded-[28px] border border-slate-800 bg-slate-950/70 p-6 shadow-2xl shadow-slate-950/40">
+            <div className="mb-6 text-center">
+              <div className="text-xs uppercase tracking-[0.28em] text-amber-300">{authMode === 'new' ? 'Create account' : 'Welcome back'}</div>
+              <h2 className="mt-3 text-2xl font-semibold text-white">{authMode === 'new' ? 'Sign up for Rally' : 'Log in to Rally'}</h2>
+            </div>
 
-      <div className="mx-auto grid max-w-3xl gap-4 md:grid-cols-2">
-        <button
-          type="button"
-          onClick={() => handleLandingChoice('new')}
-          className="group relative overflow-hidden rounded-[26px] border border-amber-400/60 bg-[linear-gradient(135deg,rgba(245,158,11,0.18),rgba(15,23,42,0.9))] p-7 text-center shadow-[0_18px_40px_rgba(245,158,11,0.18)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.01] hover:border-amber-300 hover:shadow-[0_20px_52px_rgba(245,158,11,0.3)] active:translate-y-0"
-        >
-          <span className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-white/80 to-transparent" />
-          <span className="relative block text-2xl font-bold tracking-[0.12em] text-white uppercase">New User</span>
-        </button>
+            <form onSubmit={submitAuth} className="space-y-4">
+              <div>
+                <label htmlFor="auth-email" className="mb-2 block text-xs uppercase tracking-[0.22em] text-slate-400">Email</label>
+                <input
+                  id="auth-email"
+                  type="email"
+                  value={authEmail}
+                  onChange={(event) => setAuthEmail(event.target.value)}
+                  placeholder="you@example.com"
+                  className="w-full rounded-xl border border-slate-700 bg-slate-900 px-3 py-2.5 text-sm text-white placeholder:text-slate-500 focus:border-amber-400 focus:outline-none"
+                  autoComplete="email"
+                  required
+                />
+              </div>
 
-        <button
-          type="button"
-          onClick={() => handleLandingChoice('existing')}
-          className="group relative overflow-hidden rounded-[26px] border border-slate-700/80 bg-[linear-gradient(135deg,rgba(15,23,42,0.9),rgba(15,23,42,0.72))] p-7 text-center shadow-[0_18px_40px_rgba(15,23,42,0.4)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.01] hover:border-slate-500 hover:bg-slate-800/80 hover:shadow-[0_18px_40px_rgba(59,130,246,0.12)] active:translate-y-0"
-        >
-          <span className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-amber-300/70 to-transparent" />
-          <span className="relative block text-2xl font-bold tracking-[0.12em] text-white uppercase">Existing User</span>
-        </button>
+              <div>
+                <label htmlFor="auth-password" className="mb-2 block text-xs uppercase tracking-[0.22em] text-slate-400">Password</label>
+                <input
+                  id="auth-password"
+                  type="password"
+                  value={authPassword}
+                  onChange={(event) => setAuthPassword(event.target.value)}
+                  placeholder="Enter your password"
+                  className="w-full rounded-xl border border-slate-700 bg-slate-900 px-3 py-2.5 text-sm text-white placeholder:text-slate-500 focus:border-amber-400 focus:outline-none"
+                  autoComplete={authMode === 'new' ? 'new-password' : 'current-password'}
+                  required
+                />
+              </div>
+
+              {authMode === 'new' && (
+                <div>
+                  <label htmlFor="auth-confirm-password" className="mb-2 block text-xs uppercase tracking-[0.22em] text-slate-400">Confirm password</label>
+                  <input
+                    id="auth-confirm-password"
+                    type="password"
+                    value={authConfirmPassword}
+                    onChange={(event) => setAuthConfirmPassword(event.target.value)}
+                    placeholder="Confirm password"
+                    className="w-full rounded-xl border border-slate-700 bg-slate-900 px-3 py-2.5 text-sm text-white placeholder:text-slate-500 focus:border-amber-400 focus:outline-none"
+                    autoComplete="new-password"
+                    required
+                  />
+                </div>
+              )}
+
+              {authError && (
+                <div className="rounded-xl border border-red-500/50 bg-red-500/10 px-3 py-2 text-sm text-red-200">{authError}</div>
+              )}
+
+              <div className="flex flex-col gap-3 pt-2 sm:flex-row">
+                <button
+                  type="submit"
+                  disabled={authLoading}
+                  className="flex-1 rounded-xl bg-amber-500 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-amber-400 disabled:cursor-not-allowed disabled:opacity-70"
+                >
+                  {authLoading ? 'Please wait…' : authMode === 'new' ? 'Create account' : 'Log in'}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setAuthMode(null)}
+                  className="rounded-xl border border-slate-700 bg-slate-900 px-4 py-2.5 text-sm font-medium text-slate-200 hover:bg-slate-800"
+                >
+                  Back
+                </button>
+              </div>
+            </form>
+
+            <div className="mt-5 border-t border-slate-800 pt-4 text-center">
+              <button
+                type="button"
+                onClick={continueAsGuest}
+                className="text-sm font-medium text-amber-200 hover:text-amber-100"
+              >
+                Continue as guest
+              </button>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    return (
+      <div className="relative space-y-8 py-8 text-center">
+        <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden rounded-[32px]">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(245,158,11,0.22),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(251,191,36,0.12),transparent_25%)]" />
+          <div className="absolute -left-16 top-10 h-48 w-48 rounded-full bg-amber-500/15 blur-3xl" />
+          <div className="absolute -right-12 bottom-8 h-52 w-52 rounded-full bg-orange-500/10 blur-3xl" />
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-400/80 to-transparent" />
+        </div>
+
+        <div className="mx-auto grid max-w-3xl gap-4 md:grid-cols-2">
+          <button
+            type="button"
+            onClick={() => handleLandingChoice('new')}
+            className="group relative overflow-hidden rounded-[26px] border border-amber-400/60 bg-[linear-gradient(135deg,rgba(245,158,11,0.18),rgba(15,23,42,0.9))] p-7 text-center shadow-[0_18px_40px_rgba(245,158,11,0.18)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.01] hover:border-amber-300 hover:shadow-[0_20px_52px_rgba(245,158,11,0.3)] active:translate-y-0"
+          >
+            <span className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-white/80 to-transparent" />
+            <span className="relative block text-2xl font-bold tracking-[0.12em] text-white uppercase">New User</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => handleLandingChoice('existing')}
+            className="group relative overflow-hidden rounded-[26px] border border-slate-700/80 bg-[linear-gradient(135deg,rgba(15,23,42,0.9),rgba(15,23,42,0.72))] p-7 text-center shadow-[0_18px_40px_rgba(15,23,42,0.4)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.01] hover:border-slate-500 hover:bg-slate-800/80 hover:shadow-[0_18px_40px_rgba(59,130,246,0.12)] active:translate-y-0"
+          >
+            <span className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-amber-300/70 to-transparent" />
+            <span className="relative block text-2xl font-bold tracking-[0.12em] text-white uppercase">Existing User</span>
+          </button>
+        </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   const renderLeagueStep = () => (
     <div className="space-y-6">
