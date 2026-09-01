@@ -5,6 +5,7 @@ import { buildMonthGrid, formatMonthLabel, goToNextMonth, goToPrevMonth, isCurre
 import type { GameEvent, LeagueKey, LeagueOption, LeagueSelection, TeamOption, UserSelectionState } from './types/sports';
 import { fetchLeagueGames, fetchTeamProfile, fetchTeamsForLeague } from './services/sportsApi';
 import { hasSupabase, supabase } from './lib/supabase';
+import { detectBrowserTimezone, findClosestTimezone, convertUTCToUserTimezone, getTimezoneLabel, COMMON_TIMEZONES } from './lib/timezone';
 
 const NAV_TABS = [
   { label: 'Leagues', screen: 'league' as const },
@@ -98,6 +99,7 @@ function App() {
   const [failedLeagueLogos, setFailedLeagueLogos] = useState<Record<string, boolean>>({});
   const [teamLeagueIndex, setTeamLeagueIndex] = useState(0);
   const [scheduleNotice, setScheduleNotice] = useState<string | null>(null);
+  const [teamSearchQuery, setTeamSearchQuery] = useState('');
   const [authMode, setAuthMode] = useState<AccessMode | null>(null);
   const [authEmail, setAuthEmail] = useState('');
   const [authPassword, setAuthPassword] = useState('');
@@ -107,6 +109,11 @@ function App() {
   const [authUser, setAuthUser] = useState<{ id: string; email?: string | null } | null>(null);
   const [focusedTeamId, setFocusedTeamId] = useState<string | null>(null);
   const [profileTeamId, setProfileTeamId] = useState<string | null>(null);
+  const [showProfileMenu, setShowProfileMenu] = useState(false);
+  const [showTimezoneSelector, setShowTimezoneSelector] = useState(false);
+  const [pendingTimezoneOffset, setPendingTimezoneOffset] = useState<number | null>(null);
+  const [userTimezoneOffset, setUserTimezoneOffset] = useState<number | null>(null);
+  const [expandedDayKey, setExpandedDayKey] = useState<string | null>(null);
   const [teamProfiles, setTeamProfiles] = useState<Record<string, {
     loading: boolean;
     recordSummary: string | null;
@@ -225,6 +232,21 @@ function App() {
     writeSelection(selectedLeagues, selectedTeams);
   }, [screen, selectedLeagues, selectedTeams]);
 
+  // Initialize timezone on app load
+  useEffect(() => {
+    if (userTimezoneOffset !== null) return; // Already initialized
+    const browserOffset = detectBrowserTimezone();
+    const closestOffset = findClosestTimezone(browserOffset);
+    setUserTimezoneOffset(closestOffset);
+  }, [userTimezoneOffset]);
+
+  // Clear team search when navigating away from team selection screen
+  useEffect(() => {
+    if (screen !== 'team') {
+      setTeamSearchQuery('');
+    }
+  }, [screen]);
+
   useEffect(() => {
     const loadTeams = async () => {
       const catalog: Record<string, TeamOption[]> = {};
@@ -328,6 +350,7 @@ function App() {
                 teamShortName: team.shortName?.slice(0, 3).toUpperCase() || teamDisplayName.slice(0, 3).toUpperCase(),
                 opponent: opponentName,
                 date: dateObj.toISOString(),
+                datetime: startDate.includes('T') ? startDate : dateObj.toISOString(),  // UTC ISO datetime (e.g., "2026-09-05T19:30Z")
                 time: dateObj.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }),
                 venue: game.venue || game.strVenue || game.arena || 'TBD',
                 phase: status,
@@ -365,6 +388,11 @@ function App() {
 
   const currentTeamLeague = selectedLeagues[teamLeagueIndex] ?? null;
   const currentVisibleTeams = currentTeamLeague ? teamCatalog[currentTeamLeague.id] ?? [] : [];
+  const filteredCurrentVisibleTeams = useMemo(() => {
+    const query = teamSearchQuery.trim().toLowerCase();
+    if (!query) return currentVisibleTeams;
+    return currentVisibleTeams.filter((team) => team.name.toLowerCase().includes(query));
+  }, [currentVisibleTeams, teamSearchQuery]);
 
   const toggleLeague = (league: LeagueOption) => {
     setSelectedLeagues((current) => {
@@ -440,7 +468,8 @@ function App() {
       setAuthPassword('');
       setAuthConfirmPassword('');
       setAuthMode(null);
-      setScreen('league');
+      // Existing users go straight to calendar; new users start at league selection
+      setScreen(authMode === 'existing' ? 'calendar' : 'league');
     } catch (error) {
       setAuthError(error instanceof Error ? error.message : 'Authentication failed.');
     } finally {
@@ -460,6 +489,7 @@ function App() {
       console.error('Failed to persist league selection checkpoint', error);
     }
 
+    setTeamSearchQuery(''); // Clear search when entering team selection
     setTeamLeagueIndex(0);
     setScreen('team');
   };
@@ -470,6 +500,8 @@ function App() {
     } catch (error) {
       console.error('Failed to persist team selection checkpoint', error);
     }
+
+    setTeamSearchQuery(''); // Clear search when navigating away from team selection
 
     if (teamLeagueIndex < selectedLeagues.length - 1) {
       setTeamLeagueIndex((current) => current + 1);
@@ -707,8 +739,24 @@ function App() {
           </div>
         </div>
 
+        <div className="mb-4">
+          <label htmlFor="team-search" className="mb-2 block text-xs uppercase tracking-[0.22em] text-slate-400">Search teams</label>
+          <input
+            id="team-search"
+            type="text"
+            value={teamSearchQuery}
+            onChange={(event) => setTeamSearchQuery(event.target.value)}
+            placeholder="Type a team name..."
+            className="w-full rounded-xl border border-slate-700 bg-slate-900/80 px-3 py-2.5 text-sm text-white placeholder:text-slate-500 focus:border-amber-400 focus:outline-none"
+          />
+        </div>
+
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
-          {currentVisibleTeams.map((team) => {
+          {filteredCurrentVisibleTeams.length === 0 ? (
+            <div className="col-span-full rounded-2xl border border-dashed border-slate-700 bg-slate-900/50 p-5 text-sm text-slate-400">
+              No teams match “{teamSearchQuery}”. Clear the search to see the full list.
+            </div>
+          ) : filteredCurrentVisibleTeams.map((team) => {
             const selected = selectedTeams.some((item) => item.id === team.id);
             return (
               <button
@@ -954,8 +1002,16 @@ function App() {
               {monthDays.map((day) => {
                 const dayKey = day.toISOString().slice(0, 10);
                 const dayEvents = eventsByDay.get(dayKey) ?? [];
-                const visibleEvents = dayEvents.slice(0, 2);
-                const hiddenCount = Math.max(dayEvents.length - visibleEvents.length, 0);
+                // Sort events by time, earliest first
+                const sortedEvents = dayEvents.sort((a, b) => {
+                  const aTime = a.time || '00:00';
+                  const bTime = b.time || '00:00';
+                  return aTime.localeCompare(bTime);
+                });
+                const visibleEvents = sortedEvents.slice(0, 2);
+                const hiddenEvents = sortedEvents.slice(2);
+                const hiddenCount = hiddenEvents.length;
+                const isTooltipOpen = expandedDayKey === dayKey;
 
                 return (
                   <div
@@ -973,12 +1029,16 @@ function App() {
                       {visibleEvents.map((event) => {
                         const teamColor = event.primaryColor ?? '#5b7cff';
                         const isFocusedEvent = focusedTeamId === event.teamId;
+                        const displayTime = userTimezoneOffset !== null 
+                          ? convertUTCToUserTimezone(event.datetime, userTimezoneOffset)
+                          : event.time;
                         return (
                           <button
                             key={event.id}
                             type="button"
                             onClick={(e) => { e.stopPropagation(); setSelectedDay(day); }}
                             className="flex w-full items-center gap-1.5 rounded-md px-1.5 py-0.5 text-left text-[9px] font-medium text-slate-100 transition-transform"
+                            title={`${event.teamName} vs ${event.opponent} at ${displayTime}`}
                             style={{
                               borderLeft: `3px solid ${teamColor}`,
                               background: hexToRgba(teamColor, isFocusedEvent ? 0.32 : 0.16),
@@ -995,13 +1055,30 @@ function App() {
                       })}
 
                       {hiddenCount > 0 && (
-                        <button
-                          type="button"
-                          className="w-full rounded-md border border-dashed border-slate-600 bg-slate-800/50 px-1.5 py-0.5 text-left text-[9px] font-medium text-slate-400"
-                          onClick={(e) => { e.stopPropagation(); setSelectedDay(day); }}
-                        >
-                          +{hiddenCount}
-                        </button>
+                        <div className="relative">
+                          <button
+                            type="button"
+                            className="w-full rounded-md border border-dashed border-slate-600 bg-slate-800/50 px-1.5 py-0.5 text-left text-[9px] font-medium text-slate-400 hover:bg-slate-800 hover:text-slate-300 transition-colors"
+                            onClick={(e) => { e.stopPropagation(); setExpandedDayKey(isTooltipOpen ? null : dayKey); }}
+                          >
+                            +{hiddenCount} more
+                          </button>
+                          {isTooltipOpen && (
+                            <div className="absolute left-0 right-0 top-full mt-1 z-50 rounded-lg border border-slate-600 bg-slate-900/95 shadow-lg p-2 min-w-max">
+                              {hiddenEvents.map((event) => {
+                                const displayTime = userTimezoneOffset !== null
+                                  ? convertUTCToUserTimezone(event.datetime, userTimezoneOffset)
+                                  : event.time;
+                                return (
+                                  <div key={event.id} className="text-[8px] text-slate-300 py-1 border-b border-slate-700 last:border-b-0">
+                                    <div className="font-medium text-amber-200">{event.teamShortName} vs {event.opponent}</div>
+                                    <div className="text-slate-400">{displayTime}</div>
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          )}
+                        </div>
                       )}
                     </div>
                   </div>
@@ -1049,7 +1126,9 @@ function App() {
                         style={{ background: hexToRgba(teamColor, 0.12), borderLeft: `3px solid ${teamColor}` }}
                       >
                         <div className="font-semibold text-white">vs {event.opponent}</div>
-                        <div className="mt-0.5 text-slate-400">{dateLabel} · {event.time}</div>
+                        <div className="mt-0.5 text-slate-400">
+                          {dateLabel} · {userTimezoneOffset !== null ? convertUTCToUserTimezone(event.datetime, userTimezoneOffset) : event.time}
+                        </div>
                         {event.venue && event.venue !== 'TBD' && (
                           <div className="mt-0.5 truncate text-slate-500">{event.venue}</div>
                         )}
@@ -1073,6 +1152,9 @@ function App() {
               <div className="space-y-3">
                 {(eventsByDay.get(selectedDay.toISOString().slice(0, 10)) ?? []).map((event) => {
                   const teamColor = event.primaryColor ?? '#5b7cff';
+                  const displayTime = userTimezoneOffset !== null
+                    ? convertUTCToUserTimezone(event.datetime, userTimezoneOffset)
+                    : event.time;
                   return (
                     <div
                       key={event.id}
@@ -1087,7 +1169,7 @@ function App() {
                         <span className="text-xs uppercase tracking-[0.2em] text-slate-400">{event.type}</span>
                       </div>
                       <div className="mt-2 text-sm text-slate-300">vs {event.opponent}</div>
-                      <div className="mt-2 text-xs text-slate-400">{event.time} • {event.venue}</div>
+                      <div className="mt-2 text-xs text-slate-400">{displayTime} • {event.venue}</div>
                     </div>
                   );
                 })}
@@ -1174,15 +1256,20 @@ function App() {
                     <div className="text-xs text-slate-400">No completed games yet for this season.</div>
                   ) : (
                     <div className="space-y-2">
-                      {profileCompletedCurrentSeason.map((event) => (
-                        <div key={event.id} className="rounded-lg border border-slate-800 bg-slate-900/80 p-2 text-xs">
-                          <div className="font-semibold text-white">vs {event.opponent}</div>
-                          <div className="mt-0.5 text-slate-300">
-                            {event.teamScore ?? '-'} - {event.opponentScore ?? '-'} · {new Date(event.date).toLocaleDateString()} · {event.time}
+                      {profileCompletedCurrentSeason.map((event) => {
+                        const displayTime = userTimezoneOffset !== null
+                          ? convertUTCToUserTimezone(event.datetime, userTimezoneOffset)
+                          : event.time;
+                        return (
+                          <div key={event.id} className="rounded-lg border border-slate-800 bg-slate-900/80 p-2 text-xs">
+                            <div className="font-semibold text-white">vs {event.opponent}</div>
+                            <div className="mt-0.5 text-slate-300">
+                              {event.teamScore ?? '-'} - {event.opponentScore ?? '-'} · {new Date(event.date).toLocaleDateString()} · {displayTime}
+                            </div>
+                            <div className="mt-0.5 truncate text-slate-500">{event.venue || 'TBD'}</div>
                           </div>
-                          <div className="mt-0.5 truncate text-slate-500">{event.venue || 'TBD'}</div>
-                        </div>
-                      ))}
+                        );
+                      })}
                     </div>
                   )}
                 </div>
@@ -1193,13 +1280,18 @@ function App() {
                     <div className="text-xs text-slate-400">No upcoming games found.</div>
                   ) : (
                     <div className="space-y-2">
-                      {profileUpcomingNext10.map((event) => (
-                        <div key={event.id} className="rounded-lg border border-slate-800 bg-slate-900/80 p-2 text-xs">
-                          <div className="font-semibold text-white">vs {event.opponent}</div>
-                          <div className="mt-0.5 text-slate-300">{new Date(event.date).toLocaleDateString()} · {event.time}</div>
-                          <div className="mt-0.5 truncate text-slate-500">{event.venue || 'TBD'}</div>
-                        </div>
-                      ))}
+                      {profileUpcomingNext10.map((event) => {
+                        const displayTime = userTimezoneOffset !== null
+                          ? convertUTCToUserTimezone(event.datetime, userTimezoneOffset)
+                          : event.time;
+                        return (
+                          <div key={event.id} className="rounded-lg border border-slate-800 bg-slate-900/80 p-2 text-xs">
+                            <div className="font-semibold text-white">vs {event.opponent}</div>
+                            <div className="mt-0.5 text-slate-300">{new Date(event.date).toLocaleDateString()} · {displayTime}</div>
+                            <div className="mt-0.5 truncate text-slate-500">{event.venue || 'TBD'}</div>
+                          </div>
+                        );
+                      })}
                     </div>
                   )}
                 </div>
@@ -1237,31 +1329,133 @@ function App() {
             <p className="mt-2 text-base font-medium tracking-[0.06em] text-amber-200 md:text-lg">Every Team, Every Game, One Place.</p>
           </div>
           {screen !== 'landing' && (
-            <div className="inline-flex items-center justify-center gap-1 rounded-full border border-slate-700 bg-slate-900/80 p-1 shadow-sm shadow-slate-950/40">
-              {NAV_TABS.map((tab, index) => (
-                <button
-                  key={tab.label}
-                  type="button"
-                  onClick={() => {
-                    if (tab.screen === 'team' && selectedLeagues.length === 0) {
-                      setScreen('league');
-                      return;
-                    }
-                    if ((tab.screen === 'calendar' || tab.screen === 'my-teams') && selectedTeams.length === 0 && selectedLeagues.length === 0) {
-                      setScreen('league');
-                      return;
-                    }
-                    setScreen(tab.screen);
-                  }}
-                  className={`rounded-full px-3 py-2 text-[11px] font-medium uppercase tracking-[0.2em] transition-colors ${
-                    index === stepIndex
-                      ? 'bg-amber-500/15 text-amber-200 ring-1 ring-inset ring-amber-400/60'
-                      : 'text-slate-400 hover:text-slate-200'
-                  }`}
-                >
-                  {tab.label}
-                </button>
-              ))}
+            <div className="flex items-center gap-3">
+              <div className="inline-flex items-center justify-center gap-1 rounded-full border border-slate-700 bg-slate-900/80 p-1 shadow-sm shadow-slate-950/40">
+                {NAV_TABS.map((tab, index) => (
+                  <button
+                    key={tab.label}
+                    type="button"
+                    onClick={() => {
+                      if (tab.screen === 'team' && selectedLeagues.length === 0) {
+                        setScreen('league');
+                        return;
+                      }
+                      if ((tab.screen === 'calendar' || tab.screen === 'my-teams') && selectedTeams.length === 0 && selectedLeagues.length === 0) {
+                        setScreen('league');
+                        return;
+                      }
+                      setScreen(tab.screen);
+                    }}
+                    className={`whitespace-nowrap rounded-full px-2.5 py-2 text-[10px] font-medium uppercase tracking-[0.16em] transition-colors sm:text-[11px] ${
+                      index === stepIndex
+                        ? 'bg-amber-500/15 text-amber-200 ring-1 ring-inset ring-amber-400/60'
+                        : 'text-slate-400 hover:text-slate-200'
+                    }`}
+                  >
+                    {tab.label}
+                  </button>
+                ))}
+              </div>
+              {authUser && (
+                <div className="relative">
+                  <button
+                    type="button"
+                    onClick={() => setShowProfileMenu(!showProfileMenu)}
+                    className="flex h-9 w-9 items-center justify-center rounded-full border border-amber-400/60 bg-amber-500/15 text-amber-200 hover:bg-amber-500/25 transition-colors"
+                    title={authUser.email || 'Profile'}
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
+                      <path fillRule="evenodd" d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.715 9.715 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" clipRule="evenodd" />
+                    </svg>
+                  </button>
+                  {showProfileMenu && (
+                    <div className="absolute right-0 top-full mt-2 rounded-lg border border-slate-700 bg-slate-900/95 shadow-lg z-50">
+                      <div className="px-4 py-3 border-b border-slate-700">
+                        <div className="text-xs text-slate-400">Logged in as</div>
+                        <div className="text-sm font-medium text-white truncate">{authUser.email}</div>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setShowTimezoneSelector(!showTimezoneSelector);
+                        }}
+                        className="w-full px-4 py-2 text-left text-sm text-slate-200 hover:bg-slate-800/80 transition-colors flex items-center justify-between"
+                      >
+                        <span>Time Zone</span>
+                        <span className="text-xs text-slate-400">{userTimezoneOffset !== null ? getTimezoneLabel(userTimezoneOffset) : 'Auto'}</span>
+                      </button>
+                      {showTimezoneSelector && (
+                        <div className="border-t border-slate-700 px-4 py-2 max-h-60 overflow-y-auto">
+                          <div className="mb-2 text-xs font-medium text-amber-300 uppercase tracking-wide">Select timezone</div>
+                          {COMMON_TIMEZONES.map((tz) => (
+                            <button
+                              key={tz.offset}
+                              type="button"
+                              onClick={() => setPendingTimezoneOffset(tz.offset)}
+                              className={`w-full px-3 py-1.5 text-left text-xs rounded transition-colors ${
+                                pendingTimezoneOffset === tz.offset
+                                  ? 'bg-amber-500/20 text-amber-200 font-medium'
+                                  : userTimezoneOffset === tz.offset
+                                    ? 'bg-slate-800/60 text-white font-medium'
+                                    : 'text-slate-300 hover:bg-slate-800/40'
+                              }`}
+                            >
+                              {tz.label} - {tz.name}
+                            </button>
+                          ))}
+                          {pendingTimezoneOffset !== null && (
+                            <div className="mt-3 flex gap-2 border-t border-slate-700 pt-3">
+                              <button
+                                type="button"
+                                onClick={async () => {
+                                  setUserTimezoneOffset(pendingTimezoneOffset);
+                                  setPendingTimezoneOffset(null);
+                                  setShowTimezoneSelector(false);
+                                  // Persist to Supabase if logged in
+                                  if (authUser && hasSupabase() && supabase) {
+                                    try {
+                                      await supabase.from('user_metadata').upsert({
+                                        user_id: authUser.id,
+                                        timezone_offset: pendingTimezoneOffset,
+                                        updated_at: new Date().toISOString(),
+                                      }, { onConflict: 'user_id' });
+                                    } catch (err) {
+                                      console.error('Failed to save timezone:', err);
+                                    }
+                                  }
+                                }}
+                                className="flex-1 rounded px-2 py-1.5 bg-amber-500 text-xs font-medium text-white hover:bg-amber-400 transition-colors"
+                              >
+                                Save
+                              </button>
+                              <button
+                                type="button"
+                                onClick={() => setPendingTimezoneOffset(null)}
+                                className="flex-1 rounded px-2 py-1.5 border border-slate-600 text-xs font-medium text-slate-300 hover:bg-slate-800 transition-colors"
+                              >
+                                Cancel
+                              </button>
+                            </div>
+                          )}
+                        </div>
+                      )}
+                      <button
+                        type="button"
+                        onClick={async () => {
+                          if (hasSupabase() && supabase) {
+                            await supabase.auth.signOut();
+                            setAuthUser(null);
+                            setShowProfileMenu(false);
+                          }
+                        }}
+                        className="w-full px-4 py-2 text-left text-sm text-red-400 hover:bg-red-500/10 border-t border-slate-700 transition-colors"
+                      >
+                        Sign out
+                      </button>
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
           )}
         </header>

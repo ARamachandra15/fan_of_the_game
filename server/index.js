@@ -28,43 +28,6 @@ app.get('/api/sports/:league', async (req, res) => {
       error: 'A selected team name is required for ESPN schedule fetches.',
       example: '/api/sports/nfl?team=Houston%20Texans',
     });
-
-    app.get('/api/team-profile/:league', async (req, res) => {
-      const { league } = req.params;
-      const normalizedLeague = normalizeLeagueKey(league);
-      const teamName = typeof req.query.team === 'string' ? decodeURIComponent(req.query.team) : null;
-
-      if (!teamName) {
-        return res.status(400).json({
-          error: 'A selected team name is required for ESPN team profile lookup.',
-          example: '/api/team-profile/nba?team=Houston%20Rockets',
-        });
-      }
-
-      try {
-        const profile = await fetchEspnTeamRecord(normalizedLeague, teamName);
-        return res.json({
-          ...profile,
-          source: 'espn-team-endpoint',
-        });
-      } catch (error) {
-        const message = error instanceof Error ? error.message : String(error);
-        const status = Number(error?.status ?? 500);
-        if (message.toLowerCase().includes('rate limited') || status === 429) {
-          return res.status(429).json({
-            error: 'ESPN rate limited, try again shortly.',
-            details: message,
-          });
-        }
-
-        return res.status(status || 500).json({
-          error: message,
-          details: error?.details ?? null,
-          league: normalizedLeague,
-          team: teamName,
-        });
-      }
-    });
   }
 
   try {
@@ -98,17 +61,69 @@ app.get('/api/sports/:league', async (req, res) => {
   }
 });
 
+app.get('/api/team-profile/:league', async (req, res) => {
+  const { league } = req.params;
+  const normalizedLeague = normalizeLeagueKey(league);
+  const teamName = typeof req.query.team === 'string' ? decodeURIComponent(req.query.team) : null;
+
+  if (!teamName) {
+    return res.status(400).json({
+      error: 'A selected team name is required for ESPN team profile lookup.',
+      example: '/api/team-profile/nba?team=Houston%20Rockets',
+    });
+  }
+
+  try {
+    const profile = await fetchEspnTeamRecord(normalizedLeague, teamName);
+    return res.json({
+      ...profile,
+      source: 'espn-team-endpoint',
+    });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    const status = Number(error?.status ?? 500);
+    if (message.toLowerCase().includes('rate limited') || status === 429) {
+      return res.status(429).json({
+        error: 'ESPN rate limited, try again shortly.',
+        details: message,
+      });
+    }
+
+    return res.status(status || 500).json({
+      error: message,
+      details: error?.details ?? null,
+      league: normalizedLeague,
+      team: teamName,
+    });
+  }
+});
+
 app.get('/api/leagues', async (_req, res) => {
   const supported = [
     { id: 'premier-league', name: 'English Premier League', shortName: 'EPL', logoUrl: '/logos/leagues/premier-league.svg' },
     { id: 'la-liga', name: 'Spanish La Liga', shortName: 'La Liga', logoUrl: '/logos/leagues/la-liga.svg' },
     { id: 'nba', name: 'NBA', shortName: 'NBA', logoUrl: '/logos/leagues/nba.svg' },
     { id: 'nfl', name: 'NFL', shortName: 'NFL', logoUrl: '/logos/leagues/nfl.svg' },
+    { id: 'ncaaf', name: 'NCAAF', shortName: 'NCAAF', logoUrl: '' },
     { id: 'nhl', name: 'NHL', shortName: 'NHL', logoUrl: '/logos/leagues/nhl.svg' },
   ];
 
   return res.json({ leagues: supported });
 });
+
+const NCAAF_ROSTER = [
+  'Alabama Crimson Tide', 'Arizona State Sun Devils', 'Arizona Wildcats', 'Arkansas Razorbacks', 'Auburn Tigers',
+  'Baylor Bears', 'BYU Cougars', 'California Golden Bears', 'Clemson Tigers', 'Colorado Buffaloes', 'Duke Blue Devils',
+  'Florida Gators', 'Florida State Seminoles', 'Georgia Bulldogs', 'Georgia Tech Yellow Jackets', 'Houston Cougars',
+  'Illinois Fighting Illini', 'Indiana Hoosiers', 'Iowa Hawkeyes', 'Iowa State Cyclones', 'Kansas Jayhawks', 'Kansas State Wildcats',
+  'Kentucky Wildcats', 'Louisville Cardinals', 'LSU Tigers', 'Miami Hurricanes', 'Michigan Wolverines', 'Michigan State Spartans',
+  'Minnesota Golden Gophers', 'Mississippi State Bulldogs', 'Missouri Tigers', 'NC State Wolfpack', 'Nebraska Cornhuskers',
+  'Notre Dame Fighting Irish', 'Ohio State Buckeyes', 'Oklahoma Sooners', 'Oklahoma State Cowboys', 'Ole Miss Rebels',
+  'Oregon Ducks', 'Oregon State Beavers', 'Penn State Nittany Lions', 'Pittsburgh Panthers', 'Purdue Boilermakers', 'Rutgers Scarlet Knights',
+  'SMU Mustangs', 'South Carolina Gamecocks', 'Stanford Cardinal', 'Syracuse Orange', 'TCU Horned Frogs', 'Tennessee Volunteers',
+  'Texas Longhorns', 'Texas A&M Aggies', 'Texas Tech Red Raiders', 'UCLA Bruins', 'USC Trojans', 'Utah Utes', 'Virginia Tech Hokies',
+  'Wake Forest Demon Deacons', 'Washington Huskies', 'Washington State Cougars', 'West Virginia Mountaineers', 'Wisconsin Badgers'
+];
 
 app.get('/api/teams/:league', async (req, res) => {
   const { league } = req.params;
@@ -116,6 +131,7 @@ app.get('/api/teams/:league', async (req, res) => {
   const directLeagueCodes = {
     nba: 'NBA',
     nfl: 'NFL',
+    ncaaf: 'NCAAF',
     nhl: 'NHL',
     'premier-league': 'English Premier League',
     'la-liga': 'Spanish La Liga',
@@ -127,6 +143,42 @@ app.get('/api/teams/:league', async (req, res) => {
   }
 
   try {
+    if (normalizedLeague === 'ncaaf') {
+      const response = await fetch('https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams?limit=1000');
+      if (!response.ok) {
+        throw new Error(`ESPN NCAAF teams lookup failed: ${response.status}`);
+      }
+
+      const payload = await response.json();
+      const teams = (payload?.sports?.[0]?.leagues?.[0]?.teams ?? [])
+        .map((entry) => {
+          const team = entry?.team ?? {};
+          const name = team.displayName || team.name || 'Unknown team';
+          const logo = team.logos?.find((item) => item?.rel?.includes('default'))?.href || team.logos?.[0]?.href || '';
+          return {
+            id: `ncaaf:${team.id ?? name}`,
+            idTeam: team.id ?? null,
+            espnTeamId: team.id ?? null,
+            name,
+            shortName: team.shortDisplayName || team.abbreviation || name.slice(0, 3).toUpperCase(),
+            logoUrl: logo,
+            primaryColor: team.color ? `#${team.color}` : '#c69300',
+            secondaryColor: team.alternateColor ? `#${team.alternateColor}` : '#0f172a',
+            source: 'espn',
+          };
+        })
+        .filter((team) => NCAAF_ROSTER.includes(team.name));
+
+      return res.json({
+        teams,
+        count: teams.length,
+        league: normalizedLeague,
+        leagueName: key,
+        source: 'espn-ncaaf',
+        note: 'Power-4/FBS-heavy NCAAF roster subset to keep the UI usable while using real ESPN logos and schedules.',
+      });
+    }
+
     const snapshotPath = path.join(process.cwd(), 'server', 'data', 'teams.json');
     const raw = fs.readFileSync(snapshotPath, 'utf8');
     const snapshot = JSON.parse(raw);

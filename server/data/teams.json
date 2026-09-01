@@ -2415,6 +2415,442 @@
         "tsdbIdLeague": "4335",
         "espnTeamId": "102"
       }
+    ],
+    "ncaaf": [
+      {
+        "idTeam": "ncaaf-1",
+        "strTeam": "Alabama Crimson Tide",
+        "name": "Alabama Crimson Tide",
+        "tsdbStrTeam": "Alabama Crimson Tide",
+        "espnTeamId": "333"
+      },
+      {
+        "idTeam": "ncaaf-2",
+        "strTeam": "Arizona State Sun Devils",
+        "name": "Arizona State Sun Devils",
+        "tsdbStrTeam": "Arizona State Sun Devils",
+        "espnTeamId": "9"
+      },
+      {
+        "idTeam": "ncaaf-3",
+        "strTeam": "Arizona Wildcats",
+        "name": "Arizona Wildcats",
+        "tsdbStrTeam": "Arizona Wildcats",
+        "espnTeamId": "12"
+      },
+      {
+        "idTeam": "ncaaf-4",
+        "strTeam": "Arkansas Razorbacks",
+        "name": "Arkansas Razorbacks",
+        "tsdbStrTeam": "Arkansas Razorbacks",
+        "espnTeamId": "8"
+      },
+      {
+        "idTeam": "ncaaf-5",
+        "strTeam": "Auburn Tigers",
+        "name": "Auburn Tigers",
+        "tsdbStrTeam": "Auburn Tigers",
+        "espnTeamId": "2"
+      },
+      {
+        "idTeam": "ncaaf-6",
+        "strTeam": "Baylor Bears",
+        "name": "Baylor Bears",
+        "tsdbStrTeam": "Baylor Bears",
+        "espnTeamId": "239"
+      },
+      {
+        "idTeam": "ncaaf-7",
+        "strTeam": "BYU Cougars",
+        "name": "BYU Cougars",
+        "tsdbStrTeam": "BYU Cougars",
+        "espnTeamId": "252"
+      },
+      {
+        "idTeam": "ncaaf-8",
+        "strTeam": "California Golden Bears",
+        "name": "California Golden Bears",
+        "tsdbStrTeam": "California Golden Bears",
+        "espnTeamId": "25"
+      },
+      {
+        "idTeam": "ncaaf-9",
+        "strTeam": "Clemson Tigers",
+        "name": "Clemson Tigers",
+        "tsdbStrTeam": "Clemson Tigers",
+        "espnTeamId": "228"
+      },
+      {
+        "idTeam": "ncaaf-10",
+        "strTeam": "Colorado Buffaloes",
+        "name": "Colorado Buffaloes",
+        "tsdbStrTeam": "Colorado Buffaloes",
+        "espnTeamId": "38"
+      },
+      {
+        "idTeam": "ncaaf-11",
+        "strTeam": "Duke Blue Devils",
+        "name": "Duke Blue Devils",
+        "tsdbStrTeam": "Duke Blue Devils",
+        "espnTeamId": "150"
+      },
+      {
+        "idTeam": "ncaaf-12",
+        "strTeam": "Florida Gators",
+        "name": "Florida Gators",
+        "tsdbStrTeam": "Florida Gators",
+        "espnTeamId": "57"
+      },
+      {
+        "idTeam": "ncaaf-13",
+        "strTeam": "Florida State Seminoles",
+        "name": "Florida State Seminoles",
+        "tsdbStrTeam": "Florida State Seminoles",
+        "espnTeamId": "52"
+      },
+      {
+        "idTeam": "ncaaf-14",
+        "strTeam": "Georgia Bulldogs",
+        "name": "Georgia Bulldogs",
+        "tsdbStrTeam": "Georgia Bulldogs",
+        "espnTeamId": "61"
+      },
+      {
+        "idTeam": "ncaaf-15",
+        "strTeam": "Georgia Tech Yellow Jackets",
+        "name": "Georgia Tech Yellow Jackets",
+        "tsdbStrTeam": "Georgia Tech Yellow Jackets",
+        "espnTeamId": "59"
+      },
+      {
+        "idTeam": "ncaaf-16",
+        "strTeam": "Houston Cougars",
+        "name": "Houston Cougars",
+        "tsdbStrTeam": "Houston Cougars",
+        "espnTeamId": "248"
+      },
+      {
+        "idTeam": "ncaaf-17",
+        "strTeam": "Illinois Fighting Illini",
+        "name": "Illinois Fighting Illini",
+        "tsdbStrTeam": "Illinois Fighting Illini",
+        "espnTeamId": "356"
+      },
+      {
+        "idTeam": "ncaaf-18",
+        "strTeam": "Indiana Hoosiers",
+        "name": "Indiana Hoosiers",
+        "tsdbStrTeam": "Indiana Hoosiers",
+        "espnTeamId": "84"
+      },
+      {
+        "idTeam": "ncaaf-19",
+        "strTeam": "Iowa Hawkeyes",
+        "name": "Iowa Hawkeyes",
+        "tsdbStrTeam": "Iowa Hawkeyes",
+        "espnTeamId": "2294"
+      },
+      {
+        "idTeam": "ncaaf-20",
+        "strTeam": "Iowa State Cyclones",
+        "name": "Iowa State Cyclones",
+        "tsdbStrTeam": "Iowa State Cyclones",
+        "espnTeamId": "66"
+      },
+      {
+        "idTeam": "ncaaf-21",
+        "strTeam": "Kansas Jayhawks",
+        "name": "Kansas Jayhawks",
+        "tsdbStrTeam": "Kansas Jayhawks",
+        "espnTeamId": "2305"
+      },
+      {
+        "idTeam": "ncaaf-22",
+        "strTeam": "Kansas State Wildcats",
+        "name": "Kansas State Wildcats",
+        "tsdbStrTeam": "Kansas State Wildcats",
+        "espnTeamId": "2306"
+      },
+      {
+        "idTeam": "ncaaf-23",
+        "strTeam": "Kentucky Wildcats",
+        "name": "Kentucky Wildcats",
+        "tsdbStrTeam": "Kentucky Wildcats",
+        "espnTeamId": "96"
+      },
+      {
+        "idTeam": "ncaaf-24",
+        "strTeam": "Louisville Cardinals",
+        "name": "Louisville Cardinals",
+        "tsdbStrTeam": "Louisville Cardinals",
+        "espnTeamId": "97"
+      },
+      {
+        "idTeam": "ncaaf-25",
+        "strTeam": "LSU Tigers",
+        "name": "LSU Tigers",
+        "tsdbStrTeam": "LSU Tigers",
+        "espnTeamId": "99"
+      },
+      {
+        "idTeam": "ncaaf-26",
+        "strTeam": "Miami Hurricanes",
+        "name": "Miami Hurricanes",
+        "tsdbStrTeam": "Miami Hurricanes",
+        "espnTeamId": "2390"
+      },
+      {
+        "idTeam": "ncaaf-27",
+        "strTeam": "Michigan Wolverines",
+        "name": "Michigan Wolverines",
+        "tsdbStrTeam": "Michigan Wolverines",
+        "espnTeamId": "130"
+      },
+      {
+        "idTeam": "ncaaf-28",
+        "strTeam": "Michigan State Spartans",
+        "name": "Michigan State Spartans",
+        "tsdbStrTeam": "Michigan State Spartans",
+        "espnTeamId": "127"
+      },
+      {
+        "idTeam": "ncaaf-29",
+        "strTeam": "Minnesota Golden Gophers",
+        "name": "Minnesota Golden Gophers",
+        "tsdbStrTeam": "Minnesota Golden Gophers",
+        "espnTeamId": "135"
+      },
+      {
+        "idTeam": "ncaaf-30",
+        "strTeam": "Mississippi State Bulldogs",
+        "name": "Mississippi State Bulldogs",
+        "tsdbStrTeam": "Mississippi State Bulldogs",
+        "espnTeamId": "344"
+      },
+      {
+        "idTeam": "ncaaf-31",
+        "strTeam": "Missouri Tigers",
+        "name": "Missouri Tigers",
+        "tsdbStrTeam": "Missouri Tigers",
+        "espnTeamId": "142"
+      },
+      {
+        "idTeam": "ncaaf-32",
+        "strTeam": "NC State Wolfpack",
+        "name": "NC State Wolfpack",
+        "tsdbStrTeam": "NC State Wolfpack",
+        "espnTeamId": "152"
+      },
+      {
+        "idTeam": "ncaaf-33",
+        "strTeam": "Nebraska Cornhuskers",
+        "name": "Nebraska Cornhuskers",
+        "tsdbStrTeam": "Nebraska Cornhuskers",
+        "espnTeamId": "158"
+      },
+      {
+        "idTeam": "ncaaf-34",
+        "strTeam": "Notre Dame Fighting Irish",
+        "name": "Notre Dame Fighting Irish",
+        "tsdbStrTeam": "Notre Dame Fighting Irish",
+        "espnTeamId": "87"
+      },
+      {
+        "idTeam": "ncaaf-35",
+        "strTeam": "Ohio State Buckeyes",
+        "name": "Ohio State Buckeyes",
+        "tsdbStrTeam": "Ohio State Buckeyes",
+        "espnTeamId": "194"
+      },
+      {
+        "idTeam": "ncaaf-36",
+        "strTeam": "Oklahoma Sooners",
+        "name": "Oklahoma Sooners",
+        "tsdbStrTeam": "Oklahoma Sooners",
+        "espnTeamId": "201"
+      },
+      {
+        "idTeam": "ncaaf-37",
+        "strTeam": "Oklahoma State Cowboys",
+        "name": "Oklahoma State Cowboys",
+        "tsdbStrTeam": "Oklahoma State Cowboys",
+        "espnTeamId": "197"
+      },
+      {
+        "idTeam": "ncaaf-38",
+        "strTeam": "Ole Miss Rebels",
+        "name": "Ole Miss Rebels",
+        "tsdbStrTeam": "Ole Miss Rebels",
+        "espnTeamId": "145"
+      },
+      {
+        "idTeam": "ncaaf-39",
+        "strTeam": "Oregon Ducks",
+        "name": "Oregon Ducks",
+        "tsdbStrTeam": "Oregon Ducks",
+        "espnTeamId": "2483"
+      },
+      {
+        "idTeam": "ncaaf-40",
+        "strTeam": "Oregon State Beavers",
+        "name": "Oregon State Beavers",
+        "tsdbStrTeam": "Oregon State Beavers",
+        "espnTeamId": "204"
+      },
+      {
+        "idTeam": "ncaaf-41",
+        "strTeam": "Penn State Nittany Lions",
+        "name": "Penn State Nittany Lions",
+        "tsdbStrTeam": "Penn State Nittany Lions",
+        "espnTeamId": "213"
+      },
+      {
+        "idTeam": "ncaaf-42",
+        "strTeam": "Pitt Panthers",
+        "name": "Pitt Panthers",
+        "tsdbStrTeam": "Pitt Panthers",
+        "espnTeamId": "221"
+      },
+      {
+        "idTeam": "ncaaf-43",
+        "strTeam": "Purdue Boilermakers",
+        "name": "Purdue Boilermakers",
+        "tsdbStrTeam": "Purdue Boilermakers",
+        "espnTeamId": "2509"
+      },
+      {
+        "idTeam": "ncaaf-44",
+        "strTeam": "Rutgers Scarlet Knights",
+        "name": "Rutgers Scarlet Knights",
+        "tsdbStrTeam": "Rutgers Scarlet Knights",
+        "espnTeamId": "164"
+      },
+      {
+        "idTeam": "ncaaf-45",
+        "strTeam": "SMU Mustangs",
+        "name": "SMU Mustangs",
+        "tsdbStrTeam": "SMU Mustangs",
+        "espnTeamId": "2567"
+      },
+      {
+        "idTeam": "ncaaf-46",
+        "strTeam": "South Carolina Gamecocks",
+        "name": "South Carolina Gamecocks",
+        "tsdbStrTeam": "South Carolina Gamecocks",
+        "espnTeamId": "2579"
+      },
+      {
+        "idTeam": "ncaaf-47",
+        "strTeam": "Stanford Cardinal",
+        "name": "Stanford Cardinal",
+        "tsdbStrTeam": "Stanford Cardinal",
+        "espnTeamId": "24"
+      },
+      {
+        "idTeam": "ncaaf-48",
+        "strTeam": "Syracuse Orange",
+        "name": "Syracuse Orange",
+        "tsdbStrTeam": "Syracuse Orange",
+        "espnTeamId": "183"
+      },
+      {
+        "idTeam": "ncaaf-49",
+        "strTeam": "TCU Horned Frogs",
+        "name": "TCU Horned Frogs",
+        "tsdbStrTeam": "TCU Horned Frogs",
+        "espnTeamId": "2628"
+      },
+      {
+        "idTeam": "ncaaf-50",
+        "strTeam": "Tennessee Volunteers",
+        "name": "Tennessee Volunteers",
+        "tsdbStrTeam": "Tennessee Volunteers",
+        "espnTeamId": "2633"
+      },
+      {
+        "idTeam": "ncaaf-51",
+        "strTeam": "Texas Longhorns",
+        "name": "Texas Longhorns",
+        "tsdbStrTeam": "Texas Longhorns",
+        "espnTeamId": "251"
+      },
+      {
+        "idTeam": "ncaaf-52",
+        "strTeam": "Texas A&M Aggies",
+        "name": "Texas A&M Aggies",
+        "tsdbStrTeam": "Texas A&M Aggies",
+        "espnTeamId": "245"
+      },
+      {
+        "idTeam": "ncaaf-53",
+        "strTeam": "Texas Tech Red Raiders",
+        "name": "Texas Tech Red Raiders",
+        "tsdbStrTeam": "Texas Tech Red Raiders",
+        "espnTeamId": "2641"
+      },
+      {
+        "idTeam": "ncaaf-54",
+        "strTeam": "UCLA Bruins",
+        "name": "UCLA Bruins",
+        "tsdbStrTeam": "UCLA Bruins",
+        "espnTeamId": "26"
+      },
+      {
+        "idTeam": "ncaaf-55",
+        "strTeam": "USC Trojans",
+        "name": "USC Trojans",
+        "tsdbStrTeam": "USC Trojans",
+        "espnTeamId": "30"
+      },
+      {
+        "idTeam": "ncaaf-56",
+        "strTeam": "Utah Utes",
+        "name": "Utah Utes",
+        "tsdbStrTeam": "Utah Utes",
+        "espnTeamId": "254"
+      },
+      {
+        "idTeam": "ncaaf-57",
+        "strTeam": "Virginia Tech Hokies",
+        "name": "Virginia Tech Hokies",
+        "tsdbStrTeam": "Virginia Tech Hokies",
+        "espnTeamId": "259"
+      },
+      {
+        "idTeam": "ncaaf-58",
+        "strTeam": "Wake Forest Demon Deacons",
+        "name": "Wake Forest Demon Deacons",
+        "tsdbStrTeam": "Wake Forest Demon Deacons",
+        "espnTeamId": "154"
+      },
+      {
+        "idTeam": "ncaaf-59",
+        "strTeam": "Washington Huskies",
+        "name": "Washington Huskies",
+        "tsdbStrTeam": "Washington Huskies",
+        "espnTeamId": "264"
+      },
+      {
+        "idTeam": "ncaaf-60",
+        "strTeam": "Washington State Cougars",
+        "name": "Washington State Cougars",
+        "tsdbStrTeam": "Washington State Cougars",
+        "espnTeamId": "265"
+      },
+      {
+        "idTeam": "ncaaf-61",
+        "strTeam": "West Virginia Mountaineers",
+        "name": "West Virginia Mountaineers",
+        "tsdbStrTeam": "West Virginia Mountaineers",
+        "espnTeamId": "277"
+      },
+      {
+        "idTeam": "ncaaf-62",
+        "strTeam": "Wisconsin Badgers",
+        "name": "Wisconsin Badgers",
+        "tsdbStrTeam": "Wisconsin Badgers",
+        "espnTeamId": "275"
+      }
     ]
   }
 }

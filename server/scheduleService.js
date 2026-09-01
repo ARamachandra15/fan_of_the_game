@@ -8,6 +8,7 @@ export const CACHE_TTL_MS = 24 * 60 * 60 * 1000;
 export const ESPN_LEAGUES = {
   nba: { sport: 'basketball', league: 'nba', soccer: false },
   nfl: { sport: 'football', league: 'nfl', soccer: false },
+  ncaaf: { sport: 'football', league: 'college-football', soccer: false },
   nhl: { sport: 'hockey', league: 'nhl', soccer: false },
   'premier-league': { sport: 'soccer', league: 'eng.1', soccer: true },
   'la-liga': { sport: 'soccer', league: 'esp.1', soccer: true },
@@ -98,11 +99,65 @@ export function writeScheduleCache(leagueKey, teamNameOrId, payload) {
   return cachePath;
 }
 
+const COLLEGE_TEAM_ALIASES = {
+  'ohio state': 'Ohio State Buckeyes',
+  'ohio st': 'Ohio State Buckeyes',
+  'pitt': 'Pittsburgh Panthers',
+  'pittsburgh': 'Pittsburgh Panthers',
+  'pittsburgh panthers': 'Pittsburgh Panthers',
+  'pitt panthers': 'Pittsburgh Panthers',
+  'smu': 'SMU Mustangs',
+  'southern methodist': 'SMU Mustangs',
+  'southern methodist mustangs': 'SMU Mustangs',
+  'smu mustangs': 'SMU Mustangs',
+  'usc': 'USC Trojans',
+  'southern california': 'USC Trojans',
+  'southern california trojans': 'USC Trojans',
+  'ucla': 'UCLA Bruins',
+  'purdue': 'Purdue Boilermakers',
+  'purdue boilermakers': 'Purdue Boilermakers',
+  'notre dame': 'Notre Dame Fighting Irish',
+  'fsu': 'Florida State Seminoles',
+  'ole miss': 'Ole Miss Rebels',
+  'nc state': 'NC State Wolfpack',
+  'south carolina': 'South Carolina Gamecocks',
+  'south carolina gamecocks': 'South Carolina Gamecocks',
+  'gamecocks': 'South Carolina Gamecocks',
+  'texas am': 'Texas A&M Aggies',
+  'texas a and m': 'Texas A&M Aggies',
+  'texas a m': 'Texas A&M Aggies',
+  'tcu': 'TCU Horned Frogs',
+  'horned frogs': 'TCU Horned Frogs',
+  'tcu horned frogs': 'TCU Horned Frogs',
+  'miami': 'Miami Hurricanes',
+  'washington state': 'Washington State Cougars',
+  'wake forest': 'Wake Forest Demon Deacons',
+  'byu': 'BYU Cougars',
+  'west virginia': 'West Virginia Mountaineers',
+  'arizona state': 'Arizona State Sun Devils',
+  'michigan state': 'Michigan State Spartans',
+  'oregon state': 'Oregon State Beavers',
+  'tennessee': 'Tennessee Volunteers',
+  'volunteers': 'Tennessee Volunteers',
+  'tennessee volunteers': 'Tennessee Volunteers',
+  'texas tech': 'Texas Tech Red Raiders',
+  'texas tech red raiders': 'Texas Tech Red Raiders',
+  'ttu': 'Texas Tech Red Raiders',
+};
+
 async function resolveEspnTeamId(leagueKey, teamName) {
   const normalizedLeague = normalizeLeagueKey(leagueKey);
+  const requestedNames = new Set([
+    String(teamName || ''),
+    COLLEGE_TEAM_ALIASES[normalizeTeamName(teamName)] || '',
+  ].filter(Boolean));
+
   const teamRecord = getLeagueTeamList(normalizedLeague).find((entry) => {
     const candidateNames = [entry?.strTeam, entry?.name, entry?.tsdbStrTeam].filter(Boolean);
-    return candidateNames.some((name) => normalizeTeamName(name) === normalizeTeamName(teamName));
+    return candidateNames.some((name) => {
+      const normalizedName = normalizeTeamName(name);
+      return requestedNames.has(name) || requestedNames.has(normalizedName) || Array.from(requestedNames).some((requested) => normalizeTeamName(requested) === normalizedName);
+    });
   });
 
   if (teamRecord?.espnTeamId) {
@@ -114,7 +169,7 @@ async function resolveEspnTeamId(leagueKey, teamName) {
     throw new Error(`Unsupported ESPN league: ${normalizedLeague}`);
   }
 
-  const url = `${ESPN_BASE}/${config.sport}/${config.league}/teams`;
+  const url = `${ESPN_BASE}/${config.sport}/${config.league}/teams?limit=1000`;
   const response = await fetch(url);
   if (!response.ok) {
     const text = await response.text();
@@ -126,7 +181,10 @@ async function resolveEspnTeamId(leagueKey, teamName) {
   const match = teams.find((item) => {
     const team = item?.team ?? {};
     const candidateNames = [team.displayName, team.name, team.shortDisplayName, team.nickname, team.location].filter(Boolean);
-    return candidateNames.some((name) => normalizeTeamName(name) === normalizeTeamName(teamName));
+    return candidateNames.some((name) => {
+      const normalizedName = normalizeTeamName(name);
+      return Array.from(requestedNames).some((requested) => normalizeTeamName(requested) === normalizedName || normalizeTeamName(requested).includes(normalizedName) || normalizedName.includes(normalizeTeamName(requested)));
+    });
   });
 
   const resolvedId = match?.team?.id ?? teamRecord?.idTeam ?? null;

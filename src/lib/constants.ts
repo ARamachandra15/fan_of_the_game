@@ -38,6 +38,15 @@ export const LEAGUES: LeagueOption[] = [
     description: 'American football',
   },
   {
+    id: 'ncaaf',
+    name: 'NCAAF',
+    shortName: 'NCAAF',
+    accent: '#C69300',
+    logoPath: '/logos/leagues/ncaaf.png',
+    queryName: 'NCAA football',
+    description: 'College football',
+  },
+  {
     id: 'nhl',
     name: 'NHL',
     shortName: 'NHL',

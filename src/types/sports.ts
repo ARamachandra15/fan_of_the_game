@@ -1,6 +1,7 @@
 export type LeagueKey =
   | 'nba'
   | 'nfl'
+  | 'ncaaf'
   | 'nhl'
   | 'premier-league'
   | 'la-liga'
@@ -45,6 +46,7 @@ export interface GameEvent {
   teamShortName: string;
   opponent: string;
   date: string;
+  datetime: string;  // UTC ISO 8601 format (e.g., "2026-09-05T19:30Z")
   time: string;
   venue?: string;
   phase?: string;
