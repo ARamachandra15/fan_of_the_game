@@ -5,7 +5,8 @@ import { buildMonthGrid, formatMonthLabel, goToNextMonth, goToPrevMonth, isCurre
 import type { GameEvent, LeagueKey, LeagueOption, LeagueSelection, TeamOption, UserSelectionState } from './types/sports';
 import { fetchLeagueGames, fetchTeamProfile, fetchTeamsForLeague } from './services/sportsApi';
 import { hasSupabase, supabase } from './lib/supabase';
-import { detectBrowserTimezone, findClosestTimezone, convertUTCToUserTimezone, getTimezoneLabel, COMMON_TIMEZONES } from './lib/timezone';
+import { readTimezoneOffset, writeTimezoneOffset } from './lib/storage';
+import { IANA_TIMEZONES, getDefaultTimezone, formatTimeInTimezone, normalizeEspnTimestamp, getTimezoneInfo } from './lib/timezoneIANA';
 
 const NAV_TABS = [
   { label: 'Leagues', screen: 'league' as const },
@@ -111,8 +112,7 @@ function App() {
   const [profileTeamId, setProfileTeamId] = useState<string | null>(null);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
   const [showTimezoneSelector, setShowTimezoneSelector] = useState(false);
-  const [pendingTimezoneOffset, setPendingTimezoneOffset] = useState<number | null>(null);
-  const [userTimezoneOffset, setUserTimezoneOffset] = useState<number | null>(null);
+  const [userTimezoneId, setUserTimezoneId] = useState<string | null>(null);
   const [expandedDayKey, setExpandedDayKey] = useState<string | null>(null);
   const [teamProfiles, setTeamProfiles] = useState<Record<string, {
     loading: boolean;
@@ -173,27 +173,48 @@ function App() {
   };
 
   const loadUserTimezone = async (userId?: string) => {
+    // Try to load from localStorage first (instant, no race condition)
+    const savedTimezoneId = readTimezoneOffset();
+    if (savedTimezoneId) {
+      setUserTimezoneId(savedTimezoneId);
+      // Also sync to Supabase in background if logged in
+      if (userId && hasSupabase() && supabase) {
+        try {
+          await supabase.from('user_metadata').upsert({
+            user_id: userId,
+            timezone_id: savedTimezoneId,
+            updated_at: new Date().toISOString(),
+          }, { onConflict: 'user_id' });
+        } catch (err) {
+          console.warn('Failed to sync timezone to Supabase:', err);
+        }
+      }
+      return;
+    }
+
+    // Try to load from Supabase if logged in
     if (hasSupabase() && supabase && userId) {
       try {
         const { data, error } = await supabase
           .from('user_metadata')
-          .select('timezone_offset')
+          .select('timezone_id')
           .eq('user_id', userId)
           .maybeSingle();
 
-        if (!error && data && data.timezone_offset !== null && data.timezone_offset !== undefined) {
-          setUserTimezoneOffset(data.timezone_offset);
+        if (!error && data && data.timezone_id) {
+          setUserTimezoneId(data.timezone_id);
+          writeTimezoneOffset(data.timezone_id); // Cache to localStorage
           return;
         }
       } catch (err) {
         console.warn('Failed to load timezone from Supabase:', err);
       }
     }
-    
-    // Fallback to browser detection
-    const browserOffset = detectBrowserTimezone();
-    const closestOffset = findClosestTimezone(browserOffset);
-    setUserTimezoneOffset(closestOffset);
+
+    // Fallback to default
+    const defaultTimezone = getDefaultTimezone();
+    setUserTimezoneId(defaultTimezone);
+    writeTimezoneOffset(defaultTimezone);
   };
 
   useEffect(() => {
@@ -258,16 +279,22 @@ function App() {
     writeSelection(selectedLeagues, selectedTeams);
   }, [screen, selectedLeagues, selectedTeams]);
 
-  // Initialize timezone on app load (only if not already loaded from Supabase)
+  // Initialize timezone on app load - read from localStorage first (no race condition)
   useEffect(() => {
-    if (userTimezoneOffset !== null) return; // Already initialized
-    // Only initialize from browser if not logged in
-    if (!authUser) {
-      const browserOffset = detectBrowserTimezone();
-      const closestOffset = findClosestTimezone(browserOffset);
-      setUserTimezoneOffset(closestOffset);
+    if (userTimezoneId !== null) return; // Already initialized
+
+    // Try localStorage first (instant, no race condition)
+    const savedTimezoneId = readTimezoneOffset();
+    if (savedTimezoneId) {
+      setUserTimezoneId(savedTimezoneId);
+      return;
     }
-  }, [userTimezoneOffset, authUser]);
+
+    // Fall back to default
+    const defaultTimezone = getDefaultTimezone();
+    setUserTimezoneId(defaultTimezone);
+    writeTimezoneOffset(defaultTimezone);
+  }, [userTimezoneId]);
 
   // Clear team search when navigating away from team selection screen
   useEffect(() => {
@@ -341,9 +368,10 @@ function App() {
               const homeName = game.home_team_name || homeTeam.name || homeTeam.full_name || game.strHomeTeam || 'Home';
               const visitorName = game.visitor_team_name || visitorTeam.name || visitorTeam.full_name || game.strAwayTeam || 'Visitor';
               const status = game.status || game.strStatus || game.state || 'Scheduled';
-              const startDate = game.date || game.dateEvent || game.start_time || game.datetime || game.scheduled || game.strTimestamp || new Date().toISOString();
-              const timePart = game.time || game.strTime || '00:00:00';
-              const dateObj = startDate.includes('T') ? new Date(startDate) : new Date(`${startDate}T${timePart === 'TBD' ? '00:00:00' : timePart}`);
+              // The server now returns normalized UTC timestamps in game.datetime
+              // Treat this as the canonical UTC time and don't reprocess it
+              const utcDatetime = game.datetime || game.date || game.dateEvent || game.start_time || game.scheduled || game.strTimestamp || new Date().toISOString();
+              const dateObj = new Date(utcDatetime);
               const homeNormalized = normalizeName(homeName);
               const visitorNormalized = normalizeName(visitorName);
 
@@ -379,7 +407,7 @@ function App() {
                 teamShortName: team.shortName?.slice(0, 3).toUpperCase() || teamDisplayName.slice(0, 3).toUpperCase(),
                 opponent: opponentName,
                 date: dateObj.toISOString(),
-                datetime: startDate.includes('T') ? startDate : dateObj.toISOString(),  // UTC ISO datetime (e.g., "2026-09-05T19:30Z")
+                datetime: utcDatetime,  // Use the normalized UTC datetime from server
                 time: dateObj.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }),
                 venue: game.venue || game.strVenue || game.arena || 'TBD',
                 phase: status,
@@ -1058,8 +1086,8 @@ function App() {
                       {visibleEvents.map((event) => {
                         const teamColor = event.primaryColor ?? '#5b7cff';
                         const isFocusedEvent = focusedTeamId === event.teamId;
-                        const displayTime = userTimezoneOffset !== null 
-                          ? convertUTCToUserTimezone(event.datetime, userTimezoneOffset)
+                        const displayTime = userTimezoneId !== null 
+                          ? formatTimeInTimezone(event.datetime, userTimezoneId)
                           : event.time;
                         return (
                           <button
@@ -1095,8 +1123,8 @@ function App() {
                           {isTooltipOpen && (
                             <div className="absolute left-0 right-0 top-full mt-1 z-50 rounded-lg border border-slate-600 bg-slate-900/95 shadow-lg p-2 min-w-max">
                               {hiddenEvents.map((event) => {
-                                const displayTime = userTimezoneOffset !== null
-                                  ? convertUTCToUserTimezone(event.datetime, userTimezoneOffset)
+                                const displayTime = userTimezoneId !== null
+                                  ? formatTimeInTimezone(event.datetime, userTimezoneId)
                                   : event.time;
                                 return (
                                   <div key={event.id} className="text-[8px] text-slate-300 py-1 border-b border-slate-700 last:border-b-0">
@@ -1156,7 +1184,7 @@ function App() {
                       >
                         <div className="font-semibold text-white">vs {event.opponent}</div>
                         <div className="mt-0.5 text-slate-400">
-                          {dateLabel} · {userTimezoneOffset !== null ? convertUTCToUserTimezone(event.datetime, userTimezoneOffset) : event.time}
+                          {dateLabel} · {userTimezoneId !== null ? formatTimeInTimezone(event.datetime, userTimezoneId) : event.time}
                         </div>
                         {event.venue && event.venue !== 'TBD' && (
                           <div className="mt-0.5 truncate text-slate-500">{event.venue}</div>
@@ -1181,8 +1209,8 @@ function App() {
               <div className="space-y-3">
                 {(eventsByDay.get(selectedDay.toISOString().slice(0, 10)) ?? []).map((event) => {
                   const teamColor = event.primaryColor ?? '#5b7cff';
-                  const displayTime = userTimezoneOffset !== null
-                    ? convertUTCToUserTimezone(event.datetime, userTimezoneOffset)
+                  const displayTime = userTimezoneId !== null
+                    ? formatTimeInTimezone(event.datetime, userTimezoneId)
                     : event.time;
                   return (
                     <div
@@ -1286,8 +1314,8 @@ function App() {
                   ) : (
                     <div className="space-y-2">
                       {profileCompletedCurrentSeason.map((event) => {
-                        const displayTime = userTimezoneOffset !== null
-                          ? convertUTCToUserTimezone(event.datetime, userTimezoneOffset)
+                        const displayTime = userTimezoneId !== null
+                          ? formatTimeInTimezone(event.datetime, userTimezoneId)
                           : event.time;
                         return (
                           <div key={event.id} className="rounded-lg border border-slate-800 bg-slate-900/80 p-2 text-xs">
@@ -1310,8 +1338,8 @@ function App() {
                   ) : (
                     <div className="space-y-2">
                       {profileUpcomingNext10.map((event) => {
-                        const displayTime = userTimezoneOffset !== null
-                          ? convertUTCToUserTimezone(event.datetime, userTimezoneOffset)
+                        const displayTime = userTimezoneId !== null
+                          ? formatTimeInTimezone(event.datetime, userTimezoneId)
                           : event.time;
                         return (
                           <div key={event.id} className="rounded-lg border border-slate-800 bg-slate-900/80 p-2 text-xs">
@@ -1411,63 +1439,43 @@ function App() {
                         className="w-full px-4 py-2 text-left text-sm text-slate-200 hover:bg-slate-800/80 transition-colors flex items-center justify-between"
                       >
                         <span>Time Zone</span>
-                        <span className="text-xs text-slate-400">{userTimezoneOffset !== null ? getTimezoneLabel(userTimezoneOffset) : 'Auto'}</span>
+                        <span className="text-xs text-slate-400">
+                          {userTimezoneId ? (getTimezoneInfo(userTimezoneId)?.label || userTimezoneId) : 'Loading...'}
+                        </span>
                       </button>
                       {showTimezoneSelector && (
                         <div className="border-t border-slate-700 px-4 py-2 max-h-60 overflow-y-auto">
                           <div className="mb-2 text-xs font-medium text-amber-300 uppercase tracking-wide">Select timezone</div>
-                          {COMMON_TIMEZONES.map((tz) => (
+                          {IANA_TIMEZONES.map((tz) => (
                             <button
-                              key={tz.offset}
+                              key={tz.id}
                               type="button"
-                              onClick={() => setPendingTimezoneOffset(tz.offset)}
+                              onClick={async () => {
+                                // Update immediately
+                                setUserTimezoneId(tz.id);
+                                writeTimezoneOffset(tz.id);
+                                // Persist to Supabase in background if logged in
+                                if (authUser && hasSupabase() && supabase) {
+                                  try {
+                                    await supabase.from('user_metadata').upsert({
+                                      user_id: authUser.id,
+                                      timezone_id: tz.id,
+                                      updated_at: new Date().toISOString(),
+                                    }, { onConflict: 'user_id' });
+                                  } catch (err) {
+                                    console.error('Failed to save timezone to Supabase:', err);
+                                  }
+                                }
+                              }}
                               className={`w-full px-3 py-1.5 text-left text-xs rounded transition-colors ${
-                                pendingTimezoneOffset === tz.offset
+                                userTimezoneId === tz.id
                                   ? 'bg-amber-500/20 text-amber-200 font-medium'
-                                  : userTimezoneOffset === tz.offset
-                                    ? 'bg-slate-800/60 text-white font-medium'
-                                    : 'text-slate-300 hover:bg-slate-800/40'
+                                  : 'text-slate-300 hover:bg-slate-800/40'
                               }`}
                             >
-                              {tz.label} - {tz.name}
+                              {tz.label}
                             </button>
                           ))}
-                          {pendingTimezoneOffset !== null && (
-                            <div className="mt-3 flex gap-2 border-t border-slate-700 pt-3">
-                              <button
-                                type="button"
-                                disabled={pendingTimezoneOffset === userTimezoneOffset}
-                                onClick={async () => {
-                                  setUserTimezoneOffset(pendingTimezoneOffset);
-                                  setPendingTimezoneOffset(null);
-                                  setShowTimezoneSelector(false);
-                                  setShowProfileMenu(false);
-                                  // Persist to Supabase if logged in
-                                  if (authUser && hasSupabase() && supabase) {
-                                    try {
-                                      await supabase.from('user_metadata').upsert({
-                                        user_id: authUser.id,
-                                        timezone_offset: pendingTimezoneOffset,
-                                        updated_at: new Date().toISOString(),
-                                      }, { onConflict: 'user_id' });
-                                    } catch (err) {
-                                      console.error('Failed to save timezone:', err);
-                                    }
-                                  }
-                                }}
-                                className="flex-1 rounded px-2 py-1.5 bg-amber-500 text-xs font-medium text-white hover:bg-amber-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                              >
-                                Save
-                              </button>
-                              <button
-                                type="button"
-                                onClick={() => setPendingTimezoneOffset(null)}
-                                className="flex-1 rounded px-2 py-1.5 border border-slate-600 text-xs font-medium text-slate-300 hover:bg-slate-800 transition-colors"
-                              >
-                                Cancel
-                              </button>
-                            </div>
-                          )}
                         </div>
                       )}
                       <button

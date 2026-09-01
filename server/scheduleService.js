@@ -296,16 +296,30 @@ function mapSoccerEventToGame(event, teamId, normalizedLeague) {
   const homeName = homeComp?.team?.displayName || 'Home';
   const awayName = awayComp?.team?.displayName || 'Away';
   const status = event?.status?.type?.state || event?.status?.type?.description || 'Scheduled';
-  const date = event?.date || competition?.date || new Date().toISOString();
-  const timeValue = date.includes('T') ? date.slice(11, 16) : '00:00';
+  const rawDate = event?.date || competition?.date || new Date().toISOString();
+  
+  // Normalize ESPN timestamp to UTC
+  let normalizedDateTime;
+  try {
+    const dateObj = new Date(rawDate);
+    if (!Number.isNaN(dateObj.getTime())) {
+      normalizedDateTime = dateObj.toISOString();
+    } else {
+      normalizedDateTime = new Date().toISOString();
+    }
+  } catch {
+    normalizedDateTime = new Date().toISOString();
+  }
+  
+  const timeValue = normalizedDateTime.includes('T') ? normalizedDateTime.slice(11, 16) : '00:00';
 
   return {
-    id: String(event?.id ?? event?.uid ?? `${normalizedLeague}-${teamId}-${date}`),
+    id: String(event?.id ?? event?.uid ?? `${normalizedLeague}-${teamId}-${rawDate}`),
     league: normalizedLeague,
     title: event?.shortName || `${homeName} vs ${awayName}`,
-    date: date.includes('T') ? date.slice(0, 10) : date,
+    date: normalizedDateTime.includes('T') ? normalizedDateTime.slice(0, 10) : normalizedDateTime,
     time: timeValue,
-    datetime: date,
+    datetime: normalizedDateTime,
     status,
     venue: competition?.venue?.fullName || 'TBD',
     home_team_name: homeName,
@@ -463,16 +477,31 @@ export async function fetchEspnTeamSchedule(leagueKey, teamName, options = {}) {
     const homeName = homeComp?.team?.displayName || selected?.team?.displayName || teamName;
     const awayName = awayComp?.team?.displayName || opponent?.team?.displayName || 'Opponent';
     const status = event?.status?.type?.state || event?.status?.type?.description || 'Scheduled';
-    const date = event?.date || competition?.date || new Date().toISOString();
-    const timeValue = date.includes('T') ? date.slice(11, 16) : '00:00';
+    const rawDate = event?.date || competition?.date || new Date().toISOString();
+    
+    // Normalize ESPN timestamp to UTC. ESPN returns ISO 8601 strings which might include timezone info.
+    // We always convert to UTC for consistency.
+    let normalizedDateTime;
+    try {
+      const dateObj = new Date(rawDate);
+      if (!Number.isNaN(dateObj.getTime())) {
+        normalizedDateTime = dateObj.toISOString(); // Always returns UTC
+      } else {
+        normalizedDateTime = new Date().toISOString();
+      }
+    } catch {
+      normalizedDateTime = new Date().toISOString();
+    }
+    
+    const timeValue = normalizedDateTime.includes('T') ? normalizedDateTime.slice(11, 16) : '00:00';
 
     return {
       id: String(event?.id ?? event?.uid ?? `${normalizedLeague}-${teamId}-${index}`),
       league: normalizedLeague,
       title: event?.shortName || `${homeName} vs ${awayName}`,
-      date: date.includes('T') ? date.slice(0, 10) : date,
+      date: normalizedDateTime.includes('T') ? normalizedDateTime.slice(0, 10) : normalizedDateTime,
       time: timeValue,
-      datetime: date,
+      datetime: normalizedDateTime,
       status,
       venue: competition?.venue?.fullName || 'TBD',
       home_team_name: homeName,
